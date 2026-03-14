@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "autoprefixer": "^10.4.27",
     "framer-motion": "^12.36.0",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.5.8",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
@@ -20,7 +21,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -28,6 +31,7 @@
       "react-app/jest"
     ]
   },
+  "homepage": "https://thathablaster007.github.io/adaptive-golf-frontend",
   "browserslist": {
     "production": [
       ">0.2%",
