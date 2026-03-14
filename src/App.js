@@ -1,31 +1,30 @@
-import logo from './logo1.png';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import Homepage from './pages/Homepage';
+import WhatIsAdaptiveGolf from './pages/WhatIsAdaptiveGolf';
+import TryGolf from './pages/TryGolf';
+import Competition from './pages/Competition';
+import Media from './pages/Media';
+import GetInvolved from './pages/GetInvolved';
+import News from './pages/News';
+import Connect from './pages/Connect';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <div className="nav-bar">
-          <div className="nav-left">
-            <a href="#about">About</a>
-            <a href="#adaptive-golf">What is Adaptive Golf?</a>
-            <a href="#try-golf">Try Golf</a>
-            <a href="#competition">Competition</a>
-            <a href="#media">Media</a>
-          </div>
-          <div className="nav-center">
-            <img src={logo} className="App-logo" alt="logo" />
-            <div className="foundation-text">Adaptive Golf Alliance Foundation</div>
-          </div>
-          <div className="nav-right">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="insta-logo">&#x1F4F7;</a>
-            <a href="#blog">Blog</a>
-            <a href="#get-involved" className="get-involved">Get Involved</a>
-            <a href="#news">News</a>
-          </div>
-        </div>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Homepage />} />
+          <Route path="what-is-adaptive-golf" element={<WhatIsAdaptiveGolf />} />
+          <Route path="try-golf" element={<TryGolf />} />
+          <Route path="competition" element={<Competition />} />
+          <Route path="media" element={<Media />} />
+          <Route path="get-involved" element={<GetInvolved />} />
+          <Route path="news" element={<News />} />
+          <Route path="connect" element={<Connect />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 
