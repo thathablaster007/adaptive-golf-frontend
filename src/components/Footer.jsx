@@ -28,11 +28,11 @@ const Footer = () => {
           </div>
 
           {/* Center: Logo */}
-          <div className="flex flex-col items-center justify-center gap-3">
+          <div className="flex flex-col items-center justify-center gap-4 lg:-mt-5">
             <Link to={ROUTES.home}>
-              <img src={logo} alt="AGAF Logo" className="h-24 md:h-28 w-auto" />
+              <img src={logo} alt="AGAF Logo" className="h-40 md:h-48 w-auto" />
             </Link>
-            <p className="font-quicksand font-semibold text-center text-gray-700 text-sm md:text-base">
+            <p className="font-quicksand font-semibold text-center text-gray-700 text-lg md:text-xl leading-snug">
               Adaptive Golf Alliance Foundation
             </p>
           </div>

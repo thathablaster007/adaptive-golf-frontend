@@ -171,7 +171,7 @@ const Homepage = () => {
       />
 
       {/* About AGAF Section */}
-      <motion.section variants={itemVariants} className="py-20 bg-white">
+      <motion.section variants={itemVariants} className="py-20 bg-[#f2f1ea]">
         <div className="container-custom">
           {/* Title */}
           <motion.div variants={itemVariants} className="text-center mb-10">

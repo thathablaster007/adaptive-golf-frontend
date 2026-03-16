@@ -102,7 +102,7 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
   const fadeTransition = { duration: transitionDuration, ease: [0.22, 1, 0.36, 1] };
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-black">
+    <div className="relative w-full h-[110vh] overflow-hidden bg-black">
       {slides.map((slide, index) => (
         <motion.div
           key={index}
@@ -138,7 +138,7 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
               />
             )}
 
-            <div className="absolute inset-0 bg-black/40" />
+            <div className="absolute inset-0 bg-black/25" />
           </div>
 
           <div className="absolute inset-0 flex flex-col items-center justify-center p-8 md:p-16 text-white text-center">
