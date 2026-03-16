@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 import Button from '../components/Button';
 import HeroSlideshow from '../components/HeroSlideshow';
 import { ROUTES } from '../config/navigation';
-import title1 from '../assets/hero/title-1.jpg';
+import title1 from '../IMG_1841.JPG';
+import title2aFirstSlide from '../IMG_1850.JPG';
 import title2a from '../assets/hero/title-2a.jpg';
 import title2b from '../assets/hero/title-2b.jpg';
 import title2c from '../assets/hero/title-2c.jpg';
@@ -12,6 +13,9 @@ import title2d from '../assets/hero/title-2d.jpg';
 import title3a from '../assets/hero/title-3a.jpg';
 import title3b from '../assets/hero/title-3b.jpg';
 import title3c from '../assets/hero/title-3c.jpg';
+import title1BlogCard from '../Title 1.JPG';
+import blogImage2 from '../IMG_1883.JPG';
+import blogImage3 from '../IMG_0780.jpeg';
 import tryGolfHomeImage from '../Try Golf_Home.JPG';
 import competitionHomeImage from '../Comeptition_Home.JPG';
 import mediaHomeImage from '../Media_Home.JPG';
@@ -36,7 +40,23 @@ const Homepage = () => {
       await Promise.all(loaders);
     };
 
-    preloadImages([tryGolfHomeImage, competitionHomeImage, mediaHomeImage]);
+    preloadImages([
+      tryGolfHomeImage,
+      competitionHomeImage,
+      mediaHomeImage,
+      title1,
+      title2aFirstSlide,
+      title2a,
+      title2b,
+      title2c,
+      title2d,
+      title3a,
+      title3b,
+      title3c,
+      title1BlogCard,
+      blogImage2,
+      blogImage3,
+    ]);
   }, []);
 
   const containerVariants = {
@@ -62,7 +82,7 @@ const Homepage = () => {
   // Hero slideshow data
   const heroSlides = [
     {
-      images: [title2d, title1, title2a],
+      images: [title2d, title1, title2aFirstSlide],
       topText: 'Experience Golf',
       bottomText: 'Your Way',
       taglines: [],
@@ -119,19 +139,19 @@ const Homepage = () => {
     {
       id: 'blog-empowerment',
       title: 'More Than a Game: How Golf Empowers People with Disabilities',
-      image: 'https://images.unsplash.com/photo-1517602302552-471fe67acf66?w=900&h=1200&fit=crop&auto=format',
+      image: title1BlogCard,
       path: ROUTES.blogEmpowerment,
     },
     {
       id: 'blog-volunteers',
       title: 'The Power of Volunteers: The Heart of Adaptive Sports',
-      image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&h=1200&fit=crop&auto=format',
+      image: blogImage2,
       path: ROUTES.blogVolunteers,
     },
     {
       id: 'blog-coaching',
       title: 'Adaptive Coaching: How Golf Training is Designed for Different Abilities',
-      image: 'https://images.unsplash.com/photo-1592919505780-303950717480?w=900&h=1200&fit=crop&auto=format',
+      image: blogImage3,
       path: ROUTES.blogAdaptiveCoaching,
     },
   ];
