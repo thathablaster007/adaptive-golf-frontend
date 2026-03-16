@@ -1,16 +1,24 @@
 {
   "files": {
-    "main.css": "/adaptive-golf-frontend/static/css/main.64c568bc.css",
-    "main.js": "/adaptive-golf-frontend/static/js/main.c803165f.js",
+    "main.css": "/adaptive-golf-frontend/static/css/main.428354d1.css",
+    "main.js": "/adaptive-golf-frontend/static/js/main.b5c87d71.js",
     "static/js/453.b76d455e.chunk.js": "/adaptive-golf-frontend/static/js/453.b76d455e.chunk.js",
+    "static/media/Title 1.JPG": "/adaptive-golf-frontend/static/media/Title 1.f3636fa13f0d179fed73.JPG",
+    "static/media/Title 2c.JPG": "/adaptive-golf-frontend/static/media/Title 2c.d919d21c1e6a92fff14f.JPG",
+    "static/media/Title 2b.JPG": "/adaptive-golf-frontend/static/media/Title 2b.9f73e0ed94038d943b92.JPG",
+    "static/media/Title 3c.JPG": "/adaptive-golf-frontend/static/media/Title 3c.018077885b53a88f9989.JPG",
+    "static/media/Title 2a.JPG": "/adaptive-golf-frontend/static/media/Title 2a.66d953285db69d651500.JPG",
+    "static/media/Title 3a.JPG": "/adaptive-golf-frontend/static/media/Title 3a.aaac150d4ca30674af4d.JPG",
+    "static/media/Title 3b.JPG": "/adaptive-golf-frontend/static/media/Title 3b.a993751d28f3eb85bedc.JPG",
+    "static/media/Title 2d.JPG": "/adaptive-golf-frontend/static/media/Title 2d.a36a3c083d6655fb8c3c.JPG",
     "static/media/logo1.png": "/adaptive-golf-frontend/static/media/logo1.257ec39827d1bafaf975.png",
     "index.html": "/adaptive-golf-frontend/index.html",
-    "main.64c568bc.css.map": "/adaptive-golf-frontend/static/css/main.64c568bc.css.map",
-    "main.c803165f.js.map": "/adaptive-golf-frontend/static/js/main.c803165f.js.map",
+    "main.428354d1.css.map": "/adaptive-golf-frontend/static/css/main.428354d1.css.map",
+    "main.b5c87d71.js.map": "/adaptive-golf-frontend/static/js/main.b5c87d71.js.map",
     "453.b76d455e.chunk.js.map": "/adaptive-golf-frontend/static/js/453.b76d455e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.64c568bc.css",
-    "static/js/main.c803165f.js"
+    "static/css/main.428354d1.css",
+    "static/js/main.b5c87d71.js"
   ]
 }
