@@ -9,6 +9,10 @@ import Media from './pages/Media';
 import GetInvolved from './pages/GetInvolved';
 import News from './pages/News';
 import Connect from './pages/Connect';
+import Blog from './pages/Blog';
+import BlogPostEmpowerment from './pages/BlogPostEmpowerment';
+import BlogPostVolunteers from './pages/BlogPostVolunteers';
+import BlogPostAdaptiveCoaching from './pages/BlogPostAdaptiveCoaching';
 
 function ScrollToTop() {
   const { pathname, key } = useLocation();
@@ -57,6 +61,10 @@ function App() {
           <Route path="try-golf" element={<TryGolf />} />
           <Route path="competition" element={<Competition />} />
           <Route path="media" element={<Media />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="blog/more-than-a-game" element={<BlogPostEmpowerment />} />
+          <Route path="blog/power-of-volunteers" element={<BlogPostVolunteers />} />
+          <Route path="blog/adaptive-coaching" element={<BlogPostAdaptiveCoaching />} />
           <Route path="get-involved" element={<GetInvolved />} />
           <Route path="news" element={<News />} />
           <Route path="connect" element={<Connect />} />

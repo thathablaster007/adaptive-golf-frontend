@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Button from '../components/Button';
-import Card from '../components/Card';
 import HeroSlideshow from '../components/HeroSlideshow';
 import { ROUTES } from '../config/navigation';
 import title1 from '../assets/hero/title-1.jpg';
@@ -116,11 +115,33 @@ const Homepage = () => {
     },
   ];
 
+  const blogPreviewPosts = [
+    {
+      id: 'blog-empowerment',
+      title: 'More Than a Game: How Golf Empowers People with Disabilities',
+      image: 'https://images.unsplash.com/photo-1517602302552-471fe67acf66?w=900&h=1200&fit=crop&auto=format',
+      path: ROUTES.blogEmpowerment,
+    },
+    {
+      id: 'blog-volunteers',
+      title: 'The Power of Volunteers: The Heart of Adaptive Sports',
+      image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&h=1200&fit=crop&auto=format',
+      path: ROUTES.blogVolunteers,
+    },
+    {
+      id: 'blog-coaching',
+      title: 'Adaptive Coaching: How Golf Training is Designed for Different Abilities',
+      image: 'https://images.unsplash.com/photo-1592919505780-303950717480?w=900&h=1200&fit=crop&auto=format',
+      path: ROUTES.blogAdaptiveCoaching,
+    },
+  ];
+
   return (
     <motion.div
       initial="hidden"
       animate="visible"
       variants={containerVariants}
+      className="font-quicksand"
     >
       {/* Hero Slideshow Section */}
       <HeroSlideshow 
@@ -134,26 +155,26 @@ const Homepage = () => {
         <div className="container-custom">
           {/* Title */}
           <motion.div variants={itemVariants} className="text-center mb-10">
-            <h2 className="text-5xl font-montserrat text-primary-blue font-bold mb-3">
+            <h2 className="text-5xl font-quicksand text-primary-blue font-bold mb-3">
               Adaptive Golf Alliance Foundation
             </h2>
-            <p className="text-base font-montserrat text-primary-green font-semibold">
+            <p className="text-xl font-quicksand text-primary-green font-semibold">
               Building pathways. Creating access. Enabling excellence
             </p>
           </motion.div>
 
           {/* Text Content Above Video */}
           <motion.div variants={itemVariants} className="mb-14 px-4 sm:px-8">
-            <p className="text-sm text-gray-800 leading-relaxed text-justify max-w-5xl mx-auto">
+            <p className="text-lg text-gray-800 leading-relaxed text-justify max-w-5xl mx-auto">
               Adaptive Golf Alliance Foundation is a registered non-profit organization committed to expanding access to golf for individuals with disabilities. We believe golf is more than a game — it builds confidence, independence, skill, and a strong sense of community. Through partnerships with coaches, volunteers, schools, and golf facilities, AGAF creates meaningful opportunities for participation at every level — from first swings to competitive play.
             </p>
           </motion.div>
 
           {/* Video and Three Pillars Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
             {/* Video Section - Expanded to reduce negative space */}
-            <motion.div variants={itemVariants} className="lg:col-span-6 lg:-ml-4 xl:-ml-6">
-              <div className="aspect-video lg:aspect-[4/3] bg-gray-900 rounded-lg overflow-hidden shadow-lg">
+            <motion.div variants={itemVariants} className="lg:col-span-7 h-full lg:-ml-6 lg:self-stretch">
+              <div className="aspect-video lg:aspect-auto lg:h-full w-full bg-gray-900 rounded-xl overflow-hidden shadow-lg border-4 border-white">
                 <iframe
                   width="100%"
                   height="100%"
@@ -168,15 +189,15 @@ const Homepage = () => {
             </motion.div>
 
             {/* Three Pillars Section */}
-            <motion.div variants={itemVariants} className="lg:col-span-6">
-              <h3 className="text-lg font-montserrat text-primary-blue font-bold mb-8">
+            <motion.div variants={itemVariants} className="lg:col-span-5">
+              <h3 className="text-xl font-quicksand text-primary-blue font-bold mb-8">
                 Our mission comes to life through a three-stage pathway:
               </h3>
 
               <div className="space-y-8">
                 {/* Sample */}
                 <motion.div variants={itemVariants} className="border-l-4 border-cta-gold pl-5">
-                  <h4 className="text-base font-montserrat text-primary-green font-bold mb-2">
+                  <h4 className="text-base font-quicksand text-primary-green font-bold mb-2">
                     Sample
                   </h4>
                   <p className="text-sm text-gray-800 leading-relaxed">
@@ -186,7 +207,7 @@ const Homepage = () => {
 
                 {/* Practice */}
                 <motion.div variants={itemVariants} className="border-l-4 border-cta-gold pl-5">
-                  <h4 className="text-base font-montserrat text-primary-green font-bold mb-2">
+                  <h4 className="text-base font-quicksand text-primary-green font-bold mb-2">
                     Practice
                   </h4>
                   <p className="text-sm text-gray-800 leading-relaxed">
@@ -196,7 +217,7 @@ const Homepage = () => {
 
                 {/* Compete */}
                 <motion.div variants={itemVariants} className="border-l-4 border-cta-gold pl-5">
-                  <h4 className="text-base font-montserrat text-primary-green font-bold mb-2">
+                  <h4 className="text-base font-quicksand text-primary-green font-bold mb-2">
                     Compete
                   </h4>
                   <p className="text-sm text-gray-800 leading-relaxed">
@@ -208,7 +229,7 @@ const Homepage = () => {
               <motion.div variants={itemVariants} className="mt-8">
                 <Link
                   to={ROUTES.whatIsAdaptiveGolf}
-                  className="inline-flex items-center justify-center rounded-xl bg-primary-green px-7 py-3 text-white font-montserrat font-semibold shadow-md hover:bg-opacity-90 transition-colors duration-300"
+                  className="inline-flex items-center justify-center rounded-xl bg-primary-green px-7 py-3 text-base text-white font-quicksand font-semibold shadow-md hover:bg-opacity-90 transition-colors duration-300"
                 >
                   What is Adaptive Golf?
                 </Link>
@@ -254,7 +275,7 @@ const Homepage = () => {
                     <div className="p-7 flex-1 flex flex-col justify-between">
                       {/* Title and Description */}
                       <div>
-                        <h3 className="text-2xl font-montserrat font-bold text-primary-blue mb-3 group-hover:text-primary-green transition-colors duration-300 leading-snug">
+                        <h3 className="text-2xl font-quicksand font-bold text-primary-blue mb-3 group-hover:text-primary-green transition-colors duration-300 leading-snug">
                           {pathway.title}
                         </h3>
                         <p className="text-gray-700 text-base leading-relaxed mb-4">
@@ -278,76 +299,87 @@ const Homepage = () => {
         </div>
       </motion.section>
 
-      {/* Together We Create Access Section - With Clickable Image Buttons */}
+      {/* Blog Preview Section */}
       <motion.section
         variants={itemVariants}
-        className="section-padding bg-white"
+        className="py-20 bg-[#f2f1ea]"
       >
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <motion.div variants={itemVariants} className="space-y-8">
-              <div>
-                <h2 className="text-4xl md:text-5xl font-montserrat font-bold mb-3">
-                  <span className="text-primary-blue">Together, We</span>
-                  <span className="block text-primary-green">Create Access</span>
-                </h2>
-              </div>
+          <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-16 items-start">
+            <motion.div variants={itemVariants} className="xl:col-span-4 h-full flex flex-col justify-center gap-8">
+              <h2 className="text-5xl md:text-6xl font-quicksand font-semibold text-primary-blue leading-[1.14]">
+                We love sharing
+                <span className="block">adaptive golf <span className="text-primary-green">tips</span></span>
+                <span className="block">and <span className="text-primary-green">stories</span>.</span>
+              </h2>
 
-              <div className="space-y-4">
-                <p className="text-lg text-primary-green font-semibold">
-                  #GolfWithoutLimits
-                </p>
-                <p className="text-base text-gray-700 leading-relaxed">
-                  Every golfer deserves the opportunity to play, compete, and thrive. Join us in breaking barriers and building an inclusive future for adaptive golf.
-                </p>
-              </div>
+              <p className="text-gray-700 text-base leading-relaxed max-w-xl">
+                Read practical stories from adaptive golfers, coaches, and volunteers helping grow inclusive golf.
+              </p>
+
+              <Link to={ROUTES.blog}>
+                <Button variant="primary" size="lg" className="bg-primary-green hover:bg-opacity-90 text-white text-3xl text-left min-w-[150px] px-8 py-4 rounded-xl">
+                  Read More
+                </Button>
+              </Link>
             </motion.div>
 
-            {/* Right Content - Clickable Image Cards */}
-            <motion.div variants={itemVariants} className="grid grid-cols-2 gap-6">
-              {/* Get Involved Card */}
-              <Link to={ROUTES.getInvolved}>
-                <motion.div
-                  whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(0,0,0,0.15)' }}
-                  className="overflow-hidden rounded-lg shadow-lg cursor-pointer bg-white"
-                >
-                  <div className="overflow-hidden h-48">
-                    <img
-                      src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=500&h=400&fit=crop"
-                      alt="Get Involved"
-                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="p-4 text-center">
-                    <h3 className="text-xl font-montserrat font-bold text-primary-blue">Get Involved</h3>
-                  </div>
-                </motion.div>
-              </Link>
-
-              {/* Donate Card */}
-              <motion.div
-                whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(0,0,0,0.15)' }}
-                className="overflow-hidden rounded-lg shadow-lg cursor-pointer bg-white"
-              >
-                <a 
-                  href="#donate"
-                  className="block w-full"
-                >
-                  <div className="overflow-hidden h-48">
-                    <img
-                      src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=500&h=400&fit=crop"
-                      alt="Donate"
-                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="p-4 text-center">
-                    <h3 className="text-xl font-montserrat font-bold text-primary-blue">Donate</h3>
-                  </div>
-                </a>
-              </motion.div>
+            <motion.div variants={itemVariants} className="xl:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-10">
+              {blogPreviewPosts.map((post) => (
+                <Link key={post.id} to={post.path} className="group block">
+                  <article className="h-full">
+                    <div className="overflow-hidden rounded-2xl shadow-md h-[420px] bg-gray-300">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-quicksand text-primary-blue leading-snug mt-5 group-hover:text-primary-green transition-colors duration-300">
+                      {post.title}
+                    </h3>
+                  </article>
+                </Link>
+              ))}
             </motion.div>
           </div>
+        </div>
+      </motion.section>
+
+      {/* Together We Create Access Section - Banner CTA */}
+      <motion.section
+        variants={itemVariants}
+        className="bg-white"
+      >
+        <div className="relative overflow-hidden bg-gradient-to-r from-primary-blue via-primary-green to-primary-blue px-6 py-16 sm:px-10 md:py-20 min-h-[520px] text-white">
+          <div className="absolute inset-y-0 left-4 hidden md:block pointer-events-none select-none">
+            <p className="text-[7rem] leading-[0.85] font-quicksand font-bold uppercase tracking-tight text-white/10">
+              CREATE
+              <br />
+              ACCESS
+            </p>
+          </div>
+
+          <motion.div variants={itemVariants} className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
+            <h2 className="text-4xl md:text-6xl font-quicksand font-bold">
+              <span className="text-white">Together, We</span>
+              <span className="block text-accent-lime">Create Access</span>
+            </h2>
+
+            <p className="text-2xl md:text-3xl font-quicksand font-semibold text-white">
+              #GolfWithoutLimits
+            </p>
+
+            <div>
+              <Link
+                to={ROUTES.getInvolved}
+                className="inline-flex items-center justify-center rounded-[0.75rem] bg-cta-gold px-10 py-4 text-xl font-quicksand font-bold uppercase tracking-wide text-primary-blue shadow-lg hover:brightness-105 transition-all duration-300"
+              >
+                Get Involved
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </motion.section>
     </motion.div>
