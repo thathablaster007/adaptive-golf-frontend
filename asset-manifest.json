@@ -1,11 +1,12 @@
 {
   "files": {
-    "main.css": "/adaptive-golf-frontend/static/css/main.4ad12c7a.css",
-    "main.js": "/adaptive-golf-frontend/static/js/main.36715a01.js",
+    "main.css": "/adaptive-golf-frontend/static/css/main.3ad808ad.css",
+    "main.js": "/adaptive-golf-frontend/static/js/main.b6eb8970.js",
     "static/js/453.b76d455e.chunk.js": "/adaptive-golf-frontend/static/js/453.b76d455e.chunk.js",
     "static/media/Try Golf_Home.JPG": "/adaptive-golf-frontend/static/media/Try Golf_Home.f4079fcdf21d9006a4e6.JPG",
     "static/media/Media_Home.JPG": "/adaptive-golf-frontend/static/media/Media_Home.b8503211a5ef1612060b.JPG",
     "static/media/Comeptition_Home.JPG": "/adaptive-golf-frontend/static/media/Comeptition_Home.e4a848b13cc03c365926.JPG",
+    "static/media/logo2.png": "/adaptive-golf-frontend/static/media/logo2.ca592fc8930717f4a3fe.png",
     "static/media/title-1.jpg": "/adaptive-golf-frontend/static/media/title-1.8e9f5ae285f84545ea08.jpg",
     "static/media/title-2a.jpg": "/adaptive-golf-frontend/static/media/title-2a.80db13e12f0b3cfaa8a6.jpg",
     "static/media/title-3b.jpg": "/adaptive-golf-frontend/static/media/title-3b.fd093f0911a5566a7d97.jpg",
@@ -16,12 +17,12 @@
     "static/media/title-2b.jpg": "/adaptive-golf-frontend/static/media/title-2b.23fb9c69d54ff9aceff7.jpg",
     "static/media/title-2d.jpg": "/adaptive-golf-frontend/static/media/title-2d.338efbe3dfabfe91ed3f.jpg",
     "index.html": "/adaptive-golf-frontend/index.html",
-    "main.4ad12c7a.css.map": "/adaptive-golf-frontend/static/css/main.4ad12c7a.css.map",
-    "main.36715a01.js.map": "/adaptive-golf-frontend/static/js/main.36715a01.js.map",
+    "main.3ad808ad.css.map": "/adaptive-golf-frontend/static/css/main.3ad808ad.css.map",
+    "main.b6eb8970.js.map": "/adaptive-golf-frontend/static/js/main.b6eb8970.js.map",
     "453.b76d455e.chunk.js.map": "/adaptive-golf-frontend/static/js/453.b76d455e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4ad12c7a.css",
-    "static/js/main.36715a01.js"
+    "static/css/main.3ad808ad.css",
+    "static/js/main.b6eb8970.js"
   ]
 }
