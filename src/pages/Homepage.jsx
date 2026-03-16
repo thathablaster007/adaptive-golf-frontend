@@ -82,7 +82,7 @@ const Homepage = () => {
   // Hero slideshow data
   const heroSlides = [
     {
-      images: [title2d, title1, title2aFirstSlide],
+      images: [title2d, title2aFirstSlide,title1],
       topText: 'Experience Golf',
       bottomText: 'Your Way',
       taglines: [],
