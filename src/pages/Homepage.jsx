@@ -5,6 +5,14 @@ import Button from '../components/Button';
 import Card from '../components/Card';
 import HeroSlideshow from '../components/HeroSlideshow';
 import { ROUTES } from '../config/navigation';
+import title1 from '../Title 1.JPG';
+import title2a from '../Title 2a.JPG';
+import title2b from '../Title 2b.JPG';
+import title2c from '../Title 2c.JPG';
+import title2d from '../Title 2d.JPG';
+import title3a from '../Title 3a.JPG';
+import title3b from '../Title 3b.JPG';
+import title3c from '../Title 3c.JPG';
 
 const Homepage = () => {
   const containerVariants = {
@@ -30,23 +38,23 @@ const Homepage = () => {
   // Hero slideshow data
   const heroSlides = [
     {
-      image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&h=1080&fit=crop',
-      topText: 'Experience Golf.',
-      bottomText: 'Your Way.',
+      images: [title2d, title1, title2a],
+      topText: 'Experience Golf',
+      bottomText: 'Your Way',
       taglines: [],
       showButtons: false,
     },
     {
-      image: 'https://images.unsplash.com/photo-1506157786151-b8491531f063?w=1920&h=1080&fit=crop',
-      topText: 'Every swing defies limits and defines possibility',
-      bottomText: '',
+      images: [title2a, title2b, title2c],
+      topText: 'Every swing defines limits',
+      bottomText: 'and defines possibility',
       taglines: [],
       showButtons: false,
     },
     {
-      image: 'https://images.unsplash.com/photo-1526676317261-38c975e301e3?w=1920&h=1080&fit=crop',
-      topText: 'Inclusion Begins with a Voice.',
-      bottomText: '',
+      images: [title3a, title3b, title3c],
+      topText: 'Inclusion Begins',
+      bottomText: 'with a Voice',
       taglines: [],
       showButtons: false,
     },
@@ -92,7 +100,7 @@ const Homepage = () => {
       <HeroSlideshow 
         slides={heroSlides} 
         autoPlay={true} 
-        autoPlayInterval={6000}
+        autoPlayInterval={9000}
       />
 
       {/* About AGAF Section */}
