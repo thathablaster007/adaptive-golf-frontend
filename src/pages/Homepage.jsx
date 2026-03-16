@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Button from '../components/Button';
@@ -13,8 +13,33 @@ import title2d from '../assets/hero/title-2d.jpg';
 import title3a from '../assets/hero/title-3a.jpg';
 import title3b from '../assets/hero/title-3b.jpg';
 import title3c from '../assets/hero/title-3c.jpg';
+import tryGolfHomeImage from '../Try Golf_Home.JPG';
+import competitionHomeImage from '../Comeptition_Home.JPG';
+import mediaHomeImage from '../Media_Home.JPG';
 
 const Homepage = () => {
+  useEffect(() => {
+    const preloadImages = async (imageList) => {
+      const loaders = imageList.map(
+        (src) =>
+          new Promise((resolve) => {
+            const img = new Image();
+            img.src = src;
+            if (img.decode) {
+              img.decode().then(resolve).catch(resolve);
+            } else {
+              img.onload = resolve;
+              img.onerror = resolve;
+            }
+          })
+      );
+
+      await Promise.all(loaders);
+    };
+
+    preloadImages([tryGolfHomeImage, competitionHomeImage, mediaHomeImage]);
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -63,28 +88,29 @@ const Homepage = () => {
   const pathways = [
     {
       id: 'try-golf',
-      title: 'Try Golf',
-      description: 'Step into the game. Discover what\'s possible.',
-      image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=500&h=300&fit=crop',
+      title: 'Step into the game. Discover what\'s possible.',
+      description: 'From your first introduction to structured clinics and specialised workshops, AGAF creates accessible pathways for everyone to experience golf — their way.',
+      image: tryGolfHomeImage,
       cta: 'Explore',
       path: ROUTES.tryGolf,
       accent: 'lime',
     },
     {
       id: 'competition',
-      title: 'Competition',
-      description: 'From Training to Tournament.',
-      image: 'https://images.unsplash.com/photo-1506157786151-b8491531f063?w=500&h=300&fit=crop',
+      title: 'From Training to Tournament',
+      description: 'Progress from structured development into competitive play. Access national events and pathways toward world rankings.',
+      image: competitionHomeImage,
+      imagePosition: 'top',
       cta: 'Learn More',
       path: ROUTES.competition,
       accent: 'lime',
     },
     {
       id: 'media',
-      title: 'Media',
-      description: 'Stories. Moments. Impact in Motion.',
-      image: 'https://images.unsplash.com/photo-1526676317261-38c975e301e3?w=500&h=300&fit=crop',
-      cta: 'View Gallery',
+      title: 'Stories. Moments. Impact in Motion.',
+      description: 'Explore highlights from clinics, tournaments, workshops, and media features. A visual journey of adaptive golf in action.',
+      image: mediaHomeImage,
+      cta: 'View Media',
       path: ROUTES.media,
       accent: 'lime',
     },
@@ -111,23 +137,23 @@ const Homepage = () => {
             <h2 className="text-5xl font-montserrat text-primary-blue font-bold mb-3">
               Adaptive Golf Alliance Foundation
             </h2>
-            <p className="text-base font-montserrat text-cta-gold font-semibold">
+            <p className="text-base font-montserrat text-primary-green font-semibold">
               Building pathways. Creating access. Enabling excellence
             </p>
           </motion.div>
 
           {/* Text Content Above Video */}
-          <motion.div variants={itemVariants} className="mb-14 px-8">
-            <p className="text-sm text-gray-800 leading-relaxed text-center">
+          <motion.div variants={itemVariants} className="mb-14 px-4 sm:px-8">
+            <p className="text-sm text-gray-800 leading-relaxed text-justify max-w-5xl mx-auto">
               Adaptive Golf Alliance Foundation is a registered non-profit organization committed to expanding access to golf for individuals with disabilities. We believe golf is more than a game — it builds confidence, independence, skill, and a strong sense of community. Through partnerships with coaches, volunteers, schools, and golf facilities, AGAF creates meaningful opportunities for participation at every level — from first swings to competitive play.
             </p>
           </motion.div>
 
           {/* Video and Three Pillars Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-7 gap-10 items-start">
-            {/* Video Section - Takes 3 columns */}
-            <motion.div variants={itemVariants} className="lg:col-span-3">
-              <div className="aspect-video bg-gray-900 rounded-lg overflow-hidden shadow-lg">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-stretch">
+            {/* Video Section - Expanded to reduce negative space */}
+            <motion.div variants={itemVariants} className="lg:col-span-6 lg:-ml-4 xl:-ml-6">
+              <div className="aspect-video lg:aspect-[4/3] bg-gray-900 rounded-lg overflow-hidden shadow-lg">
                 <iframe
                   width="100%"
                   height="100%"
@@ -141,8 +167,8 @@ const Homepage = () => {
               </div>
             </motion.div>
 
-            {/* Three Pillars Section - Takes 4 columns */}
-            <motion.div variants={itemVariants} className="lg:col-span-4 pl-4">
+            {/* Three Pillars Section */}
+            <motion.div variants={itemVariants} className="lg:col-span-6">
               <h3 className="text-lg font-montserrat text-primary-blue font-bold mb-8">
                 Our mission comes to life through a three-stage pathway:
               </h3>
@@ -150,7 +176,7 @@ const Homepage = () => {
               <div className="space-y-8">
                 {/* Sample */}
                 <motion.div variants={itemVariants} className="border-l-4 border-cta-gold pl-5">
-                  <h4 className="text-base font-montserrat text-primary-blue font-bold mb-2">
+                  <h4 className="text-base font-montserrat text-primary-green font-bold mb-2">
                     Sample
                   </h4>
                   <p className="text-sm text-gray-800 leading-relaxed">
@@ -160,7 +186,7 @@ const Homepage = () => {
 
                 {/* Practice */}
                 <motion.div variants={itemVariants} className="border-l-4 border-cta-gold pl-5">
-                  <h4 className="text-base font-montserrat text-primary-blue font-bold mb-2">
+                  <h4 className="text-base font-montserrat text-primary-green font-bold mb-2">
                     Practice
                   </h4>
                   <p className="text-sm text-gray-800 leading-relaxed">
@@ -170,7 +196,7 @@ const Homepage = () => {
 
                 {/* Compete */}
                 <motion.div variants={itemVariants} className="border-l-4 border-cta-gold pl-5">
-                  <h4 className="text-base font-montserrat text-primary-blue font-bold mb-2">
+                  <h4 className="text-base font-montserrat text-primary-green font-bold mb-2">
                     Compete
                   </h4>
                   <p className="text-sm text-gray-800 leading-relaxed">
@@ -178,6 +204,15 @@ const Homepage = () => {
                   </p>
                 </motion.div>
               </div>
+
+              <motion.div variants={itemVariants} className="mt-8">
+                <Link
+                  to={ROUTES.whatIsAdaptiveGolf}
+                  className="inline-flex items-center justify-center rounded-xl bg-primary-green px-7 py-3 text-white font-montserrat font-semibold shadow-md hover:bg-opacity-90 transition-colors duration-300"
+                >
+                  What is Adaptive Golf?
+                </Link>
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -189,18 +224,8 @@ const Homepage = () => {
         className="section-padding bg-gray-50"
       >
         <div className="container-custom">
-          {/* Section Title */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-montserrat text-primary-blue font-bold mb-4">
-              Your Journey Starts Here
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Explore the different pathways to experience adaptive golf. From your first swing to competitive play, find your path.
-            </p>
-          </motion.div>
-
           {/* 3 Box Grid with Images and Links */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-10 lg:gap-y-12 gap-x-8 lg:gap-x-14 xl:gap-x-16 items-stretch">
             {pathways.map((pathway, index) => (
               <motion.div
                 key={pathway.id}
@@ -211,21 +236,25 @@ const Homepage = () => {
                 <Link to={pathway.path} className="block h-full">
                   <div className="bg-white rounded-lg overflow-hidden shadow-md h-full flex flex-col transition-all duration-300">
                     {/* Image Container */}
-                    <div className="relative overflow-hidden h-64 bg-gray-300">
+                    <div className="relative overflow-hidden h-72 lg:h-80 bg-gray-300">
                       <img
                         src={pathway.image}
                         alt={pathway.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        className="w-full h-full object-cover brightness-110 contrast-105 saturate-110 group-hover:scale-110 transition-transform duration-300"
+                        style={{ objectPosition: pathway.imagePosition || 'center' }}
+                        loading="eager"
+                        decoding="async"
+                        fetchPriority={index === 0 ? 'high' : 'auto'}
                       />
                       {/* Overlay */}
-                      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors duration-300" />
+                      <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300" />
                     </div>
 
                     {/* Content Container */}
-                    <div className="p-6 flex-1 flex flex-col justify-between">
+                    <div className="p-7 flex-1 flex flex-col justify-between">
                       {/* Title and Description */}
                       <div>
-                        <h3 className="text-2xl font-montserrat font-bold text-primary-blue mb-3 group-hover:text-cta-gold transition-colors duration-300">
+                        <h3 className="text-2xl font-montserrat font-bold text-primary-blue mb-3 group-hover:text-primary-green transition-colors duration-300 leading-snug">
                           {pathway.title}
                         </h3>
                         <p className="text-gray-700 text-base leading-relaxed mb-4">

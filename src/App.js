@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect, useLayoutEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import Homepage from './pages/Homepage';
 import WhatIsAdaptiveGolf from './pages/WhatIsAdaptiveGolf';
@@ -9,9 +10,46 @@ import GetInvolved from './pages/GetInvolved';
 import News from './pages/News';
 import Connect from './pages/Connect';
 
+function ScrollToTop() {
+  const { pathname, key } = useLocation();
+
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+  }, []);
+
+  useLayoutEffect(() => {
+    const html = document.documentElement;
+    const body = document.body;
+    const previousScrollBehavior = html.style.scrollBehavior;
+
+    html.style.scrollBehavior = 'auto';
+    body.style.scrollBehavior = 'auto';
+
+    html.scrollTop = 0;
+    body.scrollTop = 0;
+    window.scrollTo(0, 0);
+
+    requestAnimationFrame(() => {
+      html.scrollTop = 0;
+      body.scrollTop = 0;
+      window.scrollTo(0, 0);
+    });
+
+    return () => {
+      html.style.scrollBehavior = previousScrollBehavior;
+      body.style.scrollBehavior = '';
+    };
+  }, [pathname, key]);
+
+  return null;
+}
+
 function App() {
   return (
     <Router basename="/adaptive-golf-frontend">
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Homepage />} />
