@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/adaptive-golf-frontend/static/css/main.123e490d.css",
-    "main.js": "/adaptive-golf-frontend/static/js/main.1f084b75.js",
+    "main.css": "/adaptive-golf-frontend/static/css/main.4b731009.css",
+    "main.js": "/adaptive-golf-frontend/static/js/main.ee2622ed.js",
     "static/js/453.b76d455e.chunk.js": "/adaptive-golf-frontend/static/js/453.b76d455e.chunk.js",
     "static/media/Title 1.JPG": "/adaptive-golf-frontend/static/media/Title 1.f3636fa13f0d179fed73.JPG",
     "static/media/IMG_1850.JPG": "/adaptive-golf-frontend/static/media/IMG_1850.59ff3221b91f78c182f7.JPG",
@@ -17,16 +17,15 @@
     "static/media/title-3c.jpg": "/adaptive-golf-frontend/static/media/title-3c.d807613e3addbc1c0d27.jpg",
     "static/media/title-3a.jpg": "/adaptive-golf-frontend/static/media/title-3a.c7a2a514ec02666de5ba.jpg",
     "static/media/title-2c.jpg": "/adaptive-golf-frontend/static/media/title-2c.9cd675894bb6b8f02f87.jpg",
-    "static/media/logo1.png": "/adaptive-golf-frontend/static/media/logo1.257ec39827d1bafaf975.png",
     "static/media/title-2b.jpg": "/adaptive-golf-frontend/static/media/title-2b.23fb9c69d54ff9aceff7.jpg",
     "static/media/title-2d.jpg": "/adaptive-golf-frontend/static/media/title-2d.338efbe3dfabfe91ed3f.jpg",
     "index.html": "/adaptive-golf-frontend/index.html",
-    "main.123e490d.css.map": "/adaptive-golf-frontend/static/css/main.123e490d.css.map",
-    "main.1f084b75.js.map": "/adaptive-golf-frontend/static/js/main.1f084b75.js.map",
+    "main.4b731009.css.map": "/adaptive-golf-frontend/static/css/main.4b731009.css.map",
+    "main.ee2622ed.js.map": "/adaptive-golf-frontend/static/js/main.ee2622ed.js.map",
     "453.b76d455e.chunk.js.map": "/adaptive-golf-frontend/static/js/453.b76d455e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.123e490d.css",
-    "static/js/main.1f084b75.js"
+    "static/css/main.4b731009.css",
+    "static/js/main.ee2622ed.js"
   ]
 }
