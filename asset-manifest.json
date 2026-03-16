@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/adaptive-golf-frontend/static/css/main.123e490d.css",
-    "main.js": "/adaptive-golf-frontend/static/js/main.db1ad56c.js",
+    "main.js": "/adaptive-golf-frontend/static/js/main.1f084b75.js",
     "static/js/453.b76d455e.chunk.js": "/adaptive-golf-frontend/static/js/453.b76d455e.chunk.js",
     "static/media/Title 1.JPG": "/adaptive-golf-frontend/static/media/Title 1.f3636fa13f0d179fed73.JPG",
     "static/media/IMG_1850.JPG": "/adaptive-golf-frontend/static/media/IMG_1850.59ff3221b91f78c182f7.JPG",
@@ -22,11 +22,11 @@
     "static/media/title-2d.jpg": "/adaptive-golf-frontend/static/media/title-2d.338efbe3dfabfe91ed3f.jpg",
     "index.html": "/adaptive-golf-frontend/index.html",
     "main.123e490d.css.map": "/adaptive-golf-frontend/static/css/main.123e490d.css.map",
-    "main.db1ad56c.js.map": "/adaptive-golf-frontend/static/js/main.db1ad56c.js.map",
+    "main.1f084b75.js.map": "/adaptive-golf-frontend/static/js/main.1f084b75.js.map",
     "453.b76d455e.chunk.js.map": "/adaptive-golf-frontend/static/js/453.b76d455e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.123e490d.css",
-    "static/js/main.db1ad56c.js"
+    "static/js/main.1f084b75.js"
   ]
 }
