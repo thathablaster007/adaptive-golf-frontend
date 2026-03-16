@@ -19,16 +19,10 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
 
   useEffect(() => {
     let isMounted = true;
-    const uniqueImages = Array.from(
-      new Set(
-        slides
-          .flatMap((slide) => (slide.images && slide.images.length ? slide.images : [slide.image]))
-          .filter(Boolean)
-      )
-    );
+    const getSlideImages = (slide) => (slide.images && slide.images.length ? slide.images : [slide.image]).filter(Boolean);
 
-    const preloadImages = async () => {
-      const loaders = uniqueImages.map(
+    const preloadImages = async (imageList) => {
+      const loaders = imageList.map(
         (src) =>
           new Promise((resolve) => {
             const img = new Image();
@@ -41,12 +35,24 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
             }
           })
       );
-
       await Promise.all(loaders);
-      if (isMounted) setIsReady(true);
     };
 
-    preloadImages();
+    const init = async () => {
+      const firstSlideImages = getSlideImages(slides[0] || {});
+      const remainingImages = slides
+        .slice(1)
+        .flatMap((slide) => getSlideImages(slide));
+
+      // Unblock first render as soon as the first slide is ready.
+      await preloadImages(firstSlideImages);
+      if (isMounted) setIsReady(true);
+
+      // Continue warming the cache for smoother subsequent transitions.
+      preloadImages(Array.from(new Set(remainingImages)));
+    };
+
+    init();
 
     return () => {
       isMounted = false;

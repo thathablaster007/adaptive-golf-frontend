@@ -34,7 +34,7 @@ const Header = () => {
       <div>
         <nav className="grid grid-cols-3 items-center h-44 w-full p-0 m-0 overflow-visible">
           {/* Left Navigation */}
-          <div className="hidden lg:flex flex-row items-center justify-start gap-6 pl-4 text-base min-w-0">
+          <div className="hidden lg:flex flex-row items-center justify-start gap-6 pl-4 text-base min-w-0 relative z-20">
               <NavDropdown label="About" items={aboutDropdownItems} />
               <Link to={ROUTES.whatIsAdaptiveGolf} className={leftNavLinkClass(ROUTES.whatIsAdaptiveGolf)}>
                 What is Adaptive Golf?
@@ -51,15 +51,15 @@ const Header = () => {
           </div>
 
           {/* Center Logo + Subtitle */}
-          <div className="flex flex-col items-center justify-center justify-self-center w-full gap-0">
-            <Link to={ROUTES.home} className="focus:outline-none">
+          <div className="flex flex-col items-center justify-center justify-self-center w-full gap-0 relative z-10 pointer-events-none">
+            <Link to={ROUTES.home} className="focus:outline-none pointer-events-auto">
               <img src={logo} alt="AGAF Logo" className="h-32 w-auto" />
             </Link>
             <span className="font-quicksand text-sm font-normal text-gray-700 tracking-wide text-center">Adaptive Golf Alliance Foundation</span>
           </div>
 
           {/* Right Navigation */}
-          <div className="hidden lg:flex flex-row items-center justify-center gap-6 min-w-0">
+          <div className="hidden lg:flex flex-row items-center justify-center gap-6 min-w-0 relative z-20">
               <a
                 href="https://www.instagram.com/adaptivegolfalliance/"
                 target="_blank"

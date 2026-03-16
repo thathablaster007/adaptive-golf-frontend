@@ -5,14 +5,14 @@ import Button from '../components/Button';
 import Card from '../components/Card';
 import HeroSlideshow from '../components/HeroSlideshow';
 import { ROUTES } from '../config/navigation';
-import title1 from '../Title 1.JPG';
-import title2a from '../Title 2a.JPG';
-import title2b from '../Title 2b.JPG';
-import title2c from '../Title 2c.JPG';
-import title2d from '../Title 2d.JPG';
-import title3a from '../Title 3a.JPG';
-import title3b from '../Title 3b.JPG';
-import title3c from '../Title 3c.JPG';
+import title1 from '../assets/hero/title-1.jpg';
+import title2a from '../assets/hero/title-2a.jpg';
+import title2b from '../assets/hero/title-2b.jpg';
+import title2c from '../assets/hero/title-2c.jpg';
+import title2d from '../assets/hero/title-2d.jpg';
+import title3a from '../assets/hero/title-3a.jpg';
+import title3b from '../assets/hero/title-3b.jpg';
+import title3c from '../assets/hero/title-3c.jpg';
 
 const Homepage = () => {
   const containerVariants = {
