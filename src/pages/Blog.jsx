@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ROUTES } from '../config/navigation';
-import blogHeaderImage from '../_DSC0059.JPG';
+import blogHeaderImage from '../DSC0059.JPG';
 import title1BlogCard from '../Title 1.JPG';
 import blogImage2 from '../IMG_1883.JPG';
 import blogImage3 from '../IMG_0780.jpeg';

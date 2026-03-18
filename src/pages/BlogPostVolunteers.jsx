@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ROUTES } from '../config/navigation';
-import blogImage1 from '../_DSC0125.JPG';
+import blogImage1 from '../DSC0125.JPG';
 import blogImage2 from '../IMG_1883.JPG';
-import blogImage3 from '../_DSC0074.JPG';
+import blogImage3 from '../DSC0074.JPG';
 
 const BlogPostVolunteers = () => {
   return (

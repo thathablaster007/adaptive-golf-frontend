@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ROUTES } from '../config/navigation';
 import blogImage1 from '../IMG_1811.JPG';
-import blogImage2 from '../_DSC0016.JPG';
-import blogImage3 from '../_DSC0111.JPG';
+import blogImage2 from '../DSC0016.JPG';
+import blogImage3 from '../DSC0111.JPG';
 
 const BlogPostEmpowerment = () => {
   return (
