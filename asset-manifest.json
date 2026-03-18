@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/adaptive-golf-frontend/static/css/main.4fda94d2.css",
-    "main.js": "/adaptive-golf-frontend/static/js/main.c28ac61d.js",
+    "main.js": "/adaptive-golf-frontend/static/js/main.a8a9552e.js",
     "static/js/453.d9ad84a7.chunk.js": "/adaptive-golf-frontend/static/js/453.d9ad84a7.chunk.js",
     "static/media/Try golf 6.JPG": "/adaptive-golf-frontend/static/media/Try golf 6.0eabd0c923ba3361b5d9.JPG",
     "static/media/IMG_1805.JPG": "/adaptive-golf-frontend/static/media/IMG_1805.364680e84e89decdd2a3.JPG",
@@ -21,13 +21,13 @@
     "static/media/What is adaptive golf.JPG": "/adaptive-golf-frontend/static/media/What is adaptive golf.4ba8ee4e1566e4b40b80.JPG",
     "static/media/Try Golf_Home.JPG": "/adaptive-golf-frontend/static/media/Try Golf_Home.f4079fcdf21d9006a4e6.JPG",
     "static/media/Media a.JPG": "/adaptive-golf-frontend/static/media/Media a.220b1c015b88c56541f0.JPG",
-    "static/media/_DSC0125.JPG": "/adaptive-golf-frontend/static/media/_DSC0125.4d6474c8840a1b562ead.JPG",
+    "static/media/DSC0125.JPG": "/adaptive-golf-frontend/static/media/DSC0125.4d6474c8840a1b562ead.JPG",
     "static/media/Media b .JPG": "/adaptive-golf-frontend/static/media/Media b .234aad76580307437254.JPG",
-    "static/media/_DSC0016.JPG": "/adaptive-golf-frontend/static/media/_DSC0016.18d313a57fc274e71ab9.JPG",
-    "static/media/_DSC0074.JPG": "/adaptive-golf-frontend/static/media/_DSC0074.39a128371b8c6378e27e.JPG",
-    "static/media/_DSC0059.JPG": "/adaptive-golf-frontend/static/media/_DSC0059.efaae0d2ae32232e385f.JPG",
+    "static/media/DSC0016.JPG": "/adaptive-golf-frontend/static/media/DSC0016.18d313a57fc274e71ab9.JPG",
+    "static/media/DSC0074.JPG": "/adaptive-golf-frontend/static/media/DSC0074.39a128371b8c6378e27e.JPG",
+    "static/media/DSC0059.JPG": "/adaptive-golf-frontend/static/media/DSC0059.efaae0d2ae32232e385f.JPG",
     "static/media/Media c.JPG": "/adaptive-golf-frontend/static/media/Media c.46995c6719413fb694f5.JPG",
-    "static/media/_DSC0111.JPG": "/adaptive-golf-frontend/static/media/_DSC0111.6bbd3b2aa7c0779db154.JPG",
+    "static/media/DSC0111.JPG": "/adaptive-golf-frontend/static/media/DSC0111.6bbd3b2aa7c0779db154.JPG",
     "static/media/Try golf 2.JPG": "/adaptive-golf-frontend/static/media/Try golf 2.a70de5ec2393daa85601.JPG",
     "static/media/IMG_1811.JPG": "/adaptive-golf-frontend/static/media/IMG_1811.96830087a7ff027307e7.JPG",
     "static/media/IMG_0780.jpeg": "/adaptive-golf-frontend/static/media/IMG_0780.8e1c1b37a7c1f46b4b2b.jpeg",
@@ -45,11 +45,11 @@
     "static/media/title-2d.jpg": "/adaptive-golf-frontend/static/media/title-2d.338efbe3dfabfe91ed3f.jpg",
     "index.html": "/adaptive-golf-frontend/index.html",
     "main.4fda94d2.css.map": "/adaptive-golf-frontend/static/css/main.4fda94d2.css.map",
-    "main.c28ac61d.js.map": "/adaptive-golf-frontend/static/js/main.c28ac61d.js.map",
+    "main.a8a9552e.js.map": "/adaptive-golf-frontend/static/js/main.a8a9552e.js.map",
     "453.d9ad84a7.chunk.js.map": "/adaptive-golf-frontend/static/js/453.d9ad84a7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4fda94d2.css",
-    "static/js/main.c28ac61d.js"
+    "static/js/main.a8a9552e.js"
   ]
 }
