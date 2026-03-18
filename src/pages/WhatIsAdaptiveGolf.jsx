@@ -241,7 +241,7 @@ const WhatIsAdaptiveGolf = () => {
                   key={idx}
                   variants={itemVariants}
                   className="flex gap-6 items-start cursor-pointer transform transition-all hover:translate-x-2"
-                  onClick={() => setActiveStep(idx)}
+                  onMouseEnter={() => setActiveStep(idx)}
                 >
                   {/* Large Icon Circle */}
                   <div className={`flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center font-quicksand font-bold text-2xl transition-all ${activeStep === idx
@@ -291,7 +291,7 @@ const WhatIsAdaptiveGolf = () => {
                     fill="none"
                     stroke="#E5E7EB"
                     strokeWidth="1"
-                    opacity="0.6"
+                    opacity="0.9"
                   />
 
                   {/* Outer Dotted Circle */}
@@ -303,7 +303,7 @@ const WhatIsAdaptiveGolf = () => {
                     stroke="#003B6F"
                     strokeWidth="2"
                     strokeDasharray="6,6"
-                    opacity="0.2"
+                    opacity="0.4"
                   />
 
                   {/* Inner Dotted Circle */}
@@ -315,13 +315,13 @@ const WhatIsAdaptiveGolf = () => {
                     stroke="#003B6F"
                     strokeWidth="1.5"
                     strokeDasharray="4,4"
-                    opacity="0.15"
+                    opacity="0.3"
                   />
 
                   {/* Rotating Step Points */}
                   <motion.g
                     animate={{ rotate: -activeStep * 72 }}
-                    transition={{ type: 'spring', stiffness: 45, damping: 20 }}
+                    transition={{ type: 'tween', duration: 0.5, ease: 'easeInOut' }}
                     style={{ originX: 0.5, originY: 0.5 }}
                   >
                     {/* Invisible anchor to ensure the rotation center is always (100, 100) */}
@@ -342,7 +342,7 @@ const WhatIsAdaptiveGolf = () => {
                         <g
                           key={idx}
                           className="cursor-pointer"
-                          onClick={() => setActiveStep(idx)}
+                          onMouseEnter={() => setActiveStep(idx)}
                         >
                           {/* Active Glow Ring - Preserving user r="8.5" */}
                           {isActive && (
