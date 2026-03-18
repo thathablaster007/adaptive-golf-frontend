@@ -335,7 +335,7 @@ const WhatIsAdaptiveGolf = () => {
 
                       const isActive = activeStep === idx;
                       // Adjusted scales to fit track properly
-                      const iconScale = isActive ? 0.40 : 0.35;
+                      const iconScale = isActive ? 0.55 : 0.50;
                       const iconOffset = 12 * iconScale;
 
                       return (

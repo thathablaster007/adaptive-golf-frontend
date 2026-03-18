@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ROUTES } from '../config/navigation';
+import blogHeaderImage from '../_DSC0059.JPG';
+import title1BlogCard from '../Title 1.JPG';
+import blogImage2 from '../IMG_1883.JPG';
+import blogImage3 from '../IMG_0780.jpeg';
 
 const Blog = () => {
   const posts = [
@@ -9,21 +13,21 @@ const Blog = () => {
       id: 'blog-empowerment',
       title: 'More Than a Game: How Golf Empowers People with Disabilities',
       excerpt: 'A look at how adaptive golf builds confidence, independence, and connection for players of all abilities.',
-      image: 'https://images.unsplash.com/photo-1517602302552-471fe67acf66?w=900&h=1200&fit=crop&auto=format',
+      image: title1BlogCard,
       path: ROUTES.blogEmpowerment,
     },
     {
       id: 'blog-volunteers',
       title: 'The Power of Volunteers: The Heart of Adaptive Sports',
       excerpt: 'Meet the volunteers who make inclusive sports environments welcoming, safe, and inspiring.',
-      image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&h=1200&fit=crop&auto=format',
+      image: blogImage2,
       path: ROUTES.blogVolunteers,
     },
     {
       id: 'blog-coaching',
       title: 'Adaptive Coaching: How Golf Training is Designed for Different Abilities',
       excerpt: 'How coaches adapt methods, tools, and communication to help every golfer progress.',
-      image: 'https://images.unsplash.com/photo-1592919505780-303950717480?w=900&h=1200&fit=crop&auto=format',
+      image: blogImage3,
       path: ROUTES.blogAdaptiveCoaching,
     },
   ];
@@ -43,16 +47,30 @@ const Blog = () => {
 
   return (
     <motion.div initial="hidden" animate="visible" variants={containerVariants}>
-      <motion.section variants={itemVariants} className="bg-gradient-to-br from-primary-blue to-primary-green text-white section-padding">
-        <div className="container-custom text-center">
-          <h1 className="text-h1 font-montserrat font-bold mb-4">Adaptive Golf Blog</h1>
-          <p className="text-lg max-w-3xl mx-auto">
-            Stories, practical tips, and community voices that grow inclusion in golf.
-          </p>
+      {/* Hero Section with Image */}
+      <motion.section variants={itemVariants} className="relative h-[28rem] md:h-[34rem] lg:h-[38rem] bg-gray-900 overflow-hidden">
+        <img
+          src={blogHeaderImage}
+          alt="Adaptive golf blog"
+          className="absolute inset-0 h-full w-full object-cover object-center"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative h-full flex items-center justify-center px-4">
+          <div className="text-center">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-quicksand font-bold text-white mb-3">
+              The Blog
+            </h1>
+            <p className="text-xl md:text-2xl font-quicksand text-white">
+              We love sharing adaptive golf tips and stories.
+            </p>
+          </div>
         </div>
       </motion.section>
 
-      <motion.section variants={itemVariants} className="section-padding bg-bg-light">
+      <motion.section variants={itemVariants} className="section-padding bg-[#f2f1ea]">
         <div className="container-custom">
           <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" variants={containerVariants}>
             {posts.map((post) => (
@@ -67,10 +85,10 @@ const Blog = () => {
                     />
                   </div>
                   <div className="p-6">
-                    <h2 className="text-2xl font-montserrat font-bold text-primary-blue group-hover:text-primary-green transition-colors duration-300 leading-snug mb-3">
+                    <h2 className="text-2xl font-quicksand font-bold text-primary-blue group-hover:text-primary-green transition-colors duration-300 leading-snug mb-3">
                       {post.title}
                     </h2>
-                    <p className="text-gray-700 leading-relaxed">{post.excerpt}</p>
+                    <p className="text-gray-800 leading-relaxed font-quicksand">{post.excerpt}</p>
                   </div>
                 </Link>
               </motion.div>
