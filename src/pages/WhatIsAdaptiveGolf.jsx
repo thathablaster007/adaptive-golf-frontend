@@ -179,7 +179,7 @@ const WhatIsAdaptiveGolf = () => {
             <h1 className="text-4xl md:text-5xl font-quicksand text-primary-blue font-bold mb-7">
               What Is Adaptive Golf?
             </h1>
-            
+
             <p className="text-xl text-gray-800 leading-relaxed mb-7">
               Adaptive Golf is golf designed for inclusion. Like many adaptive sports, it allows individuals with physical, sensory, or cognitive challenges to learn and play the game through modified instruction, equipment, and formats — based on each person's abilities. At Adaptive Golf Alliance Foundation, we believe adaptive golf is not simply about learning a sport; it is about creating access, building confidence, and unlocking potential. By adapting the game — not the individual — we ensure that everyone has the opportunity to participate, improve, and thrive through the game of golf.
             </p>
@@ -244,19 +244,17 @@ const WhatIsAdaptiveGolf = () => {
                   onClick={() => setActiveStep(idx)}
                 >
                   {/* Large Icon Circle */}
-                  <div className={`flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center font-quicksand font-bold text-2xl transition-all ${
-                    activeStep === idx
+                  <div className={`flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center font-quicksand font-bold text-2xl transition-all ${activeStep === idx
                       ? 'bg-cta-gold text-white shadow-lg scale-110'
                       : 'bg-primary-blue text-white border-2 border-primary-blue/40'
-                  }`}>
+                    }`}>
                     <StepIcon icon={step.icon} className="w-7 h-7" />
                   </div>
 
                   {/* Text Content */}
                   <div className="flex-1 py-2">
-                    <h3 className={`text-3xl font-quicksand font-bold mb-2 leading-tight transition-colors ${
-                      activeStep === idx ? 'text-primary-green' : 'text-primary-blue'
-                    }`}>
+                    <h3 className={`text-3xl font-quicksand font-bold mb-2 leading-tight transition-colors ${activeStep === idx ? 'text-primary-green' : 'text-primary-blue'
+                      }`}>
                       {step.title}
                     </h3>
                     {activeStep === idx && (
@@ -279,12 +277,13 @@ const WhatIsAdaptiveGolf = () => {
               variants={itemVariants}
               className="flex justify-center items-center"
             >
-              <div className="relative w-[22rem] h-[22rem] md:w-[30rem] md:h-[30rem] lg:w-[36rem] lg:h-[36rem]">
+              <div className="relative w-full max-w-[22rem] md:max-w-[30rem] lg:max-w-[36rem] aspect-square mx-auto">
                 <svg
                   className="w-full h-full"
                   viewBox="0 0 200 200"
+                  preserveAspectRatio="xMidYMid meet"
                 >
-                  {/* Background Circle */}
+                  {/* Background Circle - Non-dotted outer boundary */}
                   <circle
                     cx="100"
                     cy="100"
@@ -292,21 +291,22 @@ const WhatIsAdaptiveGolf = () => {
                     fill="none"
                     stroke="#E5E7EB"
                     strokeWidth="1"
+                    opacity="0.6"
                   />
 
-                  {/* Outer Circle - Dashed - More Visible */}
+                  {/* Outer Dotted Circle */}
                   <circle
                     cx="100"
                     cy="100"
                     r="85"
                     fill="none"
                     stroke="#003B6F"
-                    strokeWidth="2.5"
-                    strokeDasharray="5,5"
-                    opacity="0.3"
+                    strokeWidth="2"
+                    strokeDasharray="6,6"
+                    opacity="0.2"
                   />
 
-                  {/* Inner Circle - Dashed */}
+                  {/* Inner Dotted Circle */}
                   <circle
                     cx="100"
                     cy="100"
@@ -314,45 +314,60 @@ const WhatIsAdaptiveGolf = () => {
                     fill="none"
                     stroke="#003B6F"
                     strokeWidth="1.5"
-                    strokeDasharray="3,3"
-                    opacity="0.2"
+                    strokeDasharray="4,4"
+                    opacity="0.15"
                   />
 
                   {/* Rotating Step Points */}
                   <motion.g
                     animate={{ rotate: -activeStep * 72 }}
-                    transition={{ type: 'spring', stiffness: 80, damping: 18 }}
-                    style={{ transformOrigin: '100px 100px' }}
+                    transition={{ type: 'spring', stiffness: 45, damping: 20 }}
+                    style={{ originX: 0.5, originY: 0.5 }}
                   >
+                    {/* Invisible anchor to ensure the rotation center is always (100, 100) */}
+                    <circle cx="100" cy="100" r="100" fill="transparent" pointerEvents="none" />
+
                     {pathwaySteps.map((step, idx) => {
                       const angle = (idx / 5) * 360 - 90;
-                      const x = 100 + 72 * Math.cos((angle * Math.PI) / 180);
-                      const y = 100 + 72 * Math.sin((angle * Math.PI) / 180);
-                      const iconScale = activeStep === idx ? 0.47 : 0.41;
+                      // Icon radius is 72.5, perfectly centered between 60 and 85
+                      const x = 100 + 72.5 * Math.cos((angle * Math.PI) / 180);
+                      const y = 100 + 72.5 * Math.sin((angle * Math.PI) / 180);
+
+                      const isActive = activeStep === idx;
+                      // Adjusted scales to fit track properly
+                      const iconScale = isActive ? 0.40 : 0.35;
                       const iconOffset = 12 * iconScale;
 
                       return (
-                        <g key={idx}>
-                          {activeStep === idx && (
-                            <circle
+                        <g
+                          key={idx}
+                          className="cursor-pointer"
+                          onClick={() => setActiveStep(idx)}
+                        >
+                          {/* Active Glow Ring - Preserving user r="8.5" */}
+                          {isActive && (
+                            <motion.circle
+                              initial={{ scale: 0.8, opacity: 0 }}
+                              animate={{ scale: 1.15, opacity: 0.5 }}
                               cx={x}
                               cy={y}
-                              r="12"
+                              r="8.5"
                               fill="none"
                               stroke="#F2B532"
-                              strokeWidth="2"
-                              opacity="0.55"
+                              strokeWidth="1.5"
                             />
                           )}
 
+                          {/* Connection point/background circle */}
                           <circle
                             cx={x}
                             cy={y}
-                            r={activeStep === idx ? 10 : 8}
-                            fill={activeStep === idx ? '#F2B532' : '#003B6F'}
-                            className="transition-all"
+                            r={isActive ? 9 : 7}
+                            fill={isActive ? '#F2B532' : '#003B6F'}
+                            className="transition-colors duration-300"
                           />
 
+                          {/* Icon Container with Inverse Rotation to stay upright */}
                           <g
                             transform={`rotate(${activeStep * 72} ${x} ${y})`}
                             stroke="white"
