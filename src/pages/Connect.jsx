@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import Button from '../components/Button';
 import { validateForm } from '../utils/formValidation';
+import contactHero from '../Try golf 7.JPG';
+
+const EMAILJS_SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID || 'service_prqr2v7';
+const EMAILJS_TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'template_3b1vcyt';
+const EMAILJS_PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || '0oAwXYHLHepcLp7WU';
 
 const Connect = () => {
   const [activeTab, setActiveTab] = useState('register');
@@ -10,60 +16,62 @@ const Connect = () => {
     email: '',
     interestedIn: '',
     message: '',
-    newsletter: false,
-  });
-
-  const [passFormData, setPassFormData] = useState({
-    name: '',
-    email: '',
-    passType: '',
-    message: '',
   });
 
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: value,
     }));
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
     }
   };
 
-  const handlePassFormChange = (e) => {
-    const { name, value } = e.target;
-    setPassFormData(prev => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const { isValid, errors: formErrors } = validateForm(formData);
 
-    if (isValid) {
-      console.log('Form submitted:', formData);
-      localStorage.setItem(`submission_${Date.now()}`, JSON.stringify(formData));
-      setSubmitted(true);
-      setFormData({ name: '', email: '', interestedIn: '', message: '', newsletter: false });
-      setTimeout(() => setSubmitted(false), 5000);
-    } else {
+    if (!isValid) {
       setErrors(formErrors);
+      return;
     }
-  };
 
-  const handlePassSubmit = (e) => {
-    e.preventDefault();
-    console.log('Pass form submitted:', passFormData);
-    localStorage.setItem(`pass_submission_${Date.now()}`, JSON.stringify(passFormData));
-    setSubmitted(true);
-    setPassFormData({ name: '', email: '', passType: '', message: '' });
-    setTimeout(() => setSubmitted(false), 5000);
+    setIsSubmitting(true);
+    setSubmitError('');
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          title: 'New enquiry',
+          name: formData.name,
+          email: formData.email,
+          interested_in: formData.interestedIn,
+          message: formData.message,
+          submitted_at: new Date().toLocaleString(),
+          to_email: 'contactus@adaptivegolfalliance.com',
+          time: new Date().toLocaleString(),
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+
+      setSubmitted(true);
+      setFormData({ name: '', email: '', interestedIn: '', message: '' });
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch (err) {
+      console.error('EmailJS send failed:', err);
+      setSubmitError('We could not send your message right now. Please try again in a moment.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const containerVariants = {
@@ -84,60 +92,82 @@ const Connect = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
+      className="font-quicksand"
     >
       {/* Hero Section */}
-      <motion.section variants={itemVariants} className="bg-gradient-to-r from-primary-green to-primary-blue text-white section-padding">
-        <div className="container-custom text-center">
-          <h1 className="text-h1 font-montserrat font-bold mb-4">Access Starts here</h1>
-          <p className="text-xl max-w-2xl mx-auto leading-relaxed">
-            You don't need to see the ball to feel the game.<br />
-            You don't need to be perfect to begin.<br />
-            All you need is curiosity and courage.
-          </p>
+      <motion.section variants={itemVariants} className="relative h-[28rem] md:h-[34rem] lg:h-[38rem] bg-gray-900 overflow-hidden">
+        <img
+          src={contactHero}
+          alt="Contact Adaptive Golf Alliance Foundation"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_24%]"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
+        />
+        <div className="absolute inset-0 bg-black/45" />
+        <div className="relative h-full flex items-center justify-center px-4 text-center">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-quicksand font-medium tracking-wide text-white">
+            Contact Us
+          </h1>
         </div>
       </motion.section>
 
       {/* Left Sidebar and Form */}
-      <div className="container-custom section-padding">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <div className="section-padding bg-[#f2f1ea]">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           {/* Left Sidebar */}
-          <motion.div variants={itemVariants} className="lg:col-span-1">
-            <div className="bg-gray-50 p-6 rounded-lg sticky top-24">
-              <p className="font-montserrat font-bold text-primary-blue mb-3">Get in touch</p>
+            <motion.div variants={itemVariants} className="lg:col-span-4">
+              <div className="bg-white/85 p-7 rounded-xl border border-primary-green/20 sticky top-24">
+                <p className="font-quicksand font-bold text-primary-blue text-2xl mb-3">Get in touch</p>
+                <p className="text-gray-700 leading-relaxed mb-3">Have a question about programmes, participation, partnerships, or support?</p>
+                <p className="text-gray-700 leading-relaxed mb-4">Reach out and our team will get back to you.</p>
               <a 
                 href="mailto:contactus@adaptivegolfalliance.com"
-                className="text-primary-blue hover:text-primary-green transition-colors break-words"
+                  className="text-primary-green font-semibold hover:text-primary-blue transition-colors break-words"
               >
                 contactus@adaptivegolfalliance.com
               </a>
             </div>
-          </motion.div>
+            </motion.div>
 
           {/* Main Content */}
-          <motion.div variants={itemVariants} className="lg:col-span-3">
+            <motion.div variants={itemVariants} className="lg:col-span-8">
+              <div className="mb-8 md:mb-10">
+                <div className="w-20 h-1 bg-primary-green/45 rounded-full mb-5" />
+                <p className="font-quicksand font-bold text-primary-blue text-3xl md:text-4xl mb-4">
+                  Access Starts here
+                </p>
+                <div className="space-y-2 text-gray-800 text-lg md:text-xl leading-relaxed max-w-3xl">
+                  <p>You don't need to see the ball to feel the game.</p>
+                  <p>You don't need to be perfect to begin.</p>
+                  <p>All you need is curiosity and courage.</p>
+                </div>
+              </div>
+
             {/* Tabs */}
-            <div className="flex gap-4 mb-8 border-b border-gray-300">
+              <div className="flex gap-3 mb-8 flex-wrap">
               <button
                 onClick={() => setActiveTab('register')}
-                className={`px-6 py-3 font-montserrat font-bold transition-colors border-b-2 ${
+                  className={`px-6 py-3 rounded-full font-quicksand font-semibold transition-colors ${
                   activeTab === 'register'
-                    ? 'text-primary-blue border-primary-blue'
-                    : 'text-gray-600 border-transparent hover:text-primary-blue'
+                      ? 'bg-primary-blue text-white'
+                      : 'bg-white text-gray-700 border border-gray-300 hover:border-primary-blue hover:text-primary-blue'
                 }`}
               >
                 Register Your Interest
               </button>
               <button
                 onClick={() => setActiveTab('pass')}
-                className={`px-6 py-3 font-montserrat font-bold transition-colors border-b-2 ${
+                  className={`px-6 py-3 rounded-full font-quicksand font-semibold transition-colors ${
                   activeTab === 'pass'
-                    ? 'text-primary-blue border-primary-blue'
-                    : 'text-gray-600 border-transparent hover:text-primary-blue'
+                      ? 'bg-primary-blue text-white'
+                      : 'bg-white text-gray-700 border border-gray-300 hover:border-primary-blue hover:text-primary-blue'
                 }`}
               >
                 Apply for a Pass
               </button>
-            </div>
+              </div>
 
             {/* Tab Content - Register Interest */}
             {activeTab === 'register' && (
@@ -148,24 +178,31 @@ const Connect = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
               >
-                <h2 className="text-2xl font-montserrat font-bold text-primary-blue mb-2">
+                  <div className="bg-white rounded-xl border border-primary-blue/15 p-7 md:p-9">
+                    <h2 className="text-3xl md:text-4xl font-quicksand font-bold text-primary-blue mb-3">
                   Register Your Interest
                 </h2>
-                <p className="text-gray-700 mb-8">
+                    <p className="text-lg md:text-xl text-gray-700 mb-8">
                   Join us on the journey to inclusive golf. Fill out the form below to get started.
                 </p>
 
                 {submitted && (
                   <div className="mb-6 p-4 bg-green-100 border border-green-400 rounded-lg text-green-800">
-                    <p className="font-montserrat font-bold">Thank you for your interest!</p>
+                        <p className="font-quicksand font-bold">Thank you for your interest!</p>
                     <p>We'll be in touch soon.</p>
+                  </div>
+                )}
+
+                {submitError && (
+                  <div className="mb-6 p-4 bg-red-100 border border-red-400 rounded-lg text-red-800">
+                    <p className="font-quicksand font-semibold">{submitError}</p>
                   </div>
                 )}
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Name */}
                   <div>
-                    <label className="block font-montserrat font-bold text-gray-800 mb-2">
+                        <label className="block font-quicksand font-bold text-gray-800 mb-2">
                       Name <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -183,7 +220,7 @@ const Connect = () => {
 
                   {/* Email */}
                   <div>
-                    <label className="block font-montserrat font-bold text-gray-800 mb-2">
+                        <label className="block font-quicksand font-bold text-gray-800 mb-2">
                       Email <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -201,8 +238,8 @@ const Connect = () => {
 
                   {/* Interested In */}
                   <div>
-                    <label className="block font-montserrat font-bold text-gray-800 mb-2">
-                      What are you interested in? <span className="text-red-500">*</span>
+                        <label className="block font-quicksand font-bold text-gray-800 mb-2">
+                      I am a... <span className="text-red-500">*</span>
                     </label>
                     <select
                       name="interestedIn"
@@ -212,12 +249,13 @@ const Connect = () => {
                         errors.interestedIn ? 'border-red-500' : 'border-gray-300'
                       }`}
                     >
-                      <option value="">-- Select an option --</option>
-                      <option value="try-golf">Try Golf</option>
-                      <option value="become-coach">Become a Coach</option>
-                      <option value="competition">Competition</option>
-                      <option value="volunteer">Volunteer</option>
-                      <option value="donate">Donate</option>
+                      <option value="">Select one</option>
+                      <option value="player">Player</option>
+                      <option value="parent">Parent</option>
+                      <option value="teacher">Teacher</option>
+                      <option value="school">School</option>
+                      <option value="club">Club</option>
+                      <option value="organization">Organization</option>
                       <option value="other">Other</option>
                     </select>
                     {errors.interestedIn && <p className="text-red-500 text-sm mt-1">{errors.interestedIn}</p>}
@@ -225,7 +263,7 @@ const Connect = () => {
 
                   {/* Message */}
                   <div>
-                    <label className="block font-montserrat font-bold text-gray-800 mb-2">
+                        <label className="block font-quicksand font-bold text-gray-800 mb-2">
                       Message <span className="text-red-500">*</span>
                     </label>
                     <textarea
@@ -241,38 +279,26 @@ const Connect = () => {
                     {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
                   </div>
 
-                  {/* Newsletter */}
-                  <div className="flex items-center gap-3">
-                    <input
-                      type="checkbox"
-                      id="newsletter"
-                      name="newsletter"
-                      checked={formData.newsletter}
-                      onChange={handleChange}
-                      className="w-4 h-4 cursor-pointer"
-                    />
-                    <label htmlFor="newsletter" className="text-gray-700 cursor-pointer">
-                      I'd like to receive updates and news from AGAF
-                    </label>
-                  </div>
-
                   {/* Submit Button */}
                   <div className="flex gap-4 pt-4">
-                    <Button variant="gold" size="lg">
-                      Submit
-                    </Button>
+                        <Button variant="gold" size="lg" type="submit" disabled={isSubmitting}>
+                          {isSubmitting ? 'Sending...' : 'Submit'}
+                        </Button>
                     <button
                       type="button"
                       onClick={() => {
-                        setFormData({ name: '', email: '', interestedIn: '', message: '', newsletter: false });
+                        setFormData({ name: '', email: '', interestedIn: '', message: '' });
                         setErrors({});
+                        setSubmitError('');
                       }}
-                      className="px-8 py-4 border-2 border-gray-400 text-gray-800 font-montserrat font-bold rounded-lg hover:bg-gray-100 transition-colors"
+                      disabled={isSubmitting}
+                          className="px-8 py-4 border-2 border-gray-400 text-gray-800 font-quicksand font-bold rounded-lg hover:bg-gray-100 transition-colors"
                     >
                       Clear
                     </button>
                   </div>
                 </form>
+                  </div>
               </motion.div>
             )}
 
@@ -285,105 +311,31 @@ const Connect = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
               >
-                <h2 className="text-2xl font-montserrat font-bold text-primary-blue mb-2">
+                  <div className="bg-white rounded-xl border border-primary-blue/15 p-7 md:p-9">
+                    <h2 className="text-3xl md:text-4xl font-quicksand font-bold text-primary-blue mb-3">
                   Apply for a Pass
                 </h2>
-                <p className="text-gray-700 mb-8">
-                  Ready to participate? Apply for a pass to join our programs and events.
+                    <p className="text-lg md:text-xl text-gray-700 mb-6">
+                      Continue your pass application on the official EDGA website.
                 </p>
 
-                {submitted && (
-                  <div className="mb-6 p-4 bg-green-100 border border-green-400 rounded-lg text-green-800">
-                    <p className="font-montserrat font-bold">Your application has been received!</p>
-                    <p>We'll review your application and get back to you soon.</p>
-                  </div>
-                )}
+                    <p className="text-gray-700 mb-8">
+                      Clicking the button below will redirect you to EDGA to complete your pass application.
+                    </p>
 
-                <form onSubmit={handlePassSubmit} className="space-y-6">
-                  {/* Name */}
-                  <div>
-                    <label className="block font-montserrat font-bold text-gray-800 mb-2">
-                      Full Name <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={passFormData.name}
-                      onChange={handlePassFormChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue"
-                      placeholder="Your full name"
-                      required
-                    />
-                  </div>
-
-                  {/* Email */}
-                  <div>
-                    <label className="block font-montserrat font-bold text-gray-800 mb-2">
-                      Email <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={passFormData.email}
-                      onChange={handlePassFormChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue"
-                      placeholder="Your email address"
-                      required
-                    />
-                  </div>
-
-                  {/* Pass Type */}
-                  <div>
-                    <label className="block font-montserrat font-bold text-gray-800 mb-2">
-                      Type of Pass <span className="text-red-500">*</span>
-                    </label>
-                    <select
-                      name="passType"
-                      value={passFormData.passType}
-                      onChange={handlePassFormChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue"
-                      required
-                    >
-                      <option value="">-- Select a pass type --</option>
-                      <option value="player">Player Pass</option>
-                      <option value="coach">Coach Pass</option>
-                      <option value="family">Family Pass</option>
-                      <option value="volunteer">Volunteer Pass</option>
-                    </select>
-                  </div>
-
-                  {/* Message */}
-                  <div>
-                    <label className="block font-montserrat font-bold text-gray-800 mb-2">
-                      Additional Information
-                    </label>
-                    <textarea
-                      name="message"
-                      value={passFormData.message}
-                      onChange={handlePassFormChange}
-                      rows="4"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue"
-                      placeholder="Tell us more about yourself (optional)"
-                    />
-                  </div>
-
-                  {/* Submit Button */}
-                  <div className="flex gap-4 pt-4">
-                    <Button variant="gold" size="lg">
-                      Submit Application
-                    </Button>
-                    <button
+                    <Button
+                      variant="gold"
+                      size="lg"
                       type="button"
-                      onClick={() => setPassFormData({ name: '', email: '', passType: '', message: '' })}
-                      className="px-8 py-4 border-2 border-gray-400 text-gray-800 font-montserrat font-bold rounded-lg hover:bg-gray-100 transition-colors"
+                      onClick={() => window.location.assign('https://edgagolf.com/online/pass/?from=web24#')}
                     >
-                      Clear
-                    </button>
+                      Apply for a Pass
+                    </Button>
                   </div>
-                </form>
               </motion.div>
             )}
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </motion.div>

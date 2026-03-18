@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import ImageGrid from '../components/ImageGrid';
-import SectionHeader from '../components/SectionHeader';
+import mediaHero from '../Media a.JPG';
+import mediaHome from '../Media_Home.JPG';
+import mediaB from '../Media b .JPG';
+import mediaC from '../Media c.JPG';
 
 const Media = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -12,44 +14,28 @@ const Media = () => {
       label: 'Discovery Golf Experience',
       description: 'DISCOVERY PROGRAMME 2026',
       images: [
-        'https://source.unsplash.com/featured/?golf,beginner,learning,joyful',
-        'https://source.unsplash.com/featured/?golf,community,inclusive,celebration',
-        'https://source.unsplash.com/featured/?golf,coaching,instruction,support',
-        'https://source.unsplash.com/featured/?golf,outdoor,green,nature',
+        { src: mediaHome, alt: 'Discovery programme participant on the golf course', position: '50% 24%' },
+        { src: mediaB, alt: 'Inclusive adaptive golf training moment', position: '50% 40%' },
+        { src: mediaC, alt: 'Adaptive golfer in a community golf event', position: '50% 22%' },
       ],
     },
     {
       id: 'clinics',
       label: 'AGAF Clinics',
-      description: 'Professional instruction and skill development',
-      images: [
-        'https://source.unsplash.com/featured/?golf,training,technique,coaching',
-        'https://source.unsplash.com/featured/?golf,group,team,learning',
-        'https://source.unsplash.com/featured/?golf,improvement,skill,practice',
-        'https://source.unsplash.com/featured/?golf,professional,instruction',
-      ],
+      description: 'Programme schedule and participant highlights will be announced soon.',
+      images: [],
     },
     {
       id: 'tournaments',
       label: 'Tournaments',
-      description: 'Competitive play and championship events',
-      images: [
-        'https://source.unsplash.com/featured/?golf,competition,tournament,event',
-        'https://source.unsplash.com/featured/?golf,champion,victory,winning',
-        'https://source.unsplash.com/featured/?golf,athlete,performance,focused',
-        'https://source.unsplash.com/featured/?golf,trophy,achievement,success',
-      ],
+      description: 'Tournament details and event coverage are on the way.',
+      images: [],
     },
     {
       id: 'workshops',
       label: 'Adaptive Coach Workshops',
-      description: 'Training and certification for coaches',
-      images: [
-        'https://source.unsplash.com/featured/?golf,coach,instructor,training',
-        'https://source.unsplash.com/featured/?golf,mentor,guidance,coaching',
-        'https://source.unsplash.com/featured/?golf,professional,program,certification',
-        'https://source.unsplash.com/featured/?golf,expert,skill,development',
-      ],
+      description: 'Workshop dates, locations, and registration information will be shared soon.',
+      images: [],
     },
   ];
 
@@ -67,39 +53,48 @@ const Media = () => {
   };
 
   return (
-    <motion.div initial="hidden" animate="visible" variants={containerVariants}>
+    <motion.div initial="hidden" animate="visible" variants={containerVariants} className="font-quicksand">
       {/* Hero Section with Image */}
-      <motion.section variants={itemVariants} className="relative h-96 bg-gray-900 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1526676317261-38c975e301e3?w=1920&h=600&fit=crop')`,
-          }}
-        >
-          <div className="absolute inset-0 bg-black/50" />
-        </div>
+      <motion.section variants={itemVariants} className="relative h-[28rem] md:h-[34rem] lg:h-[38rem] bg-gray-900 overflow-hidden">
+        <img
+          src={mediaHero}
+          alt="Adaptive golfers at a media event"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_26%]"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
+        />
+        <div className="absolute inset-0 bg-black/45" />
         <div className="relative h-full flex flex-col items-center justify-center text-white text-center px-4">
-          <h1 className="text-h1 font-montserrat font-bold mb-4">
-            Different Journeys.Shared Purpose. One game without limits.
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-quicksand font-medium leading-tight tracking-wide max-w-5xl">
+            <span className="block">Different Journeys.</span>
+            <span className="block">Shared Purpose.</span>
+            <span className="block">One game without limits.</span>
           </h1>
-          <p className="text-xl max-w-3xl">
-            Experience Golf. Your Way. Redefining ability through adaptive golf.
-          </p>
         </div>
       </motion.section>
 
       {/* Introduction Section */}
-      <motion.section variants={itemVariants} className="section-padding bg-white">
-        <div className="container-custom max-w-3xl mx-auto text-center">
-          <p className="text-lg text-gray-700 leading-relaxed">
-            Explore moments that capture the spirit of inclusion — from discovery clinics and coaching workshops to tournaments and community events.
-            See the athletes, coaches, and communities who bring our mission to life.
+      <motion.section variants={itemVariants} className="section-padding bg-[#f2f1ea]">
+        <div className="container-custom max-w-5xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-quicksand font-bold text-primary-blue text-center mb-4">Experience Golf. Your Way.</h2>
+          <p className="text-2xl md:text-3xl font-quicksand font-semibold text-primary-green text-center mb-8">
+            Redefining ability through adaptive golf.
           </p>
+
+          <div className="max-w-4xl mx-auto space-y-4 text-center">
+            <p className="text-lg md:text-xl text-gray-800 leading-relaxed">
+              Explore moments that capture the spirit of inclusion from discovery clinics and coaching workshops to tournaments and community events.
+            </p>
+            <p className="text-lg md:text-xl text-gray-800 leading-relaxed">
+              See the athletes, coaches, and communities who bring our mission to life.
+            </p>
+          </div>
         </div>
       </motion.section>
 
       {/* Tabbed Gallery */}
-      <motion.section variants={itemVariants} className="section-padding bg-gray-50">
+      <motion.section variants={itemVariants} className="section-padding bg-white">
         <div className="container-custom">
           {/* Tab Navigation */}
           <div className="flex gap-3 mb-12 overflow-x-auto pb-2 justify-center flex-wrap">
@@ -109,7 +104,7 @@ const Media = () => {
                 onClick={() => setActiveTab(idx)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-6 py-3 rounded-full font-montserrat font-bold transition-all whitespace-nowrap ${
+                className={`px-6 py-3 rounded-full font-quicksand font-semibold transition-all whitespace-nowrap ${
                   activeTab === idx
                     ? 'bg-primary-blue text-white shadow-lg'
                     : 'bg-white text-gray-800 border border-gray-300 hover:border-primary-blue hover:text-primary-blue'
@@ -123,14 +118,41 @@ const Media = () => {
           {/* Tab Description and Image Grid */}
           <motion.div key={activeTab} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}>
             <div className="mb-8 text-center">
-              <h2 className="text-2xl font-montserrat font-bold text-primary-blue mb-2">
+              <h2 className="text-2xl md:text-3xl font-quicksand font-bold text-primary-blue mb-2">
                 {tabs[activeTab].label}
               </h2>
-              <p className="text-gray-600">
+              <p className="text-gray-700 text-lg">
                 {tabs[activeTab].description}
               </p>
             </div>
-            <ImageGrid images={tabs[activeTab].images} columns={4} />
+
+            {tabs[activeTab].images.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {tabs[activeTab].images.map((image, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.35, delay: idx * 0.08 }}
+                    className="overflow-hidden rounded-xl"
+                  >
+                    <img
+                      src={image.src || image}
+                      alt={image.alt || `media-${idx}`}
+                      className="block w-full h-72 md:h-80 lg:h-96 object-cover"
+                      style={{ objectPosition: image.position || '50% 50%' }}
+                      loading="lazy"
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            ) : (
+              <div className="max-w-2xl mx-auto rounded-xl border border-primary-blue/20 bg-[#f2f1ea] p-8 text-center">
+                <p className="text-lg md:text-xl text-gray-800 leading-relaxed">
+                  New stories and visuals for this section will be published shortly. Check back soon.
+                </p>
+              </div>
+            )}
           </motion.div>
         </div>
       </motion.section>

@@ -1,36 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import Card from '../components/Card';
-import SectionHeader from '../components/SectionHeader';
+import Button from '../components/Button';
+import { ROUTES } from '../config/navigation';
+import newsHero from '../News.JPG';
 
 const News = () => {
-  const newsArticles = [
-    {
-      id: 'milestone',
-      title: 'A Milestone Moment',
-      subtitle: 'Discovery Golf Experience + To The Tee Academy Partnership',
-      excerpt: 'AGAF is thrilled to announce a groundbreaking partnership with To The Tee Academy. This collaboration brings world-class adaptive golf training to communities across the region, expanding access and opportunity for golfers of all abilities.',
-      date: 'March 2026',
-      image: 'https://source.unsplash.com/featured/?golf,partnership,celebration,achievement',
-      featured: true,
-    },
-    {
-      id: 'tournament-success',
-      title: 'Regional Tournament Success',
-      subtitle: 'Record-Breaking Attendance',
-      excerpt: 'Our spring regional tournament attracted over 150 adaptive golfers from across the region, setting a new attendance record and showcasing the growing momentum of the sport.',
-      date: 'February 2026',
-      image: 'https://source.unsplash.com/featured/?golf,tournament,event,success',
-    },
-    {
-      id: 'athlete-spotlight',
-      title: 'Athlete Spotlight: Maya Chen',
-      subtitle: 'From Discovery to Competition Champion',
-      excerpt: 'Maya Chen shares her inspiring journey from her first Discovery Golf Experience to becoming a regional competition champion in just 18 months.',
-      date: 'January 2026',
-      image: 'https://source.unsplash.com/featured/?golf,athlete,woman,champion',
-    },
-  ];
+  const featuredArticle = {
+    title: 'A Milestone Moment',
+    excerpt:
+      'Adaptive Golf Alliance Foundation proudly conducted its first Discovery Golf Experience in collaboration with To The Tee Academy — an initiative designed to introduce adaptive golf in an inclusive and inspiring setting.',
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -46,86 +26,44 @@ const News = () => {
   };
 
   return (
-    <motion.div initial="hidden" animate="visible" variants={containerVariants}>
+    <motion.div initial="hidden" animate="visible" variants={containerVariants} className="font-quicksand">
       {/* Hero */}
-      <motion.section variants={itemVariants} className="bg-gradient-to-br from-accent-lime to-primary-green text-white section-padding">
-        <div className="container-custom text-center">
-          <h1 className="text-h1 font-montserrat font-bold mb-6">News & Stories</h1>
-          <p className="text-lg max-w-3xl mx-auto">Stay updated on AGAF initiatives, athlete achievements, and the latest in adaptive golf</p>
+      <motion.section variants={itemVariants} className="relative h-[26rem] md:h-[32rem] lg:h-[36rem] bg-gray-900 overflow-hidden">
+        <img
+          src={newsHero}
+          alt="News"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_30%]"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative h-full flex items-center justify-center px-4">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-quicksand font-medium tracking-wide text-white text-center">
+            News
+          </h1>
         </div>
       </motion.section>
 
-      {/* Featured Article with Video */}
-      <motion.section variants={itemVariants} className="section-padding bg-white">
-        <div className="container-custom">
-          <SectionHeader title="Featured Story" />
+      {/* News Card */}
+      <motion.section variants={itemVariants} className="section-padding bg-[#f2f1ea]">
+        <div className="container-custom max-w-6xl">
+          <div className="w-24 h-1 bg-primary-green/45 rounded-full mb-8" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-16">
-            <motion.div variants={itemVariants} className="overflow-hidden rounded-lg">
-              <img
-                src={newsArticles[0].image}
-                alt={newsArticles[0].title}
-                className="w-full h-80 object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </motion.div>
-
-            <motion.div variants={itemVariants}>
-              <p className="text-sm font-montserrat font-bold text-cta-gold uppercase mb-2">{newsArticles[0].date}</p>
-              <h2 className="text-h2 font-montserrat text-primary-blue font-bold mb-3">{newsArticles[0].title}</h2>
-              <p className="text-lg text-primary-green font-semibold mb-4">{newsArticles[0].subtitle}</p>
-              <p className="text-gray-700 leading-relaxed mb-6">{newsArticles[0].excerpt}</p>
-              <button className="text-primary-blue font-montserrat font-bold hover:text-primary-green transition-colors">
-                Read Full Story →
-              </button>
-            </motion.div>
-          </div>
-
-          {/* YouTube Video Section */}
-          <motion.div variants={itemVariants} className="mb-16">
-            <h2 className="text-h3 font-montserrat font-bold text-primary-blue mb-6">Featured Video</h2>
-            <div className="relative w-full bg-black rounded-lg overflow-hidden" style={{ aspectRatio: '16/9' }}>
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/IOSTp781MVA"
-                title="Featured Video"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute top-0 left-0"
-              />
-            </div>
-          </motion.div>
-        </div>
-      </motion.section>
-
-      {/* Additional News Grid */}
-      <motion.section variants={itemVariants} className="section-padding bg-bg-light">
-        <div className="container-custom">
-          <SectionHeader title="Latest News" />
-
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            variants={containerVariants}
+          <motion.article
+            variants={itemVariants}
+            className="max-w-md border border-cta-gold/55 rounded-sm bg-white/90 p-8"
           >
-            {newsArticles.slice(1).map((article) => (
-              <motion.div key={article.id} variants={itemVariants}>
-                <Card
-                  title={article.title}
-                  description={article.excerpt}
-                  image={article.image}
-                  className="h-full"
-                >
-                  <div className="flex justify-between items-center mt-4">
-                    <span className="text-sm text-gray-600">{article.date}</span>
-                    <button className="text-primary-blue font-montserrat font-bold text-sm hover:text-primary-green transition-colors">
-                      Read →
-                    </button>
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
+            <h3 className="text-3xl md:text-4xl font-quicksand font-semibold text-primary-blue leading-tight mb-6">
+              {featuredArticle.title}
+            </h3>
+            <p className="text-xl text-gray-800 leading-relaxed mb-8">
+              {featuredArticle.excerpt}
+            </p>
+            <Link to={ROUTES.newsMilestone}>
+              <Button variant="gold" size="md">Read More</Button>
+            </Link>
+          </motion.article>
         </div>
       </motion.section>
     </motion.div>

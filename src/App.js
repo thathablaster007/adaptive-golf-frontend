@@ -8,6 +8,7 @@ import Competition from './pages/Competition';
 import Media from './pages/Media';
 import GetInvolved from './pages/GetInvolved';
 import News from './pages/News';
+import NewsPostMilestone from './pages/NewsPostMilestone';
 import Connect from './pages/Connect';
 import Blog from './pages/Blog';
 import BlogPostEmpowerment from './pages/BlogPostEmpowerment';
@@ -67,6 +68,7 @@ function App() {
           <Route path="blog/adaptive-coaching" element={<BlogPostAdaptiveCoaching />} />
           <Route path="get-involved" element={<GetInvolved />} />
           <Route path="news" element={<News />} />
+          <Route path="news/a-milestone-moment" element={<NewsPostMilestone />} />
           <Route path="connect" element={<Connect />} />
         </Route>
       </Routes>

@@ -42,6 +42,7 @@ export const ROUTES = {
   blogAdaptiveCoaching: '/blog/adaptive-coaching',
   getInvolved: '/get-involved',
   news: '/news',
+  newsMilestone: '/news/a-milestone-moment',
   connect: '/connect',
   aboutUs: '/about-us',
   team: '/team',
