@@ -1,42 +1,64 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import SectionHeader from '../components/SectionHeader';
+import competitionHero from '../Competition 1.JPG';
 
 const Competition = () => {
-  const [activeSection, setActiveSection] = useState(0);
+  const [activeSection, setActiveSection] = useState('competition');
 
   const sections = [
     {
+      id: 'competition',
+      title: 'Competition',
+      paragraphs: [
+        'Competition is a natural progression in the AGAF Development Pathway for players who are ready to test their skills and grow through structured play.',
+        'As athletes develop through clinics and training programmes, AGAF provides opportunities to participate in organised events and national tournaments designed specifically for adaptive golfers. These competitions encourage excellence, build experience, and create clear pathways toward higher levels of play.',
+        'From friendly competitive formats to nationally recognised tournaments, AGAF is committed to creating stages where talent, determination, and ability can shine.',
+      ],
+    },
+    {
       id: 'tournaments',
       title: 'Tournaments',
-      content: 'AGAF hosts local, regional, and national tournaments throughout the year. These events create platforms for adaptive golfers to compete, connect, and showcase their talent.',
-      highlights: ['Local Community Events', 'Regional Championships', 'National Finals', 'International Competitions'],
-    },
-    {
-      id: 'passes',
-      title: 'Types of Passes',
-      content: 'Different tournaments offer various categories of entry. Passes range from casual play to competitive classification, ensuring every golfer can find their level.',
-      highlights: ['Casual Participant Pass', 'Competitive Classification Pass', 'Professional Tournament Pass', 'Junior Competitor Pass'],
-    },
-    {
-      id: 'classes',
-      title: 'Sport Classes',
-      content: 'Adaptive golf uses an internationally recognized classification system to ensure fair and inclusive competition across all ability levels.',
-      highlights: ['Physical Impairments', 'Visual Impairments', 'Intellectual Disabilities', 'Neurological Conditions'],
-    },
-    {
-      id: 'rankings',
-      title: 'World Rankings',
-      content: 'Track your progress on the AGAF World Rankings dashboard. Compete for points, achieve milestones, and earn recognition as you advance through the sport.',
-      highlights: ['Real-time Standings', 'Point System', 'Achievement Badges', 'Legacy Recognition'],
+      description:
+        'AGAF provides tournament opportunities in a format aligned with international adaptive golf pathways. This section will be updated with official competition dates and registration details.',
+      note: 'Content coming soon: tournament dates and entry details will be published here.',
+      primaryLink: {
+        label: 'View EDGA Events Calendar',
+        href: 'https://edgagolf.com/online/events/index.php?from=web24',
+      },
     },
     {
       id: 'rules',
       title: 'Local Rules',
-      content: 'AGAF tournaments follow the Rules of Golf with inclusive adaptations. Each event has specific rules designed to provide fair and accessible competition.',
-      highlights: ['Standard Golf Rules', 'Adaptive Accommodations', 'Equipment Allowances', 'Course Modifications'],
+      description:
+        'The following Local Rules and Terms of Competition, together with any additions or amendments published by EDGA at the golf course, will apply to all competitions run by AGAF. For the full text of any Local Rule referenced below, please refer to the Official Guide to the Rules of Golf effective January 2023 and the Clarifications updated quarterly by The R&A.',
+      readLink: {
+        label: 'Read EDGA 2026 Hard Card',
+        href: 'https://www.edgagolf.com/web24/wp-content/uploads/EDGA-2026-Hard-Card_1.pdf',
+      },
     },
   ];
+
+  useEffect(() => {
+    const preloadImages = async (imageList) => {
+      const loaders = imageList.map(
+        (src) =>
+          new Promise((resolve) => {
+            const img = new Image();
+            img.src = src;
+            if (img.decode) {
+              img.decode().then(resolve).catch(resolve);
+            } else {
+              img.onload = resolve;
+              img.onerror = resolve;
+            }
+          })
+      );
+
+      await Promise.all(loaders);
+    };
+
+    preloadImages([competitionHero]);
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -53,36 +75,44 @@ const Competition = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
   };
 
+  const currentSection = sections.find((section) => section.id === activeSection) || sections[0];
+
   return (
-    <motion.div initial="hidden" animate="visible" variants={containerVariants}>
+    <motion.div initial="hidden" animate="visible" variants={containerVariants} className="font-quicksand">
       {/* Hero */}
-      <motion.section variants={itemVariants} className="bg-gradient-to-br from-primary-blue to-accent-lime text-white section-padding">
-        <div className="container-custom text-center">
-          <h1 className="text-h1 font-montserrat font-bold mb-6">Competition</h1>
-          <p className="text-lg max-w-3xl mx-auto text-white/90">
-            Competition is a natural progression in the adaptive golf journey, creating stages where talent, determination, and ability can shine.
-          </p>
+      <motion.section variants={itemVariants} className="relative h-[28rem] md:h-[34rem] lg:h-[38rem] bg-gray-900 overflow-hidden">
+        <img
+          src={competitionHero}
+          alt="Adaptive golf competition"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_24%]"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
+        />
+        <div className="absolute inset-0 bg-black/45" />
+        <div className="relative h-full flex items-center justify-center px-4">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-quicksand font-medium tracking-wide text-white text-center">
+            Competition
+          </h1>
         </div>
       </motion.section>
 
-      {/* Content Sections */}
+      {/* Subsections */}
       <motion.section variants={itemVariants} className="section-padding bg-white">
         <div className="container-custom">
-          <SectionHeader title="Competition Pathways" subtitle="Explore tournaments, classifications, rankings, and rules" />
-
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 mt-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
             {/* Sidebar */}
-            <div className="lg:col-span-1">
-              <div className="space-y-3">
-                {sections.map((section, idx) => (
+            <div className="lg:col-span-4">
+              <div className="pr-6 lg:pr-8">
+                {sections.map((section) => (
                   <motion.button
-                    key={idx}
+                    key={section.id}
                     variants={itemVariants}
-                    onClick={() => setActiveSection(idx)}
-                    className={`w-full p-4 rounded-lg text-left font-montserrat font-bold transition-all ${
-                      activeSection === idx
-                        ? 'bg-primary-blue text-white shadow-lg'
-                        : 'bg-bg-light text-gray-800 hover:bg-gray-200'
+                    onClick={() => setActiveSection(section.id)}
+                    className={`appearance-none bg-transparent shadow-none rounded-none ring-0 outline-none focus:outline-none focus-visible:outline-none w-full px-3 py-4 text-left text-xl md:text-2xl font-quicksand transition-colors border-0 border-b border-gray-200 ${
+                      activeSection === section.id
+                        ? 'text-primary-blue font-semibold border-b-primary-green'
+                        : 'text-gray-700 hover:text-primary-blue'
                     }`}
                   >
                     {section.title}
@@ -92,24 +122,50 @@ const Competition = () => {
             </div>
 
             {/* Content Area */}
-            <div className="lg:col-span-4">
+            <div className="lg:col-span-8">
               <motion.div
                 key={activeSection}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-bg-light p-8 rounded-lg"
+                className="pl-0 lg:pl-2"
               >
-                <h2 className="text-h3 font-montserrat text-primary-blue font-bold mb-4">{sections[activeSection].title}</h2>
-                <p className="text-gray-700 mb-6 leading-relaxed">{sections[activeSection].content}</p>
+                <h3 className="text-3xl md:text-4xl font-quicksand font-semibold text-primary-blue mb-6">{currentSection.title}</h3>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {sections[activeSection].highlights.map((item, idx) => (
-                    <div key={idx} className="flex gap-3 items-center">
-                      <span className="w-2 h-2 bg-cta-gold rounded-full flex-shrink-0"></span>
-                      <span className="text-gray-700">{item}</span>
-                    </div>
-                  ))}
-                </div>
+                {currentSection.paragraphs && currentSection.paragraphs.map((paragraph, idx) => (
+                  <p key={idx} className="text-lg md:text-xl text-gray-800 leading-relaxed mb-5">
+                    {paragraph}
+                  </p>
+                ))}
+
+                {currentSection.description && (
+                  <p className="text-lg md:text-xl text-gray-800 leading-relaxed mb-6">{currentSection.description}</p>
+                )}
+
+                {currentSection.note && (
+                  <p className="text-base md:text-lg text-primary-blue font-semibold mb-6">{currentSection.note}</p>
+                )}
+
+                {currentSection.primaryLink && (
+                  <a
+                    href={currentSection.primaryLink.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center rounded-xl bg-primary-blue px-6 py-3 text-white text-base md:text-lg font-quicksand font-semibold hover:bg-primary-green transition-colors"
+                  >
+                    {currentSection.primaryLink.label}
+                  </a>
+                )}
+
+                {currentSection.readLink && (
+                  <a
+                    href={currentSection.readLink.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center rounded-xl bg-primary-blue px-6 py-3 text-white text-base md:text-lg font-quicksand font-semibold hover:bg-primary-green transition-colors"
+                  >
+                    {currentSection.readLink.label}
+                  </a>
+                )}
               </motion.div>
             </div>
           </div>

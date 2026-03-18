@@ -1,83 +1,56 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Button from '../components/Button';
-import Card from '../components/Card';
-import SectionHeader from '../components/SectionHeader';
-import HeroSlideshow from '../components/HeroSlideshow';
 import { ROUTES } from '../config/navigation';
+import tryGolf1 from '../Try golf 1.JPG';
+import tryGolf2 from '../Try golf 2.JPG';
+import tryGolf3 from '../Try golf 3.JPG';
+import tryGolf4 from '../try golf 4.JPG';
+import tryGolf5 from '../try golf 5.JPG';
+import tryGolf6 from '../Try golf 6.JPG';
 
 const TryGolf = () => {
-  const heroSlides = [
-    {
-      image: 'https://source.unsplash.com/featured/?golf,adaptive,1',
-      taglines: ['Try Golf 1'],
-    },
-    {
-      image: 'https://source.unsplash.com/featured/?golf,adaptive,2',
-      taglines: ['Try Golf 2'],
-    },
-    {
-      image: 'https://source.unsplash.com/featured/?golf,adaptive,3',
-      taglines: ['Try Golf 3'],
-    },
-    {
-      image: 'https://source.unsplash.com/featured/?golf,adaptive,4',
-      taglines: ['Try Golf 4'],
-    },
-    {
-      image: 'https://source.unsplash.com/featured/?golf,adaptive,5',
-      taglines: ['Try Golf 5'],
-    },
-    {
-      image: 'https://source.unsplash.com/featured/?golf,adaptive,6',
-      taglines: ['Try Golf 6'],
-    },
-  ];
+  useEffect(() => {
+    const preloadImages = async (imageList) => {
+      const loaders = imageList.map(
+        (src) =>
+          new Promise((resolve) => {
+            const img = new Image();
+            img.src = src;
+            if (img.decode) {
+              img.decode().then(resolve).catch(resolve);
+            } else {
+              img.onload = resolve;
+              img.onerror = resolve;
+            }
+          })
+      );
 
-  const tiers = [
+      await Promise.all(loaders);
+    };
+
+    preloadImages([tryGolf1, tryGolf2, tryGolf3, tryGolf4, tryGolf5, tryGolf6]);
+  }, []);
+
+  const learningBlocks = [
     {
       id: 'discovery',
       title: 'Discovery Golf Experience',
       description: 'Our Discovery Golf Programme is the first step into adaptive golf. Designed for beginners, this experience introduces participants to the game in a welcoming, inclusive environment. With guided support and adapted equipment, it\'s all about exploration, enjoyment, and building belief.',
-      details: [
-        'Perfect for first-time golfers',
-        'Welcoming, inclusive environment',
-        'Guided support and adapted equipment',
-        'Build foundational skills and confidence',
-      ],
-      image: 'https://source.unsplash.com/featured/?golf,beginner,equipment',
-      icon: '🎓',
-      cta: 'Explore Discovery',
+      image: tryGolf3,
     },
     {
       id: 'clinic',
       title: 'AGAF Clinic',
       description: 'The AGAF Clinic offers structured training for those ready to develop their skills further. Participants receive focused coaching, personalised guidance, and opportunities to improve technique, coordination, and confidence in a supportive setting.',
-      details: [
-        'Focused coaching and guidance',
-        'Technique and skill development',
-        'Progressive improvement opportunities',
-        'Supportive community environment',
-      ],
-      image: 'https://source.unsplash.com/featured/?golf,coaching,training',
-      icon: '⚙️',
-      cta: 'Join a Clinic',
-      featured: true,
+      image: tryGolf5,
     },
     {
       id: 'coach',
       title: 'Become an Adaptive Golf Coach',
       description: 'Workshop focuses on equipping teaching professionals and experienced golfers with the knowledge and practical tools to effectively instruct individuals with disabilities using adaptive golf techniques.',
-      details: [
-        'Learn adaptive coaching methodologies',
-        'Develop practical teaching tools',
-        'Support individuals with disabilities',
-        'Make an impact in the community',
-      ],
-      image: 'https://source.unsplash.com/featured/?golf,coaching,professional',
-      icon: '👨‍🏫',
-      cta: 'Learn How to Coach',
+      image: tryGolf6,
       email: 'contactus@adaptivegolfalliance.com',
     },
   ];
@@ -103,112 +76,100 @@ const TryGolf = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
+      className="font-quicksand"
     >
-      {/* Hero Slideshow */}
-      <HeroSlideshow slides={heroSlides} autoPlay={true} autoPlayInterval={6000} />
+      {/* Hero Header */}
+      <motion.section variants={itemVariants} className="relative h-[28rem] md:h-[34rem] lg:h-[38rem] bg-gray-900 overflow-hidden">
+        <div className="absolute inset-0 flex">
+          {[tryGolf1, tryGolf2, tryGolf4].map((imageSrc, idx) => (
+            <div key={idx} className="relative w-1/3 h-full">
+              <img
+                src={imageSrc}
+                alt={`Try Golf header panel ${idx + 1}`}
+                className="h-full w-full object-cover object-[50%_22%]"
+                loading="eager"
+                decoding="async"
+                fetchPriority={idx === 0 ? 'high' : 'auto'}
+              />
+            </div>
+          ))}
+        </div>
+        <div className="absolute inset-0 bg-black/35" />
+        <div className="relative h-full flex items-center justify-center px-4">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-quicksand font-medium tracking-wide text-white text-center">
+            Learn to Play
+          </h1>
+        </div>
+      </motion.section>
 
       {/* Learn to Play Section */}
-      <motion.section variants={itemVariants} className="section-padding bg-gradient-to-br from-accent-lime to-primary-green text-white">
-        <div className="container-custom text-center max-w-3xl mx-auto">
+      <motion.section variants={itemVariants} className="section-padding bg-[#f2f1ea]">
+        <div className="container-custom max-w-4xl mx-auto">
           <motion.div variants={itemVariants}>
-            <h2 className="text-h2 font-montserrat font-bold mb-6">
-              Learn to Play!
-            </h2>
-            <p className="text-lg leading-relaxed mb-8">
-              Golf is a game of rhythm, focus, and possibility. Through adaptive instruction and supportive coaching, we make it accessible for everyone — regardless of ability. Start at your own pace. Build confidence with every swing.
-            </p>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link to={ROUTES.connect}>
-                <Button variant="gold" size="lg">
-                  Sign Up Today!
-                </Button>
-              </Link>
-            </motion.div>
+            <div className="px-4 md:px-10 py-2 text-center">
+              <div className="w-28 h-1 bg-primary-green/45 rounded-full mx-auto mb-8" />
+              <p className="text-xl md:text-2xl text-gray-800 leading-relaxed mb-8">
+                Golf is a game of rhythm, focus, and possibility. Through adaptive instruction and supportive coaching, we make it accessible for everyone — regardless of ability. Start at your own pace. Build confidence with every swing.
+              </p>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link to={ROUTES.connect}>
+                  <Button variant="gold" size="lg">
+                    Sign Up Today
+                  </Button>
+                </Link>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </motion.section>
 
-      {/* Featured Tiers */}
+      {/* Learning Blocks */}
       <motion.section variants={itemVariants} className="section-padding bg-white">
         <div className="container-custom">
-          <SectionHeader
-            title="Our Learning Pathways"
-            subtitle="Choose the experience that's right for you"
-          />
+          <motion.div className="space-y-16" variants={containerVariants}>
+            {learningBlocks.map((block, idx) => {
+              const isImageFirst = idx % 2 === 0;
 
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-            variants={containerVariants}
-          >
-            {tiers.map((tier) => (
-              <motion.div
-                key={tier.id}
-                variants={itemVariants}
-                className={tier.featured ? 'md:scale-105' : ''}
-              >
-                <Card
-                  title={tier.title}
-                  description={tier.description}
-                  image={tier.image}
-                  className={`h-full flex flex-col ${tier.featured ? 'ring-2 ring-cta-gold' : ''}`}
+              return (
+                <motion.article
+                  key={block.id}
+                  variants={itemVariants}
+                  className="border-t border-primary-green/35 pt-12"
                 >
-                  <div className="flex-1 space-y-4 my-4">
-                    {tier.details.map((detail, idx) => (
-                      <div key={idx} className="flex gap-3">
-                        <span className="text-accent-lime text-lg flex-shrink-0">✓</span>
-                        <span className="text-gray-700 text-sm">{detail}</span>
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+                    <div className={`${isImageFirst ? 'lg:order-1' : 'lg:order-2'} lg:col-span-6`}>
+                      <div className="overflow-hidden rounded-xl shadow-md bg-gray-200">
+                        <img
+                          src={block.image}
+                          alt={block.title}
+                          className="w-full h-[18rem] md:h-[22rem] object-cover"
+                          loading="lazy"
+                        />
                       </div>
-                    ))}
-                  </div>
-
-                  {tier.email && (
-                    <div className="bg-bg-light p-3 rounded mb-4 text-sm">
-                      <p className="text-gray-700 mb-2">Contact us for coaching information:</p>
-                      <a
-                        href={`mailto:${tier.email}`}
-                        className="text-primary-blue font-bold hover:text-primary-green"
-                      >
-                        {tier.email}
-                      </a>
                     </div>
-                  )}
 
-                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <Button
-                      variant={tier.featured ? 'gold' : 'primary'}
-                      size="md"
-                      className="w-full"
-                    >
-                      {tier.cta}
-                    </Button>
-                  </motion.div>
-                </Card>
-              </motion.div>
-            ))}
+                    <div className={`${isImageFirst ? 'lg:order-2' : 'lg:order-1'} lg:col-span-6`}>
+                      <h3 className={`text-3xl md:text-4xl font-quicksand font-semibold text-primary-blue mb-5 tracking-wide ${block.id === 'coach' ? 'md:whitespace-nowrap' : ''}`}>
+                        {block.title}
+                      </h3>
+                      <p className="text-lg md:text-xl text-gray-800 leading-relaxed mb-5">
+                        {block.description}
+                      </p>
+
+                      {block.email && (
+                        <p className="text-base md:text-lg text-gray-800">
+                          If you are interested in becoming an adaptive golf coach, please email, at <a href={`mailto:${block.email}`} className="text-primary-green font-semibold hover:text-primary-blue">{block.email}</a>
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </motion.article>
+              );
+            })}
           </motion.div>
         </div>
       </motion.section>
 
-      {/* Global CTA */}
-      <motion.section variants={itemVariants} className="section-padding bg-primary-blue text-white">
-        <div className="container-custom text-center">
-          <motion.div variants={itemVariants}>
-            <h2 className="text-h2 font-montserrat font-bold mb-6">
-              Ready to Start Your Golf Journey?
-            </h2>
-            <p className="text-lg max-w-2xl mx-auto mb-8">
-              Sign up today to join a Discovery Golf Experience, reserve your spot in an AGAF Clinic, or explore coaching opportunities.
-            </p>
-            <Link to={ROUTES.connect}>
-              <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-                <Button variant="gold" size="lg">
-                  Sign Up Today!
-                </Button>
-              </motion.div>
-            </Link>
-          </motion.div>
-        </div>
-      </motion.section>
     </motion.div>
   );
 };

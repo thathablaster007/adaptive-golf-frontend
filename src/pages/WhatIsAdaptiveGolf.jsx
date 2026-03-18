@@ -1,12 +1,95 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Button from '../components/Button';
 import SectionHeader from '../components/SectionHeader';
 import { ROUTES } from '../config/navigation';
+import whatIsAdaptiveGolfHero from '../What is adaptive golf.JPG';
+
+const renderStepIconPaths = (icon) => {
+  switch (icon) {
+    case 'connect':
+      return (
+        <>
+          <path d="M3 5h18v14H3z" />
+          <path d="m3 7 9 6 9-6" />
+        </>
+      );
+    case 'guide':
+      return (
+        <>
+          <path d="M12 21s7-4.8 7-11a7 7 0 1 0-14 0c0 6.2 7 11 7 11Z" />
+          <path d="M12 11.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
+        </>
+      );
+    case 'learn':
+      return (
+        <>
+          <path d="M3 8 12 4l9 4-9 4-9-4Z" />
+          <path d="M7 10.5V14c0 1.8 2.3 3.2 5 3.2s5-1.4 5-3.2v-3.5" />
+        </>
+      );
+    case 'progress':
+      return (
+        <>
+          <path d="M12 3 8.5 9H15.5L12 3Z" />
+          <path d="M7 11.5h10v2.2a5 5 0 0 1-10 0v-2.2Z" />
+          <path d="M5 12h2v1.8a2.3 2.3 0 0 1-2.3 2.3H4.5" />
+          <path d="M19 12h-2v1.8a2.3 2.3 0 0 0 2.3 2.3h.2" />
+        </>
+      );
+    case 'grow':
+      return (
+        <>
+          <path d="M12 20v-8" />
+          <path d="M12 12c-2.6 0-4.8-2.1-4.8-4.8V5.2H9A3 3 0 0 1 12 8.2" />
+          <path d="M12 12c2.6 0 4.8-2.1 4.8-4.8V5.2H15A3 3 0 0 0 12 8.2" />
+        </>
+      );
+    default:
+      return null;
+  }
+};
+
+const StepIcon = ({ icon, className = 'w-6 h-6' }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.9"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    {renderStepIconPaths(icon)}
+  </svg>
+);
 
 const WhatIsAdaptiveGolf = () => {
   const [activeStep, setActiveStep] = useState(0);
+
+  useEffect(() => {
+    const preloadImages = async (imageList) => {
+      const loaders = imageList.map(
+        (src) =>
+          new Promise((resolve) => {
+            const img = new Image();
+            img.src = src;
+            if (img.decode) {
+              img.decode().then(resolve).catch(resolve);
+            } else {
+              img.onload = resolve;
+              img.onerror = resolve;
+            }
+          })
+      );
+
+      await Promise.all(loaders);
+    };
+
+    preloadImages([whatIsAdaptiveGolfHero]);
+  }, []);
 
   const impacts = [
     { title: 'Designed for Focus and Success', description: 'With a stationary ball and a structured pace, players are given the time, clarity, and space to concentrate, adjust, and succeed at their own rhythm.' },
@@ -22,27 +105,27 @@ const WhatIsAdaptiveGolf = () => {
 
   const pathwaySteps = [
     {
-      number: 1,
+      icon: 'connect',
       title: 'Connect',
       description: 'Reach out. Share your interest. Let us help you take the first step.',
     },
     {
-      number: 2,
+      icon: 'guide',
       title: 'Assess & Guide',
       description: 'Understand your pathway. Receive clear guidance. We help you navigate eligibility, classification, and next steps.',
     },
     {
-      number: 3,
+      icon: 'learn',
       title: 'Learn & Play',
       description: 'Build skills. Gain confidence. Experience adaptive coaching in a supportive environment.',
     },
     {
-      number: 4,
+      icon: 'progress',
       title: 'Participate & Progress',
       description: 'Step into opportunity. Challenge yourself. Engage in structured events and competitive play.',
     },
     {
-      number: 5,
+      icon: 'grow',
       title: 'Grow with the Game',
       description: 'Develop independence. Belong to a community. Continue progressing — on and beyond the course.',
     },
@@ -69,37 +152,39 @@ const WhatIsAdaptiveGolf = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
+      className="font-quicksand"
     >
       {/* Hero Section with Image */}
-      <motion.section variants={itemVariants} className="relative h-96 bg-gray-900 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&h=600&fit=crop')`,
-          }}
-        >
-          <div className="absolute inset-0 bg-black/50" />
-        </div>
-        <div className="relative h-full flex items-end justify-center pb-8">
-          <h2 className="text-2xl md:text-4xl font-montserrat font-bold text-white text-center">
+      <motion.section variants={itemVariants} className="relative h-[28rem] md:h-[34rem] lg:h-[38rem] bg-gray-900 overflow-hidden">
+        <img
+          src={whatIsAdaptiveGolfHero}
+          alt="Adaptive golf participants in action"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_16%]"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative h-full flex items-center justify-center px-4">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-quicksand font-medium leading-tight tracking-wide text-white text-center whitespace-nowrap">
             Discovering Possibility Through Adaptive Golf
           </h2>
         </div>
       </motion.section>
 
       {/* What is Adaptive Golf Section */}
-      <motion.section variants={itemVariants} className="section-padding bg-white">
+      <motion.section variants={itemVariants} className="section-padding bg-[#f2f1ea]">
         <div className="container-custom">
           <motion.div variants={itemVariants} className="max-w-3xl mx-auto">
-            <h1 className="text-h2 font-montserrat text-primary-blue font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl font-quicksand text-primary-blue font-bold mb-7">
               What Is Adaptive Golf?
             </h1>
             
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+            <p className="text-xl text-gray-800 leading-relaxed mb-7">
               Adaptive Golf is golf designed for inclusion. Like many adaptive sports, it allows individuals with physical, sensory, or cognitive challenges to learn and play the game through modified instruction, equipment, and formats — based on each person's abilities. At Adaptive Golf Alliance Foundation, we believe adaptive golf is not simply about learning a sport; it is about creating access, building confidence, and unlocking potential. By adapting the game — not the individual — we ensure that everyone has the opportunity to participate, improve, and thrive through the game of golf.
             </p>
 
-            <p className="text-lg font-montserrat font-bold text-primary-green mb-8">
+            <p className="text-2xl font-quicksand font-bold text-primary-green mb-8 leading-relaxed">
               Adaptive Golf does more than teach a swing — it strengthens the whole person.
             </p>
           </motion.div>
@@ -107,11 +192,13 @@ const WhatIsAdaptiveGolf = () => {
       </motion.section>
 
       {/* The Impact Section */}
-      <motion.section variants={itemVariants} className="section-padding bg-gray-50">
+      <motion.section variants={itemVariants} className="section-padding bg-white">
         <div className="container-custom">
           <SectionHeader
             title="The Impact of Adaptive Golf"
             subtitle="How adaptive golf transforms lives and opens new possibilities"
+            titleClassName="font-quicksand text-4xl md:text-5xl"
+            subtitleClassName="font-quicksand text-xl text-gray-800"
           />
 
           <motion.div
@@ -124,10 +211,10 @@ const WhatIsAdaptiveGolf = () => {
                 variants={itemVariants}
                 className="bg-white p-6 rounded-lg border-l-4 border-primary-green hover:shadow-lg transition-shadow"
               >
-                <h3 className="text-base font-montserrat font-bold text-primary-blue mb-3">
+                <h3 className="text-xl font-quicksand font-bold text-primary-blue mb-3 leading-snug">
                   {impact.title}
                 </h3>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-base text-gray-800 leading-relaxed">
                   {impact.description}
                 </p>
               </motion.div>
@@ -140,8 +227,8 @@ const WhatIsAdaptiveGolf = () => {
       <motion.section variants={itemVariants} className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-montserrat font-bold mb-4 text-primary-blue">Our Approach</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-5xl md:text-6xl font-quicksand font-bold mb-4 text-primary-blue">Our Approach</h2>
+            <p className="text-xl text-gray-700 max-w-4xl mx-auto md:whitespace-nowrap">
               A structured progression designed by AGAF to guide every athlete forward
             </p>
           </div>
@@ -156,18 +243,20 @@ const WhatIsAdaptiveGolf = () => {
                   className="flex gap-6 items-start cursor-pointer transform transition-all hover:translate-x-2"
                   onClick={() => setActiveStep(idx)}
                 >
-                  {/* Large Numbered Circle */}
-                  <div className={`flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center font-montserrat font-bold text-2xl transition-all ${
+                  {/* Large Icon Circle */}
+                  <div className={`flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center font-quicksand font-bold text-2xl transition-all ${
                     activeStep === idx
                       ? 'bg-cta-gold text-white shadow-lg scale-110'
                       : 'bg-primary-blue text-white border-2 border-primary-blue/40'
                   }`}>
-                    {step.number}
+                    <StepIcon icon={step.icon} className="w-7 h-7" />
                   </div>
 
                   {/* Text Content */}
                   <div className="flex-1 py-2">
-                    <h3 className="text-2xl font-montserrat font-bold mb-2 leading-tight text-primary-blue">
+                    <h3 className={`text-3xl font-quicksand font-bold mb-2 leading-tight transition-colors ${
+                      activeStep === idx ? 'text-primary-green' : 'text-primary-blue'
+                    }`}>
                       {step.title}
                     </h3>
                     {activeStep === idx && (
@@ -175,7 +264,7 @@ const WhatIsAdaptiveGolf = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="text-gray-700 leading-relaxed text-base"
+                        className="text-gray-800 leading-relaxed text-lg"
                       >
                         {step.description}
                       </motion.p>
@@ -190,7 +279,7 @@ const WhatIsAdaptiveGolf = () => {
               variants={itemVariants}
               className="flex justify-center items-center"
             >
-              <div className="relative w-96 h-96">
+              <div className="relative w-[22rem] h-[22rem] md:w-[30rem] md:h-[30rem] lg:w-[36rem] lg:h-[36rem]">
                 <svg
                   className="w-full h-full"
                   viewBox="0 0 200 200"
@@ -229,62 +318,58 @@ const WhatIsAdaptiveGolf = () => {
                     opacity="0.2"
                   />
 
-                  {/* Step Points - Larger and More Visible */}
-                  {pathwaySteps.map((step, idx) => {
-                    const angle = (idx / 5) * 360 - 90;
-                    const x = 100 + 72 * Math.cos((angle * Math.PI) / 180);
-                    const y = 100 + 72 * Math.sin((angle * Math.PI) / 180);
+                  {/* Rotating Step Points */}
+                  <motion.g
+                    animate={{ rotate: -activeStep * 72 }}
+                    transition={{ type: 'spring', stiffness: 80, damping: 18 }}
+                    style={{ transformOrigin: '100px 100px' }}
+                  >
+                    {pathwaySteps.map((step, idx) => {
+                      const angle = (idx / 5) * 360 - 90;
+                      const x = 100 + 72 * Math.cos((angle * Math.PI) / 180);
+                      const y = 100 + 72 * Math.sin((angle * Math.PI) / 180);
+                      const iconScale = activeStep === idx ? 0.47 : 0.41;
+                      const iconOffset = 12 * iconScale;
 
-                    return (
-                      <g key={idx}>
-                        {/* Outer Ring for Active State */}
-                        {activeStep === idx && (
+                      return (
+                        <g key={idx}>
+                          {activeStep === idx && (
+                            <circle
+                              cx={x}
+                              cy={y}
+                              r="12"
+                              fill="none"
+                              stroke="#F2B532"
+                              strokeWidth="2"
+                              opacity="0.55"
+                            />
+                          )}
+
                           <circle
                             cx={x}
                             cy={y}
-                            r="12"
-                            fill="none"
-                            stroke="#F2B532"
-                            strokeWidth="2"
-                            opacity="0.5"
+                            r={activeStep === idx ? 10 : 8}
+                            fill={activeStep === idx ? '#F2B532' : '#003B6F'}
+                            className="transition-all"
                           />
-                        )}
-                        {/* Main Circle */}
-                        <circle
-                          cx={x}
-                          cy={y}
-                          r={activeStep === idx ? 10 : 8}
-                          fill={activeStep === idx ? '#F2B532' : '#003B6F'}
-                          className="transition-all"
-                        />
-                        {/* Step Number Inside Circle */}
-                        <text
-                          x={x}
-                          y={y + 3}
-                          textAnchor="middle"
-                          dominantBaseline="middle"
-                          className="font-montserrat font-bold text-xs"
-                          fill="white"
-                        >
-                          {step.number}
-                        </text>
-                      </g>
-                    );
-                  })}
 
-                  {/* Center Circle with Icon Background */}
-                  <circle cx="100" cy="100" r="28" fill="#003B6F" opacity="0.95" />
-                  <circle cx="100" cy="100" r="25" fill="#A2CB58" opacity="0.85" />
+                          <g
+                            transform={`rotate(${activeStep * 72} ${x} ${y})`}
+                            stroke="white"
+                            strokeWidth="1.9"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            fill="none"
+                          >
+                            <g transform={`translate(${x - iconOffset} ${y - iconOffset}) scale(${iconScale})`}>
+                              {renderStepIconPaths(step.icon)}
+                            </g>
+                          </g>
+                        </g>
+                      );
+                    })}
+                  </motion.g>
                 </svg>
-
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-6xl mb-2">🏌️</div>
-                    <p className="text-xs font-montserrat font-bold text-white leading-tight">
-                      Adaptive<br />Golf
-                    </p>
-                  </div>
-                </div>
               </div>
             </motion.div>
           </div>
@@ -295,12 +380,6 @@ const WhatIsAdaptiveGolf = () => {
       <motion.section variants={itemVariants} className="section-padding bg-bg-light">
         <div className="container-custom text-center">
           <motion.div variants={itemVariants}>
-            <h2 className="text-h2 font-montserrat text-primary-blue font-bold mb-6">
-              Ready to Begin Your Pathway?
-            </h2>
-            <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
-              Take the first step toward an inclusive, empowering golf experience.
-            </p>
             <Link to={ROUTES.connect}>
               <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
                 <Button variant="gold" size="lg">
