@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ROUTES } from '../config/navigation';
-import blogHeaderImage from '../DSC0059.JPG';
+import blogHeaderImage from '../blogmain.jpeg';
 import title1BlogCard from '../Title 1.JPG';
 import blogImage2 from '../IMG_1883.JPG';
 import blogImage3 from '../IMG_0780.jpeg';
@@ -52,7 +52,7 @@ const Blog = () => {
         <img
           src={blogHeaderImage}
           alt="Adaptive golf blog"
-          className="absolute inset-0 h-full w-full object-cover object-center"
+          className="absolute inset-0 h-full w-full object-cover object-[center_15%]"
           loading="eager"
           decoding="async"
           fetchPriority="high"

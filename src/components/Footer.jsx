@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from './Button';
 import { ROUTES } from '../config/navigation';
-import logo from '../logofinal.png';
+import logo from '../logo3.png';
 
 const Footer = () => {
   const instagramUrl = 'https://www.instagram.com/adaptivegolfalliance/';

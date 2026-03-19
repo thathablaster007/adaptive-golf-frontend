@@ -1,23 +1,24 @@
-import { useEffect, useLayoutEffect } from 'react';
+import { Suspense, lazy, useEffect, useLayoutEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
-import Homepage from './pages/Homepage';
-import WhatIsAdaptiveGolf from './pages/WhatIsAdaptiveGolf';
-import TryGolf from './pages/TryGolf';
-import Competition from './pages/Competition';
-import Media from './pages/Media';
-import MediaDiscoveryProgrammeJan26 from './pages/MediaDiscoveryProgrammeJan26';
-import GetInvolved from './pages/GetInvolved';
-import News from './pages/News';
-import NewsPostMilestone from './pages/NewsPostMilestone';
-import Connect from './pages/Connect';
-import Blog from './pages/Blog';
-import BlogPostEmpowerment from './pages/BlogPostEmpowerment';
-import BlogPostVolunteers from './pages/BlogPostVolunteers';
-import BlogPostAdaptiveCoaching from './pages/BlogPostAdaptiveCoaching';
-import AboutUs from './pages/AboutUs';
-import Team from './pages/Team';
-import Policies from './pages/Policies';
+
+const Homepage = lazy(() => import('./pages/Homepage'));
+const WhatIsAdaptiveGolf = lazy(() => import('./pages/WhatIsAdaptiveGolf'));
+const TryGolf = lazy(() => import('./pages/TryGolf'));
+const Competition = lazy(() => import('./pages/Competition'));
+const Media = lazy(() => import('./pages/Media'));
+const MediaDiscoveryProgrammeJan26 = lazy(() => import('./pages/MediaDiscoveryProgrammeJan26'));
+const GetInvolved = lazy(() => import('./pages/GetInvolved'));
+const News = lazy(() => import('./pages/News'));
+const NewsPostMilestone = lazy(() => import('./pages/NewsPostMilestone'));
+const Connect = lazy(() => import('./pages/Connect'));
+const Blog = lazy(() => import('./pages/Blog'));
+const BlogPostEmpowerment = lazy(() => import('./pages/BlogPostEmpowerment'));
+const BlogPostVolunteers = lazy(() => import('./pages/BlogPostVolunteers'));
+const BlogPostAdaptiveCoaching = lazy(() => import('./pages/BlogPostAdaptiveCoaching'));
+const AboutUs = lazy(() => import('./pages/AboutUs'));
+const Team = lazy(() => import('./pages/Team'));
+const Policies = lazy(() => import('./pages/Policies'));
 
 function ScrollToTop() {
   const { pathname, key } = useLocation();
@@ -59,27 +60,29 @@ function App() {
   return (
     <Router basename="/adaptive-golf-frontend">
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Homepage />} />
-          <Route path="what-is-adaptive-golf" element={<WhatIsAdaptiveGolf />} />
-          <Route path="try-golf" element={<TryGolf />} />
-          <Route path="competition" element={<Competition />} />
-          <Route path="media" element={<Media />} />
-          <Route path="media/discovery-programme-26-jan-2026" element={<MediaDiscoveryProgrammeJan26 />} />
-          <Route path="blog" element={<Blog />} />
-          <Route path="blog/more-than-a-game" element={<BlogPostEmpowerment />} />
-          <Route path="blog/power-of-volunteers" element={<BlogPostVolunteers />} />
-          <Route path="blog/adaptive-coaching" element={<BlogPostAdaptiveCoaching />} />
-          <Route path="get-involved" element={<GetInvolved />} />
-          <Route path="news" element={<News />} />
-          <Route path="news/a-milestone-moment" element={<NewsPostMilestone />} />
-          <Route path="connect" element={<Connect />} />
-          <Route path="about-us" element={<AboutUs />} />
-          <Route path="team" element={<Team />} />
-          <Route path="policies" element={<Policies />} />
-        </Route>
-      </Routes>
+      <Suspense fallback={<div className="min-h-[40vh]" />}>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Homepage />} />
+            <Route path="what-is-adaptive-golf" element={<WhatIsAdaptiveGolf />} />
+            <Route path="try-golf" element={<TryGolf />} />
+            <Route path="competition" element={<Competition />} />
+            <Route path="media" element={<Media />} />
+            <Route path="media/discovery-programme-26-jan-2026" element={<MediaDiscoveryProgrammeJan26 />} />
+            <Route path="blog" element={<Blog />} />
+            <Route path="blog/more-than-a-game" element={<BlogPostEmpowerment />} />
+            <Route path="blog/power-of-volunteers" element={<BlogPostVolunteers />} />
+            <Route path="blog/adaptive-coaching" element={<BlogPostAdaptiveCoaching />} />
+            <Route path="get-involved" element={<GetInvolved />} />
+            <Route path="news" element={<News />} />
+            <Route path="news/a-milestone-moment" element={<NewsPostMilestone />} />
+            <Route path="connect" element={<Connect />} />
+            <Route path="about-us" element={<AboutUs />} />
+            <Route path="team" element={<Team />} />
+            <Route path="policies" element={<Policies />} />
+          </Route>
+        </Routes>
+      </Suspense>
     </Router>
   );
 }

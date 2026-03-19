@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import NavDropdown from './NavDropdown';
 import { NAVIGATION, ROUTES } from '../config/navigation';
-import footerLogo from '../logofinal.png';
+import footerLogo from '../logo3.png';
 // Add Quicksand font
 import '../index.css';
 
