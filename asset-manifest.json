@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/adaptive-golf-frontend/static/css/main.5b024328.css",
-    "main.js": "/adaptive-golf-frontend/static/js/main.571729a6.js",
+    "main.css": "/adaptive-golf-frontend/static/css/main.8446c684.css",
+    "main.js": "/adaptive-golf-frontend/static/js/main.2844d1a0.js",
     "static/js/453.d9ad84a7.chunk.js": "/adaptive-golf-frontend/static/js/453.d9ad84a7.chunk.js",
     "static/media/20.JPG": "/adaptive-golf-frontend/static/media/20.4bb592736a6ad8ac8e34.JPG",
     "static/media/25.JPG": "/adaptive-golf-frontend/static/media/25.2fc2e2ece778f3ad8732.JPG",
@@ -76,18 +76,20 @@
     "static/media/title-2c.jpg": "/adaptive-golf-frontend/static/media/title-2c.9cd675894bb6b8f02f87.jpg",
     "static/media/title-2b.jpg": "/adaptive-golf-frontend/static/media/title-2b.23fb9c69d54ff9aceff7.jpg",
     "static/media/title-2d.jpg": "/adaptive-golf-frontend/static/media/title-2d.338efbe3dfabfe91ed3f.jpg",
+    "static/media/unnamed (9).png": "/adaptive-golf-frontend/static/media/unnamed (9).b5cdfb394c9dca7d967e.png",
     "static/media/unnamed (7).png": "/adaptive-golf-frontend/static/media/unnamed (7).0060e74c3bc06de7361f.png",
     "static/media/wagr_logo.png": "/adaptive-golf-frontend/static/media/wagr_logo.8fb207ebb4c7f24aeabb.png",
     "static/media/unnamed (1).png": "/adaptive-golf-frontend/static/media/unnamed (1).0dfd2c9a0f776e059ceb.png",
     "static/media/unnamed (4).png": "/adaptive-golf-frontend/static/media/unnamed (4).b2e0469d87f6edf84724.png",
     "static/media/unnamed (2).png": "/adaptive-golf-frontend/static/media/unnamed (2).8d3097652b640eeceda9.png",
+    "static/media/Tee-Golf---1-.png": "/adaptive-golf-frontend/static/media/Tee-Golf---1-.5ee4c8095a4712fb39a7.png",
     "index.html": "/adaptive-golf-frontend/index.html",
-    "main.5b024328.css.map": "/adaptive-golf-frontend/static/css/main.5b024328.css.map",
-    "main.571729a6.js.map": "/adaptive-golf-frontend/static/js/main.571729a6.js.map",
+    "main.8446c684.css.map": "/adaptive-golf-frontend/static/css/main.8446c684.css.map",
+    "main.2844d1a0.js.map": "/adaptive-golf-frontend/static/js/main.2844d1a0.js.map",
     "453.d9ad84a7.chunk.js.map": "/adaptive-golf-frontend/static/js/453.d9ad84a7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5b024328.css",
-    "static/js/main.571729a6.js"
+    "static/css/main.8446c684.css",
+    "static/js/main.2844d1a0.js"
   ]
 }
