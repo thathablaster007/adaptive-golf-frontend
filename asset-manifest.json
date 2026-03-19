@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/adaptive-golf-frontend/static/css/main.4fda94d2.css",
-    "main.js": "/adaptive-golf-frontend/static/js/main.a8a9552e.js",
+    "main.css": "/adaptive-golf-frontend/static/css/main.974994b3.css",
+    "main.js": "/adaptive-golf-frontend/static/js/main.d5725fe8.js",
     "static/js/453.d9ad84a7.chunk.js": "/adaptive-golf-frontend/static/js/453.d9ad84a7.chunk.js",
     "static/media/Try golf 6.JPG": "/adaptive-golf-frontend/static/media/Try golf 6.0eabd0c923ba3361b5d9.JPG",
     "static/media/IMG_1805.JPG": "/adaptive-golf-frontend/static/media/IMG_1805.364680e84e89decdd2a3.JPG",
@@ -35,6 +35,7 @@
     "static/media/get involved 2.JPG": "/adaptive-golf-frontend/static/media/get involved 2.024e8a9e9352a18d259b.JPG",
     "static/media/Media_Home.JPG": "/adaptive-golf-frontend/static/media/Media_Home.b8503211a5ef1612060b.JPG",
     "static/media/Comeptition_Home.JPG": "/adaptive-golf-frontend/static/media/Comeptition_Home.e4a848b13cc03c365926.JPG",
+    "static/media/about.JPG": "/adaptive-golf-frontend/static/media/about.821a3df7283e13864b0b.JPG",
     "static/media/logo2.png": "/adaptive-golf-frontend/static/media/logo2.ca592fc8930717f4a3fe.png",
     "static/media/title-2a.jpg": "/adaptive-golf-frontend/static/media/title-2a.80db13e12f0b3cfaa8a6.jpg",
     "static/media/title-3b.jpg": "/adaptive-golf-frontend/static/media/title-3b.fd093f0911a5566a7d97.jpg",
@@ -44,12 +45,12 @@
     "static/media/title-2b.jpg": "/adaptive-golf-frontend/static/media/title-2b.23fb9c69d54ff9aceff7.jpg",
     "static/media/title-2d.jpg": "/adaptive-golf-frontend/static/media/title-2d.338efbe3dfabfe91ed3f.jpg",
     "index.html": "/adaptive-golf-frontend/index.html",
-    "main.4fda94d2.css.map": "/adaptive-golf-frontend/static/css/main.4fda94d2.css.map",
-    "main.a8a9552e.js.map": "/adaptive-golf-frontend/static/js/main.a8a9552e.js.map",
+    "main.974994b3.css.map": "/adaptive-golf-frontend/static/css/main.974994b3.css.map",
+    "main.d5725fe8.js.map": "/adaptive-golf-frontend/static/js/main.d5725fe8.js.map",
     "453.d9ad84a7.chunk.js.map": "/adaptive-golf-frontend/static/js/453.d9ad84a7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4fda94d2.css",
-    "static/js/main.a8a9552e.js"
+    "static/css/main.974994b3.css",
+    "static/js/main.d5725fe8.js"
   ]
 }
