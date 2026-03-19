@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from './Button';
 import { ROUTES } from '../config/navigation';
-import logo from '../logo2.png';
+import logo from '../logofinal.png';
 
 const Footer = () => {
   const instagramUrl = 'https://www.instagram.com/adaptivegolfalliance/';
@@ -30,11 +30,8 @@ const Footer = () => {
           {/* Center: Logo */}
           <div className="flex flex-col items-center justify-center gap-4 lg:-mt-5">
             <Link to={ROUTES.home}>
-              <img src={logo} alt="AGAF Logo" className="h-40 md:h-48 w-auto" />
+              <img src={logo} alt="AGAF Logo" className="h-48 md:h-56 w-auto" />
             </Link>
-            <p className="font-quicksand font-semibold text-center text-gray-700 text-lg md:text-xl leading-snug">
-              Adaptive Golf Alliance Foundation
-            </p>
           </div>
 
           {/* Right: Social */}

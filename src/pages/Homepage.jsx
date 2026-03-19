@@ -19,6 +19,13 @@ import blogImage3 from '../IMG_0780.jpeg';
 import tryGolfHomeImage from '../Try Golf_Home.JPG';
 import competitionHomeImage from '../Comeptition_Home.JPG';
 import mediaHomeImage from '../Media_Home.JPG';
+import medalGold from '../unnamed.png';
+import logoBerlin2023 from '../unnamed (2).png';
+import logoLosAngeles2015 from '../unnamed (7).png';
+import logoAbuDhabi2019 from '../unnamed (5).png';
+import logoEnglandGolf from '../unnamed (4).png';
+import logoDaikinMadridOpen from '../unnamed (1).png';
+import wagrLogo from '../wagr_logo.png';
 
 const Homepage = () => {
   useEffect(() => {
@@ -83,6 +90,7 @@ const Homepage = () => {
   const heroSlides = [
     {
       images: [title1,title2d,title2aFirstSlide],
+      imagePositions: ['center center', 'center 22%', 'center 24%'],
       topText: 'Experience Golf',
       bottomText: 'Your Way',
       taglines: [],
@@ -90,6 +98,7 @@ const Homepage = () => {
     },
     {
       images: [title2a, title2b, title2c],
+      imagePositions: ['center center', 'center 68%', 'center 64%'],
       topText: 'Every swing defines limits',
       bottomText: 'and defines possibility',
       taglines: [],
@@ -97,6 +106,7 @@ const Homepage = () => {
     },
     {
       images: [title3a, title3b, title3c],
+      imagePositions: ['center 22%', 'center 20%', 'center 22%'],
       topText: 'Inclusion Begins',
       bottomText: 'with a Voice',
       taglines: [],
@@ -127,7 +137,7 @@ const Homepage = () => {
     {
       id: 'media',
       title: 'Stories. Moments. Impact in Motion.',
-      description: 'Explore highlights from clinics, tournaments, workshops, and media features. A visual journey of adaptive golf in action.',
+      description: 'Explore highlights from clinics, tournaments, workshops and media features. A visual journey of adaptive golf in action.',
       image: mediaHomeImage,
       cta: 'View Media',
       path: ROUTES.media,
@@ -153,6 +163,56 @@ const Homepage = () => {
       title: 'Adaptive Coaching: How Golf Training is Designed for Different Abilities',
       image: blogImage3,
       path: ROUTES.blogAdaptiveCoaching,
+    },
+  ];
+
+  const facesOfAdaptiveGolf = [
+    {
+      name: 'Ranveer Singh Saini',
+      medalImage: medalGold,
+      medalAlt: 'Gold medal',
+      achievements: [
+        {
+          title: 'Special Olympics World Games Berlin 2023',
+          logo: logoBerlin2023,
+          logoClassName: 'h-24 w-auto',
+        },
+        {
+          title: 'Special Olympics World Games Los Angeles 2015',
+          logo: logoLosAngeles2015,
+          logoClassName: 'h-20 w-auto',
+        },
+      ],
+    },
+    {
+      name: 'Ankush Saha',
+      medalImage: medalGold,
+      medalAlt: 'Silver medal',
+      medalClassName: 'grayscale brightness-110',
+      achievements: [
+        {
+          title: 'Special Olympics World Games Abu Dhabi 2019',
+          logo: logoAbuDhabi2019,
+          logoClassName: 'h-24 w-auto',
+        },
+      ],
+    },
+    {
+      name: 'Viswa Vardhan Bhati',
+      wagrLogo,
+      wagrRank: 167,
+      achievements: [
+        {
+          title: 'England Golf',
+          logo: logoEnglandGolf,
+          logoClassName: 'h-24 w-auto',
+        },
+        {
+          title: 'Daikin Madrid Open',
+          logo: logoDaikinMadridOpen,
+          logoClassName: 'h-24 w-auto',
+        },
+      ],
     },
   ];
 
@@ -186,7 +246,7 @@ const Homepage = () => {
           {/* Text Content Above Video */}
           <motion.div variants={itemVariants} className="mb-14 px-4 sm:px-8">
             <p className="text-lg text-gray-800 leading-relaxed text-justify max-w-5xl mx-auto">
-              Adaptive Golf Alliance Foundation is a registered non-profit organization committed to expanding access to golf for individuals with disabilities. We believe golf is more than a game — it builds confidence, independence, skill, and a strong sense of community. Through partnerships with coaches, volunteers, schools, and golf facilities, AGAF creates meaningful opportunities for participation at every level — from first swings to competitive play.
+              Adaptive Golf Alliance Foundation is a registered non-profit organization committed to expanding access to golf for individuals with disabilities. We believe golf is more than a game — it builds confidence, independence, skill and a strong sense of community. Through partnerships with coaches, volunteers, schools and golf facilities, AGAF creates meaningful opportunities for participation at every level — from first swings to competitive play.
             </p>
           </motion.div>
 
@@ -217,30 +277,30 @@ const Homepage = () => {
               <div className="space-y-8">
                 {/* Sample */}
                 <motion.div variants={itemVariants} className="border-l-4 border-cta-gold pl-5">
-                  <h4 className="text-base font-quicksand text-primary-green font-bold mb-2">
+                  <h4 className="text-xl font-quicksand text-primary-green font-bold mb-2">
                     Sample
                   </h4>
-                  <p className="text-sm text-gray-800 leading-relaxed">
-                    We introduce individuals to golf in a supportive, accessible environment where they can learn foundational skills, build confidence, and discover their potential.
+                  <p className="text-base text-gray-800 leading-relaxed">
+                    We introduce individuals to golf in a supportive, accessible environment where they can learn foundational skills, build confidence and discover their potential.
                   </p>
                 </motion.div>
 
                 {/* Practice */}
                 <motion.div variants={itemVariants} className="border-l-4 border-cta-gold pl-5">
-                  <h4 className="text-base font-quicksand text-primary-green font-bold mb-2">
+                  <h4 className="text-xl font-quicksand text-primary-green font-bold mb-2">
                     Practice
                   </h4>
-                  <p className="text-sm text-gray-800 leading-relaxed">
-                    We expand access to inclusive clinics and on-course experiences that strengthen skills, foster independence, and deepen engagement in the game.
+                  <p className="text-base text-gray-800 leading-relaxed">
+                    We expand access to inclusive clinics and on-course experiences that strengthen skills, foster independence and deepen engagement in the game.
                   </p>
                 </motion.div>
 
                 {/* Compete */}
                 <motion.div variants={itemVariants} className="border-l-4 border-cta-gold pl-5">
-                  <h4 className="text-base font-quicksand text-primary-green font-bold mb-2">
+                  <h4 className="text-xl font-quicksand text-primary-green font-bold mb-2">
                     Compete
                   </h4>
-                  <p className="text-sm text-gray-800 leading-relaxed">
+                  <p className="text-base text-gray-800 leading-relaxed">
                     We create pathways to competitive play through adaptive tournaments and performance opportunities that empower athletes to excel.
                   </p>
                 </motion.div>
@@ -259,10 +319,85 @@ const Homepage = () => {
         </div>
       </motion.section>
 
+      {/* Faces of Adaptive Golf Section */}
+      <motion.section variants={itemVariants} className="py-10 md:py-12 bg-[#e8ede6]">
+        <div className="container-custom">
+          <motion.div variants={itemVariants} className="text-center mb-7 md:mb-8">
+            <h2 className="text-4xl md:text-5xl font-quicksand text-primary-blue font-bold mb-3">
+              Faces of Adaptive Golf
+            </h2>
+            <p className="text-lg md:text-xl font-quicksand text-primary-green font-semibold">
+              Celebrating the journeys, achievements and spirit of our athletes.
+            </p>
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="overflow-x-auto rounded-2xl border border-primary-blue/25 bg-[#f8f7f1] p-3 md:p-4 shadow-lg">
+            <table className="w-full min-w-[980px] border-collapse">
+              <thead>
+                <tr className="border-b-4 border-primary-blue/70">
+                  {facesOfAdaptiveGolf.map((athlete, index) => (
+                    <th
+                      key={athlete.name}
+                      className={`px-6 py-4 align-top ${index < facesOfAdaptiveGolf.length - 1 ? 'border-r-4 border-primary-blue/70' : ''}`}
+                    >
+                      <div className="flex flex-col items-center justify-start gap-3">
+                        <div className="flex items-center justify-center gap-3">
+                          {athlete.medalImage ? (
+                            <img
+                              src={athlete.medalImage}
+                              alt={athlete.medalAlt}
+                              className={`h-16 w-auto ${athlete.medalClassName || ''}`.trim()}
+                            />
+                          ) : null}
+                          <span className="text-4xl md:text-5xl font-quicksand font-bold text-primary-blue leading-tight">
+                            {athlete.name}
+                          </span>
+                        </div>
+
+                        {athlete.wagrLogo ? (
+                          <div className="flex items-center gap-3 rounded-xl border border-primary-blue/20 bg-white/70 px-3 py-2">
+                            <img src={athlete.wagrLogo} alt="World Amateur Golf Ranking" className="h-10 w-auto" />
+                            <span className="text-base font-quicksand font-bold text-primary-blue">
+                              Rank Stableford: {athlete.wagrRank}
+                            </span>
+                          </div>
+                        ) : null}
+                      </div>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  {facesOfAdaptiveGolf.map((athlete, index) => (
+                    <td
+                      key={`${athlete.name}-achievements`}
+                      className={`px-6 py-4 align-top ${index < facesOfAdaptiveGolf.length - 1 ? 'border-r-4 border-primary-blue/70' : ''}`}
+                    >
+                      <div className="flex flex-wrap items-center justify-center gap-5">
+                        {athlete.achievements.map((achievement) => (
+                          <div key={achievement.title} className="flex flex-col items-center gap-2">
+                            <img
+                              src={achievement.logo}
+                              alt={achievement.title}
+                              className={`${achievement.logoClassName} object-contain`}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </td>
+                  ))}
+                </tr>
+              </tbody>
+            </table>
+          </motion.div>
+        </div>
+      </motion.section>
+
       {/* Pathways Section - 3 Box Tabbed Layout */}
       <motion.section
         variants={itemVariants}
-        className="section-padding bg-gray-50"
+        className="section-padding bg-gray-200"
       >
         <div className="container-custom">
           {/* 3 Box Grid with Images and Links */}
@@ -329,12 +464,12 @@ const Homepage = () => {
             <motion.div variants={itemVariants} className="xl:col-span-4 h-full flex flex-col justify-center gap-8">
               <h2 className="text-5xl md:text-6xl font-quicksand font-semibold text-primary-blue leading-[1.14]">
                 We love sharing
-                <span className="block">adaptive golf <span className="text-primary-green">tips</span></span>
-                <span className="block">and <span className="text-primary-green">stories</span>.</span>
+                <span className="block">adaptive golf <span className="text-primary-green">insights</span>,</span>
+                <span className="block"><span className="text-primary-green">experiences</span> and <span className="text-primary-green">stories</span>.</span>
               </h2>
 
               <p className="text-gray-700 text-base leading-relaxed max-w-xl">
-                Read practical stories from adaptive golfers, coaches, and volunteers helping grow inclusive golf.
+                Discover journeys, insights and voices that celebrate ability, resilience and inclusion through golf.
               </p>
 
               <Link to={ROUTES.blog}>
@@ -372,7 +507,7 @@ const Homepage = () => {
         variants={itemVariants}
         className="bg-white"
       >
-        <div className="relative overflow-hidden bg-gradient-to-r from-primary-blue via-primary-green to-primary-blue px-6 py-16 sm:px-10 md:py-20 min-h-[520px] text-white">
+        <div className="relative overflow-hidden bg-gradient-to-r from-primary-blue via-primary-green to-primary-blue px-6 py-16 sm:px-10 md:py-20 min-h-[410px] text-white">
           <div className="absolute inset-y-0 left-4 hidden md:block pointer-events-none select-none">
             <p className="text-[7rem] leading-[0.85] font-quicksand font-bold uppercase tracking-tight text-white/10">
               CREATE
@@ -391,12 +526,19 @@ const Homepage = () => {
               #GolfWithoutLimits
             </p>
 
-            <div>
+            <div className="flex items-center justify-center gap-4 flex-wrap">
               <Link
                 to={ROUTES.getInvolved}
                 className="inline-flex items-center justify-center rounded-[0.75rem] bg-cta-gold px-10 py-4 text-xl font-quicksand font-bold uppercase tracking-wide text-primary-blue shadow-lg hover:brightness-105 transition-all duration-300"
               >
                 Get Involved
+              </Link>
+
+              <Link
+                to={`${ROUTES.getInvolved}#donate`}
+                className="inline-flex items-center justify-center rounded-[0.75rem] bg-cta-gold px-10 py-4 text-xl font-quicksand font-bold uppercase tracking-wide text-primary-blue shadow-lg hover:brightness-105 transition-all duration-300"
+              >
+                Donate
               </Link>
             </div>
           </motion.div>

@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import mediaHero from '../Media a.JPG';
-import mediaHome from '../Media_Home.JPG';
-import mediaB from '../Media b .JPG';
-import mediaC from '../Media c.JPG';
 
 const Media = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -12,30 +10,31 @@ const Media = () => {
     {
       id: 'discovery',
       label: 'Discovery Golf Experience',
-      description: 'DISCOVERY PROGRAMME 2026',
-      images: [
-        { src: mediaHome, alt: 'Discovery programme participant on the golf course', position: '50% 24%' },
-        { src: mediaB, alt: 'Inclusive adaptive golf training moment', position: '50% 40%' },
-        { src: mediaC, alt: 'Adaptive golfer in a community golf event', position: '50% 22%' },
+      description: 'Select a programme to view media.',
+      programmes: [
+        {
+          label: 'Discovery Programme 26th Jan 2026',
+          path: '/media/discovery-programme-26-jan-2026',
+        },
       ],
     },
     {
       id: 'clinics',
       label: 'AGAF Clinics',
       description: 'Programme schedule and participant highlights will be announced soon.',
-      images: [],
+      programmes: [],
     },
     {
       id: 'tournaments',
       label: 'Tournaments',
       description: 'Tournament details and event coverage are on the way.',
-      images: [],
+      programmes: [],
     },
     {
       id: 'workshops',
       label: 'Adaptive Coach Workshops',
       description: 'Workshop dates, locations, and registration information will be shared soon.',
-      images: [],
+      programmes: [],
     },
   ];
 
@@ -65,7 +64,7 @@ const Media = () => {
           fetchPriority="high"
         />
         <div className="absolute inset-0 bg-black/45" />
-        <div className="relative h-full flex flex-col items-center justify-center text-white text-center px-4">
+        <div className="relative h-full flex flex-col items-center justify-end text-white text-center px-4 pb-14 md:pb-20 lg:pb-24">
           <h1 className="text-2xl md:text-4xl lg:text-5xl font-quicksand font-medium leading-tight tracking-wide max-w-5xl">
             <span className="block">Different Journeys.</span>
             <span className="block">Shared Purpose.</span>
@@ -126,30 +125,28 @@ const Media = () => {
               </p>
             </div>
 
-            {tabs[activeTab].images.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {tabs[activeTab].images.map((image, idx) => (
+            {tabs[activeTab].programmes.length > 0 ? (
+              <div className="flex flex-wrap items-center justify-center gap-8 px-2 md:px-10">
+                {tabs[activeTab].programmes.map((programme, idx) => (
                   <motion.div
-                    key={idx}
+                    key={programme.label}
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.35, delay: idx * 0.08 }}
-                    className="overflow-hidden rounded-xl"
                   >
-                    <img
-                      src={image.src || image}
-                      alt={image.alt || `media-${idx}`}
-                      className="block w-full h-72 md:h-80 lg:h-96 object-cover"
-                      style={{ objectPosition: image.position || '50% 50%' }}
-                      loading="lazy"
-                    />
+                    <Link
+                      to={programme.path}
+                      className="inline-flex items-center justify-center rounded-full bg-primary-blue px-7 py-3 text-base md:text-lg font-quicksand font-semibold text-white shadow-md hover:bg-primary-green transition-colors duration-300"
+                    >
+                      {programme.label}
+                    </Link>
                   </motion.div>
                 ))}
               </div>
             ) : (
               <div className="max-w-2xl mx-auto rounded-xl border border-primary-blue/20 bg-[#f2f1ea] p-8 text-center">
                 <p className="text-lg md:text-xl text-gray-800 leading-relaxed">
-                  New stories and visuals for this section will be published shortly. Check back soon.
+                  New programmes will be added here shortly.
                 </p>
               </div>
             )}

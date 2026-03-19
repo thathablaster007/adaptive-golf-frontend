@@ -41,13 +41,29 @@ const BlogPostEmpowerment = () => {
             Unlike high-impact sports that demand speed or intense physical contact, golf can be modified to suit a wide range of abilities. Adaptive equipment, specialized carts, and guided play allow individuals with mobility challenges, limb differences, or visual impairments to participate fully in the game. With the right support and coaching, players can enjoy the strategy, focus, and satisfaction that golf offers.
           </p>
 
-          {/* Image 1 */}
-          <div className="mb-12 flex justify-center">
-            <img 
-              src={blogImage1} 
-              alt="Adaptive golf players in action" 
-              className="rounded-lg shadow-lg object-contain max-h-96 md:max-h-[28rem]"
-            />
+          {/* Images 1 and 2 */}
+          <div className="mb-8 flex flex-col md:flex-row items-center justify-center gap-3 md:gap-[10px]">
+            <div>
+              <img 
+                src={blogImage1} 
+                alt="Adaptive golf players in action" 
+                className="rounded-lg shadow-lg object-contain max-h-96 md:max-h-[28rem]"
+              />
+            </div>
+            <div>
+              <img 
+                src={blogImage2} 
+                alt="Golf rehabilitation and physical benefits" 
+                className="rounded-lg shadow-lg object-contain max-h-96 md:max-h-[28rem]"
+              />
+            </div>
+          </div>
+
+          {/* Quote Section */}
+          <div className="py-6 px-6 md:px-8 mb-12">
+            <p className="text-lg md:text-xl font-quicksand font-semibold text-primary-blue text-center">
+              "Adaptive golf proves that the game truly has no limits."
+            </p>
           </div>
 
           {/* Section 2 */}
@@ -62,22 +78,6 @@ const BlogPostEmpowerment = () => {
           <p className="text-xl text-gray-800 leading-relaxed mb-8 font-quicksand">
             Walking the course, maintaining posture, and swinging the club all contribute to improved strength and mobility. For many individuals, golf can also support rehabilitation by encouraging steady, manageable physical activity.
           </p>
-
-          {/* Image 2 */}
-          <div className="mb-12 flex justify-center">
-            <img 
-              src={blogImage2} 
-              alt="Golf rehabilitation and physical benefits" 
-              className="rounded-lg shadow-lg object-contain max-h-96 md:max-h-[28rem]"
-            />
-          </div>
-
-          {/* Quote Section */}
-          <div className="py-6 px-6 md:px-8 my-12">
-            <p className="text-lg md:text-xl font-quicksand font-semibold text-primary-blue text-center">
-              "Adaptive golf proves that the game truly has no limits."
-            </p>
-          </div>
 
           {/* Section 3 */}
           <h2 className="text-3xl md:text-4xl font-quicksand font-bold text-primary-blue mb-6 mt-12">

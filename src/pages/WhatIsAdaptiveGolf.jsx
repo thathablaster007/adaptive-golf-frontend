@@ -108,26 +108,31 @@ const WhatIsAdaptiveGolf = () => {
       icon: 'connect',
       title: 'Connect',
       description: 'Reach out. Share your interest. Let us help you take the first step.',
+      centerDescription: 'Reach out. Share your interest.',
     },
     {
       icon: 'guide',
       title: 'Assess & Guide',
       description: 'Understand your pathway. Receive clear guidance. We help you navigate eligibility, classification, and next steps.',
+      centerDescription: 'Understand your pathway. Receive clear guidance.',
     },
     {
       icon: 'learn',
       title: 'Learn & Play',
       description: 'Build skills. Gain confidence. Experience adaptive coaching in a supportive environment.',
+      centerDescription: 'Build skills. Gain confidence.',
     },
     {
       icon: 'progress',
       title: 'Participate & Progress',
       description: 'Step into opportunity. Challenge yourself. Engage in structured events and competitive play.',
+      centerDescription: 'Step into opportunity. Challenge yourself.',
     },
     {
       icon: 'grow',
       title: 'Grow with the Game',
       description: 'Develop independence. Belong to a community. Continue progressing — on and beyond the course.',
+      centerDescription: 'Develop independence. Belong to a community.',
     },
   ];
 
@@ -214,7 +219,7 @@ const WhatIsAdaptiveGolf = () => {
                 <h3 className="text-xl font-quicksand font-bold text-primary-blue mb-3 leading-snug">
                   {impact.title}
                 </h3>
-                <p className="text-base text-gray-800 leading-relaxed">
+                <p className="text-lg text-gray-800 leading-relaxed">
                   {impact.description}
                 </p>
               </motion.div>
@@ -270,6 +275,16 @@ const WhatIsAdaptiveGolf = () => {
                   </div>
                 </motion.div>
               ))}
+
+              <motion.div variants={itemVariants} className="pt-2 pl-[5.5rem]">
+                <Link to={ROUTES.connect}>
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <Button variant="gold" size="lg">
+                      Begin Your Pathway
+                    </Button>
+                  </motion.div>
+                </Link>
+              </motion.div>
             </motion.div>
 
             {/* Circular Diagram - Right Side */}
@@ -385,26 +400,24 @@ const WhatIsAdaptiveGolf = () => {
                     })}
                   </motion.g>
                 </svg>
+
+                <div className="pointer-events-none absolute inset-0 flex items-center justify-center p-8 md:p-12">
+                  <motion.p
+                    key={`center-desc-${activeStep}`}
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.25 }}
+                    className="max-w-[13rem] md:max-w-[15rem] text-center text-sm md:text-base lg:text-lg leading-relaxed font-quicksand font-semibold text-primary-blue"
+                  >
+                    {pathwaySteps[activeStep]?.centerDescription}
+                  </motion.p>
+                </div>
               </div>
             </motion.div>
           </div>
         </div>
       </motion.section>
 
-      {/* CTA Section */}
-      <motion.section variants={itemVariants} className="section-padding bg-bg-light">
-        <div className="container-custom text-center">
-          <motion.div variants={itemVariants}>
-            <Link to={ROUTES.connect}>
-              <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-                <Button variant="gold" size="lg">
-                  Begin Your Pathway
-                </Button>
-              </motion.div>
-            </Link>
-          </motion.div>
-        </div>
-      </motion.section>
     </motion.div>
   );
 };

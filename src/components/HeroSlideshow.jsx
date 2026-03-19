@@ -102,7 +102,7 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
   const fadeTransition = { duration: transitionDuration, ease: [0.22, 1, 0.36, 1] };
 
   return (
-    <div className="relative w-full h-[110vh] overflow-hidden bg-black">
+    <div className="relative w-full h-[77vh] overflow-hidden bg-black">
       {slides.map((slide, index) => (
         <motion.div
           key={index}
@@ -121,6 +121,7 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
                     src={imageSrc}
                     alt={`Hero slide ${index + 1} panel ${idx + 1}`}
                     className="h-full w-1/3 object-cover"
+                    style={{ objectPosition: slide.imagePositions?.[idx] || 'center center' }}
                     loading="eager"
                     decoding="async"
                     draggable="false"
@@ -132,6 +133,7 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
                 src={slide.image}
                 alt={`Hero slide ${index + 1}`}
                 className="absolute inset-0 h-full w-full object-cover"
+                style={{ objectPosition: slide.imagePosition || 'center center' }}
                 loading="eager"
                 decoding="async"
                 draggable="false"
@@ -141,10 +143,10 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
             <div className="absolute inset-0 bg-black/25" />
           </div>
 
-          <div className="absolute inset-0 flex flex-col items-center justify-center p-8 md:p-16 text-white text-center">
+          <div className="absolute inset-0 flex flex-col items-center justify-center p-6 md:p-10 text-white text-center">
             {slide.topText && (
               <div className="mb-auto">
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-quicksand font-medium leading-tight tracking-wide">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-quicksand font-medium leading-tight tracking-wide">
                   {slide.topText}
                 </h1>
               </div>
@@ -152,7 +154,7 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
 
             {slide.bottomText && (
               <div className="mt-auto">
-                <p className="text-5xl md:text-6xl lg:text-7xl font-quicksand font-medium tracking-wide">
+                <p className="text-4xl md:text-5xl lg:text-6xl font-quicksand font-medium tracking-wide">
                   {slide.bottomText}
                 </p>
               </div>
@@ -161,7 +163,7 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
             {slide.taglines && slide.taglines.length > 0 && (
               <div className="space-y-4 mt-8">
                 {slide.taglines.map((tagline, idx) => (
-                  <p key={idx} className="text-lg md:text-xl font-light max-w-2xl">
+                  <p key={idx} className="text-base md:text-lg font-light max-w-2xl">
                     {tagline}
                   </p>
                 ))}
@@ -169,7 +171,7 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
             )}
 
             {index === 0 && slide.showButtons && (
-              <div className="flex gap-4 pt-12 flex-wrap justify-center mt-8">
+              <div className="flex gap-4 pt-8 flex-wrap justify-center mt-6">
                 <Link to={ROUTES.getInvolved}>
                   <Button variant="gold" size="lg">
                     Get Involved
@@ -186,33 +188,33 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
 
       <button
         onClick={goToPrevious}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 text-white hover:text-primary-gold transition-colors bg-black/20 rounded-full p-2 backdrop-blur-sm"
+        className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 z-20 text-white hover:text-primary-gold transition-colors bg-black/20 rounded-full p-2 backdrop-blur-sm"
         aria-label="Previous slide"
       >
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
       </button>
 
       <button
         onClick={goToNext}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 text-white hover:text-primary-gold transition-colors bg-black/20 rounded-full p-2 backdrop-blur-sm"
+        className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 z-20 text-white hover:text-primary-gold transition-colors bg-black/20 rounded-full p-2 backdrop-blur-sm"
         aria-label="Next slide"
       >
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </button>
 
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 flex gap-2.5">
         {slides.map((_, index) => (
           <motion.button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`h-3 rounded-full transition-all ${
+            className={`h-2.5 rounded-full transition-all ${
               index === currentSlide
-                ? 'w-7 bg-[#4C9A63] border border-white'
-                : 'w-3 bg-white/70 border border-black/30 hover:bg-white'
+                ? 'w-6 bg-[#4C9A63] border border-white'
+                : 'w-2.5 bg-white/70 border border-black/30 hover:bg-white'
             }`}
             aria-label={`Go to slide ${index + 1}`}
             whileHover={{ scale: 1.15 }}

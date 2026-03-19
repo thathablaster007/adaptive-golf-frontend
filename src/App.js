@@ -6,6 +6,7 @@ import WhatIsAdaptiveGolf from './pages/WhatIsAdaptiveGolf';
 import TryGolf from './pages/TryGolf';
 import Competition from './pages/Competition';
 import Media from './pages/Media';
+import MediaDiscoveryProgrammeJan26 from './pages/MediaDiscoveryProgrammeJan26';
 import GetInvolved from './pages/GetInvolved';
 import News from './pages/News';
 import NewsPostMilestone from './pages/NewsPostMilestone';
@@ -65,6 +66,7 @@ function App() {
           <Route path="try-golf" element={<TryGolf />} />
           <Route path="competition" element={<Competition />} />
           <Route path="media" element={<Media />} />
+          <Route path="media/discovery-programme-26-jan-2026" element={<MediaDiscoveryProgrammeJan26 />} />
           <Route path="blog" element={<Blog />} />
           <Route path="blog/more-than-a-game" element={<BlogPostEmpowerment />} />
           <Route path="blog/power-of-volunteers" element={<BlogPostVolunteers />} />

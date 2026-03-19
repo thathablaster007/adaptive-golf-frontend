@@ -64,7 +64,7 @@ const Blog = () => {
               The Blog
             </h1>
             <p className="text-xl md:text-2xl font-quicksand text-white">
-              We love sharing adaptive golf tips and stories.
+              We love sharing adaptive golf insights, experiences and stories.
             </p>
           </div>
         </div>
