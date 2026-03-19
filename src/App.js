@@ -14,6 +14,9 @@ import Blog from './pages/Blog';
 import BlogPostEmpowerment from './pages/BlogPostEmpowerment';
 import BlogPostVolunteers from './pages/BlogPostVolunteers';
 import BlogPostAdaptiveCoaching from './pages/BlogPostAdaptiveCoaching';
+import AboutUs from './pages/AboutUs';
+import Team from './pages/Team';
+import Policies from './pages/Policies';
 
 function ScrollToTop() {
   const { pathname, key } = useLocation();
@@ -70,6 +73,9 @@ function App() {
           <Route path="news" element={<News />} />
           <Route path="news/a-milestone-moment" element={<NewsPostMilestone />} />
           <Route path="connect" element={<Connect />} />
+          <Route path="about-us" element={<AboutUs />} />
+          <Route path="team" element={<Team />} />
+          <Route path="policies" element={<Policies />} />
         </Route>
       </Routes>
     </Router>
