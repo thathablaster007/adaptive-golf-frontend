@@ -3,18 +3,18 @@
   "name": "adaptivegolfalliance",
   "icons": [
     {
-      "src": "favicon-96x96.png",
+      "src": "favicon-32x32.png",
       "type": "image/png",
-      "sizes": "96x96"
+      "sizes": "32x32"
     },
     {
-      "src": "favicon-192x192.png",
+      "src": "android-chrome-192x192.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any"
     },
     {
-      "src": "logo3.png",
+      "src": "android-chrome-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
