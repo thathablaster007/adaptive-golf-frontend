@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/adaptive-golf-frontend/static/css/main.66a79a98.css",
-    "main.js": "/adaptive-golf-frontend/static/js/main.372f85ea.js",
+    "main.css": "/adaptive-golf-frontend/static/css/main.684a669d.css",
+    "main.js": "/adaptive-golf-frontend/static/js/main.7d7259df.js",
     "static/js/680.52e0e9af.chunk.js": "/adaptive-golf-frontend/static/js/680.52e0e9af.chunk.js",
     "static/js/727.560458af.chunk.js": "/adaptive-golf-frontend/static/js/727.560458af.chunk.js",
     "static/js/642.fb000b4d.chunk.js": "/adaptive-golf-frontend/static/js/642.fb000b4d.chunk.js",
@@ -108,8 +108,8 @@
     "static/media/unnamed (10).png": "/adaptive-golf-frontend/static/media/unnamed (10).7301dc73e6dbefd93ac2.png",
     "static/media/Tee-Golf---1-.png": "/adaptive-golf-frontend/static/media/Tee-Golf---1-.5ee4c8095a4712fb39a7.png",
     "index.html": "/adaptive-golf-frontend/index.html",
-    "main.66a79a98.css.map": "/adaptive-golf-frontend/static/css/main.66a79a98.css.map",
-    "main.372f85ea.js.map": "/adaptive-golf-frontend/static/js/main.372f85ea.js.map",
+    "main.684a669d.css.map": "/adaptive-golf-frontend/static/css/main.684a669d.css.map",
+    "main.7d7259df.js.map": "/adaptive-golf-frontend/static/js/main.7d7259df.js.map",
     "680.52e0e9af.chunk.js.map": "/adaptive-golf-frontend/static/js/680.52e0e9af.chunk.js.map",
     "727.560458af.chunk.js.map": "/adaptive-golf-frontend/static/js/727.560458af.chunk.js.map",
     "642.fb000b4d.chunk.js.map": "/adaptive-golf-frontend/static/js/642.fb000b4d.chunk.js.map",
@@ -131,7 +131,7 @@
     "811.cbe1caa0.chunk.js.map": "/adaptive-golf-frontend/static/js/811.cbe1caa0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.66a79a98.css",
-    "static/js/main.372f85ea.js"
+    "static/css/main.684a669d.css",
+    "static/js/main.7d7259df.js"
   ]
 }
