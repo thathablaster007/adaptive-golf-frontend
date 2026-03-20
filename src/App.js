@@ -58,7 +58,7 @@ function ScrollToTop() {
 
 function App() {
   return (
-    <Router basename="/adaptive-golf-frontend">
+    <Router>
       <ScrollToTop />
       <Suspense fallback={<div className="min-h-[40vh]" />}>
         <Routes>

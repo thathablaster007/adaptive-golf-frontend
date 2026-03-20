@@ -33,7 +33,6 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://thathablaster007.github.io/adaptive-golf-frontend",
   "browserslist": {
     "production": [
       ">0.2%",
