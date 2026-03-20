@@ -68,6 +68,17 @@ const Footer = () => {
           <p className="font-quicksand text-primary-green/90">
             &copy; {new Date().getFullYear()} Adaptive Golf Alliance Foundation. All rights reserved.
           </p>
+          <p className="mt-1 font-quicksand text-primary-green/80">
+            Site By:{' '}
+            <a
+              href="https://www.linkedin.com/in/neerav-aiyappa"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#c9851b] transition-colors"
+            >
+              Neerav Aiyappa Mukkatira
+            </a>
+          </p>
         </div>
       </div>
     </footer>
