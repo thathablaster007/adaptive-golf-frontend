@@ -1,5 +1,7 @@
 import { Suspense, lazy, useEffect, useLayoutEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import Layout from './components/Layout';
 
 const Homepage = lazy(() => import('./pages/Homepage'));
@@ -83,6 +85,8 @@ function App() {
           </Route>
         </Routes>
       </Suspense>
+      <Analytics />
+      <SpeedInsights />
     </Router>
   );
 }
