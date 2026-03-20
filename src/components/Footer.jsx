@@ -52,7 +52,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="facebook"
+                href="https://facebook.com"
                 className="text-primary-green hover:text-[#c9851b] transition-colors"
                 title="Facebook"
               >

@@ -95,7 +95,7 @@ const Connect = () => {
       className="font-quicksand"
     >
       {/* Hero Section */}
-      <motion.section variants={itemVariants} className="relative h-[28rem] md:h-[34rem] lg:h-[38rem] bg-gray-900 overflow-hidden">
+      <motion.section variants={itemVariants} className="relative h-[22rem] sm:h-[26rem] md:h-[34rem] lg:h-[38rem] bg-gray-900 overflow-hidden">
         <img
           src={contactHero}
           alt="Contact Adaptive Golf Alliance Foundation"
@@ -106,7 +106,7 @@ const Connect = () => {
         />
         <div className="absolute inset-0 bg-black/45" />
         <div className="relative h-full flex items-center justify-center px-4 text-center">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-quicksand font-medium tracking-wide text-white">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-quicksand font-medium tracking-wide text-white">
             Contact Us
           </h1>
         </div>

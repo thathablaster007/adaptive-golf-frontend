@@ -81,24 +81,42 @@ const TryGolf = () => {
       className="font-quicksand"
     >
       {/* Hero Header */}
-      <motion.section variants={itemVariants} className="relative h-[28rem] md:h-[34rem] lg:h-[38rem] bg-gray-900 overflow-hidden">
+      <motion.section variants={itemVariants} className="relative h-[22rem] sm:h-[26rem] md:h-[34rem] lg:h-[38rem] bg-gray-900 overflow-hidden">
         <div className="absolute inset-0 flex">
-          {[tryGolf1, tryGolf2, tryGolf4].map((imageSrc, idx) => (
-            <div key={idx} className="relative w-1/3 h-full">
-              <img
-                src={imageSrc}
-                alt={`Try Golf header panel ${idx + 1}`}
-                className="h-full w-full object-cover object-[50%_22%]"
-                loading="eager"
-                decoding="async"
-                fetchPriority={idx === 0 ? 'high' : 'auto'}
-              />
-            </div>
-          ))}
+          <div className="relative w-full md:w-1/2 lg:w-1/3 h-full">
+            <img
+              src={tryGolf1}
+              alt="Try Golf header panel 1"
+              className="h-full w-full object-cover object-[50%_22%]"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+            />
+          </div>
+          <div className="relative hidden md:block md:w-1/2 lg:w-1/3 h-full">
+            <img
+              src={tryGolf2}
+              alt="Try Golf header panel 2"
+              className="h-full w-full object-cover object-[50%_22%]"
+              loading="lazy"
+              decoding="async"
+              fetchPriority="low"
+            />
+          </div>
+          <div className="relative hidden lg:block lg:w-1/3 h-full">
+            <img
+              src={tryGolf4}
+              alt="Try Golf header panel 3"
+              className="h-full w-full object-cover object-[50%_22%]"
+              loading="lazy"
+              decoding="async"
+              fetchPriority="low"
+            />
+          </div>
         </div>
         <div className="absolute inset-0 bg-black/35" />
         <div className="relative h-full flex items-center justify-center px-4">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-quicksand font-medium tracking-wide text-white text-center">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-quicksand font-medium tracking-wide text-white text-center">
             Learn to Play
           </h1>
         </div>
@@ -114,7 +132,7 @@ const TryGolf = () => {
                 Golf is a game of rhythm, focus, and possibility. Through adaptive instruction and supportive coaching, we make it accessible for everyone — regardless of ability. Start at your own pace. Build confidence with every swing.
               </p>
 
-              <div className="mb-8 rounded-2xl border border-primary-blue/15 bg-white/80 px-6 py-6 text-left shadow-sm">
+              <div id="upcoming-event" className="mb-8 rounded-2xl border border-primary-blue/15 bg-white/80 px-6 py-6 text-left shadow-sm">
                 <h3 className="text-2xl md:text-3xl font-quicksand font-bold text-primary-blue mb-3 text-center md:text-left">
                   Upcoming Event: Adaptive Golf Discovery Programme
                 </h3>

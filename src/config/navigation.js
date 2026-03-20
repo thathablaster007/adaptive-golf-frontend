@@ -40,6 +40,7 @@ export const ROUTES = {
   blogVolunteers: '/blog/power-of-volunteers',
   blogAdaptiveCoaching: '/blog/adaptive-coaching',
   getInvolved: '/get-involved',
+  donate: '/donate',
   news: '/news',
   newsMilestone: '/news/a-milestone-moment',
   connect: '/connect',

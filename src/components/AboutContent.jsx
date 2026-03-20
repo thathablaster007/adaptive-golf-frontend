@@ -144,7 +144,7 @@ const AboutContent = () => {
                   Get Involved
                 </Button>
               </Link>
-              <Link to={`${ROUTES.getInvolved}#donate`}>
+              <Link to={ROUTES.donate}>
                 <Button variant="gold" size="lg">
                   Donate
                 </Button>

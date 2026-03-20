@@ -160,7 +160,7 @@ const WhatIsAdaptiveGolf = () => {
       className="font-quicksand"
     >
       {/* Hero Section with Image */}
-      <motion.section variants={itemVariants} className="relative h-[28rem] md:h-[34rem] lg:h-[38rem] bg-gray-900 overflow-hidden">
+      <motion.section variants={itemVariants} className="relative h-[22rem] sm:h-[26rem] md:h-[34rem] lg:h-[38rem] bg-gray-900 overflow-hidden">
         <img
           src={whatIsAdaptiveGolfHero}
           alt="Adaptive golf participants in action"
@@ -171,7 +171,7 @@ const WhatIsAdaptiveGolf = () => {
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative h-full flex items-center justify-center px-4">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-quicksand font-medium leading-tight tracking-wide text-white text-center whitespace-nowrap">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-quicksand font-medium leading-tight tracking-wide text-white text-center">
             Discovering Possibility Through Adaptive Golf
           </h2>
         </div>
@@ -186,11 +186,13 @@ const WhatIsAdaptiveGolf = () => {
             </h1>
 
             <p className="text-xl text-gray-800 leading-relaxed mb-7">
-              Adaptive Golf is golf designed for inclusion. Like many adaptive sports, it allows individuals with physical, sensory, or cognitive challenges to learn and play the game through modified instruction, equipment, and formats — based on each person's abilities. At Adaptive Golf Alliance Foundation, we believe adaptive golf is not simply about learning a sport; it is about creating access, building confidence, and unlocking potential. By adapting the game — not the individual — we ensure that everyone has the opportunity to participate, improve, and thrive through the game of golf.
+              Adaptive Golf is golf designed for inclusion. Like many adaptive sports, it allows individuals with physical, sensory, or cognitive challenges to learn and play the game through modified instruction, equipment, and formats — based on each person's abilities.
             </p>
-
+            <p className="text-xl text-gray-800 leading-relaxed mb-7">
+              At Adaptive Golf Alliance Foundation, we believe adaptive golf is not simply about learning a sport; it is about creating access, building confidence, and unlocking potential. By adapting the game — not the individual — we ensure that everyone has the opportunity to participate, improve, and thrive through the game of golf.
+            </p>
             <p className="text-2xl font-quicksand font-bold text-primary-green mb-8 leading-relaxed">
-              Adaptive Golf does more than teach a swing — it strengthens the whole person.
+              Adaptive Golf is more than a swing — it's where access, strength, dignity and belonging come together.
             </p>
           </motion.div>
         </div>

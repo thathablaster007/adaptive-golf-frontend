@@ -80,7 +80,7 @@ const Competition = () => {
   return (
     <motion.div initial="hidden" animate="visible" variants={containerVariants} className="font-quicksand">
       {/* Hero */}
-      <motion.section variants={itemVariants} className="relative h-[28rem] md:h-[34rem] lg:h-[38rem] bg-gray-900 overflow-hidden">
+      <motion.section variants={itemVariants} className="relative h-[22rem] sm:h-[26rem] md:h-[34rem] lg:h-[38rem] bg-gray-900 overflow-hidden">
         <img
           src={competitionHero}
           alt="Adaptive golf competition"
@@ -91,7 +91,7 @@ const Competition = () => {
         />
         <div className="absolute inset-0 bg-black/45" />
         <div className="relative h-full flex items-center justify-center px-4">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-quicksand font-medium tracking-wide text-white text-center">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-quicksand font-medium tracking-wide text-white text-center">
             Competition
           </h1>
         </div>

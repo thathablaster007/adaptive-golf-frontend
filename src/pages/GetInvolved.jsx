@@ -9,8 +9,9 @@ import getInvolved1 from '../Get involved 1.JPG';
 import getInvolved2 from '../get involved 2.JPG';
 import getInvolved3 from '../get involved 3.JPG';
 import sponsorLogo1 from '../Tee-Golf---1-.png';
-import sponsorLogo2 from '../unnamed (9).png';
 import sponsorLogo3 from '../47f2e576-b5d5-44dc-aad2-f71e8fea3ce0.jpeg';
+import sponsorLogo4 from '../unnamed.jpg';
+import sponsorLogo5 from '../totheteesponder.jpg';
 
 const CardIcon = ({ type }) => {
   const wrapperClass = 'w-20 h-20 md:w-24 md:h-24 flex items-center justify-center';
@@ -135,18 +136,36 @@ const GetInvolved = () => {
       {/* Hero */}
       <motion.section variants={itemVariants} className="relative h-[28rem] md:h-[34rem] lg:h-[38rem] bg-gray-900 overflow-hidden">
         <div className="absolute inset-0 flex">
-          {[getInvolved1, getInvolved2, getInvolved3].map((imageSrc, idx) => (
-            <div key={idx} className="relative w-1/3 h-full">
-              <img
-                src={imageSrc}
-                alt={`Get involved header panel ${idx + 1}`}
-                className={`h-full w-full object-cover ${idx === 0 ? 'object-[50%_28%]' : 'object-center'}`}
-                loading="eager"
-                decoding="async"
-                fetchPriority={idx === 0 ? 'high' : 'auto'}
-              />
-            </div>
-          ))}
+          <div className="relative w-full md:w-1/2 lg:w-1/3 h-full">
+            <img
+              src={getInvolved1}
+              alt="Get involved header panel 1"
+              className="h-full w-full object-cover object-[50%_28%]"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+            />
+          </div>
+          <div className="relative hidden md:block md:w-1/2 lg:w-1/3 h-full">
+            <img
+              src={getInvolved2}
+              alt="Get involved header panel 2"
+              className="h-full w-full object-cover object-center"
+              loading="lazy"
+              decoding="async"
+              fetchPriority="low"
+            />
+          </div>
+          <div className="relative hidden lg:block lg:w-1/3 h-full">
+            <img
+              src={getInvolved3}
+              alt="Get involved header panel 3"
+              className="h-full w-full object-cover object-center"
+              loading="lazy"
+              decoding="async"
+              fetchPriority="low"
+            />
+          </div>
         </div>
         <div className="absolute inset-0 bg-black/35" />
         <div className="relative h-full flex items-center justify-center px-4 text-center">
@@ -236,7 +255,7 @@ const GetInvolved = () => {
                   Connect With Us
                 </Button>
               </Link>
-              <Link to={`${ROUTES.getInvolved}#donate`}>
+              <Link to={ROUTES.donate}>
                 <Button variant="gold" size="lg">
                   Donate
                 </Button>
@@ -249,11 +268,12 @@ const GetInvolved = () => {
       {/* Sponsors Section */}
       <motion.section variants={itemVariants} className="section-padding bg-gradient-to-b from-[#f7f9ef] to-[#fff8eb]">
         <div className="container-custom">
-          <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6" variants={containerVariants}>
+          <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" variants={containerVariants}>
             {[
               { name: 'To The Tee Golf Collective', logo: sponsorLogo1 },
-              { name: 'Sponsor Partner 2', logo: sponsorLogo2 },
               { name: 'Sponsor Partner 3', logo: sponsorLogo3 },
+              { name: 'Sponsor Partner 4', logo: sponsorLogo4 },
+              { name: 'Sponsor Partner 5', logo: sponsorLogo5 },
             ].map((sponsor) => (
               <motion.div key={sponsor.name} variants={itemVariants}>
                 <div className="h-full rounded-xl border border-primary-green/30 bg-white/85 p-6 md:p-8 flex items-center justify-center hover:border-cta-gold/70 hover:shadow-lg transition-all">

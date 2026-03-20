@@ -9,13 +9,28 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
   const [isReady, setIsReady] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
+  const [viewportWidth, setViewportWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1280);
   const lastManualNavRef = useRef(0);
   const transitionDuration = 1.0;
+
+  const stitchedPanelCount = viewportWidth >= 1024 ? 3 : viewportWidth >= 640 ? 2 : 1;
 
   useEffect(() => {
     const raf = requestAnimationFrame(() => setHasMounted(true));
     return () => cancelAnimationFrame(raf);
   }, []);
+
+  useEffect(() => {
+    const onResize = () => setViewportWidth(window.innerWidth);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  const getVisiblePanelIndexes = () => {
+    if (stitchedPanelCount === 1) return [1];
+    if (stitchedPanelCount === 2) return [0, 1];
+    return [0, 1, 2];
+  };
 
   useEffect(() => {
     let isMounted = true;
@@ -40,16 +55,10 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
 
     const init = async () => {
       const firstSlideImages = getSlideImages(slides[0] || {});
-      const remainingImages = slides
-        .slice(1)
-        .flatMap((slide) => getSlideImages(slide));
 
       // Unblock first render as soon as the first slide is ready.
       await preloadImages(firstSlideImages);
       if (isMounted) setIsReady(true);
-
-      // Continue warming the cache for smoother subsequent transitions.
-      preloadImages(Array.from(new Set(remainingImages)));
     };
 
     init();
@@ -102,7 +111,7 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
   const fadeTransition = { duration: transitionDuration, ease: [0.22, 1, 0.36, 1] };
 
   return (
-    <div className="relative w-full h-[77vh] overflow-hidden bg-black">
+    <div className="relative w-full h-[82vh] sm:h-[88vh] lg:h-[92vh] min-h-[460px] sm:min-h-[560px] lg:min-h-[640px] overflow-hidden bg-black">
       {slides.map((slide, index) => (
         <motion.div
           key={index}
@@ -115,14 +124,17 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
           <div className="absolute inset-0">
             {slide.images && slide.images.length === 3 ? (
               <div className="h-full w-full flex">
-                {slide.images.map((imageSrc, idx) => (
+                {getVisiblePanelIndexes().map((idx) => (
                   <img
                     key={`${index}-${idx}`}
-                    src={imageSrc}
+                    src={slide.images[idx]}
                     alt={`Hero slide ${index + 1} panel ${idx + 1}`}
-                    className="h-full w-1/3 object-cover"
+                    className={`h-full object-cover ${
+                      stitchedPanelCount === 1 ? 'w-full' : stitchedPanelCount === 2 ? 'w-1/2' : 'w-1/3'
+                    }`}
                     style={{ objectPosition: slide.imagePositions?.[idx] || 'center center' }}
-                    loading="eager"
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    fetchPriority={index === 0 && idx === 0 ? 'high' : index === 0 ? 'auto' : 'low'}
                     decoding="async"
                     draggable="false"
                   />
@@ -134,7 +146,8 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
                 alt={`Hero slide ${index + 1}`}
                 className="absolute inset-0 h-full w-full object-cover"
                 style={{ objectPosition: slide.imagePosition || 'center center' }}
-                loading="eager"
+                loading={index === 0 ? 'eager' : 'lazy'}
+                fetchPriority={index === 0 ? 'high' : 'low'}
                 decoding="async"
                 draggable="false"
               />
@@ -146,7 +159,7 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
           <div className="absolute inset-0 flex flex-col items-center justify-center p-6 md:p-10 text-white text-center">
             {slide.topText && (
               <div className="mb-auto">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-quicksand font-medium leading-tight tracking-wide">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-quicksand font-medium leading-tight tracking-wide">
                   {slide.topText}
                 </h1>
               </div>
@@ -154,7 +167,7 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
 
             {slide.bottomText && (
               <div className="mt-auto">
-                <p className="text-4xl md:text-5xl lg:text-6xl font-quicksand font-medium tracking-wide">
+                <p className="text-3xl md:text-5xl lg:text-6xl font-quicksand font-medium tracking-wide">
                   {slide.bottomText}
                 </p>
               </div>
@@ -177,9 +190,11 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
                     Get Involved
                   </Button>
                 </Link>
-                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary-blue">
-                  Donate
-                </Button>
+                <Link to={ROUTES.donate}>
+                  <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary-blue">
+                    Donate
+                  </Button>
+                </Link>
               </div>
             )}
           </div>

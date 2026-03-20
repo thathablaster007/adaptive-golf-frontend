@@ -9,6 +9,7 @@ const Competition = lazy(() => import('./pages/Competition'));
 const Media = lazy(() => import('./pages/Media'));
 const MediaDiscoveryProgrammeJan26 = lazy(() => import('./pages/MediaDiscoveryProgrammeJan26'));
 const GetInvolved = lazy(() => import('./pages/GetInvolved'));
+const Donate = lazy(() => import('./pages/Donate'));
 const News = lazy(() => import('./pages/News'));
 const NewsPostMilestone = lazy(() => import('./pages/NewsPostMilestone'));
 const Connect = lazy(() => import('./pages/Connect'));
@@ -73,6 +74,7 @@ function App() {
             <Route path="blog/power-of-volunteers" element={<BlogPostVolunteers />} />
             <Route path="blog/adaptive-coaching" element={<BlogPostAdaptiveCoaching />} />
             <Route path="get-involved" element={<GetInvolved />} />
+            <Route path="donate" element={<Donate />} />
             <Route path="news" element={<News />} />
             <Route path="news/a-milestone-moment" element={<NewsPostMilestone />} />
             <Route path="connect" element={<Connect />} />

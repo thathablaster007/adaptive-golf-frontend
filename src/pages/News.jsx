@@ -28,7 +28,7 @@ const News = () => {
   return (
     <motion.div initial="hidden" animate="visible" variants={containerVariants} className="font-quicksand">
       {/* Hero */}
-      <motion.section variants={itemVariants} className="relative h-[26rem] md:h-[32rem] lg:h-[36rem] bg-gray-900 overflow-hidden">
+      <motion.section variants={itemVariants} className="relative h-[21rem] sm:h-[25rem] md:h-[32rem] lg:h-[36rem] bg-gray-900 overflow-hidden">
         <img
           src={newsHero}
           alt="News"
@@ -39,7 +39,7 @@ const News = () => {
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative h-full flex items-center justify-center px-4">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-quicksand font-medium tracking-wide text-white text-center">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-quicksand font-medium tracking-wide text-white text-center">
             News
           </h1>
         </div>

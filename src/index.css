@@ -53,3 +53,31 @@ code {
   background-clip: text;
 }
 
+@media (max-width: 1280px) {
+  .section-padding {
+    @apply py-14;
+  }
+}
+
+@media (max-width: 1024px) {
+  .section-padding {
+    @apply py-12;
+  }
+}
+
+@media (max-width: 768px) {
+  html,
+  body,
+  #root {
+    overflow-x: hidden;
+  }
+
+  .section-padding {
+    @apply py-10;
+  }
+
+  .container-custom {
+    @apply px-4;
+  }
+}
+

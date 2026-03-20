@@ -40,6 +40,15 @@ root.render(
 );
 
 requestAnimationFrame(() => {
+  // Apply desktop default scale for browsers that support CSS zoom.
+  const applyDesktopZoom = () => {
+    const zoomValue = window.innerWidth >= 1200 ? '0.8' : '1';
+    document.documentElement.style.zoom = zoomValue;
+  };
+
+  applyDesktopZoom();
+  window.addEventListener('resize', applyDesktopZoom);
+
   optimizeImagesInSubtree(document);
 
   const observer = new MutationObserver((mutations) => {

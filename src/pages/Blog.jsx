@@ -48,7 +48,7 @@ const Blog = () => {
   return (
     <motion.div initial="hidden" animate="visible" variants={containerVariants}>
       {/* Hero Section with Image */}
-      <motion.section variants={itemVariants} className="relative h-[28rem] md:h-[34rem] lg:h-[38rem] bg-gray-900 overflow-hidden">
+      <motion.section variants={itemVariants} className="relative h-[22rem] sm:h-[26rem] md:h-[34rem] lg:h-[38rem] bg-gray-900 overflow-hidden">
         <img
           src={blogHeaderImage}
           alt="Adaptive golf blog"
@@ -60,7 +60,7 @@ const Blog = () => {
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative h-full flex items-center justify-center px-4">
           <div className="text-center">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-quicksand font-bold text-white mb-3">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-quicksand font-bold text-white mb-3">
               The Blog
             </h1>
             <p className="text-xl md:text-2xl font-quicksand text-white">

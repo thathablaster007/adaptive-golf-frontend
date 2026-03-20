@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Button from '../components/Button';
@@ -26,46 +26,10 @@ import logoAbuDhabi2019 from '../unnamed (5).png';
 import logoEnglandGolf from '../unnamed (4).png';
 import logoDaikinMadridOpen from '../unnamed (1).png';
 import wagrLogo from '../wagr_logo.png';
+import csrPartnerLogo from '../unnamed (9).png';
+import foundingPartnerLogo from '../unnamed (10).png';
 
 const Homepage = () => {
-  useEffect(() => {
-    const preloadImages = async (imageList) => {
-      const loaders = imageList.map(
-        (src) =>
-          new Promise((resolve) => {
-            const img = new Image();
-            img.src = src;
-            if (img.decode) {
-              img.decode().then(resolve).catch(resolve);
-            } else {
-              img.onload = resolve;
-              img.onerror = resolve;
-            }
-          })
-      );
-
-      await Promise.all(loaders);
-    };
-
-    preloadImages([
-      tryGolfHomeImage,
-      competitionHomeImage,
-      mediaHomeImage,
-      title1,
-      title2aFirstSlide,
-      title2a,
-      title2b,
-      title2c,
-      title2d,
-      title3a,
-      title3b,
-      title3c,
-      title1BlogCard,
-      blogImage2,
-      blogImage3,
-    ]);
-  }, []);
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -418,9 +382,9 @@ const Homepage = () => {
                         alt={pathway.title}
                         className="w-full h-full object-cover brightness-110 contrast-105 saturate-110 group-hover:scale-110 transition-transform duration-300"
                         style={{ objectPosition: pathway.imagePosition || 'center' }}
-                        loading="eager"
+                        loading="lazy"
                         decoding="async"
-                        fetchPriority={index === 0 ? 'high' : 'auto'}
+                        fetchPriority="low"
                       />
                       {/* Overlay */}
                       <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300" />
@@ -457,12 +421,12 @@ const Homepage = () => {
       {/* Blog Preview Section */}
       <motion.section
         variants={itemVariants}
-        className="py-20 bg-[#f2f1ea]"
+        className="py-14 md:py-16 bg-[#f2f1ea]"
       >
         <div className="container-custom">
           <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-16 items-start">
             <motion.div variants={itemVariants} className="xl:col-span-4 h-full flex flex-col justify-center gap-8">
-              <h2 className="text-5xl md:text-6xl font-quicksand font-semibold text-primary-blue leading-[1.14]">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-quicksand font-semibold text-primary-blue leading-[1.14]">
                 We love sharing
                 <span className="block">adaptive golf <span className="text-primary-green">insights</span>,</span>
                 <span className="block"><span className="text-primary-green">experiences</span> and <span className="text-primary-green">stories</span>.</span>
@@ -473,7 +437,7 @@ const Homepage = () => {
               </p>
 
               <Link to={ROUTES.blog}>
-                <Button variant="primary" size="lg" className="bg-primary-green hover:bg-opacity-90 text-white text-3xl text-left min-w-[150px] px-8 py-4 rounded-xl">
+                <Button variant="primary" size="lg" className="bg-primary-green hover:bg-opacity-90 text-white text-xl md:text-2xl text-left min-w-[130px] px-6 md:px-8 py-3 md:py-4 rounded-xl">
                   Read More
                 </Button>
               </Link>
@@ -483,7 +447,7 @@ const Homepage = () => {
               {blogPreviewPosts.map((post) => (
                 <Link key={post.id} to={post.path} className="group block">
                   <article className="h-full">
-                    <div className="overflow-hidden rounded-2xl shadow-md h-[420px] bg-gray-300">
+                    <div className="overflow-hidden rounded-2xl shadow-md h-[320px] sm:h-[380px] md:h-[420px] bg-gray-300">
                       <img
                         src={post.image}
                         alt={post.title}
@@ -498,6 +462,28 @@ const Homepage = () => {
                 </Link>
               ))}
             </motion.div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* CSR Partners Section */}
+      <motion.section variants={itemVariants} className="py-10 md:py-12 bg-[#e8ede6]">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center h-full flex flex-col justify-center">
+              <h2 className="text-3xl md:text-4xl font-quicksand font-bold text-primary-blue mb-6">
+                CSR Partners
+              </h2>
+              <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm max-w-3xl mx-auto">
+                <img
+                  src={csrPartnerLogo}
+                  alt="CSR Partner"
+                  className="w-full h-20 md:h-24 object-contain"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </motion.section>
@@ -535,13 +521,35 @@ const Homepage = () => {
               </Link>
 
               <Link
-                to={`${ROUTES.getInvolved}#donate`}
+                to={ROUTES.donate}
                 className="inline-flex items-center justify-center rounded-[0.75rem] bg-cta-gold px-10 py-4 text-xl font-quicksand font-bold uppercase tracking-wide text-primary-blue shadow-lg hover:brightness-105 transition-all duration-300"
               >
                 Donate
               </Link>
             </div>
           </motion.div>
+        </div>
+      </motion.section>
+
+      {/* Foundation Partners Section */}
+      <motion.section variants={itemVariants} className="py-12 md:py-14 bg-[#f2f1ea]">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center h-full flex flex-col justify-center">
+              <h2 className="text-3xl md:text-4xl font-quicksand font-bold text-primary-blue mb-6">
+                Foundation Partners
+              </h2>
+              <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm max-w-3xl mx-auto">
+                <img
+                  src={foundingPartnerLogo}
+                  alt="Foundation Partner"
+                  className="w-full h-20 md:h-24 object-contain"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </motion.section>
     </motion.div>
