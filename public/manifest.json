@@ -3,6 +3,11 @@
   "name": "adaptivegolfalliance",
   "icons": [
     {
+      "src": "favicon-48x48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
       "src": "logo3.png",
       "type": "image/png",
       "sizes": "512x512"
