@@ -27,7 +27,6 @@ import logoEnglandGolf from '../unnamed (4).png';
 import logoDaikinMadridOpen from '../unnamed (1).png';
 import wagrLogo from '../wagr_logo.png';
 import csrPartnerLogo from '../unnamed (9).png';
-import foundingPartnerLogo from '../unnamed (10).png';
 
 const Homepage = () => {
   const containerVariants = {
@@ -531,27 +530,7 @@ const Homepage = () => {
         </div>
       </motion.section>
 
-      {/* Foundation Partners Section */}
-      <motion.section variants={itemVariants} className="py-12 md:py-14 bg-[#f2f1ea]">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center h-full flex flex-col justify-center">
-              <h2 className="text-3xl md:text-4xl font-quicksand font-bold text-primary-blue mb-6">
-                Foundation Partners
-              </h2>
-              <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm max-w-3xl mx-auto">
-                <img
-                  src={foundingPartnerLogo}
-                  alt="Foundation Partner"
-                  className="w-full h-20 md:h-24 object-contain"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </motion.section>
+
     </motion.div>
   );
 };

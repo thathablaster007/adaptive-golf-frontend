@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -41,7 +41,30 @@ const galleryImages = galleryFiles.map((fileName) => ({
   alt: `Discovery Programme 26 Jan 2026 photo ${fileName}`,
 }));
 
+const PHOTOS_PER_PAGE = 12;
+
 const MediaDiscoveryProgrammeJan26 = () => {
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const totalPages = Math.ceil(galleryImages.length / PHOTOS_PER_PAGE);
+  const startIdx = currentPage * PHOTOS_PER_PAGE;
+  const endIdx = startIdx + PHOTOS_PER_PAGE;
+  const currentPhotos = galleryImages.slice(startIdx, endIdx);
+
+  const goToNextPage = () => {
+    if (currentPage < totalPages - 1) {
+      setCurrentPage(currentPage + 1);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const goToPrevPage = () => {
+    if (currentPage > 0) {
+      setCurrentPage(currentPage - 1);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
@@ -55,13 +78,19 @@ const MediaDiscoveryProgrammeJan26 = () => {
             Discovery Programme 26th Jan 2026
           </h1>
           <p className="font-quicksand text-lg md:text-xl text-gray-700">
-            Event gallery
+            Event gallery ({galleryImages.length} photos)
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-          {galleryImages.map((image, idx) => (
-            <div key={`${image.alt}-${idx}`} className="bg-white overflow-hidden shadow-sm">
+          {currentPhotos.map((image, idx) => (
+            <motion.div 
+              key={`${image.alt}-${startIdx + idx}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+              className="bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            >
               <img
                 src={image.src}
                 alt={image.alt}
@@ -69,11 +98,34 @@ const MediaDiscoveryProgrammeJan26 = () => {
                 loading="lazy"
                 decoding="async"
               />
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        <div className="mt-10">
+        {/* Pagination Controls */}
+        <div className="mt-10 flex items-center justify-between">
+          <button
+            onClick={goToPrevPage}
+            disabled={currentPage === 0}
+            className="inline-flex items-center justify-center rounded-full border border-primary-blue/35 bg-white px-6 py-3 font-quicksand text-primary-blue font-semibold hover:bg-primary-blue hover:text-white transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-primary-blue"
+          >
+            ← Previous
+          </button>
+
+          <span className="font-quicksand text-primary-blue font-semibold">
+            Page {currentPage + 1} of {totalPages}
+          </span>
+
+          <button
+            onClick={goToNextPage}
+            disabled={currentPage === totalPages - 1}
+            className="inline-flex items-center justify-center rounded-full border border-primary-blue/35 bg-white px-6 py-3 font-quicksand text-primary-blue font-semibold hover:bg-primary-blue hover:text-white transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-primary-blue"
+          >
+            Next →
+          </button>
+        </div>
+
+        <div className="mt-8">
           <Link
             to="/media"
             className="inline-flex items-center justify-center rounded-full border border-primary-blue/35 bg-white px-6 py-3 font-quicksand text-primary-blue font-semibold hover:bg-primary-blue hover:text-white transition-colors duration-300"
