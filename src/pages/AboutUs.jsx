@@ -1,6 +1,6 @@
 import React from 'react';
 import AboutContent from '../components/AboutContent';
 
-const AboutUs = () => <AboutContent pageTitle="About Us" />;
+const AboutUs = () => <AboutContent />;
 
 export default AboutUs;

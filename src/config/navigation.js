@@ -9,7 +9,6 @@ export const NAVIGATION = {
   about: [
     { label: 'About Us', path: '/about-us' },
     { label: 'AGAF Team', path: '/team' },
-    { label: 'Policies', path: '/policies' },
   ],
   right: [
     { label: 'Blog', path: '/blog' },
@@ -46,5 +45,4 @@ export const ROUTES = {
   connect: '/connect',
   aboutUs: '/about-us',
   team: '/team',
-  policies: '/policies',
 };

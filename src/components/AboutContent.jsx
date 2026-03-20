@@ -1,58 +1,9 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import Button from './Button';
 import aboutHero from '../about.JPG';
-
-const purposePillars = [
-  'Expand Access to the Game',
-  'Empower Players Through Sport',
-  'Create Pathways for Progress',
-  'Enable Player Potential',
-  'Develop Future Adaptive Golfers',
-  'Support Growth Through Golf',
-];
-
-const timelineItems = [
-  {
-    year: '2008',
-    description: 'Foundation established with a mission to make sport more inclusive and accessible.',
-  },
-  {
-    year: '2010',
-    description: 'Community-led support initiatives launched for aspiring athletes.',
-  },
-  {
-    year: '2012',
-    description: 'Adaptive athlete support programs expanded through partner collaboration.',
-  },
-  {
-    year: '2013',
-    description: 'Athlete education initiatives introduced to strengthen long-term development.',
-  },
-  {
-    year: '2014',
-    description: 'Major partnerships accelerated impact and broadened inclusion pathways.',
-  },
-  {
-    year: '2015',
-    description: 'Para-focused competition pathways launched to support equitable participation.',
-  },
-  {
-    year: '2016',
-    description: 'National advocates and mentors strengthened visibility for adaptive sport.',
-  },
-  {
-    year: '2017',
-    description: 'Knowledge partnerships extended to support emerging athletes and coaches.',
-  },
-  {
-    year: '2018',
-    description: 'International collaborations advanced standards, learning, and athlete support.',
-  },
-  {
-    year: '2022',
-    description: 'Program governance and strategy strengthened to scale long-term outcomes.',
-  },
-];
+import { ROUTES } from '../config/navigation';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -70,7 +21,7 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.45 } },
 };
 
-const AboutContent = ({ pageTitle }) => {
+const AboutContent = () => {
   useEffect(() => {
     const preloadImages = async (imageList) => {
       const loaders = imageList.map(
@@ -95,129 +46,114 @@ const AboutContent = ({ pageTitle }) => {
 
   return (
     <motion.div initial="hidden" animate="visible" variants={containerVariants} className="font-quicksand">
-      <motion.section variants={itemVariants} className="relative h-[26rem] md:h-[32rem] lg:h-[36rem] bg-gray-900 overflow-hidden">
-        <img
-          src={aboutHero}
-          alt="Adaptive Golf Alliance community"
-          className="absolute inset-0 h-full w-full object-cover object-[50%_40%]"
-          loading="eager"
-          decoding="async"
-          fetchPriority="high"
-        />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative h-full flex items-center justify-center px-4">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-quicksand font-semibold tracking-wide text-white text-center">
-            {pageTitle}
-          </h1>
-        </div>
-      </motion.section>
-
       <motion.section variants={itemVariants} className="section-padding bg-[#f2f1ea]">
         <div className="container-custom">
-          <div className="max-w-5xl mx-auto text-center">
-            <p className="text-sm md:text-base uppercase tracking-[0.2em] text-primary-green font-semibold mb-3">About Us</p>
-            <h2 className="text-4xl md:text-5xl font-quicksand font-bold text-primary-blue mb-6">Golf Without Barriers</h2>
-            <p className="text-lg md:text-xl text-gray-800 leading-relaxed mb-6">
-              At Adaptive Golf Alliance, we are committed to making golf accessible for individuals with disabilities. Through inclusive coaching, supportive communities, and dedicated programs, we empower players to discover their potential and experience the joy of the game.
-            </p>
-            <p className="text-lg md:text-xl text-gray-800 leading-relaxed">
-              Our vision is to create a future where ability is celebrated, opportunities are open to all, and the game of golf becomes a powerful platform for inclusion.
-            </p>
-          </div>
-        </div>
-      </motion.section>
-
-      <motion.section variants={itemVariants} className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-quicksand font-bold text-primary-blue mb-6 text-center">
-              Driving Inclusion Through Adaptive Golf
-            </h2>
-            <p className="text-lg text-gray-800 leading-relaxed mb-5 text-center">
-              Sport has the power to transform lives, and adaptive golf is creating new possibilities for individuals with disabilities to experience that transformation.
-            </p>
-            <p className="text-lg text-gray-800 leading-relaxed mb-12 text-center">
-              By combining adaptive coaching, community support, and accessible opportunities, we aim to ensure that the game of golf is open to everyone. Through these efforts, adaptive golf becomes a powerful platform for confidence, independence, and social inclusion.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-              {purposePillars.map((pillar, index) => (
-                <motion.div
-                  key={pillar}
-                  variants={itemVariants}
-                  className="rounded-2xl border border-gray-200 bg-[#f8f8f4] p-6 shadow-sm"
-                >
-                  <p className="text-sm font-semibold text-primary-green mb-2">0{index + 1}</p>
-                  <h3 className="text-xl font-quicksand font-bold text-primary-blue leading-snug">{pillar}</h3>
-                </motion.div>
-              ))}
+          <div className="max-w-5xl mx-auto rounded-2xl border border-primary-blue/15 bg-white p-7 md:p-10 shadow-sm">
+            <h1 className="text-4xl md:text-5xl font-quicksand font-bold text-primary-blue mb-8">Not about us.</h1>
+            <h1 className="text-4xl md:text-5xl font-quicksand font-bold text-primary-blue mb-8">About what has been waiting to begin.</h1>
+            <div className="space-y-5 text-lg md:text-xl text-gray-800 leading-relaxed">
+              <p>In a country of millions, where strength wears many forms, there exists a quiet gap - not of ability, but of access.</p>
+              <p>Adaptive Golf Alliance stepped into that gap. Not as an organisation alone, but as a response.</p>
+              <p>A response to the belief that the game of golf - with all its discipline, grace, and solitude - belongs to everyone.</p>
             </div>
 
-            <p className="text-center text-2xl md:text-3xl font-quicksand font-bold text-primary-green">
-              Access → Empowerment → Progress
-            </p>
-          </div>
-        </div>
-      </motion.section>
-
-      <motion.section variants={itemVariants} className="section-padding bg-[#f2f1ea]">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
-              <h3 className="text-3xl font-quicksand font-bold text-primary-blue mb-4">Governing Board</h3>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                The Governing Board steers AGAF with long-term vision, strategic leadership, and commitment to inclusive sport development.
+            <div className="my-8 border-l-4 border-gray-300 pl-5 md:pl-6">
+              <p className="text-xl md:text-2xl font-quicksand font-semibold text-primary-blue leading-relaxed">
+                This is not just golf. This is entry. This is belonging. This is possibility.
               </p>
             </div>
-            <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
-              <h3 className="text-3xl font-quicksand font-bold text-primary-blue mb-4">Board of Advisors</h3>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Our advisors contribute cross-domain expertise to strengthen accessibility, program quality, and sustainable growth.
-              </p>
-            </div>
-          </div>
-        </div>
-      </motion.section>
 
-      <motion.section variants={itemVariants} className="section-padding bg-white">
-        <div className="container-custom">
-          <h2 className="text-4xl md:text-5xl font-quicksand font-bold text-primary-blue mb-10 text-center">Timeline</h2>
-          <div className="max-w-5xl mx-auto space-y-5">
-            {timelineItems.map((item) => (
-              <div key={item.year} className="grid grid-cols-1 md:grid-cols-[110px_1fr] gap-4 items-start rounded-xl border border-gray-200 p-5">
-                <p className="text-4xl md:text-5xl font-quicksand font-bold text-primary-green leading-none">{item.year}</p>
-                <p className="text-lg text-gray-800 leading-relaxed">{item.description}</p>
+            <div className="space-y-5 text-lg md:text-xl text-gray-800 leading-relaxed">
+              <p>Across the world, adaptive golf has already found its rhythm - structured, recognised, thriving.</p>
+              <p>In India, that rhythm is now taking shape.</p>
+              <p>Through discovery initiatives, first swings have turned into returning players.</p>
+              <div className="my-6 border-l-4 border-gray-300 pl-5 md:pl-6">
+                <p className="text-xl md:text-2xl font-quicksand font-semibold text-primary-green leading-relaxed">A community is forming - it is growing.</p>
               </div>
-            ))}
+              <p>What we do is simple. What it enables is not.</p>
+            </div>
           </div>
         </div>
       </motion.section>
 
-      <motion.section variants={itemVariants} className="section-padding bg-[#f2f1ea]">
+      <motion.section variants={itemVariants} className="section-padding bg-white">
         <div className="container-custom">
-          <h2 className="text-4xl md:text-5xl font-quicksand font-bold text-primary-blue mb-10 text-center">AGAF Team</h2>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="rounded-2xl bg-white border border-gray-200 p-8 shadow-sm">
-              <h3 className="text-2xl md:text-3xl font-quicksand font-bold text-primary-green mb-4">Eligibility Assessment Team</h3>
-              <p className="text-lg text-gray-800 leading-relaxed">
-                Adaptive Golf Alliance implements a structured eligibility and classification system to ensure fair and equitable participation for golfers with disabilities. Our trained assessors evaluate functional ability in alignment with international standards, supporting integrity, inclusion, and competitive balance across all events.
-              </p>
+          <div className="max-w-5xl mx-auto rounded-2xl border border-primary-green/20 bg-[#f7f9ef] p-7 md:p-10 shadow-sm">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+              <div className="rounded-xl border border-primary-blue/15 bg-white p-5 text-center">
+                <p className="text-2xl font-quicksand font-bold text-primary-blue mb-2">We introduce.</p>
+              </div>
+              <div className="rounded-xl border border-primary-blue/15 bg-white p-5 text-center">
+                <p className="text-2xl font-quicksand font-bold text-primary-blue mb-2">We support.</p>
+              </div>
+              <div className="rounded-xl border border-primary-blue/15 bg-white p-5 text-center">
+                <p className="text-2xl font-quicksand font-bold text-primary-blue mb-2">We stay.</p>
+              </div>
             </div>
 
-            <div className="rounded-2xl bg-white border border-gray-200 p-8 shadow-sm">
-              <h3 className="text-2xl md:text-3xl font-quicksand font-bold text-primary-green mb-4">AGAF&apos;s Core Coaching Team</h3>
-              <p className="text-lg text-gray-800 leading-relaxed">
-                Our certified adaptive golf coaches specialize in individualized instruction, ensuring every golfer receives tailored support to develop skill, confidence, and competitive readiness.
+            <div className="space-y-5 text-lg md:text-xl text-gray-800 leading-relaxed">
+              <p>We work with courses, with coaches, and institutions to create access where it did not exist.</p>
+              <p>We identify and support talent - not just to participate, but to compete, to represent, to rise.</p>
+              <p>We build pathways - from first contact... to international fairways.</p>
+              <p>And already, something has shifted.</p>
+              <p>
+                From just a handful of recognised players in India, to a growing presence that is now being seen,
+                not just nationally - but globally.
               </p>
+              <p>What is taking shape here is beginning to be recognised beyond it.</p>
             </div>
           </div>
-
-          <p className="text-center text-sm md:text-base text-gray-600 mt-8">
-            Team member profile images will be updated as they are shared.
-          </p>
         </div>
       </motion.section>
+
+      <motion.section variants={itemVariants} className="section-padding bg-[#eef4ea]">
+        <div className="container-custom">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 items-center">
+            <div className="rounded-3xl bg-white p-8 border border-[#d4dfcc] shadow-sm font-quicksand">
+              <p className="font-quicksand text-xs md:text-sm uppercase tracking-[0.2em] text-[#4e6c42] font-semibold mb-3">Those who carry this forward</p>
+              <h2 className="font-quicksand text-3xl md:text-4xl font-bold text-primary-green mb-6">Not a team. A balance of journeys.</h2>
+              <div className="space-y-3 font-quicksand text-lg md:text-xl text-[#2b3d27] leading-relaxed">
+                <p className="font-quicksand">A shooter who knows stillness and precision.</p>
+                <p className="font-quicksand">A voice for inclusion shaped by lived resilience.</p>
+                <p className="font-quicksand">A builder of spaces where golf becomes accessible.</p>
+                <p className="font-quicksand">A leader who has shaped the game at a national level.</p>
+                <p className="font-quicksand">Stewards of the rules, who understand the game deeply.</p>
+                <p className="font-quicksand">And those who have chosen to step into this - not as experts alone, but as believers.</p>
+                <p className="font-quicksand">Together - bringing depth, perspective and belief.</p>
+                <p className="font-quicksand">Not to lead from the front, but to walk alongside.</p>
+              </div>
+            </div>
+            <div className="rounded-3xl overflow-hidden shadow-md border border-[#d4dfcc] bg-white">
+              <img
+                src={aboutHero}
+                alt="Adaptive Golf Alliance leadership and community"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+          <div className="max-w-5xl mx-auto mt-10 rounded-2xl border border-primary-green/20 bg-[#f7f9ef] p-7 md:p-10 text-center shadow-sm">
+            <p className="font-quicksand text-xl md:text-2xl font-semibold text-primary-blue leading-relaxed mb-3">This is not a finished story.</p>
+            <p className="font-quicksand text-lg md:text-xl font-semibold text-primary-green leading-relaxed mb-3">It is a movement - growing, expanding, finding its ground.</p>
+            <p className="font-quicksand text-lg text-primary-blue leading-relaxed mb-6">And if you are here, reading this - you are already part of it.</p>
+
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Link to={ROUTES.getInvolved}>
+                <Button variant="gold" size="lg">
+                  Get Involved
+                </Button>
+              </Link>
+              <Link to={`${ROUTES.getInvolved}#donate`}>
+                <Button variant="gold" size="lg">
+                  Donate
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
     </motion.div>
   );
 };

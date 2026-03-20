@@ -1,6 +1,6 @@
 import React from 'react';
-import AboutContent from '../components/AboutContent';
+import TeamContent from '../components/TeamContent';
 
-const Team = () => <AboutContent pageTitle="AGAF Team" />;
+const Team = () => <TeamContent />;
 
 export default Team;

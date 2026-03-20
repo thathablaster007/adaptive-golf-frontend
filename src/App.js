@@ -18,7 +18,6 @@ const BlogPostVolunteers = lazy(() => import('./pages/BlogPostVolunteers'));
 const BlogPostAdaptiveCoaching = lazy(() => import('./pages/BlogPostAdaptiveCoaching'));
 const AboutUs = lazy(() => import('./pages/AboutUs'));
 const Team = lazy(() => import('./pages/Team'));
-const Policies = lazy(() => import('./pages/Policies'));
 
 function ScrollToTop() {
   const { pathname, key } = useLocation();
@@ -79,7 +78,6 @@ function App() {
             <Route path="connect" element={<Connect />} />
             <Route path="about-us" element={<AboutUs />} />
             <Route path="team" element={<Team />} />
-            <Route path="policies" element={<Policies />} />
           </Route>
         </Routes>
       </Suspense>
