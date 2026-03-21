@@ -1,26 +1,49 @@
-import { Suspense, lazy, useEffect, useLayoutEffect } from 'react';
+import { Suspense, lazy, useEffect, useLayoutEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/react';
 import Layout from './components/Layout';
 
-const Homepage = lazy(() => import('./pages/Homepage'));
-const WhatIsAdaptiveGolf = lazy(() => import('./pages/WhatIsAdaptiveGolf'));
-const TryGolf = lazy(() => import('./pages/TryGolf'));
-const Competition = lazy(() => import('./pages/Competition'));
-const Media = lazy(() => import('./pages/Media'));
-const MediaDiscoveryProgrammeJan26 = lazy(() => import('./pages/MediaDiscoveryProgrammeJan26'));
-const GetInvolved = lazy(() => import('./pages/GetInvolved'));
-const Donate = lazy(() => import('./pages/Donate'));
-const News = lazy(() => import('./pages/News'));
-const NewsPostMilestone = lazy(() => import('./pages/NewsPostMilestone'));
-const Connect = lazy(() => import('./pages/Connect'));
-const Blog = lazy(() => import('./pages/Blog'));
-const BlogPostEmpowerment = lazy(() => import('./pages/BlogPostEmpowerment'));
-const BlogPostVolunteers = lazy(() => import('./pages/BlogPostVolunteers'));
-const BlogPostAdaptiveCoaching = lazy(() => import('./pages/BlogPostAdaptiveCoaching'));
-const AboutUs = lazy(() => import('./pages/AboutUs'));
-const Team = lazy(() => import('./pages/Team'));
+const loadHomepage = () => import('./pages/Homepage');
+const loadWhatIsAdaptiveGolf = () => import('./pages/WhatIsAdaptiveGolf');
+const loadTryGolf = () => import('./pages/TryGolf');
+const loadCompetition = () => import('./pages/Competition');
+const loadMedia = () => import('./pages/Media');
+const loadMediaDiscoveryProgrammeJan26 = () => import('./pages/MediaDiscoveryProgrammeJan26');
+const loadGetInvolved = () => import('./pages/GetInvolved');
+const loadDonate = () => import('./pages/Donate');
+const loadNews = () => import('./pages/News');
+const loadNewsPostMilestone = () => import('./pages/NewsPostMilestone');
+const loadConnect = () => import('./pages/Connect');
+const loadBlog = () => import('./pages/Blog');
+const loadBlogPostEmpowerment = () => import('./pages/BlogPostEmpowerment');
+const loadBlogPostVolunteers = () => import('./pages/BlogPostVolunteers');
+const loadBlogPostAdaptiveCoaching = () => import('./pages/BlogPostAdaptiveCoaching');
+const loadAboutUs = () => import('./pages/AboutUs');
+const loadTeam = () => import('./pages/Team');
+
+const Homepage = lazy(loadHomepage);
+const WhatIsAdaptiveGolf = lazy(loadWhatIsAdaptiveGolf);
+const TryGolf = lazy(loadTryGolf);
+const Competition = lazy(loadCompetition);
+const Media = lazy(loadMedia);
+const MediaDiscoveryProgrammeJan26 = lazy(loadMediaDiscoveryProgrammeJan26);
+const GetInvolved = lazy(loadGetInvolved);
+const Donate = lazy(loadDonate);
+const News = lazy(loadNews);
+const NewsPostMilestone = lazy(loadNewsPostMilestone);
+const Connect = lazy(loadConnect);
+const Blog = lazy(loadBlog);
+const BlogPostEmpowerment = lazy(loadBlogPostEmpowerment);
+const BlogPostVolunteers = lazy(loadBlogPostVolunteers);
+const BlogPostAdaptiveCoaching = lazy(loadBlogPostAdaptiveCoaching);
+const AboutUs = lazy(loadAboutUs);
+const Team = lazy(loadTeam);
+
+const DeferredAnalytics = lazy(() =>
+  import('@vercel/analytics/react').then((module) => ({ default: module.Analytics }))
+);
+const DeferredSpeedInsights = lazy(() =>
+  import('@vercel/speed-insights/react').then((module) => ({ default: module.SpeedInsights }))
+);
 
 function ScrollToTop() {
   const { pathname, key } = useLocation();
@@ -59,6 +82,27 @@ function ScrollToTop() {
 }
 
 function App() {
+  const [mountInsights, setMountInsights] = useState(false);
+
+  useEffect(() => {
+    const runInIdle = window.requestIdleCallback || ((cb) => window.setTimeout(cb, 1200));
+    const cancelIdle = window.cancelIdleCallback || window.clearTimeout;
+
+    const idleId = runInIdle(() => {
+      setMountInsights(true);
+      Promise.allSettled([
+        loadWhatIsAdaptiveGolf(),
+        loadTryGolf(),
+        loadGetInvolved(),
+        loadDonate(),
+        loadMedia(),
+        loadAboutUs(),
+      ]);
+    });
+
+    return () => cancelIdle(idleId);
+  }, []);
+
   return (
     <Router>
       <ScrollToTop />
@@ -85,8 +129,12 @@ function App() {
           </Route>
         </Routes>
       </Suspense>
-      <Analytics />
-      <SpeedInsights />
+      {mountInsights && (
+        <Suspense fallback={null}>
+          <DeferredAnalytics />
+          <DeferredSpeedInsights />
+        </Suspense>
+      )}
     </Router>
   );
 }

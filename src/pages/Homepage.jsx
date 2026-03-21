@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Button from '../components/Button';
@@ -28,7 +28,29 @@ import logoDaikinMadridOpen from '../unnamed (1).png';
 import wagrLogo from '../wagr_logo.png';
 import csrPartnerLogo from '../unnamed (9).png';
 
+const CRITICAL_HERO_IMAGES = [title1, title2d, title2aFirstSlide];
+
 const Homepage = () => {
+  useEffect(() => {
+    const preloadLinks = CRITICAL_HERO_IMAGES.map((imageSrc, index) => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = imageSrc;
+      link.setAttribute('fetchpriority', index === 0 ? 'high' : 'auto');
+      document.head.appendChild(link);
+      return link;
+    });
+
+    return () => {
+      preloadLinks.forEach((link) => {
+        if (document.head.contains(link)) {
+          document.head.removeChild(link);
+        }
+      });
+    };
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

@@ -43,6 +43,9 @@ const ImageGrid = ({
               src={image.src || image}
               alt={image.alt || `gallery-${idx}`}
               className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+              loading="lazy"
+              decoding="async"
+              fetchPriority="low"
             />
           </motion.div>
         ))}
@@ -72,6 +75,9 @@ const ImageGrid = ({
               src={selectedImage.src || selectedImage}
               alt={selectedImage.alt || 'full-size'}
               className="w-full h-auto max-h-[80vh] object-contain"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
             />
           </motion.div>
         </motion.div>
