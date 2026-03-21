@@ -96,7 +96,7 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
   const fadeTransition = { duration: transitionDuration, ease: [0.22, 1, 0.36, 1] };
 
   return (
-    <div className="relative w-full h-[82vh] sm:h-[88vh] lg:h-[92vh] min-h-[460px] sm:min-h-[560px] lg:min-h-[640px] overflow-hidden bg-black">
+    <div className="hero-slideshow-shell relative w-full overflow-hidden bg-black">
       {renderedSlides.map((slide, index) => (
         <motion.div
           key={index}

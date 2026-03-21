@@ -15,15 +15,43 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
+  line-height: 1.5;
   font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   background-color: #FDFDFD;
   color: #333;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button,
+[type='button'],
+[type='submit'],
+[type='reset'] {
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 h1, h2, h3, h4, h5, h6, button {
@@ -50,6 +78,41 @@ code {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Keep homepage hero visually balanced across desktop viewports, including macOS Safari. */
+.hero-slideshow-shell {
+  height: clamp(460px, 80vh, 760px);
+}
+
+@supports (height: 100svh) {
+  .hero-slideshow-shell {
+    height: clamp(460px, 80svh, 760px);
+  }
+}
+
+@media (min-width: 640px) {
+  .hero-slideshow-shell {
+    height: clamp(520px, 82vh, 820px);
+  }
+
+  @supports (height: 100svh) {
+    .hero-slideshow-shell {
+      height: clamp(520px, 82svh, 820px);
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-slideshow-shell {
+    height: clamp(560px, 84vh, 860px);
+  }
+
+  @supports (height: 100svh) {
+    .hero-slideshow-shell {
+      height: clamp(560px, 84svh, 860px);
+    }
+  }
 }
 
 @media (max-width: 1280px) {

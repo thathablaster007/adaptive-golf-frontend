@@ -106,7 +106,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <Suspense fallback={<div className="min-h-[40vh]" />}>
+      <Suspense fallback={<div className="min-h-[40svh]" />}>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Homepage />} />

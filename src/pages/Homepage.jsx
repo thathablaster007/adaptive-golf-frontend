@@ -177,8 +177,7 @@ const Homepage = () => {
     {
       name: 'Ankush Saha',
       medalImage: medalGold,
-      medalAlt: 'Silver medal',
-      medalClassName: 'grayscale brightness-110',
+      medalAlt: 'Gold medal',
       achievements: [
         {
           title: 'Special Olympics World Games Abu Dhabi 2019',

@@ -132,7 +132,7 @@ const TeamContent = () => {
                 className="absolute inset-0 bg-black/50"
               />
 
-              <div className="relative w-full max-w-4xl max-h-[88vh] overflow-y-auto rounded-xl bg-white shadow-2xl border border-primary-blue/20">
+              <div className="relative w-full max-w-4xl max-h-[88svh] overflow-y-auto rounded-xl bg-white shadow-2xl border border-primary-blue/20">
                 <div className="sticky top-0 bg-primary-blue text-white px-5 py-4 flex items-center justify-between">
                   <h4 className="text-2xl font-quicksand font-bold">Bio for Dr. A. S. Gautham</h4>
                   <button

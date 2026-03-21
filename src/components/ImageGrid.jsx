@@ -60,7 +60,7 @@ const ImageGrid = ({
           animate={{ opacity: 1 }}
         >
           <motion.div
-            className="relative bg-white rounded-lg overflow-hidden max-w-4xl max-h-[80vh]"
+            className="relative bg-white rounded-lg overflow-hidden max-w-4xl max-h-[80svh]"
             onClick={(e) => e.stopPropagation()}
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
@@ -74,7 +74,7 @@ const ImageGrid = ({
             <img
               src={selectedImage.src || selectedImage}
               alt={selectedImage.alt || 'full-size'}
-              className="w-full h-auto max-h-[80vh] object-contain"
+              className="w-full h-auto max-h-[80svh] object-contain"
               loading="eager"
               decoding="async"
               fetchPriority="high"
