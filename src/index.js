@@ -29,6 +29,14 @@ root.render(
   </React.StrictMode>
 );
 
+const applyDesktopZoom = () => {
+  const zoomValue = window.innerWidth >= 1200 ? '0.8' : '1';
+  document.documentElement.style.zoom = zoomValue;
+};
+
+applyDesktopZoom();
+window.addEventListener('resize', applyDesktopZoom);
+
 const runInIdle = window.requestIdleCallback || ((cb) => window.setTimeout(cb, 800));
 runInIdle(optimizeCriticalImages);
 
