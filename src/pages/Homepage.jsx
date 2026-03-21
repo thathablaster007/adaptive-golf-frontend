@@ -161,7 +161,7 @@ const Homepage = () => {
       ],
     },
     {
-      name: 'Viswa Vardhan Bhati',
+      name: 'Vishwa Vardhan Bhati',
       wagrLogo,
       wagrRank: 167,
       achievements: [
@@ -223,6 +223,8 @@ const Homepage = () => {
                   height="100%"
                   src="https://www.youtube.com/embed/IOSTp781MVA"
                   title="USAGA Adaptive Golf"
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -310,6 +312,9 @@ const Homepage = () => {
                               src={athlete.medalImage}
                               alt={athlete.medalAlt}
                               className={`h-16 w-auto ${athlete.medalClassName || ''}`.trim()}
+                              loading="lazy"
+                              decoding="async"
+                              fetchPriority="low"
                             />
                           ) : null}
                           <span className="text-4xl md:text-5xl font-quicksand font-bold text-primary-blue leading-tight">
@@ -319,7 +324,14 @@ const Homepage = () => {
 
                         {athlete.wagrLogo ? (
                           <div className="flex items-center gap-3 rounded-xl border border-primary-blue/20 bg-white/70 px-3 py-2">
-                            <img src={athlete.wagrLogo} alt="World Amateur Golf Ranking" className="h-10 w-auto" />
+                            <img
+                              src={athlete.wagrLogo}
+                              alt="World Amateur Golf Ranking"
+                              className="h-10 w-auto"
+                              loading="lazy"
+                              decoding="async"
+                              fetchPriority="low"
+                            />
                             <span className="text-base font-quicksand font-bold text-primary-blue">
                               Rank Stableford: {athlete.wagrRank}
                             </span>
@@ -344,6 +356,9 @@ const Homepage = () => {
                               src={achievement.logo}
                               alt={achievement.title}
                               className={`${achievement.logoClassName} object-contain`}
+                              loading="lazy"
+                              decoding="async"
+                              fetchPriority="low"
                             />
                           </div>
                         ))}
@@ -452,6 +467,8 @@ const Homepage = () => {
                         alt={post.title}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         loading="lazy"
+                        decoding="async"
+                        fetchPriority="low"
                       />
                     </div>
                     <h3 className="text-xl md:text-2xl font-quicksand text-primary-blue leading-snug mt-5 group-hover:text-primary-green transition-colors duration-300">

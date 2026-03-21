@@ -8,17 +8,11 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isReady, setIsReady] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [hasMounted, setHasMounted] = useState(false);
   const [viewportWidth, setViewportWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1280);
   const lastManualNavRef = useRef(0);
-  const transitionDuration = 1.0;
+  const transitionDuration = 0.55;
 
   const stitchedPanelCount = viewportWidth >= 1024 ? 3 : viewportWidth >= 640 ? 2 : 1;
-
-  useEffect(() => {
-    const raf = requestAnimationFrame(() => setHasMounted(true));
-    return () => cancelAnimationFrame(raf);
-  }, []);
 
   useEffect(() => {
     const onResize = () => setViewportWidth(window.innerWidth);
@@ -33,40 +27,10 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
   };
 
   useEffect(() => {
-    let isMounted = true;
-    const getSlideImages = (slide) => (slide.images && slide.images.length ? slide.images : [slide.image]).filter(Boolean);
-
-    const preloadImages = async (imageList) => {
-      const loaders = imageList.map(
-        (src) =>
-          new Promise((resolve) => {
-            const img = new Image();
-            img.src = src;
-            if (img.decode) {
-              img.decode().then(resolve).catch(resolve);
-            } else {
-              img.onload = resolve;
-              img.onerror = resolve;
-            }
-          })
-      );
-      await Promise.all(loaders);
-    };
-
-    const init = async () => {
-      const firstSlideImages = getSlideImages(slides[0] || {});
-
-      // Unblock first render as soon as the first slide is ready.
-      await preloadImages(firstSlideImages);
-      if (isMounted) setIsReady(true);
-    };
-
-    init();
-
-    return () => {
-      isMounted = false;
-    };
-  }, [slides]);
+    // Keep autoplay paused very briefly until first layout stabilizes.
+    const timer = setTimeout(() => setIsReady(true), 120);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     if (!autoPlay || !isReady || slides.length < 2) return;
@@ -115,8 +79,8 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
       {slides.map((slide, index) => (
         <motion.div
           key={index}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: hasMounted && index === currentSlide ? 1 : 0 }}
+          initial={false}
+          animate={{ opacity: index === currentSlide ? 1 : 0 }}
           transition={fadeTransition}
           className="absolute inset-0 will-change-[opacity]"
           style={{ zIndex: index === currentSlide ? 2 : 1, pointerEvents: index === currentSlide ? 'auto' : 'none' }}

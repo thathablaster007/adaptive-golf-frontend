@@ -159,24 +159,13 @@ const TeamContent = () => {
                     Dr. Gautham A. S. is an accomplished Associate Professor and Sports Medicine Physiotherapist with over 15 years of clinical, academic, and on-field experience. Based in Bangalore, he runs specialized sports medicine clinics focused on advanced rehabilitation, injury management, and performance enhancement.
                   </p>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <p className="text-2xl font-quicksand font-bold text-primary-green mb-2">Professional Highlights</p>
-                      <ul className="list-disc pl-6 space-y-1 text-lg leading-relaxed">
-                        <li>Certified in Sports Medicine by BCCI (SSSM Level 1)</li>
-                        <li>APA-registered Sports Therapist (Australia)</li>
-                        <li>National Assessor for India&apos;s Para Golfers</li>
-                      </ul>
-                    </div>
-
-                    <div>
-                      <p className="text-2xl font-quicksand font-bold text-primary-green mb-2">Sports Associations</p>
-                      <ul className="list-disc pl-6 space-y-1 text-lg leading-relaxed">
-                        <li>Sudeva Delhi FC</li>
-                        <li>Real Kashmir FC</li>
-                        <li>Pro Kabaddi League</li>
-                      </ul>
-                    </div>
+                  <div>
+                    <p className="text-2xl font-quicksand font-bold text-primary-green mb-2">Professional Highlights</p>
+                    <ul className="list-disc pl-6 space-y-1 text-lg leading-relaxed">
+                      <li>Certified in Sports Medicine by BCCI (SSSM Level 1)</li>
+                      <li>APA-registered Sports Therapist (Australia)</li>
+                      <li>National Assessor for India&apos;s Para Golfers</li>
+                    </ul>
                   </div>
 
                   <p className="text-lg leading-relaxed">
