@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Button from './Button';
 import { ROUTES } from '../config/navigation';
@@ -14,17 +14,32 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
 
   const stitchedPanelCount = viewportWidth >= 1024 ? 3 : viewportWidth >= 640 ? 2 : 1;
 
+  const renderedSlides = useMemo(() => {
+    const expanded = [];
+
+    slides.forEach((slide) => {
+      if (!slide.images || slide.images.length === 0) {
+        expanded.push({ ...slide, panelIndexes: null });
+        return;
+      }
+
+      for (let start = 0; start < slide.images.length; start += stitchedPanelCount) {
+        const panelIndexes = Array.from(
+          { length: Math.min(stitchedPanelCount, slide.images.length - start) },
+          (_, offset) => start + offset
+        );
+        expanded.push({ ...slide, panelIndexes });
+      }
+    });
+
+    return expanded;
+  }, [slides, stitchedPanelCount]);
+
   useEffect(() => {
     const onResize = () => setViewportWidth(window.innerWidth);
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
   }, []);
-
-  const getVisiblePanelIndexes = () => {
-    if (stitchedPanelCount === 1) return [1];
-    if (stitchedPanelCount === 2) return [0, 1];
-    return [0, 1, 2];
-  };
 
   useEffect(() => {
     // Keep autoplay paused very briefly until first layout stabilizes.
@@ -33,17 +48,23 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
   }, []);
 
   useEffect(() => {
-    if (!autoPlay || !isReady || slides.length < 2) return;
+    if (currentSlide >= renderedSlides.length) {
+      setCurrentSlide(0);
+    }
+  }, [currentSlide, renderedSlides.length]);
+
+  useEffect(() => {
+    if (!autoPlay || !isReady || renderedSlides.length < 2) return;
 
     const interval = setInterval(() => {
       if (Date.now() - lastManualNavRef.current < 1400) return;
       if (isTransitioning) return;
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      setCurrentSlide((prev) => (prev + 1) % renderedSlides.length);
       setIsTransitioning(true);
     }, autoPlayInterval);
 
     return () => clearInterval(interval);
-  }, [autoPlay, autoPlayInterval, slides.length, isReady, isTransitioning]);
+  }, [autoPlay, autoPlayInterval, renderedSlides.length, isReady, isTransitioning]);
 
   useEffect(() => {
     if (!isTransitioning) return;
@@ -61,14 +82,14 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
   const goToPrevious = () => {
     if (isTransitioning) return;
     lastManualNavRef.current = Date.now();
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    setCurrentSlide((prev) => (prev - 1 + renderedSlides.length) % renderedSlides.length);
     setIsTransitioning(true);
   };
 
   const goToNext = () => {
     if (isTransitioning) return;
     lastManualNavRef.current = Date.now();
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    setCurrentSlide((prev) => (prev + 1) % renderedSlides.length);
     setIsTransitioning(true);
   };
 
@@ -76,7 +97,7 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
 
   return (
     <div className="relative w-full h-[82vh] sm:h-[88vh] lg:h-[92vh] min-h-[460px] sm:min-h-[560px] lg:min-h-[640px] overflow-hidden bg-black">
-      {slides.map((slide, index) => (
+      {renderedSlides.map((slide, index) => (
         <motion.div
           key={index}
           initial={false}
@@ -86,13 +107,13 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
           style={{ zIndex: index === currentSlide ? 2 : 1, pointerEvents: index === currentSlide ? 'auto' : 'none' }}
         >
           <div className="absolute inset-0">
-            {slide.images && slide.images.length === 3 ? (
+            {slide.images && slide.panelIndexes ? (
               <div className="h-full w-full flex">
-                {getVisiblePanelIndexes().map((idx) => (
+                {slide.panelIndexes.map((idx) => (
                   <div
                     key={`${index}-${idx}`}
                     className={`relative h-full object-cover ${
-                      stitchedPanelCount === 1 ? 'w-full' : stitchedPanelCount === 2 ? 'w-1/2' : 'w-1/3'
+                      slide.panelIndexes.length === 1 ? 'w-full' : slide.panelIndexes.length === 2 ? 'w-1/2' : 'w-1/3'
                     }`}
                   >
                     <img
@@ -195,7 +216,7 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
       </button>
 
       <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 flex gap-2.5">
-        {slides.map((_, index) => (
+        {renderedSlides.map((_, index) => (
           <motion.button
             key={index}
             onClick={() => goToSlide(index)}
