@@ -292,9 +292,9 @@ const WhatIsAdaptiveGolf = () => {
             {/* Circular Diagram - Right Side */}
             <motion.div
               variants={itemVariants}
-              className="flex justify-center items-center"
+              className="flex justify-center items-center px-2 md:px-4"
             >
-              <div className="relative w-full max-w-[22rem] md:max-w-[30rem] lg:max-w-[36rem] aspect-square mx-auto">
+              <div className="relative w-full max-w-[22rem] md:max-w-[28rem] lg:max-w-[31rem] aspect-square mx-auto">
                 <svg
                   className="w-full h-full"
                   viewBox="0 0 200 200"
@@ -335,72 +335,58 @@ const WhatIsAdaptiveGolf = () => {
                     opacity="0.3"
                   />
 
-                  {/* Rotating Step Points */}
-                  <motion.g
-                    animate={{ rotate: -activeStep * 72 }}
-                    transition={{ type: 'tween', duration: 0.5, ease: 'easeInOut' }}
-                    style={{ originX: 0.5, originY: 0.5 }}
-                  >
-                    {/* Invisible anchor to ensure the rotation center is always (100, 100) */}
-                    <circle cx="100" cy="100" r="100" fill="transparent" pointerEvents="none" />
+                  {/* Animated step points */}
+                  {pathwaySteps.map((step, idx) => {
+                    const angle = ((idx - activeStep) / 5) * 360 - 90;
+                    const x = 100 + 72.5 * Math.cos((angle * Math.PI) / 180);
+                    const y = 100 + 72.5 * Math.sin((angle * Math.PI) / 180);
+                    const isActive = activeStep === idx;
+                    const iconScale = isActive ? 0.55 : 0.5;
+                    const iconOffset = 12 * iconScale;
 
-                    {pathwaySteps.map((step, idx) => {
-                      const angle = (idx / 5) * 360 - 90;
-                      // Icon radius is 72.5, perfectly centered between 60 and 85
-                      const x = 100 + 72.5 * Math.cos((angle * Math.PI) / 180);
-                      const y = 100 + 72.5 * Math.sin((angle * Math.PI) / 180);
-
-                      const isActive = activeStep === idx;
-                      // Adjusted scales to fit track properly
-                      const iconScale = isActive ? 0.55 : 0.50;
-                      const iconOffset = 12 * iconScale;
-
-                      return (
-                        <g
-                          key={idx}
-                          className="cursor-pointer"
-                          onMouseEnter={() => setActiveStep(idx)}
-                        >
-                          {/* Active Glow Ring - Preserving user r="8.5" */}
-                          {isActive && (
-                            <motion.circle
-                              initial={{ scale: 0.8, opacity: 0 }}
-                              animate={{ scale: 1.15, opacity: 0.5 }}
-                              cx={x}
-                              cy={y}
-                              r="8.5"
-                              fill="none"
-                              stroke="#F2B532"
-                              strokeWidth="1.5"
-                            />
-                          )}
-
-                          {/* Connection point/background circle */}
-                          <circle
-                            cx={x}
-                            cy={y}
-                            r={isActive ? 9 : 7}
-                            fill={isActive ? '#F2B532' : '#003B6F'}
-                            className="transition-colors duration-300"
-                          />
-
-                          {/* Icon Container with Inverse Rotation to stay upright */}
-                          <g
-                            transform={`rotate(${activeStep * 72} ${x} ${y})`}
-                            stroke="white"
-                            strokeWidth="1.9"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
+                    return (
+                      <motion.g
+                        key={idx}
+                        className="cursor-pointer"
+                        onMouseEnter={() => setActiveStep(idx)}
+                        initial={false}
+                        animate={{ x, y }}
+                        transition={{ type: 'tween', duration: 0.5, ease: 'easeInOut' }}
+                      >
+                        {isActive && (
+                          <motion.circle
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1.15, opacity: 0.5 }}
+                            cx="0"
+                            cy="0"
+                            r="8.5"
                             fill="none"
-                          >
-                            <g transform={`translate(${x - iconOffset} ${y - iconOffset}) scale(${iconScale})`}>
-                              {renderStepIconPaths(step.icon)}
-                            </g>
-                          </g>
+                            stroke="#F2B532"
+                            strokeWidth="1.5"
+                          />
+                        )}
+
+                        <circle
+                          cx="0"
+                          cy="0"
+                          r={isActive ? 9 : 7}
+                          fill={isActive ? '#F2B532' : '#003B6F'}
+                          className="transition-colors duration-300"
+                        />
+
+                        <g
+                          stroke="white"
+                          strokeWidth="1.9"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          fill="none"
+                          transform={`translate(${-iconOffset} ${-iconOffset}) scale(${iconScale})`}
+                        >
+                          {renderStepIconPaths(step.icon)}
                         </g>
-                      );
-                    })}
-                  </motion.g>
+                      </motion.g>
+                    );
+                  })}
                 </svg>
 
                 <div className="pointer-events-none absolute inset-0 flex items-center justify-center p-8 md:p-12">
