@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 import Button from '../components/Button';
 import HeroSlideshow from '../components/HeroSlideshow';
 import { ROUTES } from '../config/navigation';
-import title1 from '../IMG_1841.JPG';
-import title2aFirstSlide from '../IMG_1850.JPG';
+import ankushHeroImage from '../Ankush Saha.jpeg';
+import vishwaHeroImage from '../Vishwa Bhatiya.jpeg';
 import title2a from '../assets/hero/title-2a.jpg';
 import title2b from '../assets/hero/title-2b.jpg';
 import title2c from '../assets/hero/title-2c.jpg';
@@ -28,11 +28,15 @@ import logoDaikinMadridOpen from '../unnamed (1).png';
 import wagrLogo from '../wagr_logo.png';
 import csrPartnerLogo from '../unnamed (9).png';
 
-const CRITICAL_HERO_IMAGES = [title1, title2d, title2aFirstSlide];
+const CRITICAL_HERO_IMAGES = [ankushHeroImage, title2d, vishwaHeroImage];
 
 const Homepage = () => {
   useEffect(() => {
-    const preloadLinks = CRITICAL_HERO_IMAGES.map((imageSrc, index) => {
+    const viewportWidth = window.innerWidth;
+    const panelsToPreload = viewportWidth >= 1024 ? 3 : viewportWidth >= 640 ? 2 : 1;
+    const criticalImagesForViewport = CRITICAL_HERO_IMAGES.slice(0, panelsToPreload);
+
+    const preloadLinks = criticalImagesForViewport.map((imageSrc, index) => {
       const link = document.createElement('link');
       link.rel = 'preload';
       link.as = 'image';
@@ -74,8 +78,9 @@ const Homepage = () => {
   // Hero slideshow data
   const heroSlides = [
     {
-      images: [title1,title2d,title2aFirstSlide],
-      imagePositions: ['center center', 'center 22%', 'center 24%'],
+      images: [ankushHeroImage, title2d, vishwaHeroImage],
+      imagePositions: ['center 22%', 'center 22%', 'center 20%'],
+      imageCaptions: ['Ankush Saha', null, 'Vishwa Vardhan Bhati'],
       topText: 'Experience Golf',
       bottomText: 'Your Way',
       taglines: [],

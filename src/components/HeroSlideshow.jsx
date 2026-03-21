@@ -89,19 +89,28 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
             {slide.images && slide.images.length === 3 ? (
               <div className="h-full w-full flex">
                 {getVisiblePanelIndexes().map((idx) => (
-                  <img
+                  <div
                     key={`${index}-${idx}`}
-                    src={slide.images[idx]}
-                    alt={`Hero slide ${index + 1} panel ${idx + 1}`}
-                    className={`h-full object-cover ${
+                    className={`relative h-full object-cover ${
                       stitchedPanelCount === 1 ? 'w-full' : stitchedPanelCount === 2 ? 'w-1/2' : 'w-1/3'
                     }`}
-                    style={{ objectPosition: slide.imagePositions?.[idx] || 'center center' }}
-                    loading={index === 0 ? 'eager' : 'lazy'}
-                    fetchPriority={index === 0 && idx === 0 ? 'high' : index === 0 ? 'auto' : 'low'}
-                    decoding="async"
-                    draggable="false"
-                  />
+                  >
+                    <img
+                      src={slide.images[idx]}
+                      alt={`Hero slide ${index + 1} panel ${idx + 1}`}
+                      className="h-full w-full object-cover"
+                      style={{ objectPosition: slide.imagePositions?.[idx] || 'center center' }}
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                      fetchPriority={index === 0 && idx === 0 ? 'high' : index === 0 ? 'auto' : 'low'}
+                      decoding="async"
+                      draggable="false"
+                    />
+                    {slide.imageCaptions?.[idx] && (
+                      <span className="pointer-events-none absolute bottom-4 right-4 rounded-md bg-black/60 px-3 py-1.5 text-right text-xs font-semibold tracking-wide text-white shadow-md sm:bottom-6 sm:right-6 sm:text-sm">
+                        {slide.imageCaptions[idx]}
+                      </span>
+                    )}
+                  </div>
                 ))}
               </div>
             ) : (
