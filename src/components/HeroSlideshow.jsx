@@ -112,14 +112,14 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
                 {slide.panelIndexes.map((idx) => (
                   <div
                     key={`${index}-${idx}`}
-                    className={`relative h-full object-cover ${
+                    className={`hero-slide-panel relative h-full ${
                       slide.panelIndexes.length === 1 ? 'w-full' : slide.panelIndexes.length === 2 ? 'w-1/2' : 'w-1/3'
                     }`}
                   >
                     <img
                       src={slide.images[idx]}
                       alt={`Hero slide ${index + 1} panel ${idx + 1}`}
-                      className="h-full w-full object-cover"
+                      className="hero-slide-image h-full w-full object-cover"
                       style={{ objectPosition: slide.imagePositions?.[idx] || 'center center' }}
                       loading={index === 0 ? 'eager' : 'lazy'}
                       fetchPriority={index === 0 && idx === 0 ? 'high' : index === 0 ? 'auto' : 'low'}
@@ -138,7 +138,7 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
               <img
                 src={slide.image}
                 alt={`Hero slide ${index + 1}`}
-                className="absolute inset-0 h-full w-full object-cover"
+                className="hero-slide-image absolute inset-0 h-full w-full object-cover"
                 style={{ objectPosition: slide.imagePosition || 'center center' }}
                 loading={index === 0 ? 'eager' : 'lazy'}
                 fetchPriority={index === 0 ? 'high' : 'low'}

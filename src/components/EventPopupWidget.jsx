@@ -116,10 +116,10 @@ const EventPopupWidget = () => {
         <button
           type="button"
           onClick={openEventPopupFromTab}
-          className="fixed right-0 top-1/2 -translate-y-1/2 z-[70] bg-primary-green text-white font-quicksand font-semibold tracking-wide rounded-l-lg px-2 py-3 shadow-lg hover:bg-[#3f8354] transition-colors"
+          className="event-reopen-tab fixed top-1/2 -translate-y-1/2 z-[70] bg-primary-green text-white font-quicksand font-semibold tracking-wide rounded-l-lg px-2 py-3 shadow-lg hover:bg-[#3f8354] transition-colors"
           aria-label="Open upcoming event popup"
         >
-          <span className="block [writing-mode:vertical-rl] rotate-180 text-xs sm:text-sm uppercase">Upcoming Event</span>
+          <span className="event-reopen-tab-label block text-xs sm:text-sm uppercase">Upcoming Event</span>
         </button>
       )}
     </>
