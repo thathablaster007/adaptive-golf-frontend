@@ -78,6 +78,15 @@ const Footer = () => {
             >
               Neerav Aiyappa Mukkatira
             </a>
+            {' and '}
+            <a
+              href="https://www.linkedin.com/in/mevin-jose"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#c9851b] transition-colors"
+            >
+              Mevin Jose
+            </a>
           </p>
         </div>
       </div>
