@@ -81,6 +81,9 @@ const Homepage = () => {
     {
       images: [ankushHeroImage, ranveerHeroImage, vishwaHeroImage],
       imagePositions: ['center 22%', '10% 22%', 'center 20%'],
+      imagePositionsTablet: ['center 22%', '38% 22%', 'center 20%'],
+      imagePositionsMobile: ['center 22%', '44% 22%', 'center 20%'],
+      imagePositionsXs: ['center 22%', '50% 22%', 'center 20%'],
       imageCaptions: ['Ankush Saha', null, 'Vishwa Vardhan Bhati'],
       floatingCaption: 'Ranveer Singh Saini',
       floatingCaptionTargetImageIndex: 1,
@@ -92,7 +95,7 @@ const Homepage = () => {
     {
       images: [title2a, title2b, title2c, title2d],
       imagePositions: ['center center', 'center 68%', 'center 64%', 'center 50%'],
-      stitchedPanelCount: 4,
+      desktopStitchedPanelCount: 4,
       topText: 'Every swing defines limits',
       bottomText: 'and defines possibility',
       taglines: [],

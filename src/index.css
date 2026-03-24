@@ -160,6 +160,40 @@ code {
   line-height: 1;
 }
 
+@media (max-width: 480px) {
+  .event-reopen-tab {
+    min-width: 34px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  .event-reopen-tab-label {
+    font-size: 10px;
+    letter-spacing: 0.04em;
+  }
+}
+
+@media (max-width: 360px) {
+  .event-reopen-tab {
+    min-width: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+
+  .event-reopen-tab-label {
+    font-size: 9px;
+    letter-spacing: 0.03em;
+  }
+}
+
 @supports not (writing-mode: vertical-rl) {
   .event-reopen-tab {
     width: 40px;

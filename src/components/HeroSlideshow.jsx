@@ -10,6 +10,8 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [viewportWidth, setViewportWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1280);
   const lastManualNavRef = useRef(0);
+  const touchStartXRef = useRef(null);
+  const touchStartYRef = useRef(null);
   const transitionDuration = 0.55;
 
   const stitchedPanelCount = viewportWidth >= 1024 ? 3 : viewportWidth >= 640 ? 2 : 1;
@@ -23,7 +25,12 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
         return;
       }
 
-      const panelCountForSlide = Math.max(1, Math.min(slide.stitchedPanelCount || stitchedPanelCount, slide.images.length));
+      const desktopPanelCount = Number.isInteger(slide.desktopStitchedPanelCount)
+        ? slide.desktopStitchedPanelCount
+        : null;
+      const panelCountForSlide = viewportWidth >= 1024 && desktopPanelCount
+        ? Math.max(1, Math.min(desktopPanelCount, slide.images.length))
+        : Math.max(1, Math.min(stitchedPanelCount, slide.images.length));
 
       for (let start = 0; start < slide.images.length; start += panelCountForSlide) {
         const panelIndexes = Array.from(
@@ -35,7 +42,7 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
     });
 
     return expanded;
-  }, [slides, stitchedPanelCount]);
+  }, [slides, stitchedPanelCount, viewportWidth]);
 
   useEffect(() => {
     const onResize = () => setViewportWidth(window.innerWidth);
@@ -95,10 +102,55 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
     setIsTransitioning(true);
   };
 
+  const getPanelObjectPosition = (slide, panelIndex) => {
+    if (viewportWidth < 360 && slide.imagePositionsXs?.[panelIndex]) {
+      return slide.imagePositionsXs[panelIndex];
+    }
+    if (viewportWidth < 640 && slide.imagePositionsMobile?.[panelIndex]) {
+      return slide.imagePositionsMobile[panelIndex];
+    }
+    if (viewportWidth < 1024 && slide.imagePositionsTablet?.[panelIndex]) {
+      return slide.imagePositionsTablet[panelIndex];
+    }
+    return slide.imagePositions?.[panelIndex] || 'center center';
+  };
+
+  const handleTouchStart = (event) => {
+    if (viewportWidth >= 1024) return;
+    const touch = event.touches[0];
+    touchStartXRef.current = touch.clientX;
+    touchStartYRef.current = touch.clientY;
+  };
+
+  const handleTouchEnd = (event) => {
+    if (viewportWidth >= 1024 || isTransitioning || renderedSlides.length < 2) return;
+    if (touchStartXRef.current === null || touchStartYRef.current === null) return;
+
+    const touch = event.changedTouches[0];
+    const deltaX = touch.clientX - touchStartXRef.current;
+    const deltaY = touch.clientY - touchStartYRef.current;
+
+    touchStartXRef.current = null;
+    touchStartYRef.current = null;
+
+    if (Math.abs(deltaX) < 50 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+
+    if (deltaX > 0) {
+      goToPrevious();
+      return;
+    }
+
+    goToNext();
+  };
+
   const fadeTransition = { duration: transitionDuration, ease: [0.22, 1, 0.36, 1] };
 
   return (
-    <div className="hero-slideshow-shell relative w-full overflow-hidden bg-black">
+    <div
+      className="hero-slideshow-shell relative w-full overflow-hidden bg-black"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
       {renderedSlides.map((slide, index) => (
         <motion.div
           key={index}
@@ -128,7 +180,7 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
                       src={slide.images[idx]}
                       alt={`Hero slide ${index + 1} panel ${idx + 1}`}
                       className="hero-slide-image h-full w-full object-cover"
-                      style={{ objectPosition: slide.imagePositions?.[idx] || 'center center' }}
+                      style={{ objectPosition: getPanelObjectPosition(slide, idx) }}
                       loading={index === 0 ? 'eager' : 'lazy'}
                       fetchPriority={index === 0 && idx === 0 ? 'high' : index === 0 ? 'auto' : 'low'}
                       decoding="async"
