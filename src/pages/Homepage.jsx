@@ -81,7 +81,7 @@ const Homepage = () => {
     {
       images: [ankushHeroImage, ranveerHeroImage, vishwaHeroImage],
       imagePositions: ['center 22%', '10% 22%', 'center 20%'],
-      imagePositionsTablet: ['center 22%', '38% 22%', 'center 20%'],
+      imagePositionsTablet: ['center 22%', '42% 22%', 'center 20%'],
       imagePositionsMobile: ['center 22%', '44% 22%', 'center 20%'],
       imagePositionsXs: ['center 22%', '50% 22%', 'center 20%'],
       imageCaptions: ['Ankush Saha', null, 'Vishwa Vardhan Bhati'],

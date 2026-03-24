@@ -99,7 +99,12 @@ code {
 }
 
 @supports (height: 100svh) {
+
+  /* Always set a fallback height for the shell */
   .hero-slideshow-shell {
+    height: 520px;
+    min-height: 320px;
+    max-height: 100vh;
     height: clamp(460px, 80svh, 760px);
   }
 }

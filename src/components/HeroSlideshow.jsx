@@ -103,13 +103,13 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
   };
 
   const getPanelObjectPosition = (slide, panelIndex) => {
-    if (viewportWidth < 360 && slide.imagePositionsXs?.[panelIndex]) {
+    if (viewportWidth <= 360 && slide.imagePositionsXs?.[panelIndex]) {
       return slide.imagePositionsXs[panelIndex];
     }
-    if (viewportWidth < 640 && slide.imagePositionsMobile?.[panelIndex]) {
+    if (viewportWidth <= 640 && slide.imagePositionsMobile?.[panelIndex]) {
       return slide.imagePositionsMobile[panelIndex];
     }
-    if (viewportWidth < 1024 && slide.imagePositionsTablet?.[panelIndex]) {
+    if (viewportWidth <= 1024 && slide.imagePositionsTablet?.[panelIndex]) {
       return slide.imagePositionsTablet[panelIndex];
     }
     return slide.imagePositions?.[panelIndex] || 'center center';
