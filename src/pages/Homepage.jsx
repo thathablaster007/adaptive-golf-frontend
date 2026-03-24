@@ -5,6 +5,7 @@ import Button from '../components/Button';
 import HeroSlideshow from '../components/HeroSlideshow';
 import { ROUTES } from '../config/navigation';
 import ankushHeroImage from '../Ankush Saha.jpeg';
+import ranveerHeroImage from '../ranveer.jpeg';
 import vishwaHeroImage from '../Vishwa Bhatiya.jpeg';
 import title2a from '../assets/hero/title-2a.jpg';
 import title2b from '../assets/hero/title-2b.jpg';
@@ -28,7 +29,7 @@ import logoDaikinMadridOpen from '../unnamed (1).png';
 import wagrLogo from '../wagr_logo.png';
 import csrPartnerLogo from '../unnamed (9).png';
 
-const CRITICAL_HERO_IMAGES = [ankushHeroImage, title2d, vishwaHeroImage];
+const CRITICAL_HERO_IMAGES = [ankushHeroImage, ranveerHeroImage, vishwaHeroImage];
 
 const Homepage = () => {
   useEffect(() => {
@@ -78,17 +79,20 @@ const Homepage = () => {
   // Hero slideshow data
   const heroSlides = [
     {
-      images: [ankushHeroImage, title2d, vishwaHeroImage],
-      imagePositions: ['center 22%', 'center 22%', 'center 20%'],
+      images: [ankushHeroImage, ranveerHeroImage, vishwaHeroImage],
+      imagePositions: ['center 22%', '10% 22%', 'center 20%'],
       imageCaptions: ['Ankush Saha', null, 'Vishwa Vardhan Bhati'],
+      floatingCaption: 'Ranveer Singh Saini',
+      floatingCaptionTargetImageIndex: 1,
       topText: 'Experience Golf',
       bottomText: 'Your Way',
       taglines: [],
       showButtons: false,
     },
     {
-      images: [title2a, title2b, title2c],
-      imagePositions: ['center center', 'center 68%', 'center 64%'],
+      images: [title2a, title2b, title2c, title2d],
+      imagePositions: ['center center', 'center 68%', 'center 64%', 'center 22%'],
+      stitchedPanelCount: 4,
       topText: 'Every swing defines limits',
       bottomText: 'and defines possibility',
       taglines: [],

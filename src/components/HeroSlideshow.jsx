@@ -23,9 +23,11 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
         return;
       }
 
-      for (let start = 0; start < slide.images.length; start += stitchedPanelCount) {
+      const panelCountForSlide = Math.max(1, Math.min(slide.stitchedPanelCount || stitchedPanelCount, slide.images.length));
+
+      for (let start = 0; start < slide.images.length; start += panelCountForSlide) {
         const panelIndexes = Array.from(
-          { length: Math.min(stitchedPanelCount, slide.images.length - start) },
+          { length: Math.min(panelCountForSlide, slide.images.length - start) },
           (_, offset) => start + offset
         );
         expanded.push({ ...slide, panelIndexes });
@@ -113,7 +115,13 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
                   <div
                     key={`${index}-${idx}`}
                     className={`hero-slide-panel relative h-full ${
-                      slide.panelIndexes.length === 1 ? 'w-full' : slide.panelIndexes.length === 2 ? 'w-1/2' : 'w-1/3'
+                      slide.panelIndexes.length === 1
+                        ? 'w-full'
+                        : slide.panelIndexes.length === 2
+                        ? 'w-1/2'
+                        : slide.panelIndexes.length === 4
+                        ? 'w-1/4'
+                        : 'w-1/3'
                     }`}
                   >
                     <img
@@ -158,6 +166,37 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
                 </h1>
               </div>
             )}
+
+            {slide.floatingCaption && (() => {
+              const hasPanelIndexes = Array.isArray(slide.panelIndexes);
+              const targetImageIndex = Number.isInteger(slide.floatingCaptionTargetImageIndex)
+                ? slide.floatingCaptionTargetImageIndex
+                : null;
+
+              if (hasPanelIndexes && targetImageIndex !== null && !slide.panelIndexes.includes(targetImageIndex)) {
+                return null;
+              }
+
+              const panelCount = hasPanelIndexes ? slide.panelIndexes.length : 1;
+              const panelWidthPercent = 100 / panelCount;
+              const targetPanelOffset = hasPanelIndexes && targetImageIndex !== null
+                ? Math.max(0, slide.panelIndexes.indexOf(targetImageIndex))
+                : panelCount - 1;
+
+              return (
+                <div
+                  className="pointer-events-none absolute bottom-28 sm:bottom-32 md:bottom-36"
+                  style={{
+                    left: `${targetPanelOffset * panelWidthPercent}%`,
+                    width: `${panelWidthPercent}%`,
+                  }}
+                >
+                  <div className="ml-auto mr-4 w-fit rounded-md bg-black/60 px-3 py-1.5 text-right text-xs font-semibold tracking-wide text-white shadow-md sm:mr-6 sm:text-sm md:mr-8">
+                    {slide.floatingCaption}
+                  </div>
+                </div>
+              );
+            })()}
 
             {slide.bottomText && (
               <div className="mt-auto">
