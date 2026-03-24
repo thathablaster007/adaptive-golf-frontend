@@ -28,6 +28,9 @@ import logoEnglandGolf from '../unnamed (4).png';
 import logoDaikinMadridOpen from '../unnamed (1).png';
 import wagrLogo from '../wagr_logo.png';
 import csrPartnerLogo from '../unnamed (9).png';
+import ranveer2Image from '../ranveer2.jpeg';
+import ankushImage from '../ankush.jpeg';
+import vishwaImage from '../vishwa.jpeg';
 
 const CRITICAL_HERO_IMAGES = [ankushHeroImage, ranveerHeroImage, vishwaHeroImage];
 
@@ -401,6 +404,37 @@ const Homepage = () => {
                 </tr>
               </tbody>
             </table>
+          </motion.div>
+
+          {/* Athletes Photo Grid */}
+          <motion.div variants={itemVariants} className="mt-8 md:mt-12 overflow-x-auto rounded-2xl md:rounded-none md:overflow-visible -mx-4 md:mx-0 px-4 md:px-0">
+            <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 min-w-max md:min-w-full">
+              {[
+                { img: ranveer2Image, name: 'Ranveer Singh Saini', position: 'center 35%' },
+                { img: ankushImage, name: 'Ankush Saha', position: 'center 12%' },
+                { img: vishwaImage, name: 'Vishwa Vardhan Bhati', position: 'center 10%' },
+              ].map((athlete, index) => (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  className="relative rounded-xl overflow-hidden shadow-lg flex-shrink-0 w-64 md:w-auto md:flex-shrink"
+                >
+                  <img
+                    src={athlete.img}
+                    alt={athlete.name}
+                    className="w-full aspect-square object-cover"
+                    style={{ objectPosition: athlete.position }}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent px-4 md:px-5 py-4 md:py-5">
+                    <p className="text-white font-quicksand font-bold text-lg md:text-xl">
+                      {athlete.name}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </motion.section>
