@@ -91,7 +91,7 @@ const Homepage = () => {
     },
     {
       images: [title2a, title2b, title2c, title2d],
-      imagePositions: ['center center', 'center 68%', 'center 64%', 'center 22%'],
+      imagePositions: ['center center', 'center 68%', 'center 64%', 'center 50%'],
       stitchedPanelCount: 4,
       topText: 'Every swing defines limits',
       bottomText: 'and defines possibility',
