@@ -405,7 +405,10 @@ const Homepage = () => {
               </tbody>
             </table>
           </motion.div>
-
+        </div>
+      </motion.section>
+      <motion.section variants={itemVariants} className="py-10 md:py-12 bg-[#f2f1ea]">
+        <div className="container-custom">
           {/* Athletes Photo Grid */}
           <motion.div variants={itemVariants} className="mt-8 md:mt-12 overflow-x-auto rounded-2xl md:rounded-none md:overflow-visible -mx-4 md:mx-0 px-4 md:px-0">
             <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 min-w-max md:min-w-full">
