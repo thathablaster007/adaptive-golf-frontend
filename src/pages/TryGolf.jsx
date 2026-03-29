@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Button from '../components/Button';
-import posterMarch28 from '../Poster.jpeg';
+// import posterMarch28 from '../Poster.jpeg';
 import tryGolf1 from '../Try golf 1.JPG';
 import tryGolf2 from '../Try golf 2.JPG';
 import tryGolf3 from '../Try golf 3.JPG';
@@ -10,8 +10,8 @@ import tryGolf5 from '../try golf 5.JPG';
 import tryGolf6 from '../Try golf 6.JPG';
 
 const TryGolf = () => {
-  const discoveryPosterUrl = 'https://drive.google.com/file/d/1lC1R7czDOTdpTL7Esbumh4-e3RAASsoR/view?usp=sharing';
-  const discoveryRegistrationUrl = 'https://forms.gle/nUb8XLM8nZ2NAyZp7';
+  // const discoveryPosterUrl = 'https://drive.google.com/file/d/1lC1R7czDOTdpTL7Esbumh4-e3RAASsoR/view?usp=sharing';
+  // const discoveryRegistrationUrl = 'https://forms.gle/nUb8XLM8nZ2NAyZp7';
 
   useEffect(() => {
     const preloadImages = async (imageList) => {
@@ -132,58 +132,22 @@ const TryGolf = () => {
                 Golf is a game of rhythm, focus, and possibility. Through adaptive instruction and supportive coaching, we make it accessible for everyone — regardless of ability. Start at your own pace. Build confidence with every swing.
               </p>
 
+              {/* Sign Up button remains visible, event box hidden for future reuse */}
+              <motion.div whileHover={{ scale: 1.05, transformOrigin: 'left center' }} whileTap={{ scale: 0.95 }} className="mb-8 mt-6 inline-block">
+                <a
+                  href="/connect"
+                  // rel="noopener noreferrer" // not needed for internal link
+                >
+                  <Button variant="gold" size="lg">
+                    Sign Up Today
+                  </Button>
+                </a>
+              </motion.div>
+              {/*
               <div id="upcoming-event" className="mb-8 rounded-2xl border border-primary-blue/15 bg-white/80 px-6 py-6 text-left shadow-sm">
-                <h3 className="text-2xl md:text-3xl font-quicksand font-bold text-primary-blue mb-3 text-center md:text-left">
-                  Upcoming Event: Adaptive Golf Discovery Programme
-                </h3>
-
-                <p className="text-base md:text-lg text-gray-800 leading-relaxed mb-4">
-                  We are pleased to invite you to the Adaptive Golf Discovery Programme, an inclusive introduction to the game of golf.
-                </p>
-
-                <div className="space-y-2 text-base md:text-lg text-gray-800">
-                  <p><span className="font-semibold">Date:</span> 28 March 2026 (Visually Impaired), 29 March 2026 (All Disabilities)</p>
-                  <p><span className="font-semibold">Venue:</span> AQUALINERS Wellness and Holistic Center</p>
-                  <p><span className="font-semibold">Time:</span> 9:30 AM - 12:00 PM</p>
-                </div>
-
-                <div className="mt-5 flex flex-wrap items-center gap-3">
-                  <a
-                    href={posterMarch28}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center rounded-xl border border-primary-blue/30 bg-white px-5 py-2.5 text-sm md:text-base font-quicksand font-semibold text-primary-blue hover:bg-primary-blue hover:text-white transition-colors duration-300"
-                  >
-                    View 28 March Poster
-                  </a>
-                  <a
-                    href={discoveryPosterUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center rounded-xl border border-primary-blue/30 bg-white px-5 py-2.5 text-sm md:text-base font-quicksand font-semibold text-primary-blue hover:bg-primary-blue hover:text-white transition-colors duration-300"
-                  >
-                    View 29 March Poster (PDF)
-                  </a>
-                </div>
-
-                <div className="mt-5 text-base md:text-lg text-gray-800 leading-relaxed">
-                  <p className="font-semibold">For any queries:</p>
-                  <p>+91 96635 96615</p>
-                  <p>+91 96866 65385</p>
-                </div>
-
-                <motion.div whileHover={{ scale: 1.05, transformOrigin: 'left center' }} whileTap={{ scale: 0.95 }} className="mt-6 inline-block">
-                  <a
-                    href={discoveryRegistrationUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button variant="gold" size="lg">
-                      Sign Up Today
-                    </Button>
-                  </a>
-                </motion.div>
+                ...Upcoming Event box hidden for now...
               </div>
+              */}
             </div>
           </motion.div>
         </div>
