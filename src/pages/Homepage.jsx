@@ -28,6 +28,7 @@ import logoEnglandGolf from '../unnamed (4).png';
 import logoDaikinMadridOpen from '../unnamed (1).png';
 import wagrLogo from '../wagr_logo.png';
 import csrPartnerLogo from '../unnamed (9).png';
+import mediaImpactPartnerLogo from '../Logo Golf & BEYOND.png';
 import ranveer2Image from '../ranveer2.jpeg';
 import ankushImage from '../ankush.jpeg';
 import vishwaImage from '../vishwa.jpeg';
@@ -407,7 +408,7 @@ const Homepage = () => {
           </motion.div>
         </div>
       </motion.section>
-      <motion.section variants={itemVariants} className="py-10 md:py-12 bg-[#f2f1ea]">
+      <motion.section variants={itemVariants} className="py-10 md:py-12 bg-[#dbeafe]">
         <div className="container-custom">
           {/* Athletes Photo Grid */}
           <motion.div variants={itemVariants} className="mt-8 md:mt-12 overflow-x-auto rounded-2xl md:rounded-none md:overflow-visible -mx-4 md:mx-0 px-4 md:px-0">
@@ -564,6 +565,28 @@ const Homepage = () => {
                 <img
                   src={csrPartnerLogo}
                   alt="CSR Partner"
+                  className="w-full h-20 md:h-24 object-contain"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Media Impact Partner Section */}
+      <motion.section variants={itemVariants} className="py-10 md:py-12 bg-[#f2f1ea]">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center h-full flex flex-col justify-center">
+              <h2 className="text-3xl md:text-4xl font-quicksand font-bold text-primary-blue mb-6">
+                Media Impact Partner
+              </h2>
+              <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm max-w-3xl mx-auto">
+                <img
+                  src={mediaImpactPartnerLogo}
+                  alt="Media Impact Partner"
                   className="w-full h-20 md:h-24 object-contain"
                   loading="lazy"
                   decoding="async"

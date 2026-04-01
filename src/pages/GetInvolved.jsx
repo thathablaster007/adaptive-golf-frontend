@@ -12,6 +12,7 @@ import sponsorLogo1 from '../Tee-Golf---1-.png';
 import sponsorLogo3 from '../47f2e576-b5d5-44dc-aad2-f71e8fea3ce0.jpeg';
 import sponsorLogo4 from '../unnamed.jpg';
 import sponsorLogo5 from '../totheteesponder.jpg';
+import sponsorLogoGolfBeyond from '../Logo Golf & BEYOND.png';
 
 const CardIcon = ({ type }) => {
   const wrapperClass = 'w-20 h-20 md:w-24 md:h-24 flex items-center justify-center';
@@ -130,6 +131,16 @@ const GetInvolved = () => {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
   };
+
+  const sponsors = [
+    { name: 'To The Tee Golf Collective', logo: sponsorLogo1 },
+    { name: 'Golf & BEYOND', logo: sponsorLogoGolfBeyond },
+    { name: 'Sponsor Partner 3', logo: sponsorLogo3 },
+    { name: 'Sponsor Partner 4', logo: sponsorLogo4 },
+    { name: 'Sponsor Partner 5', logo: sponsorLogo5 },
+  ];
+
+  const loopingSponsors = [...sponsors, ...sponsors];
 
   return (
     <motion.div initial="hidden" animate="visible" variants={containerVariants} className="font-quicksand">
@@ -268,26 +279,40 @@ const GetInvolved = () => {
       {/* Sponsors Section */}
       <motion.section variants={itemVariants} className="section-padding bg-gradient-to-b from-[#f7f9ef] to-[#fff8eb]">
         <div className="container-custom">
-          <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" variants={containerVariants}>
-            {[
-              { name: 'To The Tee Golf Collective', logo: sponsorLogo1 },
-              { name: 'Sponsor Partner 3', logo: sponsorLogo3 },
-              { name: 'Sponsor Partner 4', logo: sponsorLogo4 },
-              { name: 'Sponsor Partner 5', logo: sponsorLogo5 },
-            ].map((sponsor) => (
-              <motion.div key={sponsor.name} variants={itemVariants}>
-                <div className="h-full rounded-xl border border-primary-green/30 bg-white/85 p-6 md:p-8 flex items-center justify-center hover:border-cta-gold/70 hover:shadow-lg transition-all">
-                  <img
-                    src={sponsor.logo}
-                    alt={sponsor.name}
-                    className="w-full max-w-[240px] h-24 object-contain"
-                    loading="lazy"
-                    decoding="async"
-                  />
+          <div className="relative overflow-hidden -mx-4 sm:-mx-6 lg:-mx-10 xl:-mx-14 px-4 sm:px-6 lg:px-10 xl:px-14">
+            <motion.div
+              className="flex w-max gap-6 md:gap-8 py-1"
+              variants={itemVariants}
+              style={{ animation: 'sponsorsMarquee 30s linear infinite' }}
+            >
+              {loopingSponsors.map((sponsor, index) => (
+                <div key={`${sponsor.name}-${index}`} className="shrink-0 w-[240px] sm:w-[270px] md:w-[300px]">
+                  <div className="h-full rounded-xl border border-primary-green/30 bg-white/85 p-6 md:p-8 flex items-center justify-center hover:border-cta-gold/70 hover:shadow-lg transition-all">
+                    <img
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      className="w-full h-20 sm:h-24 md:h-28 object-contain"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
                 </div>
-              </motion.div>
-            ))}
-          </motion.div>
+              ))}
+            </motion.div>
+          </div>
+
+          <style>
+            {`
+              @keyframes sponsorsMarquee {
+                0% {
+                  transform: translateX(0);
+                }
+                100% {
+                  transform: translateX(-50%);
+                }
+              }
+            `}
+          </style>
         </div>
       </motion.section>
     </motion.div>

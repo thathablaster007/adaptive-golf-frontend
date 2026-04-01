@@ -5,6 +5,7 @@ import { ROUTES } from '../config/navigation';
 import blogImage1 from '../DSC0125.JPG';
 import blogImage2 from '../IMG_1883.JPG';
 import blogImage3 from '../DSC0074.JPG';
+import blogImageVolunteersStudents from '../volunters_students.jpeg';
 
 const BlogPostVolunteers = () => {
   return (
@@ -67,13 +68,22 @@ const BlogPostVolunteers = () => {
             By providing this support, volunteers allow athletes to focus on what matters most: enjoying the game.
           </p>
 
-          {/* Image 2 */}
-          <div className="mb-12 flex justify-center">
-            <img 
-              src={blogImage2} 
-              alt="Volunteers assisting athletes in adaptive sports" 
-              className="rounded-lg shadow-lg object-contain max-h-96 md:max-h-[28rem]"
-            />
+          {/* Images Above Quote */}
+          <div className="mb-12 flex flex-col md:flex-row items-center justify-center gap-3 md:gap-[10px]">
+            <div>
+              <img 
+                src={blogImage2} 
+                alt="Volunteers assisting athletes in adaptive sports" 
+                className="rounded-lg shadow-lg object-contain max-h-96 md:max-h-[28rem]"
+              />
+            </div>
+            <div>
+              <img 
+                src={blogImageVolunteersStudents} 
+                alt="Volunteers and students supporting inclusive sports" 
+                className="rounded-lg shadow-lg object-contain max-h-96 md:max-h-[28rem]"
+              />
+            </div>
           </div>
 
           {/* Quote Section */}
