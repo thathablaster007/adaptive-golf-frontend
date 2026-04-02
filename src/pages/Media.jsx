@@ -16,6 +16,10 @@ const Media = () => {
           label: 'Discovery Programme 26th Jan 2026',
           path: '/media/discovery-programme-26-jan-2026',
         },
+        {
+          label: 'Discovery Day for Visual Impairment Participants',
+          path: '/media/discovery-day-visual-impairment-participants',
+        },
       ],
     },
     {

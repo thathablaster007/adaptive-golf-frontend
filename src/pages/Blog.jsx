@@ -6,6 +6,7 @@ import blogHeaderImage from '../blogmain.jpeg';
 import title1BlogCard from '../Title 1.JPG';
 import blogImage2 from '../IMG_1883.JPG';
 import blogImage3 from '../IMG_0780.jpeg';
+import blogImage4 from '../IMG_BLOG4_1.jpg';
 
 const Blog = () => {
   const posts = [
@@ -29,6 +30,13 @@ const Blog = () => {
       excerpt: 'How coaches adapt methods, tools, and communication to help every golfer progress.',
       image: blogImage3,
       path: ROUTES.blogAdaptiveCoaching,
+    },
+    {
+      id: 'blog-beyond-vision',
+      title: 'Beyond Vision: How Adaptive Golf Builds Confidence Without Sight',
+      excerpt: 'A Discovery Day reflection on trust, sound-led learning, and how belief can grow without visual cues.',
+      image: blogImage4,
+      path: ROUTES.blogBeyondVision,
     },
   ];
 
@@ -80,7 +88,7 @@ const Blog = () => {
                     <img
                       src={post.image}
                       alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="block w-full h-full object-cover [backface-visibility:hidden] [transform:translateZ(0)] group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                     />
                   </div>

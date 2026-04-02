@@ -8,15 +8,18 @@ const loadTryGolf = () => import('./pages/TryGolf');
 const loadCompetition = () => import('./pages/Competition');
 const loadMedia = () => import('./pages/Media');
 const loadMediaDiscoveryProgrammeJan26 = () => import('./pages/MediaDiscoveryProgrammeJan26');
+const loadMediaDiscoveryDayVisualImpairment = () => import('./pages/MediaDiscoveryDayVisualImpairment');
 const loadGetInvolved = () => import('./pages/GetInvolved');
 const loadDonate = () => import('./pages/Donate');
 const loadNews = () => import('./pages/News');
 const loadNewsPostMilestone = () => import('./pages/NewsPostMilestone');
+const loadNewsPostDiscoveryDay = () => import('./pages/NewsPostDiscoveryDay');
 const loadConnect = () => import('./pages/Connect');
 const loadBlog = () => import('./pages/Blog');
 const loadBlogPostEmpowerment = () => import('./pages/BlogPostEmpowerment');
 const loadBlogPostVolunteers = () => import('./pages/BlogPostVolunteers');
 const loadBlogPostAdaptiveCoaching = () => import('./pages/BlogPostAdaptiveCoaching');
+const loadBlogPostBeyondVision = () => import('./pages/BlogPostBeyondVision');
 const loadAboutUs = () => import('./pages/AboutUs');
 const loadTeam = () => import('./pages/Team');
 
@@ -26,15 +29,18 @@ const TryGolf = lazy(loadTryGolf);
 const Competition = lazy(loadCompetition);
 const Media = lazy(loadMedia);
 const MediaDiscoveryProgrammeJan26 = lazy(loadMediaDiscoveryProgrammeJan26);
+const MediaDiscoveryDayVisualImpairment = lazy(loadMediaDiscoveryDayVisualImpairment);
 const GetInvolved = lazy(loadGetInvolved);
 const Donate = lazy(loadDonate);
 const News = lazy(loadNews);
 const NewsPostMilestone = lazy(loadNewsPostMilestone);
+const NewsPostDiscoveryDay = lazy(loadNewsPostDiscoveryDay);
 const Connect = lazy(loadConnect);
 const Blog = lazy(loadBlog);
 const BlogPostEmpowerment = lazy(loadBlogPostEmpowerment);
 const BlogPostVolunteers = lazy(loadBlogPostVolunteers);
 const BlogPostAdaptiveCoaching = lazy(loadBlogPostAdaptiveCoaching);
+const BlogPostBeyondVision = lazy(loadBlogPostBeyondVision);
 const AboutUs = lazy(loadAboutUs);
 const Team = lazy(loadTeam);
 
@@ -115,14 +121,17 @@ function App() {
             <Route path="competition" element={<Competition />} />
             <Route path="media" element={<Media />} />
             <Route path="media/discovery-programme-26-jan-2026" element={<MediaDiscoveryProgrammeJan26 />} />
+            <Route path="media/discovery-day-visual-impairment-participants" element={<MediaDiscoveryDayVisualImpairment />} />
             <Route path="blog" element={<Blog />} />
             <Route path="blog/more-than-a-game" element={<BlogPostEmpowerment />} />
             <Route path="blog/power-of-volunteers" element={<BlogPostVolunteers />} />
             <Route path="blog/adaptive-coaching" element={<BlogPostAdaptiveCoaching />} />
+            <Route path="blog/beyond-vision" element={<BlogPostBeyondVision />} />
             <Route path="get-involved" element={<GetInvolved />} />
             <Route path="donate" element={<Donate />} />
             <Route path="news" element={<News />} />
             <Route path="news/a-milestone-moment" element={<NewsPostMilestone />} />
+            <Route path="news/where-sound-leads-the-game" element={<NewsPostDiscoveryDay />} />
             <Route path="connect" element={<Connect />} />
             <Route path="about-us" element={<AboutUs />} />
             <Route path="team" element={<Team />} />

@@ -152,13 +152,16 @@ const BlogPostAdaptiveCoaching = () => {
             Through organizations like the Adaptive Golf Alliance, adaptive coaching programs are helping more individuals discover that golf is a sport where everyone can belong.
           </p>
 
-          {/* Back to Blog Link */}
+          {/* Next Blog Navigation */}
           <div className="mt-16 pt-8 border-t border-gray-300">
             <Link
-              to={ROUTES.blog}
-              className="inline-flex items-center justify-center rounded-lg bg-primary-green px-6 py-3 text-white font-quicksand font-semibold hover:bg-opacity-90 transition-colors duration-300"
+              to={ROUTES.blogBeyondVision}
+              className="flex items-center justify-between group hover:no-underline"
             >
-              ← Back to Blog
+              <span className="text-xl font-quicksand font-semibold text-primary-blue group-hover:text-primary-green transition-colors duration-300">
+                Beyond Vision: How Adaptive Golf Builds Confidence Without Sight
+              </span>
+              <span className="text-3xl text-primary-green group-hover:translate-x-2 transition-transform duration-300">→</span>
             </Link>
           </div>
         </div>
