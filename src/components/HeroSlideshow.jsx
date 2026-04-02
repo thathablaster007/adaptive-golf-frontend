@@ -13,8 +13,9 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
   const touchStartXRef = useRef(null);
   const touchStartYRef = useRef(null);
   const transitionDuration = 0.55;
+  const desktopBreakpoint = 960;
 
-  const stitchedPanelCount = viewportWidth >= 1024 ? 3 : viewportWidth >= 640 ? 2 : 1;
+  const stitchedPanelCount = viewportWidth >= desktopBreakpoint ? 3 : viewportWidth >= 640 ? 2 : 1;
 
   const renderedSlides = useMemo(() => {
     const expanded = [];
@@ -28,7 +29,7 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
       const desktopPanelCount = Number.isInteger(slide.desktopStitchedPanelCount)
         ? slide.desktopStitchedPanelCount
         : null;
-      const panelCountForSlide = viewportWidth >= 1024 && desktopPanelCount
+      const panelCountForSlide = viewportWidth >= desktopBreakpoint && desktopPanelCount
         ? Math.max(1, Math.min(desktopPanelCount, slide.images.length))
         : Math.max(1, Math.min(stitchedPanelCount, slide.images.length));
 
@@ -116,14 +117,14 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
   };
 
   const handleTouchStart = (event) => {
-    if (viewportWidth >= 1024) return;
+    if (viewportWidth >= desktopBreakpoint) return;
     const touch = event.touches[0];
     touchStartXRef.current = touch.clientX;
     touchStartYRef.current = touch.clientY;
   };
 
   const handleTouchEnd = (event) => {
-    if (viewportWidth >= 1024 || isTransitioning || renderedSlides.length < 2) return;
+    if (viewportWidth >= desktopBreakpoint || isTransitioning || renderedSlides.length < 2) return;
     if (touchStartXRef.current === null || touchStartYRef.current === null) return;
 
     const touch = event.changedTouches[0];
@@ -163,18 +164,17 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
           <div className="absolute inset-0">
             {slide.images && slide.panelIndexes ? (
               <div className="h-full w-full flex">
-                {slide.panelIndexes.map((idx) => (
+                {slide.panelIndexes.map((idx) => {
+                  const panelWidthPercent = 100 / slide.panelIndexes.length;
+
+                  return (
                   <div
                     key={`${index}-${idx}`}
-                    className={`hero-slide-panel relative h-full ${
-                      slide.panelIndexes.length === 1
-                        ? 'w-full'
-                        : slide.panelIndexes.length === 2
-                        ? 'w-1/2'
-                        : slide.panelIndexes.length === 4
-                        ? 'w-1/4'
-                        : 'w-1/3'
-                    }`}
+                    className="hero-slide-panel relative h-full shrink-0"
+                    style={{
+                      flexBasis: `${panelWidthPercent}%`,
+                      maxWidth: `${panelWidthPercent}%`,
+                    }}
                   >
                     <img
                       src={slide.images[idx]}
@@ -192,7 +192,8 @@ const HeroSlideshow = ({ slides, autoPlay = true, autoPlayInterval = 6000 }) => 
                       </span>
                     )}
                   </div>
-                ))}
+                  );
+                })}
               </div>
             ) : (
               <img

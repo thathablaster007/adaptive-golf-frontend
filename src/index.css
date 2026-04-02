@@ -98,6 +98,64 @@ code {
   transform: translateZ(0);
 }
 
+.blog-preview-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.blog-preview-track {
+  display: flex;
+  gap: 2.5rem;
+  width: max-content;
+  animation: none;
+}
+
+.blog-preview-marquee.is-running .blog-preview-track {
+  animation: blogPreviewScroll 40s linear infinite;
+}
+
+.blog-preview-marquee:hover .blog-preview-track {
+  animation-play-state: paused;
+}
+
+.blog-preview-card {
+  width: clamp(260px, 30vw, 360px);
+  flex: 0 0 auto;
+}
+
+@keyframes blogPreviewScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 1.25rem));
+  }
+}
+
+@media (max-width: 1024px) {
+  .blog-preview-track {
+    gap: 1.5rem;
+  }
+
+  .blog-preview-marquee.is-running .blog-preview-track {
+    animation-duration: 34s;
+  }
+
+  .blog-preview-card {
+    width: clamp(240px, 68vw, 330px);
+  }
+
+  @keyframes blogPreviewScroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-50% - 0.75rem));
+    }
+  }
+}
+
 @supports (height: 100svh) {
 
   /* Always set a fallback height for the shell */

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Button from '../components/Button';
@@ -17,6 +17,7 @@ import title3c from '../assets/hero/title-3c.jpg';
 import title1BlogCard from '../Title 1.JPG';
 import blogImage2 from '../IMG_1883.JPG';
 import blogImage3 from '../IMG_0780.jpeg';
+import blogImage4 from '../IMG_BLOG4_1.jpg';
 import tryGolfHomeImage from '../Try Golf_Home.JPG';
 import competitionHomeImage from '../Comeptition_Home.JPG';
 import mediaHomeImage from '../Media_Home.JPG';
@@ -36,6 +37,9 @@ import vishwaImage from '../vishwa.jpeg';
 const CRITICAL_HERO_IMAGES = [ankushHeroImage, ranveerHeroImage, vishwaHeroImage];
 
 const Homepage = () => {
+  const [hasBlogRailStarted, setHasBlogRailStarted] = useState(false);
+  const blogPreviewSectionRef = useRef(null);
+
   useEffect(() => {
     const viewportWidth = window.innerWidth;
     const panelsToPreload = viewportWidth >= 1024 ? 3 : viewportWidth >= 640 ? 2 : 1;
@@ -59,6 +63,26 @@ const Homepage = () => {
       });
     };
   }, []);
+
+  useEffect(() => {
+    if (!blogPreviewSectionRef.current || hasBlogRailStarted) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+
+        if (entry.isIntersecting) {
+          setHasBlogRailStarted(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(blogPreviewSectionRef.current);
+
+    return () => observer.disconnect();
+  }, [hasBlogRailStarted]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -165,7 +189,15 @@ const Homepage = () => {
       image: blogImage3,
       path: ROUTES.blogAdaptiveCoaching,
     },
+    {
+      id: 'blog-beyond-vision',
+      title: 'Beyond Vision: How Adaptive Golf Builds Confidence Without Sight',
+      image: blogImage4,
+      path: ROUTES.blogBeyondVision,
+    },
   ];
+
+  const loopingBlogPreviewPosts = [...blogPreviewPosts, ...blogPreviewPosts];
 
   const facesOfAdaptiveGolf = [
     {
@@ -506,6 +538,7 @@ const Homepage = () => {
       {/* Blog Preview Section */}
       <motion.section
         variants={itemVariants}
+        ref={blogPreviewSectionRef}
         className="py-14 md:py-16 bg-[#f2f1ea]"
       >
         <div className="container-custom">
@@ -528,26 +561,30 @@ const Homepage = () => {
               </Link>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="xl:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-10">
-              {blogPreviewPosts.map((post) => (
-                <Link key={post.id} to={post.path} className="group block">
-                  <article className="h-full">
-                    <div className="overflow-hidden rounded-2xl shadow-md h-[320px] sm:h-[380px] md:h-[420px] bg-gray-300">
-                      <img
-                        src={post.image}
-                        alt={post.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        loading="lazy"
-                        decoding="async"
-                        fetchPriority="low"
-                      />
-                    </div>
-                    <h3 className="text-xl md:text-2xl font-quicksand text-primary-blue leading-snug mt-5 group-hover:text-primary-green transition-colors duration-300">
-                      {post.title}
-                    </h3>
-                  </article>
-                </Link>
-              ))}
+            <motion.div variants={itemVariants} className="xl:col-span-8 overflow-hidden">
+              <div className={`blog-preview-marquee group ${hasBlogRailStarted ? 'is-running' : ''}`}>
+                <div className="blog-preview-track">
+                  {loopingBlogPreviewPosts.map((post, index) => (
+                    <Link key={`${post.id}-${index}`} to={post.path} className="group/card block blog-preview-card">
+                      <article className="h-full">
+                        <div className="overflow-hidden rounded-2xl shadow-md h-[320px] sm:h-[380px] md:h-[420px] bg-gray-300">
+                          <img
+                            src={post.image}
+                            alt={post.title}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover/card:scale-105"
+                            loading="lazy"
+                            decoding="async"
+                            fetchPriority="low"
+                          />
+                        </div>
+                        <h3 className="text-xl md:text-2xl font-quicksand text-primary-blue leading-snug mt-5 group-hover/card:text-primary-green transition-colors duration-300">
+                          {post.title}
+                        </h3>
+                      </article>
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
