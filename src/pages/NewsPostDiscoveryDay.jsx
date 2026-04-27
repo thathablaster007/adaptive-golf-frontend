@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Button from '../components/Button';
 import { ROUTES } from '../config/navigation';
-import newsDiscoveryImage from '../News2.jpg';
 
 const NewsPostDiscoveryDay = () => {
   return (
@@ -41,13 +40,19 @@ const NewsPostDiscoveryDay = () => {
           </p>
 
           <div className="pt-3">
-            <img
-              src={newsDiscoveryImage}
-              alt="Adaptive Golf Discovery Day participants"
-              className="w-full rounded-xl shadow-sm"
-              loading="lazy"
-              decoding="async"
-            />
+            <h2 className="text-2xl md:text-3xl font-quicksand font-semibold text-primary-blue mb-5">Featured Video</h2>
+            <div className="relative w-full bg-black rounded-xl overflow-hidden" style={{ aspectRatio: '16/9' }}>
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/5WbyuBjvdFM"
+                title="Adaptive Golf Discovery Day - Featured Video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="absolute top-0 left-0"
+              />
+            </div>
           </div>
         </div>
       </section>
