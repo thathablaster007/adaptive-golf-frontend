@@ -15,6 +15,10 @@ import nandanTwo from '../Nandan (2).jpeg';
 import nandanThree from '../Nandan (3).jpeg';
 import nandanFour from '../Nandan (4).jpeg';
 import jasonImage from '../Jason.jpeg';
+import ranveerImage from '../ranveer.jpeg';
+import ranveerImageTwo from '../ranveer2.jpeg';
+import prashantImageOne from '../Zoman (1).jpeg';
+import prashantImageTwo from '../Zoman (2).jpeg';
 
 export const PLAYER_STORIES = [
   {
@@ -293,7 +297,7 @@ export const PLAYER_STORIES = [
   {
     slug: 'nandan-s',
     name: 'Nandan S',
-    disabilityTags: ['Autism', 'Specific Learning Disability'],
+    disabilityTags: ['Intellectual'],
     faceImage: nandanOne,
     faceImageAlt: 'Nandan portrait',
     summary:
@@ -369,6 +373,84 @@ export const PLAYER_STORIES = [
         afterParagraphIndex: 2,
         src: jasonImage,
         alt: 'Jason practicing at the range',
+      },
+    ],
+  },
+  {
+    slug: 'ranveer-singh-saini',
+    name: 'Ranveer Singh Saini',
+    disabilityTags: ['Intellectual'],
+    faceImage: ranveerImage,
+    faceImageAlt: 'Ranveer Singh Saini portrait',
+    summary:
+      'One of India’s most accomplished Special Olympics golfers and a leading voice for inclusion, resilience, and possibility.',
+    route: '/media/player-stories/ranveer-singh-saini',
+    title: 'A Journey That Continues to Redefine Ability, Excellence, and Human Potential',
+    intro:
+      'Ranveer Singh Saini has become a global symbol of adaptive golf excellence, showing how talent grows when it is nurtured with opportunity and belief.',
+    paragraphs: [
+      'Ranveer Singh Saini is not only one of India’s most accomplished Special Olympics golfers, but also a powerful voice for inclusion, resilience, and possibility.',
+      'Diagnosed with autism at a young age, Ranveer’s journey began in a world that often misunderstood neurodiversity and underestimated the potential of individuals with disabilities. Yet from an early stage, he displayed extraordinary focus, discipline, and determination — qualities that would later help him rise onto some of the world’s biggest sporting platforms.',
+      'Through golf, Ranveer discovered far more than competition. The game became a space where he could channel his energy, build confidence, and express himself with freedom and purpose. Over the years, his commitment to the sport transformed him into a world-class athlete whose achievements have inspired not only the adaptive golf community, but millions across India and beyond.',
+      'Ranveer has proudly represented India at multiple Special Olympics World Games, creating history through his remarkable performances. He became the first Indian special needs golfer to secure podium finishes across three consecutive World Games — winning Gold in Los Angeles in 2015, Silver in Abu Dhabi in 2019, and Gold again in Berlin in 2023.',
+      'His consistency and excellence have established him as one of the leading figures in adaptive golf internationally.',
+      'A 13-time National Champion and multiple-time medallist at the Golf Masters Macau, Ranveer’s list of accomplishments reflects years of relentless dedication and hard work. His journey has also earned him widespread recognition outside the golf course. He is an 8-time Limca Record Holder, recipient of prestigious government honours including the Bhim Award and Khel Gaurav Puraskar, and was honoured with the Shreshth Divyangjan Award by the President of India, Droupadi Murmu.',
+      'His achievements have also been acknowledged nationally through platforms such as the Prime Minister’s Mann Ki Baat, where his inspiring story was recognised as a symbol of determination and national pride.',
+      'But beyond medals and awards, Ranveer’s greatest impact lies in the hope he creates for others. As a speaker, role model, and ambassador for inclusion, he continues to inspire autistic individuals, families, educators, athletes, and organisations to rethink what is possible. Whether through public speaking engagements, leadership initiatives, or simply through the example he sets every day, Ranveer represents a generation of athletes changing perceptions around disability and sport.',
+      'What makes his journey especially powerful is the quiet humility and perseverance behind every achievement. For Ranveer, golf is not simply about winning tournaments. It is about discipline, growth, self-belief, and inspiring others to discover confidence in themselves. Every fairway he walks carries a larger message — that disability should never define ambition, capability, or dreams.',
+      'Today, Ranveer Singh Saini stands as a global symbol of excellence in adaptive golf and inclusion. His story is proof that when talent is nurtured with opportunity, support, and belief, barriers begin to disappear and extraordinary possibilities emerge.',
+    ],
+    quote:
+      '“True ability is not measured by limitations, but by the courage to rise beyond them.”',
+    quoteAttribution: 'Ranveer Singh Saini',
+    inlineImages: [
+      {
+        afterParagraphIndex: 2,
+        src: ranveerImage,
+        alt: 'Ranveer Singh Saini on the golf course',
+      },
+      {
+        afterParagraphIndex: 6,
+        src: ranveerImageTwo,
+        alt: 'Ranveer Singh Saini at a golfing event',
+      },
+    ],
+  },
+  {
+    slug: 'prashant-subhash-zoman',
+    name: 'Prashant Subhash Zoman',
+    disabilityTags: ['Arm/Multi'],
+    faceImage: prashantImageOne,
+    faceImageAlt: 'Prashant Subhash Zoman portrait',
+    summary:
+      'A caddie-turned-player from Maharashtra whose determination and love for his mother helped him rebuild hope through golf.',
+    route: '/media/player-stories/prashant-subhash-zoman',
+    title: 'Finding Strength, Dignity, and Hope Through the Game of Golf',
+    intro:
+      'Prashant Subhash Zoman discovered that golf could be a teacher, a platform, and a source of belonging after an accident changed the course of his life.',
+    paragraphs: [
+      'Prashant comes from the small village of Bhausahebnagar in Maharashtra, where life has been shaped by simplicity, hard work, and resilience.',
+      'After an accident left him physically disabled and severely affected the movement of his arms and fingers, Prashant faced a future filled with uncertainty. Yet through courage, determination, and an unwavering fighting spirit, he slowly rebuilt his confidence and discovered a new direction through golf.',
+      'What began as an opportunity to work as a caddie at a local golf course gradually transformed into a deep passion for the game itself. Despite knowing nothing about golf initially, Prashant quickly learnt the sport, and within a year, he began playing the game himself.',
+      'For Prashant, golf became more than a sport — it became a teacher. Through every challenge on the course, he learnt how to face life’s difficulties with patience, calmness, and courage. The ups and downs of golf reminded him of life itself — teaching him that difficult moments must be faced with strength rather than fear.',
+      'At the heart of his journey stands his greatest inspiration: his mother. Prashant speaks deeply about the sacrifices she made for the family. Through the hardest phases of life, she worked tirelessly in other people’s fields, carrying the burden of survival with dignity and courage. No matter how difficult the circumstances became, she continued fighting for her family and showed him what true resilience looks like.',
+      'Her strength became his strength. The courage with which she faced every struggle continues to inspire Prashant every day, giving him the motivation to keep moving forward despite life’s challenges.',
+      'Today, adaptive golf represents hope, opportunity, and belonging for Prashant. For the first time, he sees a platform where players with disabilities in India can showcase their talent, compete, and be recognised for their abilities.',
+      'His journey reflects not only perseverance, but also gratitude — for the game, for opportunity, and for the people who helped him believe in himself again.',
+    ],
+    quote:
+      '“Golf gave me the strength to believe in myself again, and the hope to keep moving forward.”',
+    quoteAttribution: 'Prashant Subhash Zoman',
+    inlineImages: [
+      {
+        afterParagraphIndex: 1,
+        src: prashantImageOne,
+        alt: 'Prashant Subhash Zoman at the golf course',
+      },
+      {
+        afterParagraphIndex: 5,
+        src: prashantImageTwo,
+        alt: 'Prashant Subhash Zoman during a golf session',
       },
     ],
   },
