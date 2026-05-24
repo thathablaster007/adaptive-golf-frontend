@@ -20,6 +20,11 @@ const Header = () => {
     { label: 'AGAF Team', path: ROUTES.team },
   ];
 
+  const mediaDropdownItems = [
+    { label: 'Player Stories', path: ROUTES.playerStories },
+    { label: 'Photo Library', path: ROUTES.media },
+  ];
+
   const navLinkClass = (path) => `font-quicksand font-semibold text-lg transition-colors duration-300 whitespace-nowrap ${
     isActive(path)
       ? 'text-[#4C9A63]'
@@ -40,7 +45,7 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden xl:grid grid-cols-[1fr_auto_1fr] items-center h-36 w-full px-8 overflow-visible">
           <div className="flex flex-row items-center justify-start gap-5 text-base min-w-0 relative z-20">
-            <NavDropdown label="About" items={aboutDropdownItems} />
+            <NavDropdown label="About" items={aboutDropdownItems} activePath={location.pathname} showActiveFill />
             <Link to={ROUTES.whatIsAdaptiveGolf} className={leftNavLinkClass(ROUTES.whatIsAdaptiveGolf)}>
               What is Adaptive Golf?
             </Link>
@@ -50,9 +55,7 @@ const Header = () => {
             <Link to={ROUTES.competition} className={leftNavLinkClass(ROUTES.competition)}>
               Competition
             </Link>
-            <Link to={ROUTES.media} className={leftNavLinkClass(ROUTES.media)}>
-              Media
-            </Link>
+            <NavDropdown label="Media" items={mediaDropdownItems} activePath={location.pathname} />
           </div>
 
           <div className="flex flex-col items-center justify-center justify-self-center w-full gap-0 relative z-10 pointer-events-none">
@@ -157,8 +160,12 @@ const Header = () => {
               <Link to={ROUTES.competition} onClick={closeMobileMenu} className="font-quicksand font-semibold text-base text-primary-blue hover:text-[#4C9A63]">
                 Competition
               </Link>
-              <Link to={ROUTES.media} onClick={closeMobileMenu} className="font-quicksand font-semibold text-base text-primary-blue hover:text-[#4C9A63]">
-                Media
+              <p className="pt-1 font-quicksand font-bold text-primary-green uppercase text-sm tracking-wide">Media</p>
+              <Link to={ROUTES.playerStories} onClick={closeMobileMenu} className="font-quicksand font-semibold text-base text-primary-blue hover:text-[#4C9A63] pl-2">
+                Player Stories
+              </Link>
+              <Link to={ROUTES.media} onClick={closeMobileMenu} className="font-quicksand font-semibold text-base text-primary-blue hover:text-[#4C9A63] pl-2">
+                Photo Library
               </Link>
               <Link to={ROUTES.blog} onClick={closeMobileMenu} className="font-quicksand font-semibold text-base text-primary-blue hover:text-[#4C9A63]">
                 Blog

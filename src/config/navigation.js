@@ -35,6 +35,8 @@ export const ROUTES = {
   tryGolf: '/try-golf',
   competition: '/competition',
   media: '/media',
+  playerStories: '/media/player-stories',
+  playerStoryVishwa: '/media/player-stories/vishwa-vardhan-bhati',
   blog: '/blog',
   blogEmpowerment: '/blog/more-than-a-game',
   blogVolunteers: '/blog/power-of-volunteers',

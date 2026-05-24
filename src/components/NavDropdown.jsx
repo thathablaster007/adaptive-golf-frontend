@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const NavDropdown = ({ label, items }) => {
+const NavDropdown = ({ label, items, activePath = '', showActiveFill = false }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const hasActiveItem = items.some((item) => {
+    if (!activePath) return false;
+    return activePath === item.path;
+  });
 
   return (
     <div
@@ -11,7 +15,9 @@ const NavDropdown = ({ label, items }) => {
       onMouseLeave={() => setIsOpen(false)}
     >
       <button
-        className="flex items-center text-primary-blue hover:text-[#4C9A63] transition-colors duration-300 font-quicksand font-semibold text-base"
+        className={`flex items-center transition-colors duration-300 font-quicksand font-semibold text-base ${
+          hasActiveItem ? 'text-[#4C9A63]' : 'text-primary-blue hover:text-[#4C9A63]'
+        }`}
         type="button"
       >
         {label}
@@ -25,10 +31,16 @@ const NavDropdown = ({ label, items }) => {
             <Link
               key={item.path}
               to={item.path}
-              className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#4C9A63] transition-colors first:rounded-t-lg last:rounded-b-lg"
+              className={`flex items-center justify-between gap-4 px-4 py-3 transition-colors first:rounded-t-lg last:rounded-b-lg ${
+                activePath === item.path
+                  ? showActiveFill
+                    ? 'bg-[#f3f8ef] text-[#4C9A63]'
+                    : 'text-[#4C9A63]'
+                  : 'text-gray-700 hover:bg-gray-50 hover:text-[#4C9A63]'
+              }`}
               onClick={() => setIsOpen(false)}
             >
-              {item.label}
+              <span>{item.label}</span>
             </Link>
           ))}
         </div>

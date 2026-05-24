@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import mediaHero from '../Media a.JPG';
+import { ROUTES } from '../config/navigation';
 
 const Media = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -69,6 +70,7 @@ const Media = () => {
         />
         <div className="absolute inset-0 bg-black/45" />
         <div className="relative h-full flex flex-col items-center justify-end text-white text-center px-4 pb-14 md:pb-20 lg:pb-24">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-white/80">Media / Photo Library</p>
           <h1 className="text-2xl md:text-4xl lg:text-5xl font-quicksand font-medium leading-tight tracking-wide max-w-5xl">
             <span className="block">Different Journeys.</span>
             <span className="block">Shared Purpose.</span>
@@ -80,18 +82,26 @@ const Media = () => {
       {/* Introduction Section */}
       <motion.section variants={itemVariants} className="section-padding bg-[#f2f1ea]">
         <div className="container-custom max-w-5xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-quicksand font-bold text-primary-blue text-center mb-4">Experience Golf. Your Way.</h2>
+          <h2 className="text-4xl md:text-5xl font-quicksand font-bold text-primary-blue text-center mb-4">Photo Library</h2>
           <p className="text-2xl md:text-3xl font-quicksand font-semibold text-primary-green text-center mb-8">
-            Redefining ability through adaptive golf.
+            Moments that capture the spirit of inclusion.
           </p>
 
           <div className="max-w-4xl mx-auto space-y-4 text-center">
             <p className="text-lg md:text-xl text-gray-800 leading-relaxed">
-              Explore moments that capture the spirit of inclusion from discovery clinics and coaching workshops to tournaments and community events.
+              Explore moments from discovery clinics, coaching workshops, tournaments, and community events across adaptive golf.
             </p>
             <p className="text-lg md:text-xl text-gray-800 leading-relaxed">
-              See the athletes, coaches, and communities who bring our mission to life.
+              If you want the written player stories, head to the new story library built alongside this gallery.
             </p>
+            <div className="pt-4">
+              <Link
+                to={ROUTES.playerStories}
+                className="inline-flex items-center justify-center rounded-full bg-primary-green px-6 py-3 text-base font-semibold text-white shadow-md transition-colors duration-300 hover:bg-[#3f8354]"
+              >
+                Explore Player Stories
+              </Link>
+            </div>
           </div>
         </div>
       </motion.section>

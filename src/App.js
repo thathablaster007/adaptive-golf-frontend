@@ -7,6 +7,8 @@ const loadWhatIsAdaptiveGolf = () => import('./pages/WhatIsAdaptiveGolf');
 const loadTryGolf = () => import('./pages/TryGolf');
 const loadCompetition = () => import('./pages/Competition');
 const loadMedia = () => import('./pages/Media');
+const loadPlayerStories = () => import('./pages/PlayerStories');
+const loadPlayerStoryDetail = () => import('./pages/PlayerStoryDetail');
 const loadMediaDiscoveryProgrammeJan26 = () => import('./pages/MediaDiscoveryProgrammeJan26');
 const loadMediaDiscoveryDayVisualImpairment = () => import('./pages/MediaDiscoveryDayVisualImpairment');
 const loadGetInvolved = () => import('./pages/GetInvolved');
@@ -28,6 +30,8 @@ const WhatIsAdaptiveGolf = lazy(loadWhatIsAdaptiveGolf);
 const TryGolf = lazy(loadTryGolf);
 const Competition = lazy(loadCompetition);
 const Media = lazy(loadMedia);
+const PlayerStories = lazy(loadPlayerStories);
+const PlayerStoryDetail = lazy(loadPlayerStoryDetail);
 const MediaDiscoveryProgrammeJan26 = lazy(loadMediaDiscoveryProgrammeJan26);
 const MediaDiscoveryDayVisualImpairment = lazy(loadMediaDiscoveryDayVisualImpairment);
 const GetInvolved = lazy(loadGetInvolved);
@@ -102,6 +106,7 @@ function App() {
         loadGetInvolved(),
         loadDonate(),
         loadMedia(),
+        loadPlayerStories(),
         loadAboutUs(),
       ]);
     });
@@ -120,6 +125,8 @@ function App() {
             <Route path="try-golf" element={<TryGolf />} />
             <Route path="competition" element={<Competition />} />
             <Route path="media" element={<Media />} />
+            <Route path="media/player-stories" element={<PlayerStories />} />
+            <Route path="media/player-stories/:slug" element={<PlayerStoryDetail />} />
             <Route path="media/discovery-programme-26-jan-2026" element={<MediaDiscoveryProgrammeJan26 />} />
             <Route path="media/discovery-day-visual-impairment-participants" element={<MediaDiscoveryDayVisualImpairment />} />
             <Route path="blog" element={<Blog />} />
