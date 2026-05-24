@@ -21,7 +21,7 @@ const Header = () => {
   ];
 
   const mediaDropdownItems = [
-    { label: 'Player Stories', path: ROUTES.playerStories },
+    { label: `"You Can" Player Stories`, path: ROUTES.playerStories },
     { label: 'Photo Library', path: ROUTES.media },
   ];
 
@@ -162,7 +162,7 @@ const Header = () => {
               </Link>
               <p className="pt-1 font-quicksand font-bold text-primary-green uppercase text-sm tracking-wide">Media</p>
               <Link to={ROUTES.playerStories} onClick={closeMobileMenu} className="font-quicksand font-semibold text-base text-primary-blue hover:text-[#4C9A63] pl-2">
-                Player Stories
+                "You Can" Player Stories
               </Link>
               <Link to={ROUTES.media} onClick={closeMobileMenu} className="font-quicksand font-semibold text-base text-primary-blue hover:text-[#4C9A63] pl-2">
                 Photo Library
