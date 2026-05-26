@@ -92,12 +92,14 @@ const PlayerStoryDetail = () => {
             })}
           </div>
 
-          <blockquote className="mt-12 border-l-4 border-primary-green bg-white px-6 py-8 text-xl font-medium leading-9 text-primary-blue shadow-[0_16px_44px_rgba(24,39,75,0.08)] md:text-2xl font-quicksand">
-            {story.quote}
-            <footer className="mt-4 text-base font-semibold uppercase tracking-[0.18em] text-primary-green">
-              {story.quoteAttribution}
-            </footer>
-          </blockquote>
+          {story.quote && (
+            <blockquote className="mt-12 border-l-4 border-primary-green bg-white px-6 py-8 text-xl font-medium leading-9 text-primary-blue shadow-[0_16px_44px_rgba(24,39,75,0.08)] md:text-2xl font-quicksand">
+              {story.quote}
+              <footer className="mt-4 text-base font-semibold uppercase tracking-[0.18em] text-primary-green">
+                {story.quoteAttribution}
+              </footer>
+            </blockquote>
+          )}
         </div>
       </motion.section>
     </motion.div>

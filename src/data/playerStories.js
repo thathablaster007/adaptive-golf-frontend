@@ -19,6 +19,7 @@ import ranveerImage from '../ranveer.jpeg';
 import ranveerImageTwo from '../ranveer2.jpeg';
 import prashantImageOne from '../Zoman (1).jpeg';
 import prashantImageTwo from '../Zoman (2).jpeg';
+import subbiahImage from '../Subbaiah.jpeg';
 
 export const PLAYER_STORIES = [
   {
@@ -177,7 +178,7 @@ export const PLAYER_STORIES = [
   },
   {
     slug: 'khandu-jairam-khotkar',
-    name: 'Khandu Jairam Khotkar',
+    name: 'Khandu Jairam Kotkar',
     disabilityTags: ['Leg'],
     faceImage: khanduImageTwo,
     faceImageAlt: 'Khandu Jairam Khotkar portrait',
@@ -186,9 +187,9 @@ export const PLAYER_STORIES = [
     route: '/media/player-stories/khandu-jairam-khotkar',
     title: 'The Man Who Refused to Stay Down',
     intro:
-      'Khandu Jairam Khotkar rebuilt his life after a catastrophic leg injury and went on to represent India across multiple sports, discovering golf as another arena of resilience.',
+      'Khandu Jairam Kotkar rebuilt his life after a catastrophic leg injury and went on to represent India across multiple sports, discovering golf as another arena of resilience.',
     paragraphs: [
-      'Khandu Jairam Khotkar comes from the village of Rampur in Niphad Taluk, Nashik District, Maharashtra — a place where resilience is often shaped quietly through hardship.',
+      'Khandu Jairam Kotkar comes from the village of Rampur in Niphad Taluk, Nashik District, Maharashtra — a place where resilience is often shaped quietly through hardship.',
       'Today, he is known as an international para cricket player, para athlete, kabaddi player, and golfer. But his journey to sport began with unimaginable struggle.',
       'When Khandu was in the 10th standard, a devastating accident changed the course of his life. He fell into a deep pit, severely injuring his leg. The injury was catastrophic. His studies came to a halt, financial difficulties grew, and repeated surgeries on his leg failed to restore his mobility.',
       'The emotional pain became just as difficult as the physical one. People around him began telling him he would never walk again. During this period, he also lost his father, and life became increasingly isolating. Yet somewhere amidst the setbacks and despair, Khandu made a decision — he would fight to rebuild himself, no matter how long it took.',
@@ -199,10 +200,10 @@ export const PLAYER_STORIES = [
       'His determination only continued to grow. Driven by an inner desire to challenge himself, Khandu climbed Kalsubai Peak — the highest peak in Maharashtra — not once, but twenty-one times.',
       'Golf entered his life through his continued association with Wing Commander Bagmar. During a golf introductory session, Khandu was encouraged to try a few shots. His natural ability and focus immediately stood out, and from that day onward, he began learning and playing the game seriously.',
       'For Khandu, sport became more than achievement. It became proof — proof that setbacks do not define destiny. Proof that the human spirit can rise stronger after every fall. And proof that belief in oneself can overcome even the harshest circumstances.',
-      'From a young boy fighting to walk again to an athlete representing India across multiple sports, Khandu Jairam Khotkar stands as a powerful symbol of perseverance, courage, and faith.',
+      'From a young boy fighting to walk again to an athlete representing India across multiple sports, Khandu Jairam Kotkar stands as a powerful symbol of perseverance, courage, and faith.',
     ],
     quote: '“Whatever life throws at me, I will not lose. We must always have faith in ourselves.”',
-    quoteAttribution: 'Khandu Jairam Khotkar',
+    quoteAttribution: 'Khandu Jairam Kotkar',
     inlineImages: [
       {
         afterParagraphIndex: 6,
@@ -311,7 +312,7 @@ export const PLAYER_STORIES = [
       'That decision changed everything.',
       'As a child, Nandan naturally gravitated toward sports. He showed remarkable ability in swimming and badminton, but it was golf that would eventually become the sport that transformed not only his life, but also the lives of those around him.',
       'The introduction to golf came unexpectedly. During conversations about another golfer with disabilities, Ankush, and his inspiring sporting journey, Nandan’s parents met people who believed that golf could offer structure, confidence, and growth for children with special needs. What initially began as an experiment soon became a turning point.',
-      'After early coaching experiences, Nandan’s family later discovered Zion Hills Golf County in Kolar — a place that would become central to his development both as a golfer and as a person. There, surrounded by coaches, mentors, and an inclusive golfing environment, Nandan began flourishing.',
+      'After early coaching experiences, Nandan’s family later discovered Zion Hills Golf County in Kolar — a place that would become central to his development both as a golfer and as a person. Training at the TSG Academy became a turning point in Nandan’s journey. The structured environment, patient coaching, and inclusive culture of the academy helped shape not only his game, but also his confidence, discipline, and ability to connect with others.',
       'He started golf at around eight years old. Today, the game has become an inseparable part of his identity. For Nandan, golf is much more than competition. The sport brought structure and routine into his life — something that deeply helped him stay calm, focused, and emotionally balanced. The discipline of schedules, etiquette, taking turns, following rules, and interacting within the academy environment gradually helped him build confidence and social connection.',
       'Golf also gave him friendships. Within the academy, Nandan found acceptance among fellow golfers who welcomed him naturally, supported him, and made him feel part of the community long before the outside world fully understood adaptive golf. Those moments of inclusion became deeply meaningful milestones in his journey.',
       'His love for the game is extraordinary. Nandan wakes up every day excited for golf. Whether it means waking before dawn to travel from Kolar to Bengaluru for tournaments and practice rounds, or preparing his golf kit and essentials the night before, he approaches every day with enthusiasm and commitment.',
@@ -451,6 +452,35 @@ export const PLAYER_STORIES = [
         afterParagraphIndex: 5,
         src: prashantImageTwo,
         alt: 'Prashant Subhash Zoman during a golf session',
+      },
+    ],
+  },
+  {
+    slug: 's-subbiah',
+    name: 'S. Subbiah',
+    disabilityTags: ['Vision'],
+    faceImage: subbiahImage,
+    faceImagePosition: 'top',
+    faceImageAlt: 'S. Subbiah portrait',
+    summary: 'Finding confidence beyond vision through adaptive golf and perseverance.',
+    route: '/media/player-stories/s-subbiah',
+    title: 'Finding Confidence Beyond Vision',
+    intro:
+      'For S. Subbiah, adaptive golf represents determination, patience, and the belief that disability should never define potential.',
+    paragraphs: [
+      'For S. Subbiah, adaptive golf represents determination, patience, and the belief that disability should never define potential. Living with 100% visual impairment, Subbiah has built an inspiring journey through academic excellence, professional achievement, and an unwavering commitment to growth. Today, he serves as an Assistant General Manager at the Reserve Bank of India, Bengaluru Regional Office, while also dedicating years of service toward empowering persons with disabilities through EnAble India.',
+      'Despite excelling professionally and academically, golf introduced him to an entirely new challenge — one that demanded trust, discipline, and resilience. Learning the game without sight was not easy. Understanding the nuances of swing, rhythm, alignment, and accuracy tested both his patience and confidence. There were moments when he questioned whether he could continue.',
+      'But through perseverance, guidance from coaches, and a strong willingness to learn, Subbiah slowly began discovering confidence on the golf course. For him, golf became deeply meditative — a space where he could fully immerse himself, focus on improvement, and experience the joy of progress one shot at a time.',
+      'His journey in adaptive golf reflects a powerful message: with determination, opportunity, and the right support system, persons with disabilities can continue to learn, compete, and thrive in every field.',
+      'Today, Subbiah stands as an example of quiet strength and perseverance — proving that true vision is not limited to sight, but shaped by courage, discipline, and belief in oneself.',
+    ],
+    quote: null,
+    quoteAttribution: null,
+    inlineImages: [
+      {
+        afterParagraphIndex: 1,
+        src: subbiahImage,
+        alt: 'S. Subbiah during a practice session',
       },
     ],
   },
