@@ -20,6 +20,8 @@ import ranveerImageTwo from '../ranveer2.jpeg';
 import prashantImageOne from '../Zoman (1).jpeg';
 import prashantImageTwo from '../Zoman (2).jpeg';
 import subbiahImage from '../Subbaiah.jpeg';
+import jayanthImageOne from '../Jayanth (1).jpeg';
+import jayanthImageTwo from '../Jayanth (2).jpeg';
 
 export const PLAYER_STORIES = [
   {
@@ -481,6 +483,46 @@ export const PLAYER_STORIES = [
         afterParagraphIndex: 1,
         src: subbiahImage,
         alt: 'S. Subbiah during a practice session',
+      },
+    ],
+  },
+  {
+    slug: 'jayanth-h-g',
+    name: 'Jayanth H.G.',
+    disabilityTags: ['Intellectual'],
+    faceImage: jayanthImageOne,
+    faceImagePosition: 'top-small',
+    faceImageAlt: 'Jayanth H.G. portrait',
+    summary:
+      'A swimmer, dancer, and golfer whose warm smile and determination inspire everyone around him.',
+    route: '/media/player-stories/jayanth-h-g',
+    title: 'A Smile That Inspires',
+    intro:
+      'Some people leave an impression through their achievements. Others leave an impression through the way they make people feel. Jayanth H.G. does both.',
+    paragraphs: [
+      'From the moment you meet him, you notice his smile. Warm, genuine, and ever-present, it reflects the way he approaches life—with positivity, confidence, and an infectious enthusiasm that draws people towards him. During the India Adaptive Open, fellow players spoke about how easy he was to talk to, how encouraging he was, and how his cheerful presence brought energy to every interaction.',
+      'Behind that smile is a remarkable journey of perseverance and passion.',
+      'Born with Down Syndrome, Jayanth never allowed labels to define what he could achieve. Instead, he discovered his strengths through sport and creative expression, pursuing each opportunity with determination and joy. Swimming became one of his greatest passions, and through years of dedication he went on to compete at national and international levels, earning more than 30 medals and receiving prestigious recognitions for his accomplishments.',
+      'But Jayanth\'s story does not end at the swimming pool.',
+      'He is also a talented golfer, embracing the challenge and discipline that the game demands. Whether practicing his swing or competing on the course, he brings the same commitment and enthusiasm that have shaped every part of his sporting journey.',
+      'Beyond sport, Jayanth is a gifted dancer whose creativity shines through every performance. His ability to express himself freely and confidently has earned him recognition on international stages, proving that talent knows no boundaries.',
+      'Yet what makes Jayanth truly special is not the medals he has won or the awards he has received. It is his spirit. His ability to connect with people, spread happiness, and make everyone around him feel welcome. He reminds us that success is measured not only by achievements, but by the impact we have on others.',
+      'Every smile, every conversation, every challenge embraced with courage tells the story of a person who chooses possibility over limitation.',
+      'And that is why Jayanth continues to inspire. Because his journey is not just about what he can do. It is about showing the world what is possible.',
+    ],
+    quote:
+      '“Every smile, every conversation, every challenge embraced with courage tells the story of a person who chooses possibility over limitation.”',
+    quoteAttribution: 'Jayanth H.G.',
+    inlineImages: [
+      {
+        afterParagraphIndex: 2,
+        src: jayanthImageOne,
+        alt: 'Jayanth smiling at an event',
+      },
+      {
+        afterParagraphIndex: 6,
+        src: jayanthImageTwo,
+        alt: 'Jayanth performing or competing',
       },
     ],
   },

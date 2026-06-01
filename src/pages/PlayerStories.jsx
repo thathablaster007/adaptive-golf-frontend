@@ -104,9 +104,14 @@ const PlayerStories = () => {
                     <img
                       src={story.faceImage}
                       alt={story.faceImageAlt}
-                      className={`h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] ${
-                        story.faceImagePosition === 'top' ? 'object-top' : 'object-center'
-                      }`}
+                      className={`h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]`}
+                      style={
+                        story.faceImagePosition === 'top'
+                          ? { objectPosition: 'center top' }
+                          : story.faceImagePosition === 'top-small'
+                          ? { objectPosition: '50% 18%' }
+                          : undefined
+                      }
                       loading="lazy"
                       decoding="async"
                     />
