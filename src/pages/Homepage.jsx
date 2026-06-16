@@ -24,10 +24,10 @@ import tryGolfHomeImage from '../Try Golf_Home.JPG';
 import competitionHomeImage from '../Comeptition_Home.JPG';
 import mediaHomeImage from '../Media_Home.JPG';
 import medalGold from '../unnamed.png';
-import logoBerlin2023 from '../unnamed (2).png';
+import logoBerlin2023 from '../unnamed (4).png';
 import logoLosAngeles2015 from '../unnamed (7).png';
 import logoAbuDhabi2019 from '../unnamed (5).png';
-import logoEnglandGolf from '../unnamed (4).png';
+import logoEnglandGolf from '../unnamed (2).png';
 import logoDaikinMadridOpen from '../unnamed (1).png';
 import wagrLogo from '../wagr_logo.png';
 import csrPartnerLogo from '../unnamed (9).png';
@@ -35,6 +35,9 @@ import mediaImpactPartnerLogo from '../Logo Golf & BEYOND.png';
 import ranveer2Image from '../ranveer2.jpeg';
 import ankushImage from '../ankush.jpeg';
 import vishwaImage from '../vishwa.jpeg';
+import logoSpecialOlympics from '../sob-1.png';
+import logoMacao from '../macao logo.jpg';
+
 
 const CRITICAL_HERO_IMAGES = [ankushHeroImage, ranveerHeroImage, vishwaHeroImage, nandanFour];
 
@@ -277,6 +280,26 @@ const Homepage = () => {
         },
       ],
     },
+    {
+      name: 'Nandan S',
+      medalImage: medalGold,
+      medalAlt: 'Gold medal',
+      faceImage: nandanFour,
+      faceImagePosition: 'center 12%',
+      achievements: [
+        {
+          title: 'Special Plympics Bharat National Trials',
+          logo: logoSpecialOlympics,
+          logoClassName: 'h-24 w-auto',
+        },
+        {
+          title: 'Macao Golf Masters Open 2025',
+          logo: logoMacao,
+          logoClassName: 'h-24 w-auto',
+        },
+      ],
+    },
+    
   ];
 
   return (
