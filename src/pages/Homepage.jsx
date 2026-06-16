@@ -7,6 +7,8 @@ import { ROUTES } from '../config/navigation';
 import ankushHeroImage from '../Ankush Saha.jpeg';
 import ranveerHeroImage from '../ranveer.jpeg';
 import vishwaHeroImage from '../Vishwa Bhatiya.jpeg';
+import nandanFour from '../Nandan (4).jpeg';
+import { PLAYER_STORY_BY_SLUG } from '../data/playerStories';
 import title2a from '../assets/hero/title-2a.jpg';
 import title2b from '../assets/hero/title-2b.jpg';
 import title2c from '../assets/hero/title-2c.jpg';
@@ -34,7 +36,7 @@ import ranveer2Image from '../ranveer2.jpeg';
 import ankushImage from '../ankush.jpeg';
 import vishwaImage from '../vishwa.jpeg';
 
-const CRITICAL_HERO_IMAGES = [ankushHeroImage, ranveerHeroImage, vishwaHeroImage];
+const CRITICAL_HERO_IMAGES = [ankushHeroImage, ranveerHeroImage, vishwaHeroImage, nandanFour];
 
 const Homepage = () => {
   const [hasBlogRailStarted, setHasBlogRailStarted] = useState(false);
@@ -95,6 +97,27 @@ const Homepage = () => {
     },
   };
 
+  const [autoPlayIntervalValue, setAutoPlayIntervalValue] = useState(() => {
+    if (typeof window === 'undefined') return 7000;
+    const w = window.innerWidth;
+    if (w < 640) return 4000;
+    if (w < 1024) return 5000;
+    return 7000;
+  });
+
+  useEffect(() => {
+    const compute = () => {
+      const w = window.innerWidth;
+      if (w < 640) setAutoPlayIntervalValue(4000);
+      else if (w < 1024) setAutoPlayIntervalValue(5000);
+      else setAutoPlayIntervalValue(7000);
+    };
+
+    compute();
+    window.addEventListener('resize', compute);
+    return () => window.removeEventListener('resize', compute);
+  }, []);
+
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -105,14 +128,16 @@ const Homepage = () => {
   };
 
   // Hero slideshow data
+  const nandanName = PLAYER_STORY_BY_SLUG['nandan-s']?.name || 'Nandan S';
   const heroSlides = [
     {
-      images: [ankushHeroImage, ranveerHeroImage, vishwaHeroImage],
-      imagePositions: ['center 22%', 'center 22%', 'center 20%'],
-      imagePositionsTablet: ['center 22%', 'center 22%', 'center 20%'],
-      imagePositionsMobile: ['center 22%', 'center 22%', 'center 20%'],
-      imagePositionsXs: ['center 22%', 'center 22%', 'center 20%'],
-      imageCaptions: ['Ankush Saha', null, 'Vishwa Vardhan Bhati'],
+      images: [ankushHeroImage, ranveerHeroImage, vishwaHeroImage, nandanFour],
+      desktopStitchedPanelCount: 4,
+        imagePositions: ['center 22%', 'center 22%', 'center 20%', 'center 22%'],
+        imagePositionsTablet: ['center 22%', 'center 22%', 'center 20%', 'center 22%'],
+        imagePositionsMobile: ['center 22%', 'center 22%', 'center 20%', 'center 22%'],
+        imagePositionsXs: ['center 22%', 'center 22%', 'center 20%', 'center 22%'],
+        imageCaptions: ['Ankush Saha', null, 'Vishwa Vardhan Bhati', nandanName],
       floatingCaption: 'Ranveer Singh Saini',
       floatingCaptionTargetImageIndex: 1,
       topText: 'Experience Golf',
@@ -204,6 +229,8 @@ const Homepage = () => {
       name: 'Ranveer Singh Saini',
       medalImage: medalGold,
       medalAlt: 'Gold medal',
+      faceImage: ranveer2Image,
+      faceImagePosition: 'center 35%',
       achievements: [
         {
           title: 'Special Olympics World Games Berlin 2023',
@@ -221,6 +248,8 @@ const Homepage = () => {
       name: 'Ankush Saha',
       medalImage: medalGold,
       medalAlt: 'Gold medal',
+      faceImage: ankushImage,
+      faceImagePosition: 'center 12%',
       achievements: [
         {
           title: 'Special Olympics World Games Abu Dhabi 2019',
@@ -233,6 +262,8 @@ const Homepage = () => {
       name: 'Vishwa Vardhan Bhati',
       wagrLogo,
       wagrRank: 167,
+      faceImage: vishwaImage,
+      faceImagePosition: 'center 10%',
       achievements: [
         {
           title: 'England Golf',
@@ -259,7 +290,7 @@ const Homepage = () => {
       <HeroSlideshow 
         slides={heroSlides} 
         autoPlay={true} 
-        autoPlayInterval={9000}
+        autoPlayInterval={autoPlayIntervalValue}
       />
 
       {/* About AGAF Section */}
@@ -290,7 +321,7 @@ const Homepage = () => {
                 <iframe
                   width="100%"
                   height="100%"
-                  src="https://www.youtube.com/embed/IOSTp781MVA"
+                  src="https://www.youtube.com/embed/PhiBZvgeX2Q"
                   title="USAGA Adaptive Golf"
                   loading="lazy"
                   referrerPolicy="strict-origin-when-cross-origin"
@@ -412,7 +443,27 @@ const Homepage = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr className="border-t-4 border-primary-blue/70">
+                  {facesOfAdaptiveGolf.map((athlete, index) => (
+                    <td
+                      key={`${athlete.name}-portrait`}
+                      className={`px-4 py-5 align-top ${index < facesOfAdaptiveGolf.length - 1 ? 'border-r-4 border-primary-blue/70' : ''}`}
+                    >
+                      <div className="mx-auto w-full max-w-[300px] overflow-hidden rounded-xl shadow-lg">
+                        <img
+                          src={athlete.faceImage}
+                          alt={athlete.name}
+                          className="w-full h-[340px] object-cover"
+                          style={{ objectPosition: athlete.faceImagePosition || 'center' }}
+                          loading="lazy"
+                          decoding="async"
+                          fetchPriority="low"
+                        />
+                      </div>
+                    </td>
+                  ))}
+                </tr>
+                <tr className="border-t-4 border-primary-blue/70">
                   {facesOfAdaptiveGolf.map((athlete, index) => (
                     <td
                       key={`${athlete.name}-achievements`}
@@ -437,40 +488,6 @@ const Homepage = () => {
                 </tr>
               </tbody>
             </table>
-          </motion.div>
-        </div>
-      </motion.section>
-      <motion.section variants={itemVariants} className="py-10 md:py-12 bg-[#dbeafe]">
-        <div className="container-custom">
-          {/* Athletes Photo Grid */}
-          <motion.div variants={itemVariants} className="mt-8 md:mt-12 overflow-x-auto rounded-2xl md:rounded-none md:overflow-visible -mx-4 md:mx-0 px-4 md:px-0">
-            <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 min-w-max md:min-w-full">
-              {[
-                { img: ranveer2Image, name: 'Ranveer Singh Saini', position: 'center 35%' },
-                { img: ankushImage, name: 'Ankush Saha', position: 'center 12%' },
-                { img: vishwaImage, name: 'Vishwa Vardhan Bhati', position: 'center 10%' },
-              ].map((athlete, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  className="relative rounded-xl overflow-hidden shadow-lg flex-shrink-0 w-64 md:w-auto md:flex-shrink"
-                >
-                  <img
-                    src={athlete.img}
-                    alt={athlete.name}
-                    className="w-full aspect-square object-cover"
-                    style={{ objectPosition: athlete.position }}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent px-4 md:px-5 py-4 md:py-5">
-                    <p className="text-white font-quicksand font-bold text-lg md:text-xl">
-                      {athlete.name}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </motion.section>
