@@ -13,6 +13,8 @@ import sponsorLogo3 from '../47f2e576-b5d5-44dc-aad2-f71e8fea3ce0.jpeg';
 import sponsorLogo4 from '../unnamed.jpg';
 import sponsorLogo5 from '../totheteesponder.jpg';
 import sponsorLogoGolfBeyond from '../Logo Golf & BEYOND.png';
+import sponsorLogo6 from '../180Golf.png';
+import sponsorLogo7 from '../Golf_Trust.jpeg';
 
 const CardIcon = ({ type }) => {
   const wrapperClass = 'w-20 h-20 md:w-24 md:h-24 flex items-center justify-center';
@@ -138,6 +140,8 @@ const GetInvolved = () => {
     { name: 'Sponsor Partner 3', logo: sponsorLogo3 },
     { name: 'Sponsor Partner 4', logo: sponsorLogo4 },
     { name: 'Sponsor Partner 5', logo: sponsorLogo5 },
+    { name: 'Sponsor Partner 6', logo: sponsorLogo6 },
+    { name: 'Sponsor Partner 7', logo: sponsorLogo7 },
   ];
 
   const loopingSponsors = [...sponsors, ...sponsors];
@@ -195,15 +199,15 @@ const GetInvolved = () => {
           <p className="text-xl md:text-2xl text-gray-800 leading-relaxed">
             Every athlete deserves the opportunity to discover their potential. Every community deserves inclusive spaces where ability is celebrated.
           </p>
-          
+
           <p className="text-xl md:text-2xl text-gray-800 leading-relaxed">
             At Adaptive Golf Alliance Foundation, we are building more than programs — we are building pathways, confidence, and lifelong connections through the game of golf. Together with our partners, volunteers, and supporters, we are expanding what is possible for athletes with disabilities.
           </p>
-          
+
           <p className="text-xl md:text-2xl text-gray-800 leading-relaxed">
             Whether you are an athlete, coach, volunteer, donor, or advocate — there is a place for you here.
           </p>
-          
+
           <p className="text-xl md:text-2xl font-quicksand font-semibold text-primary-green">
             Because when access grows, opportunity follows.
           </p>
@@ -247,15 +251,15 @@ const GetInvolved = () => {
             <p className="text-xl md:text-2xl text-gray-800 leading-relaxed">
               Creating access means removing barriers and building intentional pathways to participation. Through partnership and support, we ensure athletes of all abilities have the opportunity to learn, play, and compete.
             </p>
-            
+
             <p className="text-xl md:text-2xl text-gray-800 leading-relaxed">
               Join us in advancing inclusion and expanding access nationwide. By partnering with Adaptive Golf Alliance Foundation, you invest in programs that empower athletes, strengthen communities, and create lasting impact through sport.
             </p>
-            
+
             <p className="text-xl md:text-2xl font-quicksand font-semibold text-primary-blue">
               Be part of the movement.
             </p>
-            
+
             <p className="text-primary-red font-quicksand font-bold text-xl">
               #AccessThroughGolf
             </p>

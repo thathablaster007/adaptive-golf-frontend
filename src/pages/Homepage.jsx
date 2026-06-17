@@ -37,6 +37,10 @@ import ankushImage from '../ankush.jpeg';
 import vishwaImage from '../vishwa.jpeg';
 import logoSpecialOlympics from '../sob-1.png';
 import logoMacao from '../macao logo.jpg';
+import GolfTrustPartnerLogo from '../Golf_Trust.jpeg';
+import mediaImpactPartner2Logo from '../180Golf.png';
+import totheteesponderLogo from '../totheteesponder.jpg';
+
 
 
 const CRITICAL_HERO_IMAGES = [ankushHeroImage, ranveerHeroImage, vishwaHeroImage, nandanFour];
@@ -136,11 +140,11 @@ const Homepage = () => {
     {
       images: [ankushHeroImage, ranveerHeroImage, vishwaHeroImage, nandanFour],
       desktopStitchedPanelCount: 4,
-        imagePositions: ['center 22%', 'center 22%', 'center 20%', 'center 22%'],
-        imagePositionsTablet: ['center 22%', 'center 22%', 'center 20%', 'center 22%'],
-        imagePositionsMobile: ['center 22%', 'center 22%', 'center 20%', 'center 22%'],
-        imagePositionsXs: ['center 22%', 'center 22%', 'center 20%', 'center 22%'],
-        imageCaptions: ['Ankush Saha', null, 'Vishwa Vardhan Bhati', nandanName],
+      imagePositions: ['center 22%', 'center 22%', 'center 20%', 'center 22%'],
+      imagePositionsTablet: ['center 22%', 'center 22%', 'center 20%', 'center 22%'],
+      imagePositionsMobile: ['center 22%', 'center 22%', 'center 20%', 'center 22%'],
+      imagePositionsXs: ['center 22%', 'center 22%', 'center 20%', 'center 22%'],
+      imageCaptions: ['Ankush Saha', null, 'Vishwa Vardhan Bhati', nandanName],
       floatingCaption: 'Ranveer Singh Saini',
       floatingCaptionTargetImageIndex: 1,
       topText: 'Experience Golf',
@@ -299,7 +303,7 @@ const Homepage = () => {
         },
       ],
     },
-    
+
   ];
 
   return (
@@ -310,9 +314,9 @@ const Homepage = () => {
       className="font-quicksand"
     >
       {/* Hero Slideshow Section */}
-      <HeroSlideshow 
-        slides={heroSlides} 
-        autoPlay={true} 
+      <HeroSlideshow
+        slides={heroSlides}
+        autoPlay={true}
         autoPlayInterval={autoPlayIntervalValue}
       />
 
@@ -630,18 +634,85 @@ const Homepage = () => {
         </div>
       </motion.section>
 
-      {/* CSR Partners Section */}
-      <motion.section variants={itemVariants} className="py-10 md:py-12 bg-[#e8ede6]">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center h-full flex flex-col justify-center">
-              <h2 className="text-3xl md:text-4xl font-quicksand font-bold text-primary-blue mb-6">
-                CSR Partners
+      {/* CSR & Media Partners Section */}
+      <motion.section variants={itemVariants} className="py-12 md:py-16 bg-[#e8ede6]">
+        <div className="container-custom max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-stretch">
+            {/* CSR Partner */}
+            <div className="flex flex-col h-full">
+              <h2 className="text-3xl md:text-4xl font-quicksand font-bold text-primary-blue mb-6 text-center">
+                CSR Partner
               </h2>
-              <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm max-w-3xl mx-auto">
+              <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm flex items-center justify-center max-w-md mx-auto w-full">
                 <img
                   src={csrPartnerLogo}
                   alt="CSR Partner"
+                  className="w-full h-20 md:h-24 object-contain"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+
+            {/* Media Partner */}
+            <div className="flex flex-col h-full">
+              <h2 className="text-3xl md:text-4xl font-quicksand font-bold text-primary-blue mb-6 text-center">
+                Media Partner
+              </h2>
+              <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6 items-stretch">
+                <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center">
+                  <img
+                    src={mediaImpactPartnerLogo}
+                    alt="Media Impact Partner"
+                    className="w-full h-20 md:h-24 object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center">
+                  <img
+                    src={mediaImpactPartner2Logo}
+                    alt="Media Impact Partner 2"
+                    className="w-full h-20 md:h-24 object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* International & Community Partners Section */}
+      <motion.section variants={itemVariants} className="py-12 md:py-16 bg-[#f2f1ea]">
+        <div className="container-custom max-w-5xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-stretch">
+            {/* International Relations Partner */}
+            <div className="flex flex-col h-full">
+              <h2 className="text-3xl md:text-4xl font-quicksand font-bold text-primary-blue mb-6 text-center">
+                International Relations Partner
+              </h2>
+              <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm flex items-center justify-center max-w-md mx-auto w-full">
+                <img
+                  src={GolfTrustPartnerLogo}
+                  alt="International Relations Partner"
+                  className="w-full h-20 md:h-24 object-contain"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+
+            {/* Community Partner */}
+            <div className="flex flex-col h-full">
+              <h2 className="text-3xl md:text-4xl font-quicksand font-bold text-primary-blue mb-6 text-center">
+                Community Partner
+              </h2>
+              <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm flex items-center justify-center max-w-md mx-auto w-full">
+                <img
+                  src={totheteesponderLogo}
+                  alt="Community Partner"
                   className="w-full h-20 md:h-24 object-contain"
                   loading="lazy"
                   decoding="async"
@@ -652,27 +723,6 @@ const Homepage = () => {
         </div>
       </motion.section>
 
-      {/* Media Impact Partner Section */}
-      <motion.section variants={itemVariants} className="py-10 md:py-12 bg-[#f2f1ea]">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center h-full flex flex-col justify-center">
-              <h2 className="text-3xl md:text-4xl font-quicksand font-bold text-primary-blue mb-6">
-                Media Impact Partner
-              </h2>
-              <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm max-w-3xl mx-auto">
-                <img
-                  src={mediaImpactPartnerLogo}
-                  alt="Media Impact Partner"
-                  className="w-full h-20 md:h-24 object-contain"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </motion.section>
 
       {/* Together We Create Access Section - Banner CTA */}
       <motion.section
