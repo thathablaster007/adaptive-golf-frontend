@@ -162,7 +162,7 @@ const MediaAdaptiveGolfTournament = () => {
             <div className="container-custom">
                 <div className="mb-8">
                     <h1 className="font-quicksand text-4xl md:text-5xl font-bold text-primary-blue mb-3">
-                        Adaptive Golf Tournament
+                        India Adaptive Open 1st - 3rd June 2026
                     </h1>
                     <p className="font-quicksand text-lg md:text-xl text-gray-700">
                         Event gallery ({galleryFiles.length} photos)

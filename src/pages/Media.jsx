@@ -35,7 +35,7 @@ const Media = () => {
       description: 'Tournament details and event coverage are on the way.',
       programmes: [
         {
-          label: 'Adaptive Golf Tournament',
+          label: 'India Adaptive Open 2026',
           path: '/media/adaptive-golf-tournament',
         },
       ],
