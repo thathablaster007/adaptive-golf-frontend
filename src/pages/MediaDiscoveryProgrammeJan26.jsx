@@ -81,7 +81,7 @@ const MediaDiscoveryProgrammeJan26 = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {currentPhotos.map((image, idx) => (
-            <motion.div 
+            <motion.div
               key={`${image.alt}-${idx}`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

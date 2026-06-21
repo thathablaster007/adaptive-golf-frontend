@@ -33,7 +33,12 @@ const Media = () => {
       id: 'tournaments',
       label: 'Tournaments',
       description: 'Tournament details and event coverage are on the way.',
-      programmes: [],
+      programmes: [
+        {
+          label: 'Adaptive Golf Tournament',
+          path: '/media/adaptive-golf-tournament',
+        },
+      ],
     },
     {
       id: 'workshops',
@@ -117,11 +122,10 @@ const Media = () => {
                 onClick={() => setActiveTab(idx)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-6 py-3 rounded-full font-quicksand font-semibold transition-all whitespace-nowrap ${
-                  activeTab === idx
-                    ? 'bg-primary-blue text-white shadow-lg'
-                    : 'bg-white text-gray-800 border border-gray-300 hover:border-primary-blue hover:text-primary-blue'
-                }`}
+                className={`px-6 py-3 rounded-full font-quicksand font-semibold transition-all whitespace-nowrap ${activeTab === idx
+                  ? 'bg-primary-blue text-white shadow-lg'
+                  : 'bg-white text-gray-800 border border-gray-300 hover:border-primary-blue hover:text-primary-blue'
+                  }`}
               >
                 {tab.label}
               </motion.button>

@@ -11,6 +11,7 @@ const loadPlayerStories = () => import('./pages/PlayerStories');
 const loadPlayerStoryDetail = () => import('./pages/PlayerStoryDetail');
 const loadMediaDiscoveryProgrammeJan26 = () => import('./pages/MediaDiscoveryProgrammeJan26');
 const loadMediaDiscoveryDayVisualImpairment = () => import('./pages/MediaDiscoveryDayVisualImpairment');
+const loadMediaAdaptiveGolfTournament = () => import('./pages/MediaAdaptiveGolfTournament');
 const loadGetInvolved = () => import('./pages/GetInvolved');
 const loadDonate = () => import('./pages/Donate');
 const loadNews = () => import('./pages/News');
@@ -34,6 +35,7 @@ const PlayerStories = lazy(loadPlayerStories);
 const PlayerStoryDetail = lazy(loadPlayerStoryDetail);
 const MediaDiscoveryProgrammeJan26 = lazy(loadMediaDiscoveryProgrammeJan26);
 const MediaDiscoveryDayVisualImpairment = lazy(loadMediaDiscoveryDayVisualImpairment);
+const MediaAdaptiveGolfTournament = lazy(loadMediaAdaptiveGolfTournament);
 const GetInvolved = lazy(loadGetInvolved);
 const Donate = lazy(loadDonate);
 const News = lazy(loadNews);
@@ -129,6 +131,7 @@ function App() {
             <Route path="media/player-stories/:slug" element={<PlayerStoryDetail />} />
             <Route path="media/discovery-programme-26-jan-2026" element={<MediaDiscoveryProgrammeJan26 />} />
             <Route path="media/discovery-day-visual-impairment-participants" element={<MediaDiscoveryDayVisualImpairment />} />
+            <Route path="media/adaptive-golf-tournament" element={<MediaAdaptiveGolfTournament />} />
             <Route path="blog" element={<Blog />} />
             <Route path="blog/more-than-a-game" element={<BlogPostEmpowerment />} />
             <Route path="blog/power-of-volunteers" element={<BlogPostVolunteers />} />

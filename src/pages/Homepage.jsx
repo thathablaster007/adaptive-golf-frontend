@@ -643,7 +643,7 @@ const Homepage = () => {
               <h2 className="text-3xl md:text-4xl font-quicksand font-bold text-primary-blue mb-6 text-center">
                 CSR Partner
               </h2>
-              <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm flex items-center justify-center max-w-md mx-auto w-full">
+              <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center max-w-md mx-auto w-full">
                 <img
                   src={csrPartnerLogo}
                   alt="CSR Partner"
@@ -659,25 +659,14 @@ const Homepage = () => {
               <h2 className="text-3xl md:text-4xl font-quicksand font-bold text-primary-blue mb-6 text-center">
                 Media Partner
               </h2>
-              <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6 items-stretch">
-                <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center">
-                  <img
-                    src={mediaImpactPartnerLogo}
-                    alt="Media Impact Partner"
-                    className="w-full h-20 md:h-24 object-contain"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center">
-                  <img
-                    src={mediaImpactPartner2Logo}
-                    alt="Media Impact Partner 2"
-                    className="w-full h-20 md:h-24 object-contain"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
+              <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center max-w-md mx-auto w-full">
+                <img
+                  src={mediaImpactPartnerLogo}
+                  alt="Media Impact Partner"
+                  className="w-full h-20 md:h-24 object-contain"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             </div>
           </div>
@@ -693,7 +682,7 @@ const Homepage = () => {
               <h2 className="text-3xl md:text-4xl font-quicksand font-bold text-primary-blue mb-6 text-center">
                 International Relations Partner
               </h2>
-              <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm flex items-center justify-center max-w-md mx-auto w-full">
+              <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center max-w-md mx-auto w-full">
                 <img
                   src={GolfTrustPartnerLogo}
                   alt="International Relations Partner"
@@ -709,14 +698,25 @@ const Homepage = () => {
               <h2 className="text-3xl md:text-4xl font-quicksand font-bold text-primary-blue mb-6 text-center">
                 Community Partner
               </h2>
-              <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm flex items-center justify-center max-w-md mx-auto w-full">
-                <img
-                  src={totheteesponderLogo}
-                  alt="Community Partner"
-                  className="w-full h-20 md:h-24 object-contain"
-                  loading="lazy"
-                  decoding="async"
-                />
+              <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6 items-stretch">
+                <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center">
+                  <img
+                    src={totheteesponderLogo}
+                    alt="Community Partner"
+                    className="w-full h-20 md:h-24 object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center">
+                  <img
+                    src={mediaImpactPartner2Logo}
+                    alt="Media Impact Partner 2"
+                    className="w-full h-20 md:h-24 object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
               </div>
             </div>
           </div>
