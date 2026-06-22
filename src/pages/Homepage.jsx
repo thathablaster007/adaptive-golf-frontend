@@ -40,6 +40,7 @@ import logoMacao from '../macao logo.jpg';
 import GolfTrustPartnerLogo from '../Golf_Trust.jpeg';
 import mediaImpactPartner2Logo from '../180Golf.png';
 import totheteesponderLogo from '../totheteesponder.jpg';
+import GoSportsLogo from '../unnamed (10).png';
 
 
 
@@ -634,48 +635,28 @@ const Homepage = () => {
         </div>
       </motion.section>
 
-      {/* CSR & Media Partners Section */}
       <motion.section variants={itemVariants} className="py-12 md:py-16 bg-[#e8ede6]">
         <div className="container-custom max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-stretch">
-            {/* CSR Partner */}
-            <div className="flex flex-col h-full">
-              <h2 className="text-3xl md:text-4xl font-quicksand font-bold text-primary-blue mb-6 text-center">
-                CSR Partner
-              </h2>
-              <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center max-w-md mx-auto w-full">
-                <img
-                  src={csrPartnerLogo}
-                  alt="CSR Partner"
-                  className="w-full h-20 md:h-24 object-contain"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-            </div>
-
-            {/* Media Partner */}
-            <div className="flex flex-col h-full">
-              <h2 className="text-3xl md:text-4xl font-quicksand font-bold text-primary-blue mb-6 text-center">
-                Media Partner
-              </h2>
-              <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center max-w-md mx-auto w-full">
-                <img
-                  src={mediaImpactPartnerLogo}
-                  alt="Media Impact Partner"
-                  className="w-full h-20 md:h-24 object-contain"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
+          <div className="flex flex-col h-full">
+            <h2 className="text-3xl md:text-4xl font-quicksand font-bold text-primary-blue mb-6 text-center">
+              Capacity Building & Ecosystem Development Partner
+            </h2>
+            <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center max-w-md mx-auto w-full">
+              <img
+                src={GoSportsLogo}
+                alt="Go Sports Logo"
+                className="w-full h-20 md:h-24 object-contain"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           </div>
         </div>
       </motion.section>
 
-      {/* International & Community Partners Section */}
+      {/* CSR & Media Partners Section */}
       <motion.section variants={itemVariants} className="py-12 md:py-16 bg-[#f2f1ea]">
-        <div className="container-custom max-w-5xl">
+        <div className="container-custom max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-stretch">
             {/* International Relations Partner */}
             <div className="flex flex-col h-full">
@@ -692,6 +673,47 @@ const Homepage = () => {
                 />
               </div>
             </div>
+
+
+            {/* CSR Partner */}
+            <div className="flex flex-col h-full">
+              <h2 className="text-3xl md:text-4xl font-quicksand font-bold text-primary-blue mb-6 text-center">
+                CSR Partner
+              </h2>
+              <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center max-w-md mx-auto w-full">
+                <img
+                  src={csrPartnerLogo}
+                  alt="CSR Partner"
+                  className="w-full h-20 md:h-24 object-contain"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* International & Community Partners Section */}
+      <motion.section variants={itemVariants} className="py-12 md:py-16 bg-[#f2f1ea]">
+        <div className="container-custom max-w-5xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-stretch">
+            {/* Media Partner */}
+            <div className="flex flex-col h-full">
+              <h2 className="text-3xl md:text-4xl font-quicksand font-bold text-primary-blue mb-6 text-center">
+                Media Partner
+              </h2>
+              <div className="rounded-2xl border border-primary-green/25 bg-white/90 p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center max-w-md mx-auto w-full">
+                <img
+                  src={mediaImpactPartnerLogo}
+                  alt="Media Impact Partner"
+                  className="w-full h-20 md:h-24 object-contain"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+
 
             {/* Community Partner */}
             <div className="flex flex-col h-full">
