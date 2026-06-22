@@ -47,7 +47,8 @@ export const ROUTES = {
   news: '/news',
   newsMilestone: '/news/a-milestone-moment',
   newsDiscoveryDay: '/news/where-sound-leads-the-game',
+  newsAdaptiveOpen: '/news/india-adaptive-open-2026',
   connect: '/connect',
   aboutUs: '/about-us',
   team: '/team',
-};
+}; 

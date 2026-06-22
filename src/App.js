@@ -17,6 +17,7 @@ const loadDonate = () => import('./pages/Donate');
 const loadNews = () => import('./pages/News');
 const loadNewsPostMilestone = () => import('./pages/NewsPostMilestone');
 const loadNewsPostDiscoveryDay = () => import('./pages/NewsPostDiscoveryDay');
+const loadNewsAdaptiveOpen = () => import('./pages/NewsAdaptiveOpen');
 const loadConnect = () => import('./pages/Connect');
 const loadBlog = () => import('./pages/Blog');
 const loadBlogPostEmpowerment = () => import('./pages/BlogPostEmpowerment');
@@ -41,6 +42,7 @@ const Donate = lazy(loadDonate);
 const News = lazy(loadNews);
 const NewsPostMilestone = lazy(loadNewsPostMilestone);
 const NewsPostDiscoveryDay = lazy(loadNewsPostDiscoveryDay);
+const NewsAdaptiveOpen = lazy(loadNewsAdaptiveOpen);
 const Connect = lazy(loadConnect);
 const Blog = lazy(loadBlog);
 const BlogPostEmpowerment = lazy(loadBlogPostEmpowerment);
@@ -142,6 +144,7 @@ function App() {
             <Route path="news" element={<News />} />
             <Route path="news/a-milestone-moment" element={<NewsPostMilestone />} />
             <Route path="news/where-sound-leads-the-game" element={<NewsPostDiscoveryDay />} />
+            <Route path="news/india-adaptive-open-2026" element={<NewsAdaptiveOpen />} />
             <Route path="connect" element={<Connect />} />
             <Route path="about-us" element={<AboutUs />} />
             <Route path="team" element={<Team />} />

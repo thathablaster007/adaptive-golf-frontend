@@ -19,6 +19,12 @@ const News = () => {
         'Adaptive Golf Alliance successfully conducted its Discovery Day – Visual Impairment Edition, introducing 24 participants to golf through sound, touch, and guided experience.',
       path: ROUTES.newsDiscoveryDay,
     },
+    {
+      title: 'India Adaptive Open 2026: A Historic First',
+      excerpt:
+        "The India Adaptive Open 2026 marked a watershed moment in Indian sport as the country's first national golf championship for golfers with disabilities. Hosted at the prestigious Bangalore Golf Club in collaboration with the Adaptive Golf Alliance Foundation",
+      path: ROUTES.newsAdaptiveOpen,
+    },
   ];
 
   const containerVariants = {
