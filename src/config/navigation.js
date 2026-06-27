@@ -48,6 +48,7 @@ export const ROUTES = {
   newsMilestone: '/news/a-milestone-moment',
   newsDiscoveryDay: '/news/where-sound-leads-the-game',
   newsAdaptiveOpen: '/news/india-adaptive-open-2026',
+  newsCzechDisabledOpen: '/news/czech-disabled-golf-masters-2026',
   connect: '/connect',
   aboutUs: '/about-us',
   team: '/team',

@@ -24,6 +24,8 @@ import tryGolfHomeImage from '../Try Golf_Home.JPG';
 import competitionHomeImage from '../Comeptition_Home.JPG';
 import mediaHomeImage from '../Media_Home.JPG';
 import medalGold from '../unnamed.png';
+import medalSilver from '../silver_medal.png';
+import medalBronze from '../Bronze_medal.png';
 import logoBerlin2023 from '../unnamed (4).png';
 import logoLosAngeles2015 from '../unnamed (7).png';
 import logoAbuDhabi2019 from '../unnamed (5).png';
@@ -36,6 +38,7 @@ import ranveer2Image from '../ranveer2.jpeg';
 import ankushImage from '../ankush.jpeg';
 import vishwaImage from '../vishwa.jpeg';
 import logoSpecialOlympics from '../sob-1.png';
+import logoCzech from '../Czech_logo.png';
 import logoMacao from '../macao logo.jpg';
 import GolfTrustPartnerLogo from '../Golf_Trust.jpeg';
 import mediaImpactPartner2Logo from '../180Golf.png';
@@ -256,6 +259,8 @@ const Homepage = () => {
       name: 'Ankush Saha',
       medalImage: medalGold,
       medalAlt: 'Gold medal',
+      medalImage2: medalBronze,
+      medalAlt2: 'Bronze medal',
       faceImage: ankushImage,
       faceImagePosition: 'center 12%',
       achievements: [
@@ -264,12 +269,19 @@ const Homepage = () => {
           logo: logoAbuDhabi2019,
           logoClassName: 'h-24 w-auto',
         },
+        {
+          title: 'Czech Disabled Golf Masters 2026',
+          logo: logoCzech,
+          logoClassName: 'h-24 w-auto',
+        },
       ],
     },
     {
       name: 'Vishwa Vardhan Bhati',
       wagrLogo,
       wagrRank: 167,
+      medalImage: medalSilver,
+      medalAlt: 'Silver medal',
       faceImage: vishwaImage,
       faceImagePosition: 'center 10%',
       achievements: [
@@ -283,10 +295,15 @@ const Homepage = () => {
           logo: logoDaikinMadridOpen,
           logoClassName: 'h-24 w-auto',
         },
+        {
+          title: 'Czech Disabled Golf Masters 2026',
+          logo: logoCzech,
+          logoClassName: 'h-24 w-auto',
+        },
       ],
     },
     {
-      name: 'Nandan S',
+      name: 'Nandan Sadanand',
       medalImage: medalGold,
       medalAlt: 'Gold medal',
       faceImage: nandanFour,
@@ -434,17 +451,29 @@ const Homepage = () => {
                       className={`px-6 py-4 align-top ${index < facesOfAdaptiveGolf.length - 1 ? 'border-r-4 border-primary-blue/70' : ''}`}
                     >
                       <div className="flex flex-col items-center justify-start gap-3">
-                        <div className="flex items-center justify-center gap-3">
-                          {athlete.medalImage ? (
-                            <img
-                              src={athlete.medalImage}
-                              alt={athlete.medalAlt}
-                              className={`h-16 w-auto ${athlete.medalClassName || ''}`.trim()}
-                              loading="lazy"
-                              decoding="async"
-                              fetchPriority="low"
-                            />
-                          ) : null}
+                        <div className="flex items-start justify-center gap-3">
+                          <div className="flex flex-col items-center gap-1">
+                            {athlete.medalImage ? (
+                              <img
+                                src={athlete.medalImage}
+                                alt={athlete.medalAlt}
+                                className={`h-20 w-20 object-contain ${athlete.medalClassName || ''}`.trim()}
+                                loading="lazy"
+                                decoding="async"
+                                fetchPriority="low"
+                              />
+                            ) : null}
+                            {athlete.medalImage2 ? (
+                              <img
+                                src={athlete.medalImage2}
+                                alt={athlete.medalAlt2}
+                                className={`h-20 w-20 object-contain ${athlete.medalClassName || ''}`.trim()}
+                                loading="lazy"
+                                decoding="async"
+                                fetchPriority="low"
+                              />
+                            ) : null}
+                          </div>
                           <span className="text-4xl md:text-5xl font-quicksand font-bold text-primary-blue leading-tight">
                             {athlete.name}
                           </span>

@@ -25,6 +25,12 @@ const News = () => {
         "The India Adaptive Open 2026 marked a watershed moment in Indian sport as the country's first national golf championship for golfers with disabilities. Hosted at the prestigious Bangalore Golf Club in collaboration with the Adaptive Golf Alliance Foundation",
       path: ROUTES.newsAdaptiveOpen,
     },
+    {
+      title: 'Indian Adaptive Golfers Shine at the Czech Disabled Golf Masters 2026',
+      excerpt:
+        "The Adaptive Golf Alliance Foundation is proud to celebrate a landmark achievement for Indian adaptive golf as our players delivered an outstanding performance at the Czech Disabled Golf Masters 2026, held at Golf Resort Black Bridge, Prague, Czech Republic. Representing India on the international stage for the first time, our team showcased remarkable skill, sportsmanship, and determination.",
+      path: ROUTES.newsCzechDisabledOpen,
+    },
   ];
 
   const containerVariants = {
