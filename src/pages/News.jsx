@@ -28,7 +28,7 @@ const News = () => {
     {
       title: 'Indian Adaptive Golfers Shine at the Czech Disabled Golf Masters 2026',
       excerpt:
-        "The Adaptive Golf Alliance Foundation is proud to celebrate a landmark achievement for Indian adaptive golf as our players delivered an outstanding performance at the Czech Disabled Golf Masters 2026, held at Golf Resort Black Bridge, Prague, Czech Republic. Representing India on the international stage for the first time, our team showcased remarkable skill, sportsmanship, and determination.",
+        "The Adaptive Golf Alliance Foundation is proud to celebrate a landmark achievement for Indian adaptive golf as our players delivered an outstanding performance at the Czech Disabled Golf Masters 2026, held at Golf Resort Black Bridge, Prague, Czech Republic.",
       path: ROUTES.newsCzechDisabledOpen,
     },
   ];

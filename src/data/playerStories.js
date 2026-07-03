@@ -544,23 +544,20 @@ export const PLAYER_STORIES = [
       'At the age of 20, Saurabh Malav received a diagnosis that changed the course of his life forever. Yet decades later, adaptive golf helped him rediscover a dream he thought he had lost.',
 
     paragraphs: [
-      'At the age of 20, Saurabh Malav\'s life changed forever. He was diagnosed with Usher Syndrome, a rare genetic disorder that causes progressive vision loss due to Retinitis Pigmentosa (RP) along with hearing impairment. The diagnosis came as a devastating shock. Like any young adult, Saurabh had dreams and aspirations, but in a single moment he felt many of them slip away. Among the dreams he quietly gave up was the hope of ever playing a sport. He believed that competitive sports—and certainly participating in a tournament—would never be part of his life.',
+      'At the age of 20, Saurabh Malav’s life took an unexpected turn when he was diagnosed with Usher Syndrome, a rare genetic condition that causes progressive vision loss due to Retinitis Pigmentosa (RP) along with hearing impairment. Overnight, many of the dreams he had for himself seemed out of reach. Among them was the simple joy of playing sport.',
 
-      'Over the next two decades, Saurabh built a highly successful career as an IT professional, working in the technology industry for more than 20 years. Professionally, he continued to excel, but somewhere deep inside, he always felt a void. Watching others enjoy sports, teamwork and outdoor activities reminded him of something he believed disability had taken away from him.',
+      'For more than two decades, Saurabh built a successful career in the technology industry, proving that disability would never define his professional abilities. Yet, he always carried the feeling that he had missed out on the camaraderie, challenge and freedom that sport brings.',
 
-      'That changed in 2024. During a conversation with Dipesh Sutaria from Enable India, the idea of learning golf came up. At first, Saurabh was hesitant. He questioned whether he would be able to play and whether he would remain committed. With no expectations beyond staying physically active, he decided to give it a try.',
+      'Everything changed in 2024. A conversation with Enable India’s Dipesh Sutaria introduced him to adaptive golf. Unsure of what to expect and simply hoping to stay active, Saurabh picked up a golf club for the first time. What started as curiosity soon became a passion.',
 
-      'What began as a casual attempt soon became a life-changing journey.',
+      'Golf taught him far more than how to swing a club. It taught him resilience, patience and the power of staying present. Living with low vision and hearing impairment means every round presents unique challenges, but each challenge has strengthened his confidence and determination.',
 
-      'With every practice session, his passion for golf grew stronger. The game taught him far more than technique. It taught him resilience when every shot was different, patience when improvement came slowly, and the ability to remain present instead of worrying about the future. Golf became a reminder that while disability may change the way a person plays, it does not restrict what they can achieve.',
+      'Competing in the 1st Indian Adaptive Golf Tournament at Bangalore Golf Club was a milestone he once believed impossible. Standing alongside fellow adaptive golfers reminded him that true ability is not defined by physical limitations, but by the courage to keep showing up and giving your best.',
 
-      'Living with low vision and being hard of hearing presents unique challenges on every golf course. Yet those very challenges have strengthened Saurabh\'s determination. Every round is a lesson in trust, focus, perseverance and courage.',
+      'Beyond golf, Saurabh is passionate about technology and accessibility. As a technology leader, he believes innovations such as Artificial Intelligence have the power to create a more inclusive world, enabling people with disabilities to achieve their full potential.',
 
-      'Participating in the 1st Indian Adaptive Golf Tournament at Bangalore Golf Club was a milestone that once seemed like a distant dream. Standing alongside fellow adaptive golfers reaffirmed his belief that true ability is measured not by physical limitations, but by the courage to keep moving forward.',
+      'Today, adaptive golf represents much more than a sport for Saurabh. It is a symbol of hope, confidence and second chances—a journey that has reignited his love for learning, competing and believing that no dream is ever truly out of reach.',
 
-      'Beyond golf, Saurabh is passionate about technology and accessibility. As a technology leader, he believes innovation and next generation technologies like AI can transform the lives of people with disabilities and create a world where everyone has the opportunity to reach their full potential.',
-
-      'For Saurabh, adaptive golf is much more than a sport. It is a symbol of hope, confidence and second chances. It gave him back something he thought he had lost forever—the joy of competing, the excitement of learning, and the belief that it is never too late to begin again.',
     ],
 
     quote:

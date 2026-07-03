@@ -4,6 +4,7 @@ import assessorImage from '../asseser.jpeg';
 import anandImage from '../anand.jpeg';
 import prakashImage from '../prakash.jpeg';
 import revannaImage from '../revanna.jpeg';
+import BalakrishnanImage from '../Balakrishnan S.jpeg';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -44,6 +45,13 @@ const TeamContent = () => {
       image: revannaImage,
       course: 'BGS International Residential School, Bangalore',
     },
+
+    {
+      name: 'Balakrishnan S (Ajay)',
+      title: 'EDGA Sampler Coach',
+      image: BalakrishnanImage,
+      course: 'To The Tee Golf Academy, Bangalore',
+    },
   ];
 
   return (
@@ -54,7 +62,7 @@ const TeamContent = () => {
           <p className="text-center text-lg md:text-xl text-primary-green font-quicksand font-semibold -mt-6 mb-10">
             Together we make a difference
           </p>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="rounded-2xl bg-white border border-gray-200 p-8 shadow-sm">
               <h3 className="text-2xl md:text-3xl font-quicksand font-bold text-primary-green mb-4">Eligibility Assessment Team</h3>

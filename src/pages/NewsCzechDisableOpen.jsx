@@ -2,18 +2,22 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ROUTES } from '../config/navigation';
-import photo1 from '../Czech (1).jpeg';
+import photo1 from '../Czech (6).jpeg';
 import photo2 from '../Czech (2).jpeg';
 import photo3 from '../Czech (3).jpeg';
 import photo4 from '../Czech (4).jpeg';
 import photo5 from '../Czech (5).jpeg';
-import photo6 from '../Czech (6).jpeg';
+import photo6 from '../Czech (1).jpeg';
 import photo7 from '../Czech (7).jpeg';
 import photo8 from '../Czech (8).jpeg';
 import photo9 from '../Czech (9).jpeg';
 import photo10 from '../Czech (10).jpeg';
 import Button from '../components/Button';
 import Article from '../ArticleCzech.png';
+import Press1 from '../Press_India.png';
+import Press2 from '../Press_India2.png';
+import Press3 from '../Press_India3.jpeg';
+import Press4 from '../Press_India4.png';
 
 const galleryPhotos = [
     { src: photo1, alt: 'Photo 1' },
@@ -127,7 +131,7 @@ const NewsCzechDisableOpen = () => {
                     <h2 className="text-2xl md:text-3xl font-quicksand font-semibold text-primary-blue mb-10">
                         Coverage &amp; Resources
                     </h2>
-                    <div className="max-w-md">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                         <motion.a
                             variants={itemVariants}
                             href="https://www.czdga.cz/ctyri-cenne-kovy-cesky-tym-czech-disabled-golf-masters-2026"
@@ -139,7 +143,7 @@ const NewsCzechDisableOpen = () => {
                                 <img
                                     src={Article}
                                     alt="Article"
-                                    className="w-full h-64 object-cover object-center"
+                                    className="w-full h-64 object-cover object-top"
                                 />
                             </div>
 
@@ -161,6 +165,140 @@ const NewsCzechDisableOpen = () => {
                                 </p>
                             </div>
                         </motion.a>
+
+                        <motion.a
+                            variants={itemVariants}
+                            href="https://www.news18.com/agency-feeds/indians-secure-two-podium-finishes-at-czech-disabled-golf-masters-10182757.html"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col group"
+                        >
+                            <div className="relative overflow-hidden bg-gray-100">
+                                <img
+                                    src={Press1}
+                                    alt="Press1"
+                                    className="w-full h-64 object-cover object-top"
+                                />
+                            </div>
+
+                            <div className="p-5 flex flex-col flex-1">
+                                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-primary-green mb-2">
+                                    News Article
+                                </p>
+
+                                <h3 className="text-base font-quicksand font-bold text-primary-blue leading-snug mb-1 group-hover:text-primary-green transition-colors duration-200">
+                                    News18 Coverage
+                                </h3>
+
+                                <p className="text-sm text-gray-600 leading-relaxed flex-1">
+                                    Read the full article covering the event.
+                                </p>
+
+                                <p className="mt-4 text-sm font-semibold text-primary-blue group-hover:text-primary-green transition-colors duration-200">
+                                    Read Article →
+                                </p>
+                            </div>
+                        </motion.a>
+
+                        <motion.a
+                            variants={itemVariants}
+                            href="https://www.ptinews.com/story/sports/indians-secure-two-podium-finishes-at-czech-disabled-golf-masters/3817173"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col group"
+                        >
+                            <div className="relative overflow-hidden bg-gray-100">
+                                <img
+                                    src={Press2}
+                                    alt="Press2"
+                                    className="w-full h-64 object-cover object-top"
+                                />
+                            </div>
+
+                            <div className="p-5 flex flex-col flex-1">
+                                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-primary-green mb-2">
+                                    News Article
+                                </p>
+
+                                <h3 className="text-base font-quicksand font-bold text-primary-blue leading-snug mb-1 group-hover:text-primary-green transition-colors duration-200">
+                                    PTI News Coverage
+                                </h3>
+
+                                <p className="text-sm text-gray-600 leading-relaxed flex-1">
+                                    Read the full article covering the event.
+                                </p>
+
+                                <p className="mt-4 text-sm font-semibold text-primary-blue group-hover:text-primary-green transition-colors duration-200">
+                                    Read Article →
+                                </p>
+                            </div>
+                        </motion.a>
+
+                        <motion.div
+                            variants={itemVariants}
+                            onClick={() =>
+                                setSelectedImage({
+                                    src: Press3,
+                                    alt: "Samyukta Karnataka newspaper clipping"
+                                })
+                            }
+                            className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col"
+                        >
+                            <div className="relative overflow-hidden bg-gray-100">
+                                <img
+                                    src={Press3}
+                                    alt="Samyukta Karnataka"
+                                    className="w-full h-64 object-cover object-center object-top"
+                                />
+                                <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white/60 to-transparent pointer-events-none" />
+                            </div>
+                            <div className="p-5 flex flex-col flex-1">
+                                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-primary-green mb-2">
+                                    Print Media
+                                </p>
+                                <h3 className="text-base font-quicksand font-bold text-primary-blue leading-snug mb-1">
+                                    Samyukta Karnataka
+                                </h3>
+                                <p className="text-sm text-gray-600 leading-relaxed flex-1">
+                                    At the Czech Disabled Golf Masters 2026 tournament held in the Czech Republic, Indian golfers delivered an impressive performance and won medals.
+                                </p>
+                            </div>
+                        </motion.div>
+
+                        <motion.a
+                            variants={itemVariants}
+                            href="https://www.indiagolfweekly.com/features/latest-news/indians-do-well-in-czech-adaptive-golfers-event/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col group"
+                        >
+                            <div className="relative overflow-hidden bg-gray-100">
+                                <img
+                                    src={Press4}
+                                    alt="Press4"
+                                    className="w-full h-64 object-cover object-top"
+                                />
+                            </div>
+
+                            <div className="p-5 flex flex-col flex-1">
+                                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-primary-green mb-2">
+                                    News Article
+                                </p>
+
+                                <h3 className="text-base font-quicksand font-bold text-primary-blue leading-snug mb-1 group-hover:text-primary-green transition-colors duration-200">
+                                    India Golf Weekly Coverage
+                                </h3>
+
+                                <p className="text-sm text-gray-600 leading-relaxed flex-1">
+                                    Read the full article covering the event.
+                                </p>
+
+                                <p className="mt-4 text-sm font-semibold text-primary-blue group-hover:text-primary-green transition-colors duration-200">
+                                    Read Article →
+                                </p>
+                            </div>
+                        </motion.a>
+
                     </div>
                 </div>
             </motion.section>
