@@ -6,6 +6,7 @@ const loadHomepage = () => import('./pages/Homepage');
 const loadWhatIsAdaptiveGolf = () => import('./pages/WhatIsAdaptiveGolf');
 const loadTryGolf = () => import('./pages/TryGolf');
 const loadCompetition = () => import('./pages/Competition');
+const loadAgaCalendar = () => import('./pages/AgaCalendar');
 const loadMedia = () => import('./pages/Media');
 const loadPlayerStories = () => import('./pages/PlayerStories');
 const loadPlayerStoryDetail = () => import('./pages/PlayerStoryDetail');
@@ -32,6 +33,7 @@ const Homepage = lazy(loadHomepage);
 const WhatIsAdaptiveGolf = lazy(loadWhatIsAdaptiveGolf);
 const TryGolf = lazy(loadTryGolf);
 const Competition = lazy(loadCompetition);
+const AgaCalendar = lazy(loadAgaCalendar);
 const Media = lazy(loadMedia);
 const PlayerStories = lazy(loadPlayerStories);
 const PlayerStoryDetail = lazy(loadPlayerStoryDetail);
@@ -130,6 +132,7 @@ function App() {
             <Route path="what-is-adaptive-golf" element={<WhatIsAdaptiveGolf />} />
             <Route path="try-golf" element={<TryGolf />} />
             <Route path="competition" element={<Competition />} />
+            <Route path="competition/aga-calendar" element={<AgaCalendar />} />
             <Route path="media" element={<Media />} />
             <Route path="media/player-stories" element={<PlayerStories />} />
             <Route path="media/player-stories/:slug" element={<PlayerStoryDetail />} />

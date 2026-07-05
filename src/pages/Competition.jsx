@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import competitionHero from '../Competition 1.JPG';
+import { ROUTES } from '../config/navigation';
 
 const Competition = () => {
   const [activeSection, setActiveSection] = useState('competition');
@@ -20,10 +22,13 @@ const Competition = () => {
       title: 'Tournaments',
       description:
         'AGAF provides tournament opportunities in a format aligned with international adaptive golf pathways. This section will be updated with official competition dates and registration details.',
-      note: 'Content coming soon: tournament dates and entry details will be published here.',
       primaryLink: {
         label: 'View EDGA Events Calendar',
         href: 'https://edgagolf.com/online/events/index.php?from=web24',
+      },
+      calendarLink: {
+        label: 'View AGA Calendar',
+        path: ROUTES.agaCalendar,
       },
     },
     {
@@ -145,26 +150,39 @@ const Competition = () => {
                   <p className="text-base md:text-lg text-primary-blue font-semibold mb-6">{currentSection.note}</p>
                 )}
 
-                {currentSection.primaryLink && (
-                  <a
-                    href={currentSection.primaryLink.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center rounded-xl bg-primary-blue px-6 py-3 text-white text-base md:text-lg font-quicksand font-semibold hover:bg-primary-green transition-colors"
-                  >
-                    {currentSection.primaryLink.label}
-                  </a>
-                )}
+                {(currentSection.primaryLink || currentSection.calendarLink || currentSection.readLink) && (
+                  <div className="flex flex-wrap gap-4">
+                    {currentSection.primaryLink && (
+                      <a
+                        href={currentSection.primaryLink.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center rounded-xl bg-primary-blue px-6 py-3 text-white text-base md:text-lg font-quicksand font-semibold hover:bg-primary-green transition-colors"
+                      >
+                        {currentSection.primaryLink.label}
+                      </a>
+                    )}
 
-                {currentSection.readLink && (
-                  <a
-                    href={currentSection.readLink.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center rounded-xl bg-primary-blue px-6 py-3 text-white text-base md:text-lg font-quicksand font-semibold hover:bg-primary-green transition-colors"
-                  >
-                    {currentSection.readLink.label}
-                  </a>
+                    {currentSection.calendarLink && (
+                      <Link
+                        to={currentSection.calendarLink.path}
+                        className="inline-flex items-center rounded-xl border border-primary-blue bg-white px-6 py-3 text-primary-blue text-base md:text-lg font-quicksand font-semibold hover:bg-primary-blue hover:text-white transition-colors"
+                      >
+                        {currentSection.calendarLink.label}
+                      </Link>
+                    )}
+
+                    {currentSection.readLink && (
+                      <a
+                        href={currentSection.readLink.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center rounded-xl bg-primary-blue px-6 py-3 text-white text-base md:text-lg font-quicksand font-semibold hover:bg-primary-green transition-colors"
+                      >
+                        {currentSection.readLink.label}
+                      </a>
+                    )}
+                  </div>
                 )}
               </motion.div>
             </div>

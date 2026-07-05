@@ -34,6 +34,7 @@ export const ROUTES = {
   whatIsAdaptiveGolf: '/what-is-adaptive-golf',
   tryGolf: '/try-golf',
   competition: '/competition',
+  agaCalendar: '/competition/aga-calendar',
   media: '/media',
   playerStories: '/media/player-stories',
   playerStoryVishwa: '/media/player-stories/vishwa-vardhan-bhati',
