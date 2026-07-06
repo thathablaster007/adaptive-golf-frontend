@@ -25,6 +25,10 @@ import jayanthImageTwo from '../Jayanth (2).jpeg';
 import SaurabhOne from '../Saurabh (1).jpeg';
 import SaurabhTwo from '../Saurabh (2).jpeg';
 import SaurabhThree from '../Saurabh (3).jpeg';
+import VimalTwo from '../Media3/DDS00280.jpg';
+import VimalOne from '../Vimal_story.jpeg';
+import VimalThree from '../DDS00029.jpg';
+import VimalFour from '../DDS00061.jpg';
 
 export const PLAYER_STORIES = [
   {
@@ -663,6 +667,73 @@ export const PLAYER_STORIES = [
         afterParagraphIndex: 6,
         src: SaurabhThree,
         alt: 'Saurabh Malav at the Indian Adaptive Golf Tournament',
+      },
+    ],
+  },
+  {
+    slug: 'vimal-mehra',
+    name: 'Vimal Mehra',
+    disabilityTags: ['Vision'],
+    faceImage: VimalOne,
+    faceImageAlt: 'Vimal Mehra portrait',
+    summary:
+      'From being told he was a waste of investment to building a life of resilience, independence, and hope.',
+    route: '/media/player-stories/vimal-mehra',
+    title: 'Finding Purpose Beyond Limits',
+    intro:
+      'From being told he was a waste of investment to building a life of resilience, independence, and hope.',
+    paragraphs: [
+      'From being told he was a waste of investment to building a life of resilience, independence, and hope.',
+      'Born in Jammu, Jammu & Kashmir, Vimal Mehra entered the world with a visual impairment. From an early age, life presented challenges that many around him believed would define his future. Simple tasks required determination, education demanded additional support, and society often saw his disability before they saw his potential.',
+      'But one person never accepted those limitations,his father.',
+      'Despite criticism from relatives who questioned why he continued spending the family’s limited resources on Vimal’s education and medical care, his father never stopped believing in him. Many openly said that investing in a visually impaired child was a waste of money because they believed he would never become independent.',
+      'Those words became even more painful when Vimal was unable to clear his Class 10 examination on his first attempt.',
+      'Instead of giving in to disappointment, his father encouraged him to ignore the negativity, work harder, and never allow other people’s opinions to shape his future. Inspired by that unwavering faith, Vimal appeared for the examination again and successfully completed his Class 10.',
+      'Life, however, continued to test him. While studying in Class 11, his father’s health began to deteriorate. Knowing that his family needed support, Vimal started searching for work, walking from one shop to another asking for an opportunity. Many turned him away. Whether because there were no vacancies or because they struggled to imagine employing a person with a visual impairment, the answer was almost always the same.',
+      'Eventually, one employer decided to give him a chance.There were no shortcuts. With little guidance, Vimal learned through persistence, observation, and countless mistakes. Every challenge became a lesson, and every lesson strengthened his confidence.',
+      'In 2022, while continuing to work, he completed his Class 12 education and enrolled in a Bachelor of Business Administration programme. Although he was unable to continue into his third year due to academic credit requirements, he refused to let another setback define him.',
+      'Instead, he searched for organisations that believed in ability rather than disability.That search led him to EnAble India in 2024, where he completed a Fundamentals of Computer course in Srinagar. He later attended an Employability Training Programme at Sarthak Educational Trust in Delhi, which opened the door to a position at Vishal Mega Mart in Jammu. Working in retail strengthened his communication skills, taught him resilience, and reinforced his desire to build an independent life.',
+      'Yet he knew he wanted a career where he could make a deeper difference in people’s lives.In 2026, Vimal moved to Bengaluru to begin a new chapter as a Foot Reflexology Intern with EnAble India. Helping people improve their well-being gave him a renewed sense of purpose and showed him that meaningful work is measured by the lives we touch, not by the limitations we carry.',
+      'That same year, another unexpected opportunity arrived.In March 2026, Vimal attended an Adaptive Golf Alliance Foundation workshop, where he was introduced to adaptive golf for the very first time. He had never imagined that golf could be a sport for someone with low vision. The workshop didn’t simply introduce him to a game,it introduced him to a community that believed everyone deserved the opportunity to play, compete, and belong.',
+      'Inspired by the experience, he participated in his first golf tournament from 1st to 3rd June 2026. Walking onto the course as a player was both exciting and empowering. Alongside competitive play, the tournament created friendships, built confidence, and reminded him that inclusion is experienced through opportunity.',
+      'Playing golf with low vision has transformed the way Vimal approaches both sport and life. Every shot begins with trusting his posture, body alignment, and spatial awareness rather than relying on sight alone. He has learned to listen to the sound of clean contact, trust sensory feedback, and work closely with coaches whose guidance helps him visualise the course.',
+      'Most importantly, golf has strengthened qualities he already carried throughout his life: patience, resilience, focus, and trust.Every fairway reminds him how far he has come.',
+      'From a young boy who was told he was not worth investing in, Vimal has grown into a determined professional, an adaptive golfer, and someone committed to serving others with dignity and compassion. His dream is to become a successful reflexologist, build his own professional identity, and continue proving that a person’s future is never defined by disability, but by courage, perseverance, and the opportunities they are given.',
+      'Today, through the Adaptive Golf Alliance Foundation, Vimal’s journey stands as a powerful reminder that when belief replaces barriers, extraordinary stories begin.',
+
+
+    ],
+    accolades: [
+      {
+        eventTitle: 'Indian Adaptive Open 2026',
+        sections: [
+          {
+            title: 'Fun Team Event',
+            items: ['Runner Up - Team B - Captain C Sunder, Mohit Gupta, Vimal Mehra'],
+          },
+        ],
+      },
+    ],
+    inlineImages: [
+      {
+        afterParagraphIndex: 4,
+        src: VimalOne,
+        alt: 'Vimal Mehra',
+      },
+      {
+        afterParagraphIndex: 8,
+        src: VimalTwo,
+        alt: 'Vimal Mehra',
+      },
+      {
+        afterParagraphIndex: 12,
+        src: VimalThree,
+        alt: 'Vimal Mehra',
+      },
+      {
+        afterParagraphIndex: 15,
+        src: VimalFour,
+        alt: 'Vimal Mehra',
       },
     ],
   },
