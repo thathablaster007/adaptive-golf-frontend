@@ -279,7 +279,9 @@ const Homepage = () => {
     {
       name: 'Vishwa Vardhan Bhati',
       wagrLogo,
-      wagrRank: 167,
+      wagrRank_Gross: 466,
+      wagrRank_Nett: 358,
+      wagrRank_Stableford: 184,
       medalImage: medalSilver,
       medalAlt: 'Silver medal',
       faceImage: vishwaImage,
@@ -490,7 +492,9 @@ const Homepage = () => {
                               fetchPriority="low"
                             />
                             <span className="text-base font-quicksand font-bold text-primary-blue">
-                              Rank Stableford: {athlete.wagrRank}
+                              Rank Gross: {athlete.wagrRank_Gross}<br/>
+                              Rank Nett: {athlete.wagrRank_Nett}<br/>
+                              Rank Stableford: {athlete.wagrRank_Stableford}
                             </span>
                           </div>
                         ) : null}

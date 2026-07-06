@@ -168,6 +168,40 @@ const NewsCzechDisableOpen = () => {
 
                         <motion.a
                             variants={itemVariants}
+                            href="https://www.indiagolfweekly.com/features/latest-news/indians-do-well-in-czech-adaptive-golfers-event/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col group"
+                        >
+                            <div className="relative overflow-hidden bg-gray-100">
+                                <img
+                                    src={Press4}
+                                    alt="Press4"
+                                    className="w-full h-64 object-cover object-top"
+                                />
+                            </div>
+
+                            <div className="p-5 flex flex-col flex-1">
+                                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-primary-green mb-2">
+                                    News Article
+                                </p>
+
+                                <h3 className="text-base font-quicksand font-bold text-primary-blue leading-snug mb-1 group-hover:text-primary-green transition-colors duration-200">
+                                    India Golf Weekly Coverage
+                                </h3>
+
+                                <p className="text-sm text-gray-600 leading-relaxed flex-1">
+                                    Read the full article covering the event.
+                                </p>
+
+                                <p className="mt-4 text-sm font-semibold text-primary-blue group-hover:text-primary-green transition-colors duration-200">
+                                    Read Article →
+                                </p>
+                            </div>
+                        </motion.a>
+                        
+                        <motion.a
+                            variants={itemVariants}
                             href="https://www.news18.com/agency-feeds/indians-secure-two-podium-finishes-at-czech-disabled-golf-masters-10182757.html"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -264,40 +298,6 @@ const NewsCzechDisableOpen = () => {
                                 </p>
                             </div>
                         </motion.div>
-
-                        <motion.a
-                            variants={itemVariants}
-                            href="https://www.indiagolfweekly.com/features/latest-news/indians-do-well-in-czech-adaptive-golfers-event/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col group"
-                        >
-                            <div className="relative overflow-hidden bg-gray-100">
-                                <img
-                                    src={Press4}
-                                    alt="Press4"
-                                    className="w-full h-64 object-cover object-top"
-                                />
-                            </div>
-
-                            <div className="p-5 flex flex-col flex-1">
-                                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-primary-green mb-2">
-                                    News Article
-                                </p>
-
-                                <h3 className="text-base font-quicksand font-bold text-primary-blue leading-snug mb-1 group-hover:text-primary-green transition-colors duration-200">
-                                    India Golf Weekly Coverage
-                                </h3>
-
-                                <p className="text-sm text-gray-600 leading-relaxed flex-1">
-                                    Read the full article covering the event.
-                                </p>
-
-                                <p className="mt-4 text-sm font-semibold text-primary-blue group-hover:text-primary-green transition-colors duration-200">
-                                    Read Article →
-                                </p>
-                            </div>
-                        </motion.a>
 
                     </div>
                 </div>

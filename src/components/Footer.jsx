@@ -52,7 +52,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/people/Adaptive-Golf-Alliance/61591641320894/"
                 className="text-primary-green hover:text-[#c9851b] transition-colors"
                 title="Facebook"
               >

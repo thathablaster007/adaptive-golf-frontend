@@ -54,6 +54,20 @@ export const PLAYER_STORIES = [
     quote:
       '“Life changed in a moment, but so did my understanding of courage. Every challenge became an opportunity to rise again.”',
     quoteAttribution: 'Vishwa Vardhan Bhati',
+    accolades: [
+      {
+        title: '18H Stableford',
+        items: ['Winner - Vishwa Vardhan Bhati'],
+      },
+      {
+        title: '9H Stableford',
+        items: ['Winner - Vishwa Vardhan Bhati'],
+      },
+      {
+        title: 'Category Prizes',
+        items: ['Other Disabilities - Vishwa Vardhan Bhati'],
+      },
+    ],
     inlineImages: [
       {
         afterParagraphIndex: 3,
@@ -93,6 +107,12 @@ export const PLAYER_STORIES = [
     quote:
       '“Golf gave me a new rhythm after recovery — a space to rebuild, refocus, and keep moving forward.”',
     quoteAttribution: 'Lt Col Vipin Bais',
+    accolades: [
+      {
+        title: '9H Stableford',
+        items: ['2 Runner Up - Lt Col Vipin Bais'],
+      },
+    ],
     inlineImages: [
       {
         afterParagraphIndex: 3,
@@ -250,6 +270,12 @@ export const PLAYER_STORIES = [
     quote:
       '“Golf gave me confidence, purpose, and the belief that I could achieve more than anyone imagined.”',
     quoteAttribution: 'Ankush Saha',
+    accolades: [
+      {
+        title: '18H Stableford',
+        items: ['2 Runner Up - Ankush Saha'],
+      },
+    ],
     inlineImages: [
       {
         afterParagraphIndex: 3,
@@ -292,6 +318,12 @@ export const PLAYER_STORIES = [
     quote:
       '“Golf taught me to trust myself — to let go, stay present, and keep moving forward one shot at a time.”',
     quoteAttribution: 'Sundeep Rao',
+    accolades: [
+      {
+        title: 'Category Prizes',
+        items: ['Visual/Blind - Sundeep Rao'],
+      },
+    ],
     inlineImages: [
       {
         afterParagraphIndex: 3,
@@ -329,6 +361,20 @@ export const PLAYER_STORIES = [
     quote:
       '“Golf gave Nandan confidence, discipline, friendship, and a place where he truly belongs.”',
     quoteAttribution: 'Nandan’s family',
+    accolades: [
+      {
+        title: '18H Stableford',
+        items: ['Runner Up - Nandan S'],
+      },
+      {
+        title: '9H Stableford',
+        items: ['Runner Up - Nandan S'],
+      },
+      {
+        title: 'Category Prizes',
+        items: ['Intellectual - Nandan S'],
+      },
+    ],
     inlineImages: [
       {
         afterParagraphIndex: 1,

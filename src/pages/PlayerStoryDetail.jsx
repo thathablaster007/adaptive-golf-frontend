@@ -100,6 +100,29 @@ const PlayerStoryDetail = () => {
               </footer>
             </blockquote>
           )}
+
+          {story.accolades?.length > 0 && (
+            <div className="mt-8 border-l-4 border-primary-green bg-white px-6 py-8 text-primary-blue shadow-[0_16px_44px_rgba(24,39,75,0.08)]">
+              <p className="font-quicksand text-xl font-bold uppercase tracking-[0.12em] text-primary-green md:text-2xl">
+                Accolades
+              </p>
+
+              <div className="mt-5 space-y-6 font-quicksand text-base leading-7 text-gray-700 md:text-lg">
+                {story.accolades.map((section) => (
+                  <div key={section.title}>
+                    <h3 className="text-lg font-semibold text-primary-blue md:text-xl">
+                      {section.title}
+                    </h3>
+                    <ul className="mt-3 space-y-1.5">
+                      {section.items.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </motion.section>
     </motion.div>

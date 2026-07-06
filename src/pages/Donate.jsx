@@ -90,7 +90,7 @@ const Donate = () => {
                       </svg>
                     </a>
                     <a
-                      href="https://facebook.com"
+                      href="https://www.facebook.com/people/Adaptive-Golf-Alliance/61591641320894/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary-blue hover:text-[#4C9A63] transition-colors duration-300"
