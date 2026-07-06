@@ -107,17 +107,27 @@ const PlayerStoryDetail = () => {
                 Accolades
               </p>
 
-              <div className="mt-5 space-y-6 font-quicksand text-base leading-7 text-gray-700 md:text-lg">
-                {story.accolades.map((section) => (
-                  <div key={section.title}>
-                    <h3 className="text-lg font-semibold text-primary-blue md:text-xl">
-                      {section.title}
+              <div className="mt-6 space-y-8 font-quicksand text-base leading-7 text-gray-700 md:text-lg">
+                {story.accolades.map((eventSection) => (
+                  <div key={eventSection.eventTitle ?? eventSection.title} className="space-y-4">
+                    <h3 className="font-quicksand text-2xl font-bold text-primary-blue md:text-[1.75rem]">
+                      {eventSection.eventTitle ?? eventSection.title}
                     </h3>
-                    <ul className="mt-3 space-y-1.5">
-                      {section.items.map((item) => (
-                        <li key={item}>{item}</li>
+
+                    <div className="space-y-6">
+                      {(eventSection.sections ?? [eventSection]).map((prizeSection) => (
+                        <div key={prizeSection.title}>
+                          <h4 className="font-quicksand text-lg font-semibold text-primary-blue md:text-xl">
+                            {prizeSection.title}
+                          </h4>
+                          <ul className="mt-3 space-y-1.5">
+                            {prizeSection.items.map((item) => (
+                              <li key={item}>{item}</li>
+                            ))}
+                          </ul>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 ))}
               </div>

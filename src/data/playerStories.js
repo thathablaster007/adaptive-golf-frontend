@@ -56,16 +56,30 @@ export const PLAYER_STORIES = [
     quoteAttribution: 'Vishwa Vardhan Bhati',
     accolades: [
       {
-        title: '18H Stableford',
-        items: ['Winner - Vishwa Vardhan Bhati'],
+        eventTitle: 'Indian Adaptive Open 2026',
+        sections: [
+          {
+            title: '18H Stableford',
+            items: ['Winner - Vishwa Vardhan Bhati'],
+          },
+          {
+            title: '9H Stableford',
+            items: ['Winner - Vishwa Vardhan Bhati'],
+          },
+          {
+            title: 'Category Prizes',
+            items: ['Other Disabilities - Vishwa Vardhan Bhati'],
+          },
+        ],
       },
       {
-        title: '9H Stableford',
-        items: ['Winner - Vishwa Vardhan Bhati'],
-      },
-      {
-        title: 'Category Prizes',
-        items: ['Other Disabilities - Vishwa Vardhan Bhati'],
+        eventTitle: 'Czech Disabled Golf Masters 2026',
+        sections: [
+          {
+            title: 'Strokeplay Nett',
+            items: ['Runner-Up (Silver Medal) - Vishwa Vardhan Bhati'],
+          },
+        ],
       },
     ],
     inlineImages: [
@@ -109,8 +123,13 @@ export const PLAYER_STORIES = [
     quoteAttribution: 'Lt Col Vipin Bais',
     accolades: [
       {
-        title: '9H Stableford',
-        items: ['2 Runner Up - Lt Col Vipin Bais'],
+        eventTitle: 'Indian Adaptive Open 2026',
+        sections: [
+          {
+            title: '9H Stableford',
+            items: ['2 Runner Up - Lt Col Vipin Bais'],
+          },
+        ],
       },
     ],
     inlineImages: [
@@ -272,8 +291,22 @@ export const PLAYER_STORIES = [
     quoteAttribution: 'Ankush Saha',
     accolades: [
       {
-        title: '18H Stableford',
-        items: ['2 Runner Up - Ankush Saha'],
+        eventTitle: 'Indian Adaptive Open 2026',
+        sections: [
+          {
+            title: '18H Stableford',
+            items: ['2 Runner Up - Ankush Saha'],
+          },
+        ],
+      },
+      {
+        eventTitle: 'Czech Disabled Golf Masters 2026',
+        sections: [
+          {
+            title: 'Strokeplay Nett',
+            items: ['Third (Bronze Medal) - Ankush Saha'],
+          },
+        ],
       },
     ],
     inlineImages: [
@@ -320,8 +353,13 @@ export const PLAYER_STORIES = [
     quoteAttribution: 'Sundeep Rao',
     accolades: [
       {
-        title: 'Category Prizes',
-        items: ['Visual/Blind - Sundeep Rao'],
+        eventTitle: 'Indian Adaptive Open 2026',
+        sections: [
+          {
+            title: 'Category Prizes',
+            items: ['Visual/Blind - Sundeep Rao'],
+          },
+        ],
       },
     ],
     inlineImages: [
@@ -363,16 +401,21 @@ export const PLAYER_STORIES = [
     quoteAttribution: 'Nandan’s family',
     accolades: [
       {
-        title: '18H Stableford',
-        items: ['Runner Up - Nandan S'],
-      },
-      {
-        title: '9H Stableford',
-        items: ['Runner Up - Nandan S'],
-      },
-      {
-        title: 'Category Prizes',
-        items: ['Intellectual - Nandan S'],
+        eventTitle: 'Indian Adaptive Open 2026',
+        sections: [
+          {
+            title: '18H Stableford',
+            items: ['Runner Up - Nandan S'],
+          },
+          {
+            title: '9H Stableford',
+            items: ['Runner Up - Nandan S'],
+          },
+          {
+            title: 'Category Prizes',
+            items: ['Intellectual - Nandan S'],
+          },
+        ],
       },
     ],
     inlineImages: [
