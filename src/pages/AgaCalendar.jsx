@@ -75,7 +75,7 @@ const AgaCalendar = () => {
 
       <section className="section-padding">
         <div className="container-custom">
-          <div className="mb-6 flex flex-wrap items-center gap-4 bg-[#f3f3f3] px-5 py-4 shadow-sm w-fit">
+          <div className="mb-6 flex w-full flex-col gap-4 bg-[#f3f3f3] px-5 py-4 shadow-sm sm:w-fit sm:flex-row sm:flex-wrap sm:items-center">
             <label htmlFor="season-select" className="text-lg md:text-xl text-gray-800 font-medium">
               Season
             </label>
@@ -83,7 +83,7 @@ const AgaCalendar = () => {
               id="season-select"
               value={season}
               onChange={(event) => setSeason(event.target.value)}
-              className="min-w-[8rem] rounded-none border border-gray-200 bg-white px-4 py-2 text-base md:text-lg font-semibold text-gray-900 shadow-sm outline-none focus:border-primary-blue"
+              className="w-full rounded-none border border-gray-200 bg-white px-4 py-2 text-base md:text-lg font-semibold text-gray-900 shadow-sm outline-none focus:border-primary-blue sm:min-w-[8rem]"
             >
               {seasonOptions.map((option) => (
                 <option key={option} value={option}>
@@ -106,7 +106,82 @@ const AgaCalendar = () => {
               {event.month}
             </div>
 
-            <div className="border-b border-gray-200 bg-white">
+            <div className="border-b border-gray-200 bg-white lg:hidden">
+              <div className="px-5 py-6 space-y-7 text-center flex flex-col items-center">
+                <div className="space-y-3 w-full">
+                  <div className="text-lg font-semibold text-gray-900">{event.number}</div>
+                  <div className="mx-auto inline-flex flex-col gap-1.5 rounded-none bg-[#f7f7fb] px-4 py-3 text-blue-700 text-sm font-medium shadow-sm">
+                    <span>{event.date}</span>
+                    <span className="text-sm">{season}</span>
+                  </div>
+                </div>
+
+                <div className="flex flex-col items-center gap-4 pt-1 w-full">
+                  <img
+                    src={agaLogo}
+                    alt="Adaptive Golf Alliance logo"
+                    className="h-24 w-32 object-contain"
+                    loading="eager"
+                    decoding="async"
+                  />
+                  <img
+                    src={secondLogo}
+                    alt="Indian Golf Open logo"
+                    className="h-18 w-24 object-contain"
+                    loading="eager"
+                    decoding="async"
+                  />
+                </div>
+
+                <div className="w-full max-w-[24rem] bg-[#f3f3f3] px-4 py-4 space-y-2 shadow-sm text-center">
+                  <h2 className="text-2xl font-semibold text-primary-blue leading-tight">
+                    {event.title}
+                  </h2>
+                  <p className="text-base text-gray-700">
+                    <span className="font-semibold text-gray-800">Venue:</span> {event.venue}
+                  </p>
+                  <p className="text-base text-gray-700">
+                    <span className="font-semibold text-gray-800">Practice Rd:</span> {event.practiceRound}
+                  </p>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => setSelectedImage({ src: groupPhoto, alt: 'Indian Golf Open group preview' })}
+                  className="block w-full max-w-[28rem] overflow-hidden border border-gray-200 bg-white shadow-sm transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  <img
+                    src={groupPhoto}
+                    alt="Indian Golf Open group preview"
+                    className="h-auto w-full object-cover object-center"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </button>
+
+                <div className="flex flex-col items-center gap-3 pt-1">
+                  <div className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-[#e9eef4] shadow-sm shrink-0">
+                    <img
+                      src={vishwaPhoto}
+                      alt="Vishwa Vardhan"
+                      className="h-full w-full object-cover object-top"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div className="min-w-0 text-center">
+                    <div className="text-lg font-semibold text-primary-blue leading-snug">
+                      {event.winner}
+                    </div>
+                    <div className="mt-1 text-base text-gray-800">
+                      {event.status}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="hidden border-b border-gray-200 bg-white lg:block">
               <div className="grid grid-cols-1 lg:grid-cols-[72px_230px_minmax(420px,1fr)_230px_150px] gap-5 px-6 py-7 lg:items-center">
                 <div className="text-lg md:text-xl text-gray-900 lg:text-center lg:justify-self-center">{event.number}</div>
 

@@ -7,9 +7,17 @@ import title1BlogCard from '../Title 1.JPG';
 import blogImage2 from '../IMG_1883.JPG';
 import blogImage3 from '../IMG_0780.jpeg';
 import blogImage4 from '../IMG_BLOG4_1.jpg';
+import blogAnkush from '../blog_ankush (3).jpeg';
 
 const Blog = () => {
   const posts = [
+    {
+      id: 'blog-czech-disabled-golf-masters-2026',
+      title: 'A Podium Finish That Means So Much More: Ankush Saha’s Remarkable Debut at the Czech Disability Golf Masters 2026',
+      excerpt: 'Ankush Saha’s first international disability golf tournament in Prague became a podium finish, a family milestone, and a celebration of adaptive golf in India.',
+      image: blogAnkush,
+      path: ROUTES.blogCzechDisabledGolfMasters,
+    },
     {
       id: 'blog-empowerment',
       title: 'More Than a Game: How Golf Empowers People with Disabilities',
