@@ -311,6 +311,28 @@ const PlayerStoryDetail = () => {
               </div>
             </div>
           )}
+          {story.videoUrl && (
+            <motion.div variants={itemVariants} className="mt-12 md:mt-14">
+              <h2 className="mb-6 font-quicksand text-2xl font-bold text-primary-blue md:text-3xl">
+                Watch {story.name}'s Story
+              </h2>
+
+              <div className="w-full overflow-hidden rounded-xl border-4 border-white bg-gray-900 shadow-lg">
+                <div className="aspect-video w-full">
+                  <iframe
+                    src={story.videoUrl}
+                    title={`${story.name} - Adaptive Golf Story`}
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="h-full w-full"
+                  ></iframe>
+                </div>
+              </div>
+            </motion.div>
+          )}
         </div>
       </motion.section>
     </motion.div>

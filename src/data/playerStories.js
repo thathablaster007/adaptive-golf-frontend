@@ -799,6 +799,7 @@ export const PLAYER_STORIES = [
         alt: 'Vishwa Vardhan Bhati competing in an adaptive golf event',
       },
     ],
+    videoUrl: 'https://www.youtube.com/embed/3t9FSG7bjUo',
   },
   {
     slug: 'lt-col-vipin-bais',
@@ -879,6 +880,7 @@ export const PLAYER_STORIES = [
         alt: 'Colonel Charanjit Singh (Retd.) on the golf course',
       },
     ],
+    videoUrl: 'https://www.youtube.com/embed/3t9FSG7bjUo',
   },
   {
     slug: 'moses-chowdari-gorrepati',
@@ -1028,6 +1030,7 @@ export const PLAYER_STORIES = [
         size: 'small',
       },
     ],
+    videoUrl: 'https://www.youtube.com/embed/3t9FSG7bjUo',
   },
   {
     slug: 'sundeep-rao',
@@ -1253,6 +1256,7 @@ export const PLAYER_STORIES = [
         alt: 'Prashant Subhash Zoman during a golf session',
       },
     ],
+    videoUrl: 'https://www.youtube.com/embed/3t9FSG7bjUo',
   },
   {
     slug: 's-subbiah',
