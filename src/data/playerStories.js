@@ -1,6 +1,8 @@
 import vishwaStoryFace from '../Vishwa_story1.jpeg';
-import vishwaStoryDetailOne from '../Vishwa_story1.jpeg';
-import vishwaStoryDetailTwo from '../Vishwa_story2.jpeg';
+import vishwaStoryTwo from '../Vishwa_story2.jpeg';
+import czechPhotoFour from '../Czech (4).jpeg';
+import czechPhotoSix from '../Czech (6).jpeg';
+import czechPhotoTen from '../Czech (10).jpeg';
 import vipinStoryImage from '../Vipin_story.jpeg';
 import charanjitStoryImage from '../Charanjit_story.jpeg';
 import mosesImageOne from '../Moses_1.jpeg';
@@ -38,25 +40,729 @@ export const PLAYER_STORIES = [
     faceImage: vishwaStoryFace,
     faceImageAlt: 'Vishwa Vardhan Bhati portrait',
     summary:
-      'A Noida-born athlete whose journey from a childhood accident to international para golf represents resilience, discipline, and belief.',
+      'A story of resilience and reinvention, from surviving a life-changing accident to discovering a new sporting identity in golf.',
     route: '/media/player-stories/vishwa-vardhan-bhati',
-    title: 'From Surviving Loss to Swinging for India',
+    title: 'The Game He Was Always Meant to Find',
     intro:
-      'At just 12 years old, Vishwa Vardhan Bhati experienced a life-altering accident that changed everything he knew. A high-voltage electric shock led to the loss of his dominant left hand, forcing him to relearn the simplest tasks most people take for granted.',
-    paragraphs: [
-      'At just 12 years old, Vishwa Vardhan Bhati experienced a life-altering accident that changed everything he knew. A high-voltage electric shock led to the loss of his dominant left hand, forcing him to relearn the simplest tasks most people take for granted: writing, eating, studying, and even living independently.',
-      'But what could have become the end of a childhood dream became the beginning of an extraordinary journey of resilience.',
-      'Born and raised in Noida, Vishwa Vardhan completed his schooling at Sommerville School before pursuing a Bachelor’s degree in Business Studies from Delhi University. Academically driven and determined, he later secured admission to IIM Shillong for his PGDM after successfully clearing the CAT examination.',
-      'Long before golf entered his life, sport was already part of his identity. A passionate cricketer, Vishwa Vardhan represented district and state-level teams before earning recognition in para cricket. His dedication and discipline eventually saw him shortlisted among the top players in India for the 2019 Para Cricket World Cup in England — a moment that reflected years of perseverance, grit, and belief.',
-      'Yet, life had another chapter waiting for him.',
-      'In 2023, Vishwa Vardhan was introduced to golf at the Noida Golf Course. What began as a new experience soon transformed into a powerful passion. Under the guidance of coach Shri Arjun Choudhuri and with the support of the Noida Golf Course management, he began adapting his game and rebuilding confidence through the sport.',
-      'Within just two years, Vishwa Vardhan emerged onto the international stage. In 2025, he represented India at the English Open for Golfers with Disability in Durham, United Kingdom, competing against players from across the world and securing a Top 10 finish in his category. Soon after, he represented India again at the Daikin Madrid Cup in Spain, continuing to carry the nation’s flag with pride and determination.',
-      'For Vishwa Vardhan , golf is more than competition. It is freedom, focus, and proof that adversity does not define potential.',
-      'Behind every achievement stands a support system he deeply values — his parents, mentors, coaches, seniors, friends, and colleagues who stood beside him through every challenge and triumph.',
-      'Today, Vishwa Vardhan continues to dream bigger. With unwavering discipline and a strong sense of purpose, he aspires to represent India at many more international tournaments and inspire others living with disabilities to believe that limitations can be transformed into strength.',
+      'There are some stories that begin with a sporting dream. Vishwa Vardhan Bhati’s began with a cricket ball, but his greatest journey began when he had to rebuild his life after losing his left arm at the age of twelve.',
+    contentBlocks: [
+      {
+        type: 'paragraph',
+        text: 'There are some stories that begin with a sporting dream. Vishwa Vardhan Bhati’s began with a cricket ball.',
+      },
+      {
+        type: 'paragraph',
+        text: 'But before golf became his passion, before he represented India, before he stood on international golf courses with the Indian flag beside him, Vishwa had to learn something much more fundamental: how to rebuild a life after losing his left arm at the age of twelve.',
+      },
+      {
+        type: 'paragraph',
+        text: 'It was June 12, 2000. Vishwa was spending his summer holidays with his family in Samthar, a former princely state about 60 kilometres from Jhansi in Uttar Pradesh. It was a typical family summer — cousins everywhere, children playing, and the excitement of a birthday celebration for his younger brother.',
+      },
+      {
+        type: 'paragraph',
+        text: 'That afternoon, Vishwa and his brothers had gone into the nearby fields to pick jujube fruit. As he walked ahead of them, he was doing what he had done countless times before: pretending to bowl with his left hand. He was a cricket lover and a left-handed player, and even when he was simply walking through a field, cricket was never far from his mind.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Then, in a matter of seconds, everything changed.',
+      },
+      {
+        type: 'paragraph',
+        text: 'As he raised his left arm, he came into contact with a high-voltage electrical wire. The current passed through his body and threw him to the ground. His brothers ran for help. When people reached him, he was completely unresponsive. His mouth was frothing and his body was numb. The electrical current had passed through his body and exited through his right hand and leg.',
+      },
+      {
+        type: 'paragraph',
+        text: 'The people around him were terrified.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He was taken to a nearby temple, where family members and villagers prayed desperately for his life. Several people tried to revive him, pressing hard on his chest. At first, there was no response.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Then, suddenly, Vishwa gasped for air.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He was alive.',
+      },
+      {
+        type: 'paragraph',
+        text: 'The next few hours became a race against time. He was taken to hospital in Jhansi, where doctors assessed the severity of his injuries and referred him to Delhi. The journey back to Noida was long and painful. His left hand had swollen dramatically, and the burns were severe.',
+      },
+      {
+        type: 'paragraph',
+        text: 'The following morning, he reached Delhi and was taken first to AIIMS before being transferred to Safdarjung Hospital, where he underwent a long operation.',
+      },
+      {
+        type: 'paragraph',
+        text: 'The doctors initially believed that the entire arm might have to be amputated. Instead, they decided to make an extraordinary attempt to save it. They connected the hand to active nerves from the stomach in the hope that the tissues could be revived.',
+      },
+      {
+        type: 'paragraph',
+        text: 'For a few days, there was hope.',
+      },
+      {
+        type: 'paragraph',
+        text: 'The hand began to show some response up to the elbow. But below the elbow, the tissues were no longer responding, and a severe infection and gangrene began to spread.',
+      },
+      {
+        type: 'paragraph',
+        text: 'The doctors had no choice.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Vishwa’s father was told that unless the damaged part of the arm was removed, the infection could spread further and threaten Vishwa’s life. After consulting the family, he gave his consent.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Vishwa underwent a second operation.',
+      },
+      {
+        type: 'paragraph',
+        text: 'His left arm was amputated below the elbow.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He was twelve years old.',
+      },
+      {
+        type: 'imageRow',
+        images: [
+          {
+            src: vishwaStoryFace,
+            alt: 'Vishwa Vardhan Bhati portrait from the original story',
+          },
+          {
+            src: vishwaStoryTwo,
+            alt: 'Vishwa Vardhan Bhati from the original story photos',
+          },
+        ],
+      },
+      {
+        type: 'heading',
+        text: 'Learning to live with one hand',
+      },
+      {
+        type: 'paragraph',
+        text: 'What happened next is perhaps the most important part of Vishwa’s story, because the accident did not simply take away his arm. It forced him to reconsider everything he thought he knew about life.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He spent almost two months in hospital.',
+      },
+      {
+        type: 'paragraph',
+        text: 'During that time, he met other patients who were fighting battles of their own. He spoke to them, laughed with them and, in his own way, tried to make them feel better. He saw suffering around him and began to understand that everyone was fighting some kind of battle.',
+      },
+      {
+        type: 'paragraph',
+        text: 'One young boy, only seven years old, had suffered severe burns in a cylinder blast at home. Vishwa became friendly with him and would talk to him. One day, he was told that the boy had not survived.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Experiences like that changed him.',
+      },
+      {
+        type: 'paragraph',
+        text: 'When Vishwa finally left the hospital after almost two months, one of the first things he noticed was the sunlight. Standing outside after so long indoors, he realised how precious the simplest things in life could be - the sun, his body, his family, his relationships and simply being alive.',
+      },
+      {
+        type: 'paragraph',
+        text: 'But going home did not mean that the struggle was over.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He now had to learn how to do ordinary things with one hand.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Eating.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Dressing.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Tying his shoelaces.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Managing personal tasks.',
+      },
+      {
+        type: 'paragraph',
+        text: 'And, perhaps most difficult of all, returning to school.',
+      },
+      {
+        type: 'paragraph',
+        text: 'The first day back was deeply uncomfortable. Children stared at him. Some whispered. He felt as though everyone was looking at his missing arm. He avoided the morning assembly and lunchtime because he did not want to face large groups of students.',
+      },
+      {
+        type: 'paragraph',
+        text: 'For a young boy who had once simply been known as a cricket-playing child, suddenly being seen primarily through the lens of his disability was difficult.',
+      },
+      {
+        type: 'paragraph',
+        text: 'But slowly, Vishwa began to understand that if he wanted to live normally, he could not wait for the world to change around him.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He had to adapt.',
+      },
+      {
+        type: 'paragraph',
+        text: 'And adapting became a skill.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He experimented with how to ride a bicycle with one hand. He practised in the backyard at night until he became comfortable. Later, he learnt to ride a motorcycle and drive a car.',
+      },
+      {
+        type: 'paragraph',
+        text: 'And then he returned to the thing he loved most.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Cricket.',
+      },
+      {
+        type: 'heading',
+        text: 'The cricketer who refused to give up',
+      },
+      {
+        type: 'paragraph',
+        text: 'Before the accident, Vishwa had been a good cricketer. Now he had to find a new way of playing the game.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He started with bowling.',
+      },
+      {
+        type: 'paragraph',
+        text: 'The logic was simple: he only needed one hand to hold the ball.',
+      },
+      {
+        type: 'paragraph',
+        text: 'So he experimented.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He practised.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He adapted.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Eventually, he began batting as well.',
+      },
+      {
+        type: 'paragraph',
+        text: 'In 2005, his father took him to cricket trials at Amity School in Noida for selection to the Under-16 district team. At the registration desk, Vishwa was initially told that he should go and play specially-abled cricket instead.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He sat beside his father and listened.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Eventually, after some discussion, he was allowed to take part.',
+      },
+      {
+        type: 'paragraph',
+        text: 'One coach looked at him and directed him towards a junior group meant for nine- and ten-year-old children. Vishwa went there and played for a few minutes.',
+      },
+      {
+        type: 'paragraph',
+        text: 'The junior coach watched him and sent him back to the senior group. There, he bowled, fielded and competed alongside the other players. The senior coach was impressed. The next day, his father brought home the newspaper. Vishwa’s name was there. He had been selected for the district team, at number two on the list.',
+      },
+      {
+        type: 'paragraph',
+        text: 'For Vishwa, it felt like the dream had returned.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He began dreaming about representing Uttar Pradesh and, one day, India.',
+      },
+      {
+        type: 'paragraph',
+        text: 'But the path ahead was not straightforward. His father, having already seen how Vishwa had been treated at the first level of selection, worried that the same barriers would appear again. He encouraged Vishwa to focus on his studies.',
+      },
+      {
+        type: 'paragraph',
+        text: 'For a time, his dream of playing for India seemed to disappear.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Then cricket gave him another opportunity.',
+      },
+      {
+        type: 'paragraph',
+        text: 'In 2006, Vishwa accompanied his father to a friendly cricket match. His father encouraged him to play, and Vishwa batted well. Someone watching the game noticed him and later contacted him about playing specially-abled cricket.',
+      },
+      {
+        type: 'paragraph',
+        text: 'The dream came alive again.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He began receiving invitations from the Delhi cricket association and played tournaments across different states.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Over the years, cricket took him further than he had imagined.',
+      },
+      {
+        type: 'paragraph',
+        text: 'In 2016, after returning to para cricket following a break, he represented Haryana in the North Zone tournament. In the final against Delhi, Haryana faced a huge target and lost two early wickets.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Vishwa walked to the crease.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He remained unbeaten on 83.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Haryana won the final.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Then came another milestone.',
+      },
+      {
+        type: 'paragraph',
+        text: 'In 2018, Vishwa was selected for the Indian para-cricket team and represented India. He continued to play for the national side in the years that followed.',
+      },
+      {
+        type: 'paragraph',
+        text: 'In 2019, he went through another demanding selection process for the Indian team for the World Series in England. Five hundred and sixteen para cricketers were initially shortlisted. That number was reduced successively to 246, 118, 54 and then 30.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Vishwa made the final 30.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He did not make the final 16.',
+      },
+      {
+        type: 'paragraph',
+        text: 'It was devastating.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He describes himself as broken and shattered.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Yet, as had happened throughout his life, disappointment did not become the end of his story.',
+      },
+      {
+        type: 'paragraph',
+        text: 'It simply became another chapter.',
+      },
+      {
+        type: 'heading',
+        text: 'A life beyond sport',
+      },
+      {
+        type: 'paragraph',
+        text: 'Vishwa’s determination was never confined to cricket.',
+      },
+      {
+        type: 'paragraph',
+        text: 'In 2007, after watching Taare Zameen Par, he began thinking about the possibility of making a film about a person with a physical disability — a story that would inspire people through determination rather than evoke sympathy.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He kept the idea to himself for several years, afraid people might laugh at him. Then, in 2009, he finally told his close friend Dinesh Kumar, known to him as DK.',
+      },
+      {
+        type: 'paragraph',
+        text: 'DK did not laugh. Instead, he said: why not?',
+      },
+      {
+        type: 'paragraph',
+        text: 'The two friends decided they would try to meet Aamir Khan.',
+      },
+      {
+        type: 'paragraph',
+        text: 'What followed was an extraordinary three-year pursuit.',
+      },
+      {
+        type: 'paragraph',
+        text: 'From 2010 to 2012, Vishwa and DK repeatedly travelled to Mumbai. They searched for offices, asked security guards for information, borrowed money, made plans and returned again and again. They came close on several occasions. Once, Vishwa saw Aamir Khan face-to-face for only a few seconds. Another time, he stood behind him, just a few metres away, but could not bring himself to speak.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Eventually, the opportunity never came.',
+      },
+      {
+        type: 'paragraph',
+        text: 'But perhaps the pursuit itself says more about Vishwa than whether the meeting happened.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He has always been willing to chase an unlikely dream.',
+      },
+      {
+        type: 'heading',
+        text: 'The boy who became a sportsman',
+      },
+      {
+        type: 'paragraph',
+        text: 'Vishwa later moved to Shillong for his postgraduate studies and remained deeply involved in sport. He was an active sportsperson throughout college and won cricket tournaments for his team.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He was also fortunate to be part of the first batch of students to have Dr APJ Abdul Kalam as a guest faculty member.',
+      },
+      {
+        type: 'paragraph',
+        text: 'In 2014, Vishwa was selected through campus placement by Oil India Limited and posted in Upper Assam. His cricket continued to make him stand out. Wherever he played, people noticed the unusual sight of a player competing with one hand.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He became known in his workplace and the local community for his cricket.',
+      },
+      {
+        type: 'paragraph',
+        text: 'In Assam, another sport caught his attention. Squash. He took to it seriously and began performing well.',
+      },
+      {
+        type: 'paragraph',
+        text: 'And then there was golf. At first, Vishwa had absolutely no interest in it. In fact, he used to joke that golf was a game for old people, chasing a small white ball around a course without really doing much physical activity.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He now admits he was completely wrong.',
+      },
+      {
+        type: 'heading',
+        text: 'The unexpected discovery of golf',
+      },
+      {
+        type: 'paragraph',
+        text: 'In June 2023, Oil India organised a golf coaching camp for its employees. The company’s sports coordinator encouraged Vishwa to attend. He went simply because the camp was free.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He did not expect anything more from it than a little time on a golf course.',
+      },
+      {
+        type: 'paragraph',
+        text: 'But during the session, his coach noticed something. Vishwa’s cricketing ability gave him a natural understanding of striking a ball. That small observation sparked his curiosity. He began playing. Then he began practising. And before long, golf had become much more than a new sport.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He bought a second-hand Wilson golf set that was almost twenty years old and began working on his game. But he quickly discovered that playing golf with one hand presented a challenge that was much bigger than simply holding a club.',
+      },
+      {
+        type: 'paragraph',
+        text: 'There was no established pathway for a one-handed para golfer in India. There were no readily available coaching models designed around his particular needs. Coaches were experimenting with him, just as he was experimenting with himself. Some suggested that he use lighter women’s clubs. But Vishwa knew that there was no instruction manual for what he was trying to achieve.',
+      },
+      {
+        type: 'paragraph',
+        text: 'So he went back to what had worked throughout his life.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Experiment.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Observe.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Adapt.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Try again.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He watched other golfers carefully. He studied how they moved and how they struck the ball. He experimented with his grip, his balance, his swing and his equipment. He began developing his own way of playing.',
+      },
+      {
+        type: 'paragraph',
+        text: 'For Vishwa, golf became less about finding a technically perfect method and more about finding the method that allowed him to feel the club, connect with the ball and control the shot.',
+      },
+      {
+        type: 'paragraph',
+        text: 'People told him that chipping with one hand would be difficult. They told him putting would be difficult. They questioned how he would maintain his balance. But instead of discouraging him, those doubts became fuel. He had heard the word difficult many times before.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He had learnt not to confuse difficult with impossible.',
+      },
+      {
+        type: 'heading',
+        text: 'Finding the international pathway',
+      },
+      {
+        type: 'paragraph',
+        text: 'In 2024, Vishwa began researching golf for players with disabilities at the international level. That research led him to EDGA. He followed its work for several months and then applied for the WR4GD Pass. He received it successfully.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Vishwa became the first para golfer from India to successfully receive a WR4GD Pass. For him, it was more than a qualification.',
+      },
+      {
+        type: 'paragraph',
+        text: 'It represented the discovery of a pathway that he had not known existed. He now had the opportunity to compete internationally as a golfer with a disability.',
+      },
+      {
+        type: 'paragraph',
+        text: 'In June 2025, he travelled to Durham, England, to participate in the English Open for Golfers with Disability, representing India.',
+      },
+      {
+        type: 'paragraph',
+        text: 'When he saw the Indian flag flying alongside the flags of players from different countries, the significance of the moment stayed with him.',
+      },
+      {
+        type: 'paragraph',
+        text: 'The boy who had once wondered whether he would ever play sport again was now standing on an international golf course representing his country. In October 2025, another opportunity followed when he represented India in Spain at the Daikin Madrid Cup.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Golf was taking him places he had never expected.',
+      },
+      {
+        type: 'paragraph',
+        text: 'And it was only the beginning.',
+      },
+      {
+        type: 'heading',
+        text: 'From finding golf to building his game',
+      },
+      {
+        type: 'paragraph',
+        text: 'By 2026, Vishwa was no longer simply discovering golf.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He was beginning to build a future in it.',
+      },
+      {
+        type: 'paragraph',
+        text: 'His connection with the Adaptive Golf Alliance Foundation brought him into a growing network committed to creating opportunities for golfers with disabilities in India. The relationship also opened the door to a wider international support system.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Today, Vishwa is working closely with the Adaptive Golf Alliance Foundation and The Golf Trust to develop his game. He is in regular interaction with the team, including golf professionals and coaches who are helping him understand how he can continue to improve his technique, adapt his equipment and develop a more complete game.',
+      },
+      {
+        type: 'paragraph',
+        text: 'For Vishwa, this stage is particularly exciting.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He has spent his life figuring out how to do things differently.',
+      },
+      {
+        type: 'paragraph',
+        text: 'With that support, Vishwa’s ambitions have grown.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He is working towards becoming a stronger and more competitive golfer and has set his sights on the G4D pathway, with the ambition of competing at that level in 2027.',
+      },
+      {
+        type: 'paragraph',
+        text: 'For someone who only picked up a golf club seriously in 2023, the goal is ambitious. But ambition has never frightened Vishwa.',
+      },
+      {
+        type: 'heading',
+        text: 'A second-place finish and another beginning',
+      },
+      {
+        type: 'paragraph',
+        text: 'In 2026, his progress began producing results on the international stage. At the Czech Disabled Golf Masters in Prague, Vishwa opened the Nett Stroke Play competition with an outstanding score of 66. He eventually finished runner-up in the category, securing second place for India. His performance was part of a landmark showing for Indian adaptive golf.',
+      },
+      {
+        type: 'paragraph',
+        text: 'The result was significant.',
+      },
+      {
+        type: 'imageRow',
+        images: [
+          {
+            src: czechPhotoFour,
+            alt: 'Vishwa Vardhan Bhati at the Czech Disabled Golf Masters',
+          },
+          {
+            src: czechPhotoTen,
+            alt: 'Vishwa Vardhan Bhati celebrating on the golf course',
+          },
+        ],
+      },
+      {
+        type: 'paragraph',
+        text: 'But for Vishwa, perhaps the most important thing was not the trophy. It was evidence that the hours of experimentation, practice and adaptation were beginning to translate into competitive performance.',
+      },
+      {
+        type: 'paragraph',
+        text: 'The gap between where he was and where he wanted to be was still there. And that gap is exactly what he wants to work on.',
+      },
+      {
+        type: 'heading',
+        text: 'Golf has become his game',
+      },
+      {
+        type: 'paragraph',
+        text: 'Vishwa’s cricketing friends still find it difficult to believe that he has not played cricket for the past few years.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Cricket was his first love. It gave him his identity as a sportsman. It taught him competition. It gave him the confidence to believe that he could perform alongside able-bodied players. It eventually took him to represent India.',
+      },
+      {
+        type: 'paragraph',
+        text: 'That love has not disappeared.',
+      },
+      {
+        type: 'paragraph',
+        text: 'But golf has become something different.',
+      },
+      {
+        type: 'paragraph',
+        text: 'It has become deeply personal.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Vishwa says that he now lives golf. He wakes up thinking about it. He goes to sleep thinking about it. The game has become part of the rhythm of his life. And perhaps the most revealing thing he says about golf is that his biggest competition is not necessarily another golfer.',
+      },
+      {
+        type: 'paragraph',
+        text: 'It is himself.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Every round gives him another opportunity to improve.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Another shot to understand.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Another weakness to work on.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Another barrier to remove.',
+      },
+      {
+        type: 'heading',
+        text: 'The next chapter',
+      },
+      {
+        type: 'paragraph',
+        text: 'Vishwa Vardhan Bhati’s story is not a story about a boy who lost an arm.',
+      },
+      {
+        type: 'paragraph',
+        text: 'It is a story about what he did after losing it.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He learnt to live again.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He returned to school.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He learnt to ride.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He learnt to drive.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He returned to cricket.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He represented India.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He chased a dream of making a film.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He discovered squash.',
+      },
+      {
+        type: 'paragraph',
+        text: 'And then, unexpectedly, he discovered golf.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Today, he is working to transform that discovery into a serious international golfing career.',
+      },
+      {
+        type: 'paragraph',
+        text: 'He wants to improve his game, compete at a higher level and represent India on more international stages. With the support of the Adaptive Golf Alliance Foundation and The Golf Trust, he is now working towards that next level, refining his technique, learning from experienced coaches, exploring adaptations and preparing himself for the challenges ahead.',
+      },
+      {
+        type: 'paragraph',
+        text: 'His ambition is to make India proud.',
+      },
+      {
+        type: 'paragraph',
+        text: 'But there is something even more powerful underneath that ambition. He wants to keep proving to himself what is possible.',
+      },
+      {
+        type: 'paragraph',
+        text: 'The twelve-year-old boy who once lay unconscious in a field could not have imagined where life would take him. He could not have imagined representing India in cricket. He could not have imagined standing on an international golf course with the Indian flag flying beside him.',
+      },
+      {
+        type: 'paragraph',
+        text: 'And he certainly could not have imagined that a sport he once dismissed as a game for old people would eventually become the sport he could not imagine living without.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Yet here he is.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Still learning.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Still adapting.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Still competing.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Still chasing the next goal.',
+      },
+      {
+        type: 'heading',
+        text: 'The way you play may have to change. The dream does not.',
+      },
+      {
+        type: 'paragraph',
+        text: 'Because if there is one thing Vishwa’s life has taught him, it is this: the way you play may have to change. The dream does not.',
+      },
     ],
     quote:
-      '“Life changed in a moment, but so did my understanding of courage. Every challenge became an opportunity to rise again.”',
+      '“The way you play may have to change. The dream does not.”',
     quoteAttribution: 'Vishwa Vardhan Bhati',
     accolades: [
       {
@@ -86,16 +792,11 @@ export const PLAYER_STORIES = [
         ],
       },
     ],
-    inlineImages: [
+    contentImages: [
       {
-        afterParagraphIndex: 3,
-        src: vishwaStoryDetailOne,
-        alt: 'Vishwa Vardhan Bhati competing in golf',
-      },
-      {
-        afterParagraphIndex: 6,
-        src: vishwaStoryDetailTwo,
-        alt: 'Vishwa Vardhan Bhati smiling during a golf event',
+        afterBlockIndex: 122,
+        src: czechPhotoSix,
+        alt: 'Vishwa Vardhan Bhati competing in an adaptive golf event',
       },
     ],
   },

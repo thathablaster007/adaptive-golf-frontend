@@ -368,32 +368,49 @@ const Homepage = () => {
           </motion.div>
 
           {/* Video and Three Pillars Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
-            {/* Video Section - Expanded to reduce negative space */}
-            <motion.div variants={itemVariants} className="lg:col-span-7 h-full lg:-ml-6 lg:self-stretch">
-              <div className="aspect-video lg:aspect-auto lg:h-full w-full bg-gray-900 rounded-xl overflow-hidden shadow-lg border-4 border-white">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/PhiBZvgeX2Q"
-                  title="USAGA Adaptive Golf"
-                  loading="lazy"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                ></iframe>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start lg:pl-16 xl:pl-20">
+            {/* Video Section - Two stacked frames */}
+            <motion.div variants={itemVariants} className="lg:col-span-6 flex flex-col gap-6 md:gap-7">
+              <div className="flex h-full flex-col gap-5 md:gap-6">
+                <div className="w-full bg-gray-900 rounded-xl overflow-hidden shadow-lg border-4 border-white h-[260px] md:h-[290px] lg:h-[280px]">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/PhiBZvgeX2Q"
+                    title="USAGA Adaptive Golf"
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  ></iframe>
+                </div>
+
+                <div className="w-full bg-gray-900 rounded-xl overflow-hidden shadow-lg border-4 border-white h-[260px] md:h-[290px] lg:h-[280px]">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/3t9FSG7bjUo"
+                    title="Adaptive Golf Alliance Foundation"
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  ></iframe>
+                </div>
               </div>
             </motion.div>
 
             {/* Three Pillars Section */}
-            <motion.div variants={itemVariants} className="lg:col-span-5">
-              <h3 className="text-xl font-quicksand text-primary-blue font-bold mb-8">
+            <motion.div variants={itemVariants} className="lg:col-span-6 lg:pt-2">
+              <h3 className="text-xl font-quicksand text-primary-blue font-bold mb-10">
                 Our mission comes to life through a three-stage pathway:
               </h3>
 
-              <div className="space-y-8">
+              <div className="space-y-10">
                 {/* Sample */}
                 <motion.div variants={itemVariants} className="border-l-4 border-cta-gold pl-5">
                   <h4 className="text-xl font-quicksand text-primary-green font-bold mb-2">
@@ -425,7 +442,7 @@ const Homepage = () => {
                 </motion.div>
               </div>
 
-              <motion.div variants={itemVariants} className="mt-8">
+              <motion.div variants={itemVariants} className="mt-10">
                 <Link
                   to={ROUTES.whatIsAdaptiveGolf}
                   className="inline-flex items-center justify-center rounded-xl bg-primary-green px-7 py-3 text-base text-white font-quicksand font-semibold shadow-md hover:bg-opacity-90 transition-colors duration-300"

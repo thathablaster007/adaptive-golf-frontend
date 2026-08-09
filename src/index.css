@@ -3,6 +3,11 @@
   font-family: 'Quicksand', Arial, sans-serif;
 }
 
+.player-story-page,
+.player-story-page * {
+  font-family: 'Quicksand', Arial, sans-serif;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
