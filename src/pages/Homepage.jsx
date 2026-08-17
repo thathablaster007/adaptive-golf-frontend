@@ -21,6 +21,7 @@ import blogImage2 from '../IMG_1883.JPG';
 import blogImage3 from '../IMG_0780.jpeg';
 import blogImage4 from '../IMG_BLOG4_1.jpg';
 import blogAnkush from '../blog_ankush (3).jpeg';
+import blogCol from '../BlogCol.jpeg';
 import tryGolfHomeImage from '../Try Golf_Home.JPG';
 import competitionHomeImage from '../Comeptition_Home.JPG';
 import mediaHomeImage from '../Media_Home.JPG';
@@ -209,6 +210,12 @@ const Homepage = () => {
 
   const blogPreviewPosts = [
     {
+      id: 'blog-PostCol',
+      title: 'PLEASE SPEAK By Col Charanjit (Retd)',
+      image: blogCol,
+      path: ROUTES.blogCol,
+    },
+    {
       id: 'blog-czech-disabled-golf-masters-2026',
       title: 'A Podium Finish That Means So Much More: Ankush Saha’s Remarkable Debut at the Czech Disability Golf Masters 2026',
       image: blogAnkush,
@@ -376,7 +383,7 @@ const Homepage = () => {
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/PhiBZvgeX2Q"
+                    src="https://www.youtube.com/embed/BwYduwm4rP0"
                     title="USAGA Adaptive Golf"
                     loading="lazy"
                     referrerPolicy="strict-origin-when-cross-origin"

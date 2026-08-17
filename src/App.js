@@ -27,6 +27,7 @@ const loadBlogPostVolunteers = () => import('./pages/BlogPostVolunteers');
 const loadBlogPostAdaptiveCoaching = () => import('./pages/BlogPostAdaptiveCoaching');
 const loadBlogPostBeyondVision = () => import('./pages/BlogPostBeyondVision');
 const loadBlogPostCzech = () => import('./pages/BlogPostCzech');
+const loadBlogPostCol = () => import('./pages/BlogPostCol');
 const loadAboutUs = () => import('./pages/AboutUs');
 const loadTeam = () => import('./pages/Team');
 
@@ -55,6 +56,7 @@ const BlogPostVolunteers = lazy(loadBlogPostVolunteers);
 const BlogPostAdaptiveCoaching = lazy(loadBlogPostAdaptiveCoaching);
 const BlogPostBeyondVision = lazy(loadBlogPostBeyondVision);
 const BlogPostCzech = lazy(loadBlogPostCzech);
+const BlogPostCol = lazy(loadBlogPostCol);
 const AboutUs = lazy(loadAboutUs);
 const Team = lazy(loadTeam);
 
@@ -147,6 +149,7 @@ function App() {
             <Route path="blog/adaptive-coaching" element={<BlogPostAdaptiveCoaching />} />
             <Route path="blog/beyond-vision" element={<BlogPostBeyondVision />} />
             <Route path="blog/czech-disabled-golf-masters-2026" element={<BlogPostCzech />} />
+            <Route path="blog/PostCol" element={<BlogPostCol />} />
             <Route path="get-involved" element={<GetInvolved />} />
             <Route path="donate" element={<Donate />} />
             <Route path="news" element={<News />} />

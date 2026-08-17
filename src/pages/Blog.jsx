@@ -8,9 +8,17 @@ import blogImage2 from '../IMG_1883.JPG';
 import blogImage3 from '../IMG_0780.jpeg';
 import blogImage4 from '../IMG_BLOG4_1.jpg';
 import blogAnkush from '../blog_ankush (3).jpeg';
+import blogCol from '../BlogCol.jpeg';
 
 const Blog = () => {
   const posts = [
+    {
+      id: 'blog-PostCol',
+      title: 'PLEASE SPEAK By Col Charanjit (Retd)',
+      excerpt: 'A reminiscence from his years in the Indian Army, Col Charanjit (Retd) is a former Indian Army officer and an adaptive golfer whose journey brings together service, resilience and a deep love for the game',
+      image: blogCol,
+      path: ROUTES.blogCol,
+    },
     {
       id: 'blog-czech-disabled-golf-masters-2026',
       title: 'A Podium Finish That Means So Much More: Ankush Saha’s Remarkable Debut at the Czech Disability Golf Masters 2026',
@@ -96,7 +104,7 @@ const Blog = () => {
                     <img
                       src={post.image}
                       alt={post.title}
-                      className="block w-full h-full object-cover [backface-visibility:hidden] [transform:translateZ(0)] group-hover:scale-105 transition-transform duration-500"
+                      className="block w-full h-full object-cover object-top [backface-visibility:hidden] [transform:translateZ(0)] group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                     />
                   </div>
