@@ -91,12 +91,22 @@ const BlogPostCol = () => {
           </p>
 
           {/* Photo 1 */}
-          <div className="mb-12 flex justify-center">
-            <img
-              src={blogImage1}
-              alt="Please Speak"
-              className="rounded-lg shadow-lg object-contain max-h-96 md:max-h-[28rem]"
-            />
+          <div className="mb-12 flex flex-col md:flex-row items-center justify-center gap-3 md:gap-[10px]">
+            <div>
+                <img
+                src={blogImage1}
+                alt="Please Speak"
+                className="rounded-lg shadow-lg object-contain max-h-96 md:max-h-[28rem]"
+                />
+            </div>
+
+            <div>
+                <img
+                src={blogImage2}
+                alt="Please Speak memoir"
+                className="rounded-lg shadow-lg object-contain max-h-96 md:max-h-[28rem]"
+                />
+            </div>
           </div>
 
           <p className="text-xl text-gray-800 leading-relaxed mb-8 font-quicksand">
@@ -150,15 +160,6 @@ const BlogPostCol = () => {
             after rounding" the remark of mine with red pen. I cursed myself.
           </p>
 
-          {/* Photo 2 */}
-          <div className="mb-12 flex justify-center">
-            <img
-              src={blogImage2}
-              alt="Please Speak memoir"
-              className="rounded-lg shadow-lg object-contain max-h-96 md:max-h-[28rem]"
-            />
-          </div>
-
           <p className="text-xl text-gray-800 leading-relaxed mb-8 font-quicksand">
             After taking a deep breath, I walked into the CO’s office and put
             the circulation file on his table. Weather conditions in the CO's
@@ -173,41 +174,47 @@ const BlogPostCol = () => {
             remarks from “Adjt Speak” to “Adjt Listen”!
           </p>
 
-          {/* Photo 3 */}
-          <div className="mb-12 flex justify-center">
-            <img
-              src={blogImage5}
-              alt="Col Charanjit (Retd)"
-              className="rounded-lg shadow-lg object-contain max-h-96 md:max-h-[28rem]"
-            />
-          </div>
+          <div className="mb-12 flex flex-col md:flex-row items-center justify-center gap-3 md:gap-[10px]">
 
-          {/* About the Author */}
-          <section className="border-l-4 border-primary-green bg-white px-6 py-8 text-primary-blue shadow-[0_16px_44px_rgba(24,39,75,0.08)] font-quicksand">
-            <h3 className="font-quicksand text-2xl font-bold text-primary-blue md:text-[1.75rem]">
-              About the Author
-            </h3>
-
-            <div className="mt-6 space-y-4 text-base leading-7 text-gray-700 md:text-lg">
-              <p>
-                Col Charanjit (Retd) is a former Indian Army officer and an
-                adaptive golfer whose journey brings together service,
-                resilience and a deep love for the game.
-              </p>
-
-              <p>
-                A keen observer of life and human nature, he draws upon his
-                experiences from the Army to share stories that are candid,
-                humorous and thought-provoking.
-              </p>
-
-              <p>
-                Through his writing, he offers a glimpse into the people,
-                moments and lessons that have shaped his journey, both on and
-                beyond the golf course.
-              </p>
+            {/* Photo 3 */}
+            <div className="w-full md:w-1/2 flex justify-center">
+                <img
+                src={blogImage5}
+                alt="Col Charanjit (Retd)"
+                className="rounded-lg shadow-lg object-contain max-h-96 md:max-h-[28rem]"
+                />
             </div>
-          </section>
+
+            {/* About the Author */}
+            <div className="w-full md:w-1/2">
+                <section className="border-l-4 border-primary-green bg-white px-6 py-8 text-primary-blue shadow-[0_16px_44px_rgba(24,39,75,0.08)] font-quicksand">
+                <h3 className="font-quicksand text-2xl font-bold text-primary-blue md:text-[1.75rem]">
+                    About the Author
+                </h3>
+
+                <div className="mt-6 space-y-4 text-base leading-7 text-gray-700 md:text-lg">
+                    <p>
+                    Col Charanjit (Retd) is a former Indian Army officer and an adaptive
+                    golfer whose journey brings together service, resilience and a deep
+                    love for the game.
+                    </p>
+
+                    <p>
+                    A keen observer of life and human nature, he draws upon his
+                    experiences from the Army to share stories that are candid, humorous
+                    and thought-provoking.
+                    </p>
+
+                    <p>
+                    Through his writing, he offers a glimpse into the people, moments and
+                    lessons that have shaped his journey, both on and beyond the golf
+                    course.
+                    </p>
+                </div>
+                </section>
+            </div>
+
+          </div>
 
           {/* Bottom Navigation */}
           <div className="mt-16 pt-8 border-t border-gray-300">
