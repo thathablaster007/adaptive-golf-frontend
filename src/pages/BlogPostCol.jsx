@@ -3,10 +3,8 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ROUTES } from '../config/navigation';
 
-import blogImage1 from '../BlogCol (1).jpeg';
-import blogImage2 from '../BlogCol (2).jpeg';
-import blogVideo1 from '../BlogCol (1).mp4';
-import blogVideo2 from '../BlogCol (2).mp4';
+import blogImage1 from '../Col (1).jpeg';
+import blogImage2 from '../Col (2).jpeg';
 import blogImage5 from '../BlogCol.jpeg';
 
 const BlogPostCol = () => {
@@ -123,27 +121,6 @@ const BlogPostCol = () => {
             reducing in numbers as, I was gradually learning the skill of "eye
             for detail".
           </p>
-
-          {/* Two MP4 videos side-by-side */}
-          <div className="mb-12 flex flex-col md:flex-row items-center justify-center gap-3 md:gap-[10px]">
-            <div>
-              <video
-                src={blogVideo1}
-                controls
-                playsInline
-                className="rounded-lg shadow-lg object-contain max-h-96 md:max-h-[28rem]"
-              />
-            </div>
-
-            <div>
-              <video
-                src={blogVideo2}
-                controls
-                playsInline
-                className="rounded-lg shadow-lg object-contain max-h-96 md:max-h-[28rem]"
-              />
-            </div>
-          </div>
 
           <p className="text-xl text-gray-800 leading-relaxed mb-8 font-quicksand">
             One day while going through the "DAK", I happened to notice a
