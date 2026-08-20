@@ -19,10 +19,6 @@ const BlogPostCol = () => {
               PLEASE SPEAK
             </h1>
 
-            <h2 className="text-4xl md:text-5xl font-quicksand font-bold text-primary-blue">
-              By Col Charanjit (Retd)
-            </h2>
-
             <p className="text-xl md:text-2xl text-gray-700 font-quicksand mt-4">
               A reminiscence from his years in the Indian Army
             </p>

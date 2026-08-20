@@ -9,12 +9,20 @@ import blogImage3 from '../IMG_0780.jpeg';
 import blogImage4 from '../IMG_BLOG4_1.jpg';
 import blogAnkush from '../blog_ankush (3).jpeg';
 import blogCol from '../BlogCol.jpeg';
+import blogCol2 from '../Col_Blog2 (3).jpeg';
 
 const Blog = () => {
   const posts = [
     {
+      id: 'blog-PostCol2',
+      title: 'The Day the Wind Had Other Plans: When Preparation Meets the Unpredictable ',
+      excerpt: 'Skydiving is one of those experiences that is far easier to feel than to describe.',
+      image: blogCol2,
+      path: ROUTES.blogCol2,
+    },
+    {
       id: 'blog-PostCol',
-      title: 'PLEASE SPEAK By Col Charanjit (Retd)',
+      title: 'PLEASE SPEAK ',
       excerpt: 'A reminiscence from his years in the Indian Army, Col Charanjit (Retd) is a former Indian Army officer and an adaptive golfer whose journey brings together service, resilience and a deep love for the game',
       image: blogCol,
       path: ROUTES.blogCol,

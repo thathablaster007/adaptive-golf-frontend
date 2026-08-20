@@ -45,6 +45,7 @@ export const ROUTES = {
   blogBeyondVision: '/blog/beyond-vision',
   blogCzechDisabledGolfMasters: '/blog/czech-disabled-golf-masters-2026',
   blogCol: '/blog/PostCol',
+  blogCol2: '/blog/PostCol2',
   getInvolved: '/get-involved',
   donate: '/donate',
   news: '/news',

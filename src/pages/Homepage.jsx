@@ -46,6 +46,7 @@ import GolfTrustPartnerLogo from '../Golf_Trust.jpeg';
 import mediaImpactPartner2Logo from '../180Golf.png';
 import totheteesponderLogo from '../totheteesponder.jpg';
 import GoSportsLogo from '../unnamed (10).png';
+import blogCol2 from '../Col_Blog2 (3).jpeg';
 
 
 
@@ -210,8 +211,14 @@ const Homepage = () => {
 
   const blogPreviewPosts = [
     {
+      id: 'blog-PostCol2',
+      title: 'The Day the Wind Had Other Plans: When Preparation Meets the Unpredictable ',
+      image: blogCol2,
+      path: ROUTES.blogCol2,
+    },
+    {
       id: 'blog-PostCol',
-      title: 'PLEASE SPEAK By Col Charanjit (Retd)',
+      title: 'PLEASE SPEAK ',
       image: blogCol,
       path: ROUTES.blogCol,
     },
