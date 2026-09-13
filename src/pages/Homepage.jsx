@@ -47,6 +47,7 @@ import mediaImpactPartner2Logo from '../180Golf.png';
 import totheteesponderLogo from '../totheteesponder.jpg';
 import GoSportsLogo from '../unnamed (10).png';
 import blogCol2 from '../Col_Blog2 (3).jpeg';
+import logoDunkirk from '../dunkirk.jpg';
 
 
 
@@ -301,7 +302,7 @@ const Homepage = () => {
       name: 'Vishwa Vardhan Bhati',
       wagrLogo,
       wagrRank_Gross: 466,
-      wagrRank_Nett: 358,
+      wagrRank_Nett: 303,
       wagrRank_Stableford: 184,
       medalImage: medalSilver,
       medalAlt: 'Silver medal',
@@ -321,6 +322,11 @@ const Homepage = () => {
         {
           title: 'Czech Disabled Golf Masters 2026',
           logo: logoCzech,
+          logoClassName: 'h-24 w-auto',
+        },
+        {
+          title: 'Dunkerque Golf Tournament in Dunkirk, France 2026',
+          logo: logoDunkirk,
           logoClassName: 'h-24 w-auto',
         },
       ],

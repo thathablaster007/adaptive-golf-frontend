@@ -791,6 +791,19 @@ export const PLAYER_STORIES = [
           },
         ],
       },
+      {
+        eventTitle: 'Dunkerque Golf Tournament in Dunkirk, France 2026',
+        sections: [
+          {
+            title: 'Strokeplay Nett',
+            items: ['14th Place - Vishwa Vardhan Bhati'],
+          },
+          {
+            title: 'Strokeplay Gross',
+            items: ['15th Place - Vishwa Vardhan Bhati'],
+          },
+        ],
+      },
     ],
     contentImages: [
       {

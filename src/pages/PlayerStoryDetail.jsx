@@ -17,6 +17,7 @@ import vishwaWagrLogo from '../wagr_logo.png';
 import vishwaEnglandGolfLogo from '../unnamed (2).png';
 import vishwaDaikinMadridOpenLogo from '../unnamed (1).png';
 import vishwaCzechLogo from '../Czech_logo.png';
+import logoDunkirk from '../dunkirk.jpg';
 
 const PlayerStoryDetail = () => {
   const { slug } = useParams();
@@ -213,7 +214,7 @@ const PlayerStoryDetail = () => {
                             />
                             <div className="text-center text-[0.86rem] font-bold leading-[1.45] text-[#2f6fa0]">
                               Rank Gross: 466<br />
-                              Rank Nett: 358<br />
+                              Rank Nett: 303<br />
                               Rank Stableford: 184
                             </div>
                           </div>
@@ -233,7 +234,7 @@ const PlayerStoryDetail = () => {
                         </div>
                       </div>
 
-                      <div className="mt-6 flex items-center justify-center gap-4 sm:gap-6">
+                      <div className="mt-6 flex flex-wrap items-center justify-center gap-4 sm:gap-6 ">
                         <img
                           src={vishwaEnglandGolfLogo}
                           alt="England Golf"
@@ -251,6 +252,13 @@ const PlayerStoryDetail = () => {
                         <img
                           src={vishwaCzechLogo}
                           alt="EDGA"
+                          className="h-20 w-auto object-contain"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        <img
+                          src={logoDunkirk}
+                          alt="Dunkerque Golf Tournament"
                           className="h-20 w-auto object-contain"
                           loading="lazy"
                           decoding="async"
