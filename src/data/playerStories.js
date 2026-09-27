@@ -31,6 +31,15 @@ import VimalTwo from '../Media3/DDS00280.jpg';
 import VimalOne from '../Vimal_story.jpeg';
 import VimalThree from '../DDS00029.jpg';
 import VimalFour from '../DDS00061.jpg';
+import mihaanImageOne from '../Mohanna_Dal (1).jpeg';
+import mihaanImageTwo from '../Mohanna_Dal (2).jpeg';
+import mihaanImageThree from '../Mohanna_Dal (3).jpeg';
+import mihaanVideo from '../Mohanna_Dal (1).mp4';
+import chauhanImageOne from '../chauhan (1).jpeg';
+import chauhanImageTwo from '../chauhan (2).jpeg';
+import chauhanImageThree from '../chauhan (3).jpeg';
+import chauhanImageFive from '../chauhan (5).jpeg';
+import chauhanVideo from '../chauhan (1).mp4';
 
 export const PLAYER_STORIES = [
   {
@@ -1385,6 +1394,148 @@ export const PLAYER_STORIES = [
         afterParagraphIndex: 6,
         src: SaurabhThree,
         alt: 'Saurabh Malav at the Indian Adaptive Golf Tournament',
+      },
+    ],
+  },
+  {
+    slug: 'col-ravinder-kumar-chauhan',
+    name: 'Col Ravinder Kumar Chauhan',
+    disabilityTags: ['Leg'],
+    faceImage: chauhanImageOne,
+    faceImagePosition: 'top-small',
+    faceImageAlt: 'Col Ravinder Kumar Chauhan on the golf course',
+    summary:
+      'A decorated Army officer who rebuilt his life after losing a leg and found a new course through adaptive golf.',
+    route: '/media/player-stories/col-ravinder-kumar-chauhan',
+    title: 'The Unbroken March',
+    intro:
+      'Some journeys are measured in miles. Others are measured in moments when a person chooses to keep moving.',
+    paragraphs: [
+      'Ravinder Kumar Chauhan was born on 25 December 1972 in the small village of Chatruru in Himachal Pradesh. From an early age, discipline and duty were woven into the life he chose.',
+      'An alumnus of Bangalore Military School, he went on to the National Defence Academy at Khadakwasla, where he began the journey that would shape much of his life. On 10 June 1995, he was commissioned into the 4th Battalion, The Dogra Regiment.',
+      'For an infantry officer, the battalion becomes family and the battlefield becomes a classroom unlike any other. Col Chauhan lived by the Dogra credo, Kartavyam Anvatma — Duty Before Self.',
+      'His career took him through some of the most demanding roles in the Army. He served as an instructor at both the National Defence Academy, Khadakwasla and the Indian Military Academy, Dehradun, helping prepare the next generation of officers. He also served on staff as GSO 2 (Ops) in 21 Mountain Division.',
+      'Then came 2007.',
+      'During an anti-militant operation in Jammu & Kashmir, Col Chauhan lost his left leg. He was left with a 70 percent disability.',
+      'For many people, that might have marked the end of the road.',
+      'For Col Chauhan, it was simply the end of one chapter.',
+      'He rebuilt. He retrained. And he returned.',
+      'His career continued to unfold with the same determination that had defined it from the beginning. He went on to command men in some of the most demanding terrains as Commanding Officer of 5th Battalion, The Dogra Regiment. Recognition followed. The Chief of the Army Staff, Central Army Commander, Eastern Army Commander and ARTRAC Army Commander each awarded him Commendation Cards for his service.',
+      'Today, as Commanding Officer of 21 Punjab Battalion NCC in Kapurthala, he has spent the last five years doing something that remains close to the heart of soldiering: preparing India’s young people to become citizens of courage and character.',
+      'But there is another place where Col Chauhan continues to test himself.',
+      'The golf course.',
+      'A below-knee amputee with a handicap of 16, he walks the fairways of RCF Golf Course in Kapurthala. Golf is not something he took up simply to stay active. There is something familiar about its challenge — the discipline, the patience, the concentration, the constant demand to face the next shot.',
+      'Every swing carries a quiet message: You do not need two legs to stand tall.',
+      'When Col Gaurav Dutta introduced him to Adaptive Golf, he did not hesitate.',
+      'Perhaps that is because challenges have never been something Col Chauhan has waited to avoid. They have simply been another part of the journey.',
+      'From the drill square of Bangalore Military School to the heights of the Himalayas, from a hospital bed in 2007 to the 18th green today, his story has never really been about what happened to him.',
+      'It has been about what he chose to do next.',
+      'The leg was lost. The purpose was not.',
+      'The uniform may have changed, the terrain may have changed, and now the challenge may be measured in strokes rather than military operations. But the instinct remains the same: step forward, face what is in front of you, and keep going.',
+      'Col RK Chauhan is not defined by the leg he lost.',
+      'He is defined by the life he continued to build after losing it.',
+      'And perhaps that is what makes his journey so powerful.',
+    ],
+    quote: '“The body can be wounded. The march can change. But the spirit does not have to stop.”',
+    quoteAttribution: 'Col Ravinder Kumar Chauhan',
+    inlineImages: [
+      {
+        afterParagraphIndex: 2,
+        src: chauhanImageTwo,
+        alt: 'Col Ravinder Kumar Chauhan during his Army service',
+      },
+      {
+        afterParagraphIndex: 5,
+        src: chauhanImageThree,
+        alt: 'Col Ravinder Kumar Chauhan after his injury',
+      },
+      {
+        afterParagraphIndex: 14,
+        src: chauhanImageFive,
+        alt: 'Col Ravinder Kumar Chauhan playing adaptive golf',
+      },
+    ],
+    inlineVideo: {
+      afterParagraphIndex: 16,
+      src: chauhanVideo,
+      title: 'Col Ravinder Kumar Chauhan playing adaptive golf',
+    },
+    additionalSections: [
+      {
+        heading: 'A life of service. A new course.',
+        paragraphs: [
+          'Today, Col Chauhan continues to serve through his work with the NCC, shaping young lives while pursuing his own journey in Adaptive Golf.',
+          'From soldier to mentor, from commander to golfer, his story is a reminder that resilience is not about returning to exactly who you were before. Sometimes, it is about discovering how far you can go from where you are.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'mihaan-dhall',
+    name: 'Mihaan Dhall',
+    disabilityTags: ['Intellectual'],
+    faceImage: mihaanImageOne,
+    faceImagePosition: 'top-small',
+    faceImageAlt: 'Mihaan Dhall on the golf course',
+    summary:
+      'A golfer, marathon runner, singer, photographer, and disability advocate who found his happy place on the fairway.',
+    route: '/media/player-stories/mihaan-dhall',
+    title: 'When Golf Became His Happy Place',
+    intro:
+      'Somewhere between watching a golf ball fly and learning to make it fly himself, Mihaan found a sport that became much more than a game.',
+    paragraphs: [
+      'Mihaan Dhall remembers what first drew him to golf. It was not the score, the handicap, or even the idea of competing. As a child, he simply loved watching a golf ball fly through the air and then fall.',
+      'In November 2021, his dad took him to the Willingdon Club in Mumbai and introduced him to the game. At first, getting the ball airborne was a challenge. “The ball would just keep rolling,” Mihaan remembers. But with practice, that changed. The ball began to fly, and before long, Mihaan had moved from learning the basics to playing on the course. Today, he can make bogeys and double bogeys and, on his better days, pars too.',
+      'Golf soon became much more than something he played. It became something he was genuinely hooked on.',
+      'Mihaan discovered adaptive golf through his dad, who came across an adaptive golf tournament on Instagram and wondered if Mihaan might be eligible to take part. With the appropriate EDGA certification pass in place, Mihaan found himself introduced to an entirely new side of the game: a community of golfers and the opportunity to compete in tournaments alongside other adaptive golfers.',
+      'His golf, like every golfer’s, comes with its moments of comedy and frustration.',
+      'The shank is still an occasional enemy. When it happens, the ball heads towards the trees and, in Mihaan’s words, becomes “Tarzan”. Bunkers are not exactly his favourite either. Sometimes he thins the ball and sends it flying across the sand; sometimes he puts too much into the shot and watches it roll right back down.',
+      '“Maybe I need to practise golf at the beach now,” he jokes.',
+      'But there are moments that make all the practice worthwhile. One of them came when his chipping finally produced something every golfer loves to see: the ball disappearing into the hole. Mihaan was thrilled. It does not happen often enough for him to take it for granted — perhaps once in a thousand attempts, he says, which made that particular shot even more special.',
+      'Another milestone came with his first handicap: 34.',
+      'For Mihaan, it is another sign of how far he has come, even if he leaves the handicap mathematics to his dad. “Only Dad is the maths genius, not me!” he laughs.',
+      'And then there is the part of golf that is perhaps hardest to put into numbers.',
+      '“Golfing is my happy place.”',
+      'It is easy to understand why. Mihaan’s life is already full. He works at K Hospitality in Worli, attends Skill Shakti Community, runs marathons, goes to the gym, sings in a band, studies photography, works with young children on their exercises, advocates for disability inclusion and, of course, finds plenty of time to be with his friends.',
+      'Golf has become another important part of that life, but it has also opened a door to something he now wants to pursue seriously.',
+      'One day, Mihaan would like to turn professional. He wants to make pars, birdies and eagles, and compete in tournaments in India and internationally. But for now, there are club tournaments to get through, more practice to put in and plenty of golf still to play.',
+      'And if you want to follow the journey, Mihaan has already given it a name: MihaanGolfGuru.',
+      'Exactly how the “guru” got there, he says, he cannot explain.',
+      'But perhaps the name is fitting. Mihaan may still be learning the game, but he is clearly enjoying every bit of the journey.',
+    ],
+    quote: '“Golfing is my happy place.”',
+    quoteAttribution: 'Mihaan Dhall',
+    inlineImages: [
+      {
+        afterParagraphIndex: 3,
+        src: mihaanImageTwo,
+        alt: 'Mihaan Dhall playing adaptive golf',
+      },
+      {
+        afterParagraphIndex: 13,
+        src: mihaanImageThree,
+        alt: 'Mihaan Dhall on the golf course',
+      },
+    ],
+    inlineVideo: {
+      afterParagraphIndex: 8,
+      src: mihaanVideo,
+      title: 'Mihaan Dhall playing golf',
+    },
+    additionalSections: [
+      {
+        heading: 'A little more about Mihaan',
+        paragraphs: [
+          'Beyond the golf course, Mihaan leads a wonderfully full life. He is a marathon runner, singer, photographer, disability advocate and fitness enthusiast. He also works with young children on their exercises and enjoys spending time with his friends.',
+          'Golf is one part of that life but it is a part that has become very close to his heart.',
+        ],
+      },
+      {
+        heading: 'Follow Mihaan’s Golf Journey',
+        paragraphs: [
+          'Instagram: @MihaanGolfGuru',
+          'From the first ball that refused to get airborne to dreams of pars, birdies, eagles and international tournaments, Mihaan’s golf journey is only just beginning.',
+        ],
       },
     ],
   },

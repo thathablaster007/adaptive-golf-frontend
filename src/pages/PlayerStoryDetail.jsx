@@ -109,8 +109,13 @@ const PlayerStoryDetail = () => {
       <motion.section variants={itemVariants} className="section-padding">
         <div className="container-custom mx-auto max-w-4xl px-4 md:px-6">
           <div className="space-y-5 text-lg leading-8 text-gray-800 md:space-y-6 md:text-xl md:leading-8 font-quicksand">
+            {story.intro && contentBlocks[0]?.text !== story.intro && (
+              <p className="font-quicksand font-bold leading-8 md:leading-9">{story.intro}</p>
+            )}
+
             {contentBlocks.map((block, index) => {
               const image = contentImages.find((entry) => (entry.afterBlockIndex ?? entry.afterParagraphIndex) === index);
+              const showInlineVideo = story.inlineVideo?.afterParagraphIndex === index;
 
               return (
                 <React.Fragment key={`${story.slug}-block-${index}`}>
@@ -137,10 +142,40 @@ const PlayerStoryDetail = () => {
                       {renderImage(image, image.size === 'xxlarge' ? 'max-h-[2025px]' : image.size === 'xlarge' ? 'max-h-[1350px]' : image.size === 'large' ? 'max-h-[900px]' : image.size === 'small' ? 'max-h-[450px]' : 'max-h-[590px]')}
                     </div>
                   )}
+
+                  {showInlineVideo && (
+                    <div className="my-6 flex justify-center md:my-7">
+                      <figure className="inline-block max-w-full overflow-hidden rounded-[1.25rem] border border-white bg-white shadow-[0_18px_50px_rgba(24,39,75,0.1)]">
+                        <video
+                          src={story.inlineVideo.src}
+                          title={story.inlineVideo.title}
+                          controls
+                          preload="metadata"
+                          className="block h-auto max-h-[590px] w-full max-w-full object-contain object-top"
+                        />
+                      </figure>
+                    </div>
+                  )}
                 </React.Fragment>
               );
             })}
           </div>
+
+          {story.additionalSections?.map((section) => (
+            <section key={section.heading} className="mt-10 space-y-5 font-quicksand text-lg leading-8 text-gray-800 md:mt-12 md:space-y-6 md:text-xl md:leading-8">
+              <h2 className="font-quicksand text-2xl font-bold leading-tight text-primary-blue md:text-3xl">
+                {section.heading}
+              </h2>
+              {section.paragraphs.map((paragraph, paragraphIndex) => (
+                <p
+                  key={`${section.heading}-${paragraphIndex}`}
+                  className={section.heading === 'Follow Mihaan’s Golf Journey' && paragraphIndex === 1 ? 'font-quicksand font-bold leading-8 md:leading-9' : 'font-quicksand leading-8 md:leading-9'}
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </section>
+          ))}
 
           {story.quote && (
             <blockquote className="mt-8 font-quicksand border-l-4 border-primary-green bg-white px-6 py-6 text-xl font-medium leading-8 text-primary-blue shadow-[0_16px_44px_rgba(24,39,75,0.08)] md:mt-10 md:text-2xl md:leading-9">
