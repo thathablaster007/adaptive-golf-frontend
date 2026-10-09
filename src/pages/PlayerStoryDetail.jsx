@@ -77,6 +77,11 @@ const PlayerStoryDetail = () => {
         loading="lazy"
         decoding="async"
       />
+      {image.caption && (
+        <figcaption className="mx-auto max-w-[24rem] px-3 py-2 text-center text-xs leading-5 text-gray-600 break-words">
+          {image.caption}
+        </figcaption>
+      )}
     </figure>
   );
 
@@ -114,7 +119,7 @@ const PlayerStoryDetail = () => {
             )}
 
             {contentBlocks.map((block, index) => {
-              const image = contentImages.find((entry) => (entry.afterBlockIndex ?? entry.afterParagraphIndex) === index);
+              const images = contentImages.filter((entry) => (entry.afterBlockIndex ?? entry.afterParagraphIndex) === index);
               const showInlineVideo = story.inlineVideo?.afterParagraphIndex === index;
 
               return (
@@ -137,11 +142,11 @@ const PlayerStoryDetail = () => {
                     </div>
                   )}
 
-                  {image && (
-                    <div className="my-6 flex justify-center md:my-7">
+                  {images.map((image) => (
+                    <div key={image.src} className="my-6 flex justify-center md:my-7">
                       {renderImage(image, image.size === 'xxlarge' ? 'max-h-[2025px]' : image.size === 'xlarge' ? 'max-h-[1350px]' : image.size === 'large' ? 'max-h-[900px]' : image.size === 'small' ? 'max-h-[450px]' : 'max-h-[590px]')}
                     </div>
-                  )}
+                  ))}
 
                   {showInlineVideo && (
                     <div className="my-6 flex justify-center md:my-7">
@@ -171,7 +176,14 @@ const PlayerStoryDetail = () => {
                   key={`${section.heading}-${paragraphIndex}`}
                   className={section.heading === 'Follow Mihaan’s Golf Journey' && paragraphIndex === 1 ? 'font-quicksand font-bold leading-8 md:leading-9' : 'font-quicksand leading-8 md:leading-9'}
                 >
-                  {paragraph}
+                  {section.instagramUrl && paragraphIndex === 0 ? (
+                    <>
+                      {paragraph.replace('@thekeyianoman', '')}
+                      <a href={section.instagramUrl} target="_blank" rel="noreferrer" className="font-semibold text-primary-green hover:text-primary-blue">
+                        @thekeyianoman
+                      </a>
+                    </>
+                  ) : paragraph}
                 </p>
               ))}
             </section>
